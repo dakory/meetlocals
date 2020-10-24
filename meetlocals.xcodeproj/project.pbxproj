@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
-		B02DD0EA7A0D46B284D015A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD62BD36AFCC4C19B201C /* ContentView.swift */; };
 		B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */; };
 		B02DD90A7D745C329B663E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DDCF3F744873D79528951 /* Assets.xcassets */; };
-		B02DDE29A469AB7C09389077 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDA438C4EC42A9243636E /* SceneDelegate.swift */; };
 		B02DDFD797B553BC13995E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02DD102639215962BD46FFC /* LaunchScreen.storyboard */; };
+		C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */; };
+		C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */; };
+		C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */; };
+		C2A4FE07976A392342C2E003 /* VkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B02DD62BD36AFCC4C19B201C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B02DD82C1D788ACDE510DDB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B02DDA438C4EC42A9243636E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B02DDC5443CF873D3E031A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B02DDCF3F744873D79528951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02DDE7AFAF179680182E668 /* meetlocals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetlocals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkInfo.swift; sourceTree = "<group>"; };
+		C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegate.swift; sourceTree = "<group>"; };
+		C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
+		C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkUiDelegate.swift; sourceTree = "<group>"; };
+		C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.debug.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.debug.xcconfig"; sourceTree = "<group>"; };
+		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
+		D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetlocals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +39,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978D901214666F54B2F5964F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */,
+				CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B02DD58C096B377AE90626A8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +76,8 @@
 			children = (
 				B02DD819C0EB43716D7AB164 /* Products */,
 				B02DDD2E91F8FC11DDB3AF1D /* meetlocals */,
+				978D901214666F54B2F5964F /* Pods */,
+				ED0FADE70DC7D79824F03FBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,11 +88,29 @@
 				B02DDCF3F744873D79528951 /* Assets.xcassets */,
 				B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */,
 				B02DD102639215962BD46FFC /* LaunchScreen.storyboard */,
-				B02DD62BD36AFCC4C19B201C /* ContentView.swift */,
-				B02DDA438C4EC42A9243636E /* SceneDelegate.swift */,
 				B02DD58C096B377AE90626A8 /* Preview Content */,
+				C2A4FD946326C40AAC9893B2 /* Authorize */,
 			);
 			path = meetlocals;
+			sourceTree = "<group>";
+		};
+		C2A4FD946326C40AAC9893B2 /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */,
+				C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */,
+				C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */,
+				C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */,
+			);
+			path = Authorize;
+			sourceTree = "<group>";
+		};
+		ED0FADE70DC7D79824F03FBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B02DD7E2F7777F9CF9A97010 /* Build configuration list for PBXNativeTarget "meetlocals" */;
 			buildPhases = (
+				A810223BA7DC0C7C92AEF4D2 /* [CP] Check Pods Manifest.lock */,
 				B02DDACEAEB6B201BE7689FE /* Sources */,
 				B02DDA0D67DC0ECC62CE3D8C /* Frameworks */,
 				B02DD7B723A1B40F426D084F /* Resources */,
+				37A4E8EA64B4A49C1CD66012 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -100,12 +140,16 @@
 /* Begin PBXProject section */
 		B02DDE810373A58960ACE233 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = B02DDB14A2B5E87D1D624AF4 /* Build configuration list for PBXProject "meetlocals" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = B02DD97580F41A98612CF1AF;
 			productRefGroup = B02DD819C0EB43716D7AB164 /* Products */;
@@ -130,14 +174,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37A4E8EA64B4A49C1CD66012 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-meetlocals/Pods-meetlocals-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meetlocals/Pods-meetlocals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A810223BA7DC0C7C92AEF4D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-meetlocals-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B02DDACEAEB6B201BE7689FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */,
-				B02DD0EA7A0D46B284D015A4 /* ContentView.swift in Sources */,
-				B02DDE29A469AB7C09389077 /* SceneDelegate.swift in Sources */,
+				C2A4FE07976A392342C2E003 /* VkInfo.swift in Sources */,
+				C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */,
+				C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */,
+				C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +246,7 @@
 /* Begin XCBuildConfiguration section */
 		B02DD0EDAF9A88C692B4060F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -220,14 +310,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		B02DD3AAE5347974BF2B3DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +403,7 @@
 				B02DD0EDAF9A88C692B4060F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B02DDB14A2B5E87D1D624AF4 /* Build configuration list for PBXProject "meetlocals" */ = {
 			isa = XCConfigurationList;
