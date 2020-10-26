@@ -9,7 +9,7 @@ import UIKit
 
 final class MeetlocalsMainscreenController: UIViewController {
     private let output: MeetlocalsMainscreenViewOutput
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private let buttonAddEvent = UIButton(type: .custom)
     private var viewModels = [EventViewModel]()
     

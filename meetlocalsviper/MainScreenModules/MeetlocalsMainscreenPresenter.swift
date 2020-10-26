@@ -47,6 +47,6 @@ extension MeetlocalsMainscreenPresenter: MeetlocalsMainscreenInteractorOutput {
 
 private extension MeetlocalsMainscreenPresenter {
     func makeViewModels(events: [Event]) -> [EventViewModel] {
-        return events.map { EventViewModel(description: $0.description) }
+        return events.map { EventViewModel(description: $0.description, userName: $0.userName, eventName: $0.eventName, userImage: $0.userImage) }
     }
 }

@@ -9,8 +9,14 @@ import Foundation
 
 struct EventViewModel {
     let description: String
+    let userName: String
+    let eventName: String
+    let userImage: String
 
-    init(description: String) {
-        self.description = "Предлагает: \(description.lowercased())"
+    init(description: String, userName: String, eventName: String, userImage: String) {
+        self.eventName = "Хочет \(eventName.lowercased())"
+        self.description = description
+        self.userName = userName
+        self.userImage = userImage
     }
 }

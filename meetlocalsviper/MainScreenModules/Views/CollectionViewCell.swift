@@ -18,12 +18,14 @@ class CollectionViewCell: UICollectionViewCell {
         return UserName
     }()
     
-    fileprivate let EventDescription: UILabel = { () -> UILabel in
-        let EventDescription = UILabel()
-        EventDescription.translatesAutoresizingMaskIntoConstraints = false
-        EventDescription.font = EventDescription.font.withSize(17)
-        EventDescription.textAlignment = .left
-        return EventDescription
+    fileprivate let EventName: UILabel = { () -> UILabel in
+        let EventName = UILabel()
+        EventName.translatesAutoresizingMaskIntoConstraints = false
+        EventName.font = EventName.font.withSize(17)
+        EventName.textAlignment = .left
+        EventName.lineBreakMode = .byWordWrapping
+        EventName.numberOfLines = 0
+        return EventName
     }()
     fileprivate let UserImage: UIImageView = { ( ) -> UIImageView in
         let UserImage = UIImageView()
@@ -32,13 +34,13 @@ class CollectionViewCell: UICollectionViewCell {
         UserImage.layer.borderWidth = 1.5
         UserImage.clipsToBounds = true
         UserImage.translatesAutoresizingMaskIntoConstraints = false
-        UserImage.image = UIImage(named: "userimage")
         
         return UserImage
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
         contentView.addSubview(UserImage)
         UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
@@ -50,10 +52,15 @@ class CollectionViewCell: UICollectionViewCell {
         contentView.addSubview(UserName)
         UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         UserName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
+        UserName.bottomAnchor.constraint(equalTo: UserName.topAnchor, constant: 15).isActive = true
+        UserName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         
-        contentView.addSubview(EventDescription)
-        EventDescription.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 20).isActive = true
-        EventDescription.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
+        contentView.addSubview(EventName)
+        EventName.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 5).isActive = true
+        EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
+        EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+        EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        //EventName.backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +68,8 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: EventViewModel, collectionView: UICollectionView, index: Int) {
-        EventDescription.text = model.description
+        EventName.text = model.eventName
+        UserName.text = model.userName
+        UserImage.image = UIImage(named: "userimage")
     }
 }

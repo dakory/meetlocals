@@ -9,7 +9,12 @@ import Foundation
 
 final class MeetlocalsMainscreenInteractor {
     weak var output: MeetlocalsMainscreenInteractorOutput?
-    private var events: [Event] = [Event(description: "1"), Event(description: "2"), Event(description: "3"), Event(description: "4"), Event(description: "5"), Event(description: "6"), Event(description: "7"), Event(description: "8"), Event(description: "9"), Event(description: "10")]
+    private var events: [Event] =
+        [Event(description: "1", userName: "Катя", eventName: "прогуляться в парке под покровом ночи завтра", userImage: ""),
+         Event(description: "1", userName: "Саша", eventName: "прогуляться в парке", userImage: ""),
+         Event(description: "1", userName: "Вася", eventName: "прогуляться в парке", userImage: ""),
+         Event(description: "1", userName: "Петя", eventName: "прогуляться в парке", userImage: ""),
+         Event(description: "1", userName: "Ира", eventName: "прогуляться в парке", userImage: "")]
 }
 
 extension MeetlocalsMainscreenInteractor: MeetlocalsMainscreenInteractorInput {
