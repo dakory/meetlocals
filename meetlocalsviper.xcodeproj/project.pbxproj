@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3BA4FEB254556110041CD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA4FEA254556110041CD32 /* AppDelegate.swift */; };
+		E3BA4FED254556110041CD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA4FEC254556110041CD32 /* SceneDelegate.swift */; };
+		E3BA4FF4254556130041CD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BA4FF3254556130041CD32 /* Assets.xcassets */; };
+		E3BA4FF7254556130041CD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BA4FF5254556130041CD32 /* LaunchScreen.storyboard */; };
+		E3BA502E254557CF0041CD32 /* MeetlocalsMainscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */; };
+		E3BA504B254558210041CD32 /* MeetlocalsMainscreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */; };
+		E3BA50532545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */; };
+		E3BA5058254558510041CD32 /* MeetlocalsMainscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */; };
+		E3BA505D2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */; };
+		E3BA5065254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */; };
+		E3BA5077254568C70041CD32 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5076254568C70041CD32 /* CollectionViewFlowLayout.swift */; };
+		E3BA507D2545695F0041CD32 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */; };
+		E3F3D0302545B02E009740E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D02F2545B02E009740E3 /* Event.swift */; };
+		E3F3D03B2545B23C009740E3 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D03A2545B23C009740E3 /* EventViewModel.swift */; };
+		E3F3D04A2546058D009740E3 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D0492546058D009740E3 /* AddEventController.swift */; };
+		E3F3D0522546059D009740E3 /* AddEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D0512546059D009740E3 /* AddEventRouter.swift */; };
+		E3F3D057254605B5009740E3 /* AddEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D056254605B5009740E3 /* AddEventContainer.swift */; };
+		E3F3D065254605EC009740E3 /* AddEventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D064254605EC009740E3 /* AddEventProtocols.swift */; };
+		E3F3D06A25460602009740E3 /* AddEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D06925460602009740E3 /* AddEventPresenter.swift */; };
+		E3F3D06F2546061B009740E3 /* AddEventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D06E2546061B009740E3 /* AddEventInteractor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3BA4FFE254556130041CD32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3BA4FDF254556110041CD32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3BA4FE6254556110041CD32;
+			remoteInfo = meetlocalsviper;
+		};
+		E3BA5009254556130041CD32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3BA4FDF254556110041CD32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3BA4FE6254556110041CD32;
+			remoteInfo = meetlocalsviper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E3BA4FE7254556110041CD32 /* meetlocalsviper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetlocalsviper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3BA4FEA254556110041CD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3BA4FEC254556110041CD32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E3BA4FF3254556130041CD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3BA4FF6254556130041CD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3BA4FF8254556130041CD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3BA4FFD254556130041CD32 /* meetlocalsviperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetlocalsviperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3BA5008254556130041CD32 /* meetlocalsviperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetlocalsviperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenController.swift; sourceTree = "<group>"; };
+		E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenRouter.swift; sourceTree = "<group>"; };
+		E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenProtocols.swift; sourceTree = "<group>"; };
+		E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenPresenter.swift; sourceTree = "<group>"; };
+		E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenInteractor.swift; sourceTree = "<group>"; };
+		E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenContainer.swift; sourceTree = "<group>"; };
+		E3BA5076254568C70041CD32 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E3F3D02F2545B02E009740E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E3F3D03A2545B23C009740E3 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		E3F3D0492546058D009740E3 /* AddEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
+		E3F3D0512546059D009740E3 /* AddEventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRouter.swift; sourceTree = "<group>"; };
+		E3F3D056254605B5009740E3 /* AddEventContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventContainer.swift; sourceTree = "<group>"; };
+		E3F3D064254605EC009740E3 /* AddEventProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
+		E3F3D06925460602009740E3 /* AddEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPresenter.swift; sourceTree = "<group>"; };
+		E3F3D06E2546061B009740E3 /* AddEventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventInteractor.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3BA4FE4254556110041CD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA4FFA254556130041CD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA5005254556130041CD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3BA4FDE254556110041CD32 = {
+			isa = PBXGroup;
+			children = (
+				E3BA4FE9254556110041CD32 /* meetlocalsviper */,
+				E3BA4FE8254556110041CD32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3BA4FE8254556110041CD32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3BA4FE7254556110041CD32 /* meetlocalsviper.app */,
+				E3BA4FFD254556130041CD32 /* meetlocalsviperTests.xctest */,
+				E3BA5008254556130041CD32 /* meetlocalsviperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3BA4FE9254556110041CD32 /* meetlocalsviper */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3D04825460537009740E3 /* AddEventModules */,
+				E3BA502C2545579F0041CD32 /* MainScreenModules */,
+				E3BA4FEA254556110041CD32 /* AppDelegate.swift */,
+				E3BA4FEC254556110041CD32 /* SceneDelegate.swift */,
+				E3BA4FF3254556130041CD32 /* Assets.xcassets */,
+				E3BA4FF5254556130041CD32 /* LaunchScreen.storyboard */,
+				E3BA4FF8254556130041CD32 /* Info.plist */,
+			);
+			path = meetlocalsviper;
+			sourceTree = "<group>";
+		};
+		E3BA502C2545579F0041CD32 /* MainScreenModules */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3D02E2545B01B009740E3 /* ViewModels */,
+				E3BA507B254569490041CD32 /* Views */,
+				E3BA5075254568AF0041CD32 /* CollectionViewFlowLayout */,
+				E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */,
+				E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */,
+				E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */,
+				E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */,
+				E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */,
+				E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */,
+			);
+			path = MainScreenModules;
+			sourceTree = "<group>";
+		};
+		E3BA5075254568AF0041CD32 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				E3BA5076254568C70041CD32 /* CollectionViewFlowLayout.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		E3BA507B254569490041CD32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3F3D02E2545B01B009740E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3D02F2545B02E009740E3 /* Event.swift */,
+				E3F3D03A2545B23C009740E3 /* EventViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E3F3D04825460537009740E3 /* AddEventModules */ = {
+			isa = PBXGroup;
+			children = (
+				E3F3D0492546058D009740E3 /* AddEventController.swift */,
+				E3F3D0512546059D009740E3 /* AddEventRouter.swift */,
+				E3F3D056254605B5009740E3 /* AddEventContainer.swift */,
+				E3F3D064254605EC009740E3 /* AddEventProtocols.swift */,
+				E3F3D06925460602009740E3 /* AddEventPresenter.swift */,
+				E3F3D06E2546061B009740E3 /* AddEventInteractor.swift */,
+			);
+			path = AddEventModules;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3BA4FE6254556110041CD32 /* meetlocalsviper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3BA5011254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviper" */;
+			buildPhases = (
+				E3BA4FE3254556110041CD32 /* Sources */,
+				E3BA4FE4254556110041CD32 /* Frameworks */,
+				E3BA4FE5254556110041CD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = meetlocalsviper;
+			productName = meetlocalsviper;
+			productReference = E3BA4FE7254556110041CD32 /* meetlocalsviper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3BA4FFC254556130041CD32 /* meetlocalsviperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3BA5014254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviperTests" */;
+			buildPhases = (
+				E3BA4FF9254556130041CD32 /* Sources */,
+				E3BA4FFA254556130041CD32 /* Frameworks */,
+				E3BA4FFB254556130041CD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3BA4FFF254556130041CD32 /* PBXTargetDependency */,
+			);
+			name = meetlocalsviperTests;
+			productName = meetlocalsviperTests;
+			productReference = E3BA4FFD254556130041CD32 /* meetlocalsviperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E3BA5007254556130041CD32 /* meetlocalsviperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3BA5017254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviperUITests" */;
+			buildPhases = (
+				E3BA5004254556130041CD32 /* Sources */,
+				E3BA5005254556130041CD32 /* Frameworks */,
+				E3BA5006254556130041CD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3BA500A254556130041CD32 /* PBXTargetDependency */,
+			);
+			name = meetlocalsviperUITests;
+			productName = meetlocalsviperUITests;
+			productReference = E3BA5008254556130041CD32 /* meetlocalsviperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3BA4FDF254556110041CD32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					E3BA4FE6254556110041CD32 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					E3BA4FFC254556130041CD32 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = E3BA4FE6254556110041CD32;
+					};
+					E3BA5007254556130041CD32 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = E3BA4FE6254556110041CD32;
+					};
+				};
+			};
+			buildConfigurationList = E3BA4FE2254556110041CD32 /* Build configuration list for PBXProject "meetlocalsviper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3BA4FDE254556110041CD32;
+			productRefGroup = E3BA4FE8254556110041CD32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3BA4FE6254556110041CD32 /* meetlocalsviper */,
+				E3BA4FFC254556130041CD32 /* meetlocalsviperTests */,
+				E3BA5007254556130041CD32 /* meetlocalsviperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3BA4FE5254556110041CD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3BA4FF7254556130041CD32 /* LaunchScreen.storyboard in Resources */,
+				E3BA4FF4254556130041CD32 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA4FFB254556130041CD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA5006254556130041CD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3BA4FE3254556110041CD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3BA5077254568C70041CD32 /* CollectionViewFlowLayout.swift in Sources */,
+				E3F3D04A2546058D009740E3 /* AddEventController.swift in Sources */,
+				E3F3D065254605EC009740E3 /* AddEventProtocols.swift in Sources */,
+				E3F3D03B2545B23C009740E3 /* EventViewModel.swift in Sources */,
+				E3BA507D2545695F0041CD32 /* CollectionViewCell.swift in Sources */,
+				E3BA505D2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift in Sources */,
+				E3BA4FEB254556110041CD32 /* AppDelegate.swift in Sources */,
+				E3BA4FED254556110041CD32 /* SceneDelegate.swift in Sources */,
+				E3BA5065254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift in Sources */,
+				E3F3D06A25460602009740E3 /* AddEventPresenter.swift in Sources */,
+				E3F3D057254605B5009740E3 /* AddEventContainer.swift in Sources */,
+				E3BA504B254558210041CD32 /* MeetlocalsMainscreenRouter.swift in Sources */,
+				E3F3D0302545B02E009740E3 /* Event.swift in Sources */,
+				E3F3D06F2546061B009740E3 /* AddEventInteractor.swift in Sources */,
+				E3BA502E254557CF0041CD32 /* MeetlocalsMainscreenController.swift in Sources */,
+				E3F3D0522546059D009740E3 /* AddEventRouter.swift in Sources */,
+				E3BA50532545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift in Sources */,
+				E3BA5058254558510041CD32 /* MeetlocalsMainscreenPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA4FF9254556130041CD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3BA5004254556130041CD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3BA4FFF254556130041CD32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3BA4FE6254556110041CD32 /* meetlocalsviper */;
+			targetProxy = E3BA4FFE254556130041CD32 /* PBXContainerItemProxy */;
+		};
+		E3BA500A254556130041CD32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3BA4FE6254556110041CD32 /* meetlocalsviper */;
+			targetProxy = E3BA5009254556130041CD32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3BA4FF5254556130041CD32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3BA4FF6254556130041CD32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3BA500F254556130041CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3BA5010254556130041CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3BA5012254556130041CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3BA5013254556130041CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3BA5015254556130041CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetlocalsviper.app/meetlocalsviper";
+			};
+			name = Debug;
+		};
+		E3BA5016254556130041CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetlocalsviper.app/meetlocalsviper";
+			};
+			name = Release;
+		};
+		E3BA5018254556130041CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = meetlocalsviper;
+			};
+			name = Debug;
+		};
+		E3BA5019254556130041CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = meetlocalsviperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sofya.meetlocalsviperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = meetlocalsviper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3BA4FE2254556110041CD32 /* Build configuration list for PBXProject "meetlocalsviper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BA500F254556130041CD32 /* Debug */,
+				E3BA5010254556130041CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3BA5011254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BA5012254556130041CD32 /* Debug */,
+				E3BA5013254556130041CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3BA5014254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BA5015254556130041CD32 /* Debug */,
+				E3BA5016254556130041CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3BA5017254556130041CD32 /* Build configuration list for PBXNativeTarget "meetlocalsviperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3BA5018254556130041CD32 /* Debug */,
+				E3BA5019254556130041CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3BA4FDF254556110041CD32 /* Project object */;
+}
