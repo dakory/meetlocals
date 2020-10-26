@@ -24,6 +24,9 @@ extension AddEventPresenter: AddEventModuleInput {
 }
 
 extension AddEventPresenter: AddEventViewOutput {
+    func didTabAddEvent(name: String, description: String, date: Date, place: String) {
+        self.router.addEvent(name: name, description: description, date: date, place: place)
+    }
 }
 
 extension AddEventPresenter: AddEventInteractorOutput {

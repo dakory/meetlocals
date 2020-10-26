@@ -13,13 +13,13 @@ protocol AddEventModuleInput {
 
 protocol AddEventModuleOutput: class {
     func viewDidLoad()
-    func didTabAddEvent()
 }
 
 protocol AddEventViewInput: class {
 }
 
 protocol AddEventViewOutput: class {
+    func didTabAddEvent(name: String, description: String, date: Date, place: String)
 }
 
 protocol AddEventInteractorInput: class {
@@ -29,4 +29,5 @@ protocol AddEventInteractorOutput: class {
 }
 
 protocol AddEventRouterInput: class {
+    func addEvent(name: String, description: String, date: Date, place: String)
 }

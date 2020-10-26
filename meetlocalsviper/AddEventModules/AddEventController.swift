@@ -169,15 +169,19 @@ private extension AddEventViewController {
         self.buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
         self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
         
+        self.buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
         self.buttonAddEvent.setImage(UIImage(named: "plus"), for: .normal)
         self.buttonAddEvent.layer.cornerRadius = UIScreen.main.bounds.height / 20
         self.buttonAddEvent.clipsToBounds = true
     }
     
-//    @objc
-//    func didTapButtonAddEvent() {
-//        self.output.didTabAddEvent()
-//    }
+    @objc
+    func didTapButtonAddEvent() {
+        self.output.didTabAddEvent(name: self.textEventName.text,
+                                  description: self.textEventDescription.text,
+                                  date: self.textDate.date,
+                                   place: self.placeText.text)
+    }
 }
 
 extension AddEventViewController {
