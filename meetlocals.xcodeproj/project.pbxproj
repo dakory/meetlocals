@@ -12,10 +12,21 @@
 		B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */; };
 		B02DD90A7D745C329B663E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DDCF3F744873D79528951 /* Assets.xcassets */; };
 		B02DDFD797B553BC13995E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02DD102639215962BD46FFC /* LaunchScreen.storyboard */; };
+		C2A4F0C536DB1DB98D45F178 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5105AFFD5FE1E7C214E /* Converter.swift */; };
+		C2A4F0FAD07DBCD05DFBE607 /* JsonUserArrayConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */; };
 		C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */; };
+		C2A4F331ABB68926A49B4D23 /* UserStringArrayCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */; };
 		C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */; };
 		C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */; };
+		C2A4FAA04918454F915F7B91 /* JsonConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */; };
+		C2A4FB217ADCC5A98ECE11F1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */; };
+		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
+		C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */; };
+		C2A4FD8512A98063156B88F5 /* ConvertationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */; };
+		C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */; };
 		C2A4FE07976A392342C2E003 /* VkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */; };
+		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
+		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +36,21 @@
 		B02DDC5443CF873D3E031A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B02DDCF3F744873D79528951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02DDE7AFAF179680182E668 /* meetlocals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetlocals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonConverterFactory.swift; path = Network/Converter/Factory/JsonConverterFactory.swift; sourceTree = "<group>"; };
+		C2A4F42526DC0B4EF836DCBD /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = Network/Interactor/Interactor.swift; sourceTree = "<group>"; };
+		C2A4F43E9153ECE4DD515B75 /* NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetError.swift; path = Network/Error/NetError.swift; sourceTree = "<group>"; };
 		C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkInfo.swift; sourceTree = "<group>"; };
+		C2A4F5105AFFD5FE1E7C214E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Network/Converter/Common/Converter.swift; sourceTree = "<group>"; };
 		C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegate.swift; sourceTree = "<group>"; };
+		C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterFactory.swift; path = Network/Converter/Common/ConverterFactory.swift; sourceTree = "<group>"; };
+		C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStringArrayCreator.swift; path = Network/Converter/ArrayCreator/UserStringArrayCreator.swift; sourceTree = "<group>"; };
+		C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractorImpl.swift; path = Network/Interactor/InteractorImpl.swift; sourceTree = "<group>"; };
+		C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertationError.swift; path = Network/Converter/Common/ConvertationError.swift; sourceTree = "<group>"; };
 		C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
+		C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonUserArrayConverter.swift; path = Network/Converter/JsonUserArrayConverter.swift; sourceTree = "<group>"; };
+		C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterResolver.swift; path = Network/Converter/Common/ConverterResolver.swift; sourceTree = "<group>"; };
 		C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkUiDelegate.swift; sourceTree = "<group>"; };
+		C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Network/Repository/Repository.swift; sourceTree = "<group>"; };
 		C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.debug.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
 		D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetlocals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +112,17 @@
 				B02DD102639215962BD46FFC /* LaunchScreen.storyboard */,
 				B02DD58C096B377AE90626A8 /* Preview Content */,
 				C2A4FD946326C40AAC9893B2 /* Authorize */,
+				C2A4F42526DC0B4EF836DCBD /* Interactor.swift */,
+				C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */,
+				C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */,
+				C2A4F43E9153ECE4DD515B75 /* NetError.swift */,
+				C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */,
+				C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */,
+				C2A4F5105AFFD5FE1E7C214E /* Converter.swift */,
+				C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */,
+				C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */,
+				C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */,
+				C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -182,10 +215,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-meetlocals/Pods-meetlocals-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +266,17 @@
 				C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */,
 				C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */,
 				C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */,
+				C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */,
+				C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */,
+				C2A4FB217ADCC5A98ECE11F1 /* Repository.swift in Sources */,
+				C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */,
+				C2A4F0FAD07DBCD05DFBE607 /* JsonUserArrayConverter.swift in Sources */,
+				C2A4F331ABB68926A49B4D23 /* UserStringArrayCreator.swift in Sources */,
+				C2A4F0C536DB1DB98D45F178 /* Converter.swift in Sources */,
+				C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */,
+				C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */,
+				C2A4FD8512A98063156B88F5 /* ConvertationError.swift in Sources */,
+				C2A4FAA04918454F915F7B91 /* JsonConverterFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
