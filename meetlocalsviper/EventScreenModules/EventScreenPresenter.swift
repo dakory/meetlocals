@@ -1,5 +1,5 @@
 //
-//  MeetlocalsMainscreenPresenter.swift
+//  EventScreenPresenter.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,23 +7,23 @@
 
 import Foundation
 
-final class MeetlocalsMainscreenPresenter {
-    weak var view: MeetlocalsMainscreenViewInput?
-    weak var moduleOutput: MeetlocalsMainscreenModuleOutput?
+final class EventScreenPresenter {
+    weak var view: EventScreenViewInput?
+    weak var moduleOutput: EventScreenModuleOutput?
     
-    private let router: MeetlocalsMainscreenRouterInput
-    private let interactor: MeetlocalsMainscreenInteractorInput
+    private let router: EventScreenRouterInput
+    private let interactor: EventScreenInteractorInput
     
-    init(router: MeetlocalsMainscreenRouterInput, interactor: MeetlocalsMainscreenInteractorInput) {
+    init(router: EventScreenRouterInput, interactor:EventScreenInteractorInput) {
         self.router = router
         self.interactor = interactor
     }
 }
 
-extension MeetlocalsMainscreenPresenter: MeetlocalsMainscreenModuleInput {
+extension EventScreenPresenter: EventScreenModuleInput {
 }
 
-extension MeetlocalsMainscreenPresenter: MeetlocalsMainscreenViewOutput {
+extension EventScreenPresenter: EventScreenViewOutput {
     func didTabEvent() {
         self.router.showEvent()
     }
@@ -38,14 +38,14 @@ extension MeetlocalsMainscreenPresenter: MeetlocalsMainscreenViewOutput {
     }
 }
 
-extension MeetlocalsMainscreenPresenter: MeetlocalsMainscreenInteractorOutput {
+extension EventScreenPresenter: EventScreenInteractorOutput {
     func didLoad(events: [Event]) {
         let viewModels = self.makeViewModels(events: events)
         self.view?.set(viewModels: viewModels)
     }
 }
 
-private extension MeetlocalsMainscreenPresenter {
+private extension EventScreenPresenter {
     func makeViewModels(events: [Event]) -> [EventViewModel] {
         return events.map { EventViewModel(description: $0.description, userName: $0.userName, eventName: $0.eventName, userImage: $0.userImage) }
     }

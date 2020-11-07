@@ -1,5 +1,5 @@
 //
-//  MeetlocalsMainscreenController
+//  EventScreenController.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-final class MeetlocalsMainscreenController: UIViewController {
-    private let output: MeetlocalsMainscreenViewOutput
+final class EventScreenController: UIViewController {
+    private let output: EventScreenViewOutput
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private let buttonAddEvent = UIButton(type: .custom)
     private var viewModels = [EventViewModel]()
+
     
-    init(output: MeetlocalsMainscreenViewOutput) {
+    init(output: EventScreenViewOutput) {
         self.output = output
         
         super.init(nibName: nil, bundle: nil)
@@ -35,6 +36,13 @@ final class MeetlocalsMainscreenController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        let collectionViewFrameTopOffset: CGFloat = 100
+        self.collectionView.frame = CGRect(
+            x: 0,
+            y: collectionViewFrameTopOffset,
+            width: self.view.frame.width,
+            height: self.view.frame.height - collectionViewFrameTopOffset)
     }
 
     override func viewDidLoad() {
@@ -44,7 +52,7 @@ final class MeetlocalsMainscreenController: UIViewController {
     
 }
 
-extension MeetlocalsMainscreenController: MeetlocalsMainscreenViewInput {
+extension EventScreenController: EventScreenViewInput {
     
     func set(viewModels: [EventViewModel]) {
         self.viewModels = viewModels
@@ -52,7 +60,7 @@ extension MeetlocalsMainscreenController: MeetlocalsMainscreenViewInput {
     }
 }
 
-extension MeetlocalsMainscreenController: UICollectionViewDataSource {
+extension EventScreenController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModels.count
     }
@@ -70,17 +78,14 @@ extension MeetlocalsMainscreenController: UICollectionViewDataSource {
     
 }
 
-extension MeetlocalsMainscreenController: UICollectionViewDelegate{
+extension EventScreenController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 }
     
     
-private extension MeetlocalsMainscreenController {
+private extension EventScreenController {
     func setupCollectionView() {
-        self.collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        self.collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        self.collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-        self.collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         
+        self.collectionView.clipsToBounds = true
         self.collectionView.backgroundColor = view.backgroundColor
         self.collectionView.delegate = self
         self.collectionView.dataSource = self

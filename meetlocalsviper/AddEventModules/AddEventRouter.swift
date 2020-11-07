@@ -13,7 +13,6 @@ final class AddEventRouter {
 
 extension AddEventRouter: AddEventRouterInput {
     func addEvent(name: String, description: String, date: Date, place: String) {
-        // TODO: Переписать эту проверку
         if name.isEmpty || description.isEmpty || place.isEmpty || name == "Опишите кратко" || description ==  "Опишите кратко" ||
         place == "Место" || name == "Введите что-нибудь" || description == "Введите что-нибудь" || place == "Введите что-нибудь"{
             let alertController = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)

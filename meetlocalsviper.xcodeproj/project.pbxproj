@@ -11,12 +11,12 @@
 		E3BA4FED254556110041CD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA4FEC254556110041CD32 /* SceneDelegate.swift */; };
 		E3BA4FF4254556130041CD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BA4FF3254556130041CD32 /* Assets.xcassets */; };
 		E3BA4FF7254556130041CD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BA4FF5254556130041CD32 /* LaunchScreen.storyboard */; };
-		E3BA502E254557CF0041CD32 /* MeetlocalsMainscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */; };
-		E3BA504B254558210041CD32 /* MeetlocalsMainscreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */; };
-		E3BA50532545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */; };
-		E3BA5058254558510041CD32 /* MeetlocalsMainscreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */; };
-		E3BA505D2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */; };
-		E3BA5065254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */; };
+		E3BA502E254557CF0041CD32 /* EventScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA502D254557CF0041CD32 /* EventScreenController.swift */; };
+		E3BA504B254558210041CD32 /* EventScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA504A254558210041CD32 /* EventScreenRouter.swift */; };
+		E3BA50532545583B0041CD32 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA50522545583B0041CD32 /* EventScreenProtocols.swift */; };
+		E3BA5058254558510041CD32 /* EventScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5057254558510041CD32 /* EventScreenPresenter.swift */; };
+		E3BA505D2545586C0041CD32 /* EventScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA505C2545586C0041CD32 /* EventScreenInteractor.swift */; };
+		E3BA5065254558AF0041CD32 /* EventScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5064254558AF0041CD32 /* EventScreenContainer.swift */; };
 		E3BA5077254568C70041CD32 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA5076254568C70041CD32 /* CollectionViewFlowLayout.swift */; };
 		E3BA507D2545695F0041CD32 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */; };
 		E3F3D0302545B02E009740E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F3D02F2545B02E009740E3 /* Event.swift */; };
@@ -55,12 +55,12 @@
 		E3BA4FF8254556130041CD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3BA4FFD254556130041CD32 /* meetlocalsviperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetlocalsviperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BA5008254556130041CD32 /* meetlocalsviperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetlocalsviperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenController.swift; sourceTree = "<group>"; };
-		E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenRouter.swift; sourceTree = "<group>"; };
-		E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenProtocols.swift; sourceTree = "<group>"; };
-		E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenPresenter.swift; sourceTree = "<group>"; };
-		E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenInteractor.swift; sourceTree = "<group>"; };
-		E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetlocalsMainscreenContainer.swift; sourceTree = "<group>"; };
+		E3BA502D254557CF0041CD32 /* EventScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenController.swift; sourceTree = "<group>"; };
+		E3BA504A254558210041CD32 /* EventScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenRouter.swift; sourceTree = "<group>"; };
+		E3BA50522545583B0041CD32 /* EventScreenProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenProtocols.swift; sourceTree = "<group>"; };
+		E3BA5057254558510041CD32 /* EventScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenPresenter.swift; sourceTree = "<group>"; };
+		E3BA505C2545586C0041CD32 /* EventScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenInteractor.swift; sourceTree = "<group>"; };
+		E3BA5064254558AF0041CD32 /* EventScreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenContainer.swift; sourceTree = "<group>"; };
 		E3BA5076254568C70041CD32 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E3F3D02F2545B02E009740E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E3F3D04825460537009740E3 /* AddEventModules */,
-				E3BA502C2545579F0041CD32 /* MainScreenModules */,
+				E3BA502C2545579F0041CD32 /* EventScreenModules */,
 				E3BA4FEA254556110041CD32 /* AppDelegate.swift */,
 				E3BA4FEC254556110041CD32 /* SceneDelegate.swift */,
 				E3BA4FF3254556130041CD32 /* Assets.xcassets */,
@@ -130,20 +130,20 @@
 			path = meetlocalsviper;
 			sourceTree = "<group>";
 		};
-		E3BA502C2545579F0041CD32 /* MainScreenModules */ = {
+		E3BA502C2545579F0041CD32 /* EventScreenModules */ = {
 			isa = PBXGroup;
 			children = (
 				E3F3D02E2545B01B009740E3 /* ViewModels */,
-				E3BA507B254569490041CD32 /* Views */,
+				E3BA507B254569490041CD32 /* CollectionViewCell */,
 				E3BA5075254568AF0041CD32 /* CollectionViewFlowLayout */,
-				E3BA502D254557CF0041CD32 /* MeetlocalsMainscreenController.swift */,
-				E3BA504A254558210041CD32 /* MeetlocalsMainscreenRouter.swift */,
-				E3BA50522545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift */,
-				E3BA5057254558510041CD32 /* MeetlocalsMainscreenPresenter.swift */,
-				E3BA505C2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift */,
-				E3BA5064254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift */,
+				E3BA502D254557CF0041CD32 /* EventScreenController.swift */,
+				E3BA504A254558210041CD32 /* EventScreenRouter.swift */,
+				E3BA50522545583B0041CD32 /* EventScreenProtocols.swift */,
+				E3BA5057254558510041CD32 /* EventScreenPresenter.swift */,
+				E3BA505C2545586C0041CD32 /* EventScreenInteractor.swift */,
+				E3BA5064254558AF0041CD32 /* EventScreenContainer.swift */,
 			);
-			path = MainScreenModules;
+			path = EventScreenModules;
 			sourceTree = "<group>";
 		};
 		E3BA5075254568AF0041CD32 /* CollectionViewFlowLayout */ = {
@@ -154,12 +154,12 @@
 			path = CollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
-		E3BA507B254569490041CD32 /* Views */ = {
+		E3BA507B254569490041CD32 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				E3BA507C2545695F0041CD32 /* CollectionViewCell.swift */,
 			);
-			path = Views;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E3F3D02E2545B01B009740E3 /* ViewModels */ = {
@@ -318,19 +318,19 @@
 				E3F3D065254605EC009740E3 /* AddEventProtocols.swift in Sources */,
 				E3F3D03B2545B23C009740E3 /* EventViewModel.swift in Sources */,
 				E3BA507D2545695F0041CD32 /* CollectionViewCell.swift in Sources */,
-				E3BA505D2545586C0041CD32 /* MeetlocalsMainscreenInteractor.swift in Sources */,
+				E3BA505D2545586C0041CD32 /* EventScreenInteractor.swift in Sources */,
 				E3BA4FEB254556110041CD32 /* AppDelegate.swift in Sources */,
 				E3BA4FED254556110041CD32 /* SceneDelegate.swift in Sources */,
-				E3BA5065254558AF0041CD32 /* MeetlocalsMainscreenContainer.swift in Sources */,
+				E3BA5065254558AF0041CD32 /* EventScreenContainer.swift in Sources */,
 				E3F3D06A25460602009740E3 /* AddEventPresenter.swift in Sources */,
 				E3F3D057254605B5009740E3 /* AddEventContainer.swift in Sources */,
-				E3BA504B254558210041CD32 /* MeetlocalsMainscreenRouter.swift in Sources */,
+				E3BA504B254558210041CD32 /* EventScreenRouter.swift in Sources */,
 				E3F3D0302545B02E009740E3 /* Event.swift in Sources */,
 				E3F3D06F2546061B009740E3 /* AddEventInteractor.swift in Sources */,
-				E3BA502E254557CF0041CD32 /* MeetlocalsMainscreenController.swift in Sources */,
+				E3BA502E254557CF0041CD32 /* EventScreenController.swift in Sources */,
 				E3F3D0522546059D009740E3 /* AddEventRouter.swift in Sources */,
-				E3BA50532545583B0041CD32 /* MeetlocalsMainscreenProtocols.swift in Sources */,
-				E3BA5058254558510041CD32 /* MeetlocalsMainscreenPresenter.swift in Sources */,
+				E3BA50532545583B0041CD32 /* EventScreenProtocols.swift in Sources */,
+				E3BA5058254558510041CD32 /* EventScreenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

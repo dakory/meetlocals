@@ -1,5 +1,5 @@
 //
-//  MeetlocalsMainscreenRouter.swift
+//  EventScreenRouter.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class MeetlocalsMainscreenRouter {
+final class EventScreenRouter {
     var viewController: UIViewController?
 }
 
-extension MeetlocalsMainscreenRouter: MeetlocalsMainscreenRouterInput {
+extension EventScreenRouter: EventScreenRouterInput {
     func showAddEvent() {
         let alertController = UIAlertController(title: "Добавить событие", message: nil, preferredStyle: .alert)
         alertController.addTextField()

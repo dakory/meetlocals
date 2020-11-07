@@ -37,6 +37,7 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 }
 

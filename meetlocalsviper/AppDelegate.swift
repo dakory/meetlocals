@@ -13,8 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let contex = MeetlocalsMainscreenContext(moduleOutput: nil)
-        let container = MeetlocalsMainscreenContainer.assemble(with: contex)
+//        let contex = AddEventContext(moduleOutput: nil)
+//        let container = AddEventContainer.assemble(with: contex)
+        let contex = EventScreenContext(moduleOutput: nil)
+        let container = EventScreenContainer.assemble(with: contex)
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         window.rootViewController = container.viewController
