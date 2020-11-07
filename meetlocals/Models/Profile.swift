@@ -1,8 +1,3 @@
-//
-// Created by Dmitry Koryakin on 28.10.2020.
-//
-
-
 struct Profiles {
     var profiles: [Profile]
 
@@ -17,5 +12,7 @@ struct Profile {
     let surname: String
     let isMale: Bool?
     let avatarUrl: String?
+    let idOrganizedEvents: [Int]
+    let idParticipateEvents: [Int]
 }
 

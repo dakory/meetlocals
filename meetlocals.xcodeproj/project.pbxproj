@@ -9,47 +9,115 @@
 /* Begin PBXBuildFile section */
 		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
+		B02DD0ADCD92005040383C3B /* ProfileModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD26C520C5412E7105975 /* ProfileModuleProtocols.swift */; };
+		B02DD166BA35FB14C44B4E21 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD144F14E3305AC5B0CD4 /* AddEventController.swift */; };
+		B02DD1F01132A2E15F29CFF9 /* AddEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD04BA318D9C265DB6E81 /* AddEventPresenter.swift */; };
+		B02DD226D2B316C05898E81B /* ProfileModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD19FF2DDBF6E90E973A /* ProfileModuleContainer.swift */; };
+		B02DD28EDAB75DCA9E78B71D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */; };
+		B02DD2A79D28065524918878 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDF70A7B7E69580353D7E /* EventViewModel.swift */; };
+		B02DD2DEE132D986D59513D0 /* OrganizerScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDBDCA6C1F4E35F66EFBD /* OrganizerScreenContainer.swift */; };
+		B02DD2E245BF927DB4AAB073 /* OrganizerScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6B74B473D5C443130A9 /* OrganizerScreenInteractor.swift */; };
+		B02DD362B054CF51E7C31E39 /* ProfileModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6DA773A98D3F9F8CC10 /* ProfileModuleViewController.swift */; };
+		B02DD36F4746BED58BB4D543 /* EventScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDDA9FDC66BB6D209EA8 /* EventScreenPresenter.swift */; };
+		B02DD4B75D2A71DCFB047F90 /* EventScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD729A04463A9C6236424 /* EventScreenController.swift */; };
+		B02DD59BA296F9792FEF441E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7664FE96666BD2600EE /* Event.swift */; };
+		B02DD5C005C12C147A1E7539 /* OrganizerScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB848F1D6AE5CC03D2B9 /* OrganizerScreenProtocols.swift */; };
+		B02DD638B088146C089322AB /* AutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */; };
+		B02DD6D04D586498568BAB5A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD19BA5D3038B6BEAA875 /* Profile.swift */; };
+		B02DD77C0DB70CD067BA81B5 /* AddEventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD89A9EA419EEA6B7790E /* AddEventInteractor.swift */; };
+		B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */; };
+		B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD45266B8FD7BC61668C0 /* Common.swift */; };
+		B02DD7F0501837F5FD655A0F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFFE3F08F0CA548D08CF /* Events.swift */; };
+		B02DD8030A15B1A7D8263BA9 /* OrganizerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD8164CBC469222AA31CA /* OrganizerScreenViewController.swift */; };
 		B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */; };
 		B02DD90A7D745C329B663E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DDCF3F744873D79528951 /* Assets.xcassets */; };
+		B02DD963C606EEEF8B1B8346 /* AddEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD28579794DF9097BC399 /* AddEventContainer.swift */; };
+		B02DDA0E92585CFFE93C8417 /* OrganizerScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD8ED94CDBFC017E75CC /* OrganizerScreenPresenter.swift */; };
+		B02DDA3CC38236C34C5FC48F /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD94D06E7C6108226D8FB /* VkDelegateImpl.swift */; };
+		B02DDAE1C34DCC9CA526C7F0 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0709CFB18AD42BB9C4F /* VkDelegate.swift */; };
+		B02DDAE3767DFE197FA1D6BA /* ProfileModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD21FC85D67DC8DD82198 /* ProfileModuleRouter.swift */; };
+		B02DDB6B7E7C91EAC2F9B7B7 /* ProfileModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB3D768830C8D72BBE06 /* ProfileModuleInteractor.swift */; };
+		B02DDB7520A53017A0A0770A /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7DCC64FB40A2A652C82 /* CollectionViewCell.swift */; };
+		B02DDC888AD6D7118E8C91F4 /* OrganizerScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD903AD62D60D1A2E0D9F /* OrganizerScreenRouter.swift */; };
+		B02DDC95EDA15D260FA762D4 /* VkUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDA9A236C76DC8A8C42F4 /* VkUiDelegate.swift */; };
+		B02DDCE372342CF424FDD0BF /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD27DAC754DD48523567 /* CollectionViewFlowLayout.swift */; };
+		B02DDD29EBBD00F4D319ABAA /* VkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDEEFA6E45F81CD359752 /* VkInfo.swift */; };
+		B02DDDC336555FFBE9DABBB5 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDE92217349F3335FF87F /* EventScreenProtocols.swift */; };
+		B02DDE1BEB281EEDBA0AB8F8 /* AddEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDE7F556536C607ACCC4C /* AddEventRouter.swift */; };
+		B02DDE6B97AA37F6F0FE5118 /* EventScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDA7CCA7DC983C492475A /* EventScreenInteractor.swift */; };
+		B02DDF5277A9DCDFE404EC6B /* EventScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD9AADC820B1E97D0BD5F /* EventScreenContainer.swift */; };
+		B02DDFAA2884F78F6E5BE035 /* ProfileModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDC075A862E983272819B /* ProfileModulePresenter.swift */; };
+		B02DDFD2A06CA345BAAC67E2 /* AddEventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB60ED6F6572640BC60C /* AddEventProtocols.swift */; };
 		B02DDFD797B553BC13995E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02DD102639215962BD46FFC /* LaunchScreen.storyboard */; };
+		B02DDFF4A83853F59C62E638 /* EventScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD9414DF45BED8BF5A683 /* EventScreenRouter.swift */; };
 		C2A4F0C536DB1DB98D45F178 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5105AFFD5FE1E7C214E /* Converter.swift */; };
 		C2A4F0FAD07DBCD05DFBE607 /* JsonUserArrayConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */; };
-		C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */; };
 		C2A4F331ABB68926A49B4D23 /* UserStringArrayCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */; };
-		C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */; };
-		C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */; };
 		C2A4FAA04918454F915F7B91 /* JsonConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */; };
 		C2A4FB217ADCC5A98ECE11F1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */; };
 		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
 		C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */; };
 		C2A4FD8512A98063156B88F5 /* ConvertationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */; };
 		C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */; };
-		C2A4FE07976A392342C2E003 /* VkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */; };
 		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
 		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02DD04BA318D9C265DB6E81 /* AddEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventPresenter.swift; sourceTree = "<group>"; };
+		B02DD0709CFB18AD42BB9C4F /* VkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegate.swift; sourceTree = "<group>"; };
+		B02DD144F14E3305AC5B0CD4 /* AddEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
+		B02DD19BA5D3038B6BEAA875 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B02DD21FC85D67DC8DD82198 /* ProfileModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleRouter.swift; sourceTree = "<group>"; };
+		B02DD26C520C5412E7105975 /* ProfileModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleProtocols.swift; sourceTree = "<group>"; };
+		B02DD28579794DF9097BC399 /* AddEventContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventContainer.swift; sourceTree = "<group>"; };
+		B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B02DD45266B8FD7BC61668C0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Layout_utils.swift; sourceTree = "<group>"; };
+		B02DD6B74B473D5C443130A9 /* OrganizerScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenInteractor.swift; sourceTree = "<group>"; };
+		B02DD6DA773A98D3F9F8CC10 /* ProfileModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleViewController.swift; sourceTree = "<group>"; };
+		B02DD729A04463A9C6236424 /* EventScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenController.swift; sourceTree = "<group>"; };
+		B02DD7664FE96666BD2600EE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B02DD7DCC64FB40A2A652C82 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B02DD8164CBC469222AA31CA /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD82C1D788ACDE510DDB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B02DD89A9EA419EEA6B7790E /* AddEventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventInteractor.swift; sourceTree = "<group>"; };
+		B02DD903AD62D60D1A2E0D9F /* OrganizerScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenRouter.swift; sourceTree = "<group>"; };
+		B02DD9414DF45BED8BF5A683 /* EventScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenRouter.swift; sourceTree = "<group>"; };
+		B02DD94D06E7C6108226D8FB /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
+		B02DD9AADC820B1E97D0BD5F /* EventScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenContainer.swift; sourceTree = "<group>"; };
+		B02DDA7CCA7DC983C492475A /* EventScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenInteractor.swift; sourceTree = "<group>"; };
+		B02DDA9A236C76DC8A8C42F4 /* VkUiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkUiDelegate.swift; sourceTree = "<group>"; };
+		B02DDB3D768830C8D72BBE06 /* ProfileModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleInteractor.swift; sourceTree = "<group>"; };
+		B02DDB60ED6F6572640BC60C /* AddEventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
+		B02DDB848F1D6AE5CC03D2B9 /* OrganizerScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenProtocols.swift; sourceTree = "<group>"; };
+		B02DDBDCA6C1F4E35F66EFBD /* OrganizerScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenContainer.swift; sourceTree = "<group>"; };
+		B02DDC075A862E983272819B /* ProfileModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModulePresenter.swift; sourceTree = "<group>"; };
 		B02DDC5443CF873D3E031A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B02DDCF3F744873D79528951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B02DDD19FF2DDBF6E90E973A /* ProfileModuleContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleContainer.swift; sourceTree = "<group>"; };
+		B02DDD27DAC754DD48523567 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		B02DDD8ED94CDBFC017E75CC /* OrganizerScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenPresenter.swift; sourceTree = "<group>"; };
+		B02DDDDA9FDC66BB6D209EA8 /* EventScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenPresenter.swift; sourceTree = "<group>"; };
 		B02DDE7AFAF179680182E668 /* meetlocals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetlocals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02DDE7F556536C607ACCC4C /* AddEventRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventRouter.swift; sourceTree = "<group>"; };
+		B02DDE92217349F3335FF87F /* EventScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenProtocols.swift; sourceTree = "<group>"; };
+		B02DDEEFA6E45F81CD359752 /* VkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkInfo.swift; sourceTree = "<group>"; };
+		B02DDF70A7B7E69580353D7E /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutView.swift; sourceTree = "<group>"; };
+		B02DDFFE3F08F0CA548D08CF /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonConverterFactory.swift; path = Network/Converter/Factory/JsonConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F42526DC0B4EF836DCBD /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = Network/Interactor/Interactor.swift; sourceTree = "<group>"; };
 		C2A4F43E9153ECE4DD515B75 /* NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetError.swift; path = Network/Error/NetError.swift; sourceTree = "<group>"; };
-		C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkInfo.swift; sourceTree = "<group>"; };
 		C2A4F5105AFFD5FE1E7C214E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Network/Converter/Common/Converter.swift; sourceTree = "<group>"; };
-		C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegate.swift; sourceTree = "<group>"; };
 		C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterFactory.swift; path = Network/Converter/Common/ConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStringArrayCreator.swift; path = Network/Converter/ArrayCreator/UserStringArrayCreator.swift; sourceTree = "<group>"; };
 		C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractorImpl.swift; path = Network/Interactor/InteractorImpl.swift; sourceTree = "<group>"; };
 		C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertationError.swift; path = Network/Converter/Common/ConvertationError.swift; sourceTree = "<group>"; };
-		C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
 		C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonUserArrayConverter.swift; path = Network/Converter/JsonUserArrayConverter.swift; sourceTree = "<group>"; };
 		C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterResolver.swift; path = Network/Converter/Common/ConverterResolver.swift; sourceTree = "<group>"; };
-		C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkUiDelegate.swift; sourceTree = "<group>"; };
 		C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Repository.swift; path = Network/Repository/Repository.swift; sourceTree = "<group>"; };
 		C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.debug.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,12 +145,70 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B02DD0897423B085E454A7A1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */,
+				B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */,
+			);
+			name = Common;
+			path = meetlocals/Common;
+			sourceTree = "<group>";
+		};
+		B02DD0E7243E36682D829496 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD7664FE96666BD2600EE /* Event.swift */,
+				B02DDF70A7B7E69580353D7E /* EventViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B02DD57E62240B843EA8206E /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B02DDD27DAC754DD48523567 /* CollectionViewFlowLayout.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		B02DD58C096B377AE90626A8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 				B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B02DD6333A2FB5B42A35D9F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD45266B8FD7BC61668C0 /* Common.swift */,
+				B02DDFFE3F08F0CA548D08CF /* Events.swift */,
+				B02DD19BA5D3038B6BEAA875 /* Profile.swift */,
+			);
+			name = Models;
+			path = meetlocals/Models;
+			sourceTree = "<group>";
+		};
+		B02DD686B5B87077183867A0 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */,
+			);
+			name = Additions;
+			path = meetlocals/Additions;
+			sourceTree = "<group>";
+		};
+		B02DD6BD0AB2E0DE6732CDBB /* AuthorizeModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DDEEFA6E45F81CD359752 /* VkInfo.swift */,
+				B02DD0709CFB18AD42BB9C4F /* VkDelegate.swift */,
+				B02DDA9A236C76DC8A8C42F4 /* VkUiDelegate.swift */,
+				B02DD94D06E7C6108226D8FB /* VkDelegateImpl.swift */,
+			);
+			path = AuthorizeModule;
 			sourceTree = "<group>";
 		};
 		B02DD819C0EB43716D7AB164 /* Products */ = {
@@ -93,6 +219,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B02DD8E037E287A5703E39ED /* AddEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DDE7F556536C607ACCC4C /* AddEventRouter.swift */,
+				B02DD28579794DF9097BC399 /* AddEventContainer.swift */,
+				B02DD04BA318D9C265DB6E81 /* AddEventPresenter.swift */,
+				B02DDB60ED6F6572640BC60C /* AddEventProtocols.swift */,
+				B02DD144F14E3305AC5B0CD4 /* AddEventController.swift */,
+				B02DD89A9EA419EEA6B7790E /* AddEventInteractor.swift */,
+			);
+			path = AddEventModule;
+			sourceTree = "<group>";
+		};
 		B02DD97580F41A98612CF1AF = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +239,50 @@
 				B02DDD2E91F8FC11DDB3AF1D /* meetlocals */,
 				978D901214666F54B2F5964F /* Pods */,
 				ED0FADE70DC7D79824F03FBC /* Frameworks */,
+				B02DD0897423B085E454A7A1 /* Common */,
+				B02DD686B5B87077183867A0 /* Additions */,
+				B02DD6333A2FB5B42A35D9F8 /* Models */,
+				B02DDC00CD95DB0F6F3A8B0A /* Modules */,
 			);
+			sourceTree = "<group>";
+		};
+		B02DDB482A6E88221E99275F /* OrganizerScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD903AD62D60D1A2E0D9F /* OrganizerScreenRouter.swift */,
+				B02DDBDCA6C1F4E35F66EFBD /* OrganizerScreenContainer.swift */,
+				B02DDD8ED94CDBFC017E75CC /* OrganizerScreenPresenter.swift */,
+				B02DDB848F1D6AE5CC03D2B9 /* OrganizerScreenProtocols.swift */,
+				B02DD6B74B473D5C443130A9 /* OrganizerScreenInteractor.swift */,
+				B02DD8164CBC469222AA31CA /* OrganizerScreenViewController.swift */,
+			);
+			path = OrganizerScreenModule;
+			sourceTree = "<group>";
+		};
+		B02DDC00CD95DB0F6F3A8B0A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B02DDC496DF9D1C1AD183A5C /* ProfileModule */,
+				B02DD8E037E287A5703E39ED /* AddEventModule */,
+				B02DD6BD0AB2E0DE6732CDBB /* AuthorizeModule */,
+				B02DDEAF903D7DF9A6725388 /* EventScreenModule */,
+				B02DDB482A6E88221E99275F /* OrganizerScreenModule */,
+			);
+			name = Modules;
+			path = meetlocals/Modules;
+			sourceTree = "<group>";
+		};
+		B02DDC496DF9D1C1AD183A5C /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD21FC85D67DC8DD82198 /* ProfileModuleRouter.swift */,
+				B02DDD19FF2DDBF6E90E973A /* ProfileModuleContainer.swift */,
+				B02DDC075A862E983272819B /* ProfileModulePresenter.swift */,
+				B02DD26C520C5412E7105975 /* ProfileModuleProtocols.swift */,
+				B02DDB3D768830C8D72BBE06 /* ProfileModuleInteractor.swift */,
+				B02DD6DA773A98D3F9F8CC10 /* ProfileModuleViewController.swift */,
+			);
+			path = ProfileModule;
 			sourceTree = "<group>";
 		};
 		B02DDD2E91F8FC11DDB3AF1D /* meetlocals */ = {
@@ -111,7 +293,6 @@
 				B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */,
 				B02DD102639215962BD46FFC /* LaunchScreen.storyboard */,
 				B02DD58C096B377AE90626A8 /* Preview Content */,
-				C2A4FD946326C40AAC9893B2 /* Authorize */,
 				C2A4F42526DC0B4EF836DCBD /* Interactor.swift */,
 				C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */,
 				C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */,
@@ -127,15 +308,28 @@
 			path = meetlocals;
 			sourceTree = "<group>";
 		};
-		C2A4FD946326C40AAC9893B2 /* Authorize */ = {
+		B02DDE12C284604E0191ECDD /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C2A4F4CBC499E78C7BC050F4 /* VkInfo.swift */,
-				C2A4F76200267A64C185BF8E /* VkDelegateImpl.swift */,
-				C2A4FD7AF8DC81A7A6723AC5 /* VkUiDelegate.swift */,
-				C2A4F51DF668732A1DADAB5A /* VkDelegate.swift */,
+				B02DD7DCC64FB40A2A652C82 /* CollectionViewCell.swift */,
 			);
-			path = Authorize;
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B02DDEAF903D7DF9A6725388 /* EventScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD0E7243E36682D829496 /* ViewModels */,
+				B02DDE12C284604E0191ECDD /* CollectionViewCell */,
+				B02DD9414DF45BED8BF5A683 /* EventScreenRouter.swift */,
+				B02DD57E62240B843EA8206E /* CollectionViewFlowLayout */,
+				B02DD9AADC820B1E97D0BD5F /* EventScreenContainer.swift */,
+				B02DDDDA9FDC66BB6D209EA8 /* EventScreenPresenter.swift */,
+				B02DDE92217349F3335FF87F /* EventScreenProtocols.swift */,
+				B02DD729A04463A9C6236424 /* EventScreenController.swift */,
+				B02DDA7CCA7DC983C492475A /* EventScreenInteractor.swift */,
+			);
+			path = EventScreenModule;
 			sourceTree = "<group>";
 		};
 		ED0FADE70DC7D79824F03FBC /* Frameworks */ = {
@@ -262,10 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */,
-				C2A4FE07976A392342C2E003 /* VkInfo.swift in Sources */,
-				C2A4F53BBA63FCD49792B004 /* VkDelegateImpl.swift in Sources */,
-				C2A4F30101C0DD4D20F88FA5 /* VkUiDelegate.swift in Sources */,
-				C2A4F412F7B8837845D4BCF0 /* VkDelegate.swift in Sources */,
 				C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */,
 				C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */,
 				C2A4FB217ADCC5A98ECE11F1 /* Repository.swift in Sources */,
@@ -277,6 +467,44 @@
 				C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */,
 				C2A4FD8512A98063156B88F5 /* ConvertationError.swift in Sources */,
 				C2A4FAA04918454F915F7B91 /* JsonConverterFactory.swift in Sources */,
+				B02DD638B088146C089322AB /* AutoLayoutView.swift in Sources */,
+				B02DD28EDAB75DCA9E78B71D /* UIImageViewExtension.swift in Sources */,
+				B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */,
+				B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */,
+				B02DD7F0501837F5FD655A0F /* Events.swift in Sources */,
+				B02DD6D04D586498568BAB5A /* Profile.swift in Sources */,
+				B02DDAE3767DFE197FA1D6BA /* ProfileModuleRouter.swift in Sources */,
+				B02DD226D2B316C05898E81B /* ProfileModuleContainer.swift in Sources */,
+				B02DDFAA2884F78F6E5BE035 /* ProfileModulePresenter.swift in Sources */,
+				B02DD0ADCD92005040383C3B /* ProfileModuleProtocols.swift in Sources */,
+				B02DDB6B7E7C91EAC2F9B7B7 /* ProfileModuleInteractor.swift in Sources */,
+				B02DD362B054CF51E7C31E39 /* ProfileModuleViewController.swift in Sources */,
+				B02DDE1BEB281EEDBA0AB8F8 /* AddEventRouter.swift in Sources */,
+				B02DD963C606EEEF8B1B8346 /* AddEventContainer.swift in Sources */,
+				B02DD1F01132A2E15F29CFF9 /* AddEventPresenter.swift in Sources */,
+				B02DDFD2A06CA345BAAC67E2 /* AddEventProtocols.swift in Sources */,
+				B02DD166BA35FB14C44B4E21 /* AddEventController.swift in Sources */,
+				B02DD77C0DB70CD067BA81B5 /* AddEventInteractor.swift in Sources */,
+				B02DDD29EBBD00F4D319ABAA /* VkInfo.swift in Sources */,
+				B02DDAE1C34DCC9CA526C7F0 /* VkDelegate.swift in Sources */,
+				B02DDC95EDA15D260FA762D4 /* VkUiDelegate.swift in Sources */,
+				B02DDA3CC38236C34C5FC48F /* VkDelegateImpl.swift in Sources */,
+				B02DD59BA296F9792FEF441E /* Event.swift in Sources */,
+				B02DD2A79D28065524918878 /* EventViewModel.swift in Sources */,
+				B02DDB7520A53017A0A0770A /* CollectionViewCell.swift in Sources */,
+				B02DDFF4A83853F59C62E638 /* EventScreenRouter.swift in Sources */,
+				B02DDCE372342CF424FDD0BF /* CollectionViewFlowLayout.swift in Sources */,
+				B02DDF5277A9DCDFE404EC6B /* EventScreenContainer.swift in Sources */,
+				B02DD36F4746BED58BB4D543 /* EventScreenPresenter.swift in Sources */,
+				B02DDDC336555FFBE9DABBB5 /* EventScreenProtocols.swift in Sources */,
+				B02DD4B75D2A71DCFB047F90 /* EventScreenController.swift in Sources */,
+				B02DDE6B97AA37F6F0FE5118 /* EventScreenInteractor.swift in Sources */,
+				B02DDC888AD6D7118E8C91F4 /* OrganizerScreenRouter.swift in Sources */,
+				B02DD2DEE132D986D59513D0 /* OrganizerScreenContainer.swift in Sources */,
+				B02DDA0E92585CFFE93C8417 /* OrganizerScreenPresenter.swift in Sources */,
+				B02DD5C005C12C147A1E7539 /* OrganizerScreenProtocols.swift in Sources */,
+				B02DD2E245BF927DB4AAB073 /* OrganizerScreenInteractor.swift in Sources */,
+				B02DD8030A15B1A7D8263BA9 /* OrganizerScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
