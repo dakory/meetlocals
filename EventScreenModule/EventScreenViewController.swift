@@ -65,7 +65,15 @@ final class EventScreenViewController: UIViewController {
         
             
         
-    //    imageOfPerson.image = UIImage(named: "exampleImageOfPerson") //должны достать из БД
+        // imageOfPerson.image = UIImage(named: "exampleImageOfPerson") //должны достать из БД
+        //    nameOfPerson.text = "Иванов Иван" //должны достать из БД
+        //    labelTime.text = "25.04.2020"  //должны достать из БД
+        //     labelPlace.text = "Москва, Подкопаевский переулок, 5"  //должны достать из БД
+        //     labelDescription.text = "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей"      //должны достать из БД
+
+
+
+
         imageOfPerson.contentMode = .scaleAspectFit
         imageOfPerson.widthAnchor.constraint(equalToConstant: 50).isActive = true
         imageOfPerson.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -73,16 +81,11 @@ final class EventScreenViewController: UIViewController {
         imageOfPerson.clipsToBounds = true
         
         
-        
-    //    nameOfPerson.text = "Иванов Иван" //должны достать из БД
         nameOfPerson.textColor = .white
         nameOfPerson.font = nameOfPerson.font.withSize(20)
 
-    //    labelTime.text = "25.04.2020"  //должны достать из БД
         labelTime.font = labelTime.font.withSize(20)
 
-   //     labelPlace.text = "Москва, Подкопаевский переулок, 5"  //должны достать из БД
-   //     labelDescription.text = "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей"      //должны достать из БД
 
         [labelPlace, labelDescription, labelTime
         ].forEach({

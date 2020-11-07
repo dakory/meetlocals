@@ -30,5 +30,5 @@ protocol OrganizerScreenInteractorOutput: class {
 }
 
 protocol OrganizerScreenRouterInput: class {
- //   func sendPersonToOrganizerScreen(id: Int)
+    func sendPersonToOrganizerScreen(id: Int)
 }

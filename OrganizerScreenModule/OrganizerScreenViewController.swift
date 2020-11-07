@@ -1,11 +1,3 @@
-//
-//  OrganizerScreenViewController.swift
-//  eventScreen
-//
-//  Created by Danil Ilichev on 29.10.2020.
-//  
-//
-
 import UIKit
 
 final class OrganizerScreenViewController: UIViewController {
@@ -40,24 +32,21 @@ final class OrganizerScreenViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(stackViewTopLabel)
         
-      //      imageOfPerson.image = UIImage(named: "exampleImageOfPerson2") //должны достать из БД
-            imageOfPerson.contentMode = .scaleAspectFit
-            imageOfPerson.widthAnchor.constraint(equalToConstant: 100).isActive = true
-            imageOfPerson.heightAnchor.constraint(equalToConstant: 100).isActive = true
-            imageOfPerson.layer.cornerRadius = imageOfPerson.frame.height/2
-            imageOfPerson.layer.cornerRadius = 50
-            imageOfPerson.clipsToBounds = true
+        imageOfPerson.contentMode = .scaleAspectFit
+        imageOfPerson.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageOfPerson.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageOfPerson.layer.cornerRadius = imageOfPerson.frame.height/2
+        imageOfPerson.layer.cornerRadius = 50
+        imageOfPerson.clipsToBounds = true
         
         
-   //         nameOfPerson.text = "Иванов Иван" //должны достать из БД
-            nameOfPerson.textColor = .black
-            nameOfPerson.font = nameOfPerson.font.withSize(25)
+        nameOfPerson.textColor = .black
+        nameOfPerson.font = nameOfPerson.font.withSize(25)
         
         
         stackViewTopLabel.axis = .horizontal
         stackViewTopLabel.distribution = .fillProportionally
 
-     //   stackViewTopLabel.backgroundColor = .systemBlue
         stackViewTopLabel.layer.cornerRadius = 10
         stackViewTopLabel.spacing = 20
         

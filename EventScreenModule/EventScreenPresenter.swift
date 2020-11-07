@@ -1,9 +1,7 @@
-
-
 import Foundation
 import UIKit
 
-var organizerID: Int = -1;
+private var organizerID: Int = -1;
 
 final class EventScreenPresenter {
 	weak var view: EventScreenViewInput?
@@ -19,7 +17,7 @@ final class EventScreenPresenter {
 }
 
 extension EventScreenPresenter: EventScreenModuleInput {
-    func sendEventAndOrganizerData(_ person: Profile, _ event: Event){
+    func sendEventAndOrganizerData(_ person: Profile, _ event: Event){ //функция, в которую положили данные о мероприятии и его организаторе, чтобы вывести на экран
         (self.view as! EventScreenViewController).nameOfPerson.text = "\(person.name) \(person.surname)"
         (self.view as! EventScreenViewController).imageOfPerson.image = UIImage(named: person.avatarUrl!)
         (self.view as! EventScreenViewController).labelTime.text = event.date
@@ -32,11 +30,9 @@ extension EventScreenPresenter: EventScreenModuleInput {
 extension EventScreenPresenter: EventScreenViewOutput {
     func getData(){
         let event = interactor.getInfoOfEvent()   //обращаемся к interactor для получения информации и мероприятии
-      //  let firstPerson = peopleList[0]
-      //  let secondPerson = peopleList[1]
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
         organizerID = person.id
-        sendEventAndOrganizerData(person, event)   //вызываем функцию, в которую положили
+        sendEventAndOrganizerData(person, event)
     }
     
     func singUpForEvent(){
@@ -44,7 +40,6 @@ extension EventScreenPresenter: EventScreenViewOutput {
     }
     
     func goToOrganizerScreen(){
-        
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID)
     }
 

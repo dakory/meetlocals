@@ -1,15 +1,6 @@
-//
-//  OrganizerScreenPresenter.swift
-//  eventScreen
-//
-//  Created by Danil Ilichev on 29.10.2020.
-//  
-//
-
 import Foundation
 import UIKit
 
-//private var organizerID = -1
 
 final class OrganizerScreenPresenter {
 	weak var view: OrganizerScreenViewInput?
@@ -34,7 +25,7 @@ extension OrganizerScreenPresenter: OrganizerScreenModuleInput {
 
 extension OrganizerScreenPresenter: OrganizerScreenViewOutput {
     func getData(){
-        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == 0 })
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  OrganizerScreenRouter.personID})
         let organizer = Common.profiles.profiles[indexPerson!]
         setOrganizerData(person: organizer)
     }
