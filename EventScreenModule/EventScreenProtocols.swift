@@ -3,7 +3,7 @@ import Foundation
 
 protocol EventScreenModuleInput {
 	var moduleOutput: EventScreenModuleOutput? { get }
-    func sendOrganizerData(data: Person)
+    func sendEventAndOrganizerData(_ person: Profile, _ event: Event)
 }
 
 protocol EventScreenModuleOutput: class {
@@ -20,12 +20,13 @@ protocol EventScreenViewOutput: class {
 }
 
 protocol EventScreenInteractorInput: class {
-    func getListOfPeople() -> [Person]
+    func getInfoOfEvent() -> Event
+    func getInfoOrganizer(id: Int) -> Profile
 }
 
 protocol EventScreenInteractorOutput: class {
 }
 
 protocol EventScreenRouterInput: class {
-    func organizerScreen(vc: EventScreenViewController, organizer: Person)
+    func organizerScreen(vc: EventScreenViewController, organizerID: Int)
 }

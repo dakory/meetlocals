@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-var organizer = Person(name: "", imagePerson: "")
+//private var organizerID = -1
 
 final class OrganizerScreenPresenter {
 	weak var view: OrganizerScreenViewInput?
@@ -24,16 +25,18 @@ final class OrganizerScreenPresenter {
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenModuleInput {
-    func setOrganizerData(){
-        (self.view as! OrganizerScreenViewController).nameOfPerson.text = organizer.name
-        (self.view as! OrganizerScreenViewController).imageOfPerson.image =  organizer.imagePersonString
+    func setOrganizerData(person: Profile){
+        (self.view as! OrganizerScreenViewController).nameOfPerson.text = "\(person.name) \(person.surname)"
+        (self.view as! OrganizerScreenViewController).imageOfPerson.image =  UIImage(named: person.avatarUrl!)
 
     }
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenViewOutput {
     func getData(){
-        setOrganizerData()
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == 0 })
+        let organizer = Common.profiles.profiles[indexPerson!]
+        setOrganizerData(person: organizer)
     }
 }
 

@@ -13,8 +13,8 @@ final class OrganizerScreenRouter {
 
 extension OrganizerScreenRouter: OrganizerScreenRouterInput {
     
-    func sendPersonToOrganizerScreen(per: Person){
-        organizer = per
-    }
+//    func sendPersonToOrganizerScreen(id: Int){
+//        organizerID = id
+//    }
     
 }

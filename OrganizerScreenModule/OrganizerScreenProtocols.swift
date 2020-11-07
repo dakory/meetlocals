@@ -10,7 +10,7 @@ import Foundation
 
 protocol OrganizerScreenModuleInput {
 	var moduleOutput: OrganizerScreenModuleOutput? { get }
-    func setOrganizerData()
+    func setOrganizerData(person: Profile)
 }
 
 protocol OrganizerScreenModuleOutput: class {
@@ -30,5 +30,5 @@ protocol OrganizerScreenInteractorOutput: class {
 }
 
 protocol OrganizerScreenRouterInput: class {
-    func sendPersonToOrganizerScreen(per: Person)
+ //   func sendPersonToOrganizerScreen(id: Int)
 }

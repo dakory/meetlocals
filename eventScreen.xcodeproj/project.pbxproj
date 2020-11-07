@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		69312B9425485DA7004333C6 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69312B9325485DA7004333C6 /* UIView+Layout.swift */; };
+		694B2FD325569A140092E4E7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B2FD225569A140092E4E7 /* Events.swift */; };
+		694B2FD625569A200092E4E7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B2FD525569A200092E4E7 /* Profile.swift */; };
 		695ACB7C254351EC0006892A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695ACB7B254351EC0006892A /* AppDelegate.swift */; };
 		695ACB85254351F00006892A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695ACB84254351F00006892A /* Assets.xcassets */; };
 		695ACB88254351F00006892A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695ACB86254351F00006892A /* LaunchScreen.storyboard */; };
@@ -18,7 +20,6 @@
 		695ACB9B254352310006892A /* EventScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695ACB95254352310006892A /* EventScreenInteractor.swift */; };
 		695ACB9C254352310006892A /* EventScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695ACB96254352310006892A /* EventScreenContainer.swift */; };
 		695ACBA525436D520006892A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695ACBA325436D510006892A /* Common.swift */; };
-		695ACBA625436D520006892A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695ACBA425436D510006892A /* Entity.swift */; };
 		695D2E6E254AE783003444F2 /* OrganizerScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D2E68254AE783003444F2 /* OrganizerScreenPresenter.swift */; };
 		695D2E6F254AE783003444F2 /* OrganizerScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D2E69254AE783003444F2 /* OrganizerScreenRouter.swift */; };
 		695D2E70254AE783003444F2 /* OrganizerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D2E6A254AE783003444F2 /* OrganizerScreenViewController.swift */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		69312B9325485DA7004333C6 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		694B2FD225569A140092E4E7 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		694B2FD525569A200092E4E7 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		695ACB78254351EC0006892A /* eventScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695ACB7B254351EC0006892A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695ACB84254351F00006892A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		695ACB95254352310006892A /* EventScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenInteractor.swift; sourceTree = "<group>"; };
 		695ACB96254352310006892A /* EventScreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScreenContainer.swift; sourceTree = "<group>"; };
 		695ACBA325436D510006892A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		695ACBA425436D510006892A /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		695D2E68254AE783003444F2 /* OrganizerScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerScreenPresenter.swift; sourceTree = "<group>"; };
 		695D2E69254AE783003444F2 /* OrganizerScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerScreenRouter.swift; sourceTree = "<group>"; };
 		695D2E6A254AE783003444F2 /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
@@ -61,12 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		694B2FD1255699F50092E4E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				695ACBA325436D510006892A /* Common.swift */,
+				694B2FD225569A140092E4E7 /* Events.swift */,
+				694B2FD525569A200092E4E7 /* Profile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		695ACB6F254351EC0006892A = {
 			isa = PBXGroup;
 			children = (
 				695ACB90254352040006892A /* EventScreenModule */,
 				695D2E67254AE757003444F2 /* OrganizerScreenModule */,
 				695ACB7A254351EC0006892A /* EventScreen */,
+				694B2FD1255699F50092E4E7 /* Models */,
 				695ACB79254351EC0006892A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,8 +113,6 @@
 				695ACB94254352310006892A /* EventScreenProtocols.swift */,
 				695ACB95254352310006892A /* EventScreenInteractor.swift */,
 				695ACB96254352310006892A /* EventScreenContainer.swift */,
-				695ACBA425436D510006892A /* Entity.swift */,
-				695ACBA325436D510006892A /* Common.swift */,
 			);
 			path = EventScreenModule;
 			sourceTree = "<group>";
@@ -193,8 +204,8 @@
 				695ACB99254352310006892A /* EventScreenViewController.swift in Sources */,
 				695ACBA525436D520006892A /* Common.swift in Sources */,
 				695D2E72254AE783003444F2 /* OrganizerScreenInteractor.swift in Sources */,
-				695ACBA625436D520006892A /* Entity.swift in Sources */,
 				69312B9425485DA7004333C6 /* UIView+Layout.swift in Sources */,
+				694B2FD625569A200092E4E7 /* Profile.swift in Sources */,
 				695ACB9A254352310006892A /* EventScreenProtocols.swift in Sources */,
 				695ACB9B254352310006892A /* EventScreenInteractor.swift in Sources */,
 				695ACB7C254351EC0006892A /* AppDelegate.swift in Sources */,
@@ -202,6 +213,7 @@
 				695D2E6E254AE783003444F2 /* OrganizerScreenPresenter.swift in Sources */,
 				695D2E71254AE783003444F2 /* OrganizerScreenProtocols.swift in Sources */,
 				695D2E73254AE783003444F2 /* OrganizerScreenContainer.swift in Sources */,
+				694B2FD325569A140092E4E7 /* Events.swift in Sources */,
 				695ACB98254352310006892A /* EventScreenRouter.swift in Sources */,
 				695ACB97254352310006892A /* EventScreenPresenter.swift in Sources */,
 			);

@@ -36,4 +36,5 @@ final class OrganizerScreenContainer {
 
 struct OrganizerScreenContext {
 	weak var moduleOutput: OrganizerScreenModuleOutput?
+    
 }

@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-private var person = Person(name: "", imagePerson: "")
+var organizerID: Int = -1;
 
 final class EventScreenPresenter {
 	weak var view: EventScreenViewInput?
@@ -19,23 +19,24 @@ final class EventScreenPresenter {
 }
 
 extension EventScreenPresenter: EventScreenModuleInput {
-    func sendOrganizerData(data: Person){
-        (self.view as! EventScreenViewController).nameOfPerson.text = data.name
-        (self.view as! EventScreenViewController).imageOfPerson.image =  data.imagePersonString
-        (self.view as! EventScreenViewController).labelTime.text = data.events[0].data
-        (self.view as! EventScreenViewController).labelPlace.text = data.events[0].place
-        (self.view as! EventScreenViewController).labelDescription.text = data.events[0].description
+    func sendEventAndOrganizerData(_ person: Profile, _ event: Event){
+        (self.view as! EventScreenViewController).nameOfPerson.text = "\(person.name) \(person.surname)"
+        (self.view as! EventScreenViewController).imageOfPerson.image = UIImage(named: person.avatarUrl!)
+        (self.view as! EventScreenViewController).labelTime.text = event.date
+        (self.view as! EventScreenViewController).labelPlace.text = event.place
+        (self.view as! EventScreenViewController).labelDescription.text = event.description
     }
     
 }
 
 extension EventScreenPresenter: EventScreenViewOutput {
     func getData(){
-        let peopleList = interactor.getListOfPeople()   //обращаемся к interactor для получения списка людей
+        let event = interactor.getInfoOfEvent()   //обращаемся к interactor для получения информации и мероприятии
       //  let firstPerson = peopleList[0]
       //  let secondPerson = peopleList[1]
-        person = peopleList[0]
-        sendOrganizerData(data: person)    //вызываем функцию, в которую положили
+        let person = interactor.getInfoOrganizer(id: event.idOrganizer)
+        organizerID = person.id
+        sendEventAndOrganizerData(person, event)   //вызываем функцию, в которую положили
     }
     
     func singUpForEvent(){
@@ -43,7 +44,8 @@ extension EventScreenPresenter: EventScreenViewOutput {
     }
     
     func goToOrganizerScreen(){
-        router.organizerScreen(vc: self.view as! EventScreenViewController, organizer: person)
+        
+        router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID)
     }
 
 }

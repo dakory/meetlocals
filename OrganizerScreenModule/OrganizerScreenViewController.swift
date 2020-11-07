@@ -40,7 +40,6 @@ final class OrganizerScreenViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(stackViewTopLabel)
         
-        
       //      imageOfPerson.image = UIImage(named: "exampleImageOfPerson2") //должны достать из БД
             imageOfPerson.contentMode = .scaleAspectFit
             imageOfPerson.widthAnchor.constraint(equalToConstant: 100).isActive = true
@@ -51,7 +50,7 @@ final class OrganizerScreenViewController: UIViewController {
         
         
    //         nameOfPerson.text = "Иванов Иван" //должны достать из БД
-            nameOfPerson.textColor = .white
+            nameOfPerson.textColor = .black
             nameOfPerson.font = nameOfPerson.font.withSize(25)
         
         
