@@ -10,13 +10,18 @@ import Foundation
 final class EventListInteractor {
     weak var output: EventListInteractorOutput?
     // TODO: Подгружать события.
-    private var events: [Event] =
-        [Event(id: 1, idOrganizer: 1, idMembers: [], name: "1", description: "1", place: "1", date: NSDate.now)]
+//    private var events: [Event] =
+//        [Event(id: 1, idOrganizer: 1, idMembers: [], name: "1", description: "1", place: "1", date: NSDate.now), Event(id: 1, idOrganizer: 1, idMembers: [], name: "1", description: "1", place: "1", date: NSDate.now)]
 }
 
 extension EventListInteractor: EventListInteractorInput {
+    
     func fetchEvents() {
-        self.output?.didLoad(events: self.events)
+        Common.generateEventsData()   //подгружаем общий список мероприятий
+        Common.generateProfilesData() //подгружаем общий список пользователей
+        
+        self.output?.didLoad(events: Common.events.listOfEvents)
+        
     }
 }
 

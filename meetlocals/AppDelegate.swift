@@ -27,8 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VKSdk.processOpen(url, fromApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
         print("url: \(url)")
         print("Everything is cool!")
-        //TODO открыть другой экран -- Какой?
+        
+        let context = EventListContext(moduleOutput: nil)
+        let container = EventListContainer.assemble(with: context)
+        let appWindow = UIWindow(frame: UIScreen.main.bounds)
+        self.appWindow = appWindow
+    let navigationController = UINavigationController(rootViewController: container.viewController)
+        appWindow.rootViewController = navigationController
+        appWindow.makeKeyAndVisible()
         return true
+        
+        //TODO открыть другой экран -- Какой?
     }
 
     private func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -64,6 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (state == VKAuthorizationState.authorized) {
             print("User already has been authorized")
             print("Everything is cool!")
+            
+            let context = EventListContext(moduleOutput: nil)
+            let container = EventListContainer.assemble(with: context)
+            let appWindow = UIWindow(frame: UIScreen.main.bounds)
+            self.appWindow = appWindow
+        let navigationController = UINavigationController(rootViewController: container.viewController)
+            appWindow.rootViewController = navigationController
+            appWindow.makeKeyAndVisible()
+
             //TODO открыть EventListModule
         } else if (state == VKAuthorizationState.error) {
             print("Some error happened")

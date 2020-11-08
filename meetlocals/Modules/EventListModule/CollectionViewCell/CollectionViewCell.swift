@@ -16,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
         UserName.translatesAutoresizingMaskIntoConstraints = false
         UserName.font = UserName.font.withSize(15)
         UserName.textAlignment = .left
-        UserName.text = "Аня"
+  //      UserName.text = "Аня"
         return UserName
     }()
     
@@ -69,9 +69,15 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: EventViewModel, collectionView: UICollectionView, index: Int) {
+//        print(model.name)
+//        print(model.userName)
+//        print(model.userImage)
+        print(model)
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == model.idOrganizer })
+        let person = Common.profiles.profiles[indexPerson!]
         EventName.text = model.name
-        UserName.text = model.userName
-        UserImage.image = UIImage(named: model.userImage)
+        UserName.text = "\(person.name) \(person.surname)"
+        UserImage.image = UIImage(named: person.avatarUrl!)
 //        eventId = model.id
     }
 }

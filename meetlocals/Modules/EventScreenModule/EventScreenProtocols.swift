@@ -28,5 +28,6 @@ protocol EventScreenInteractorOutput: class {
 }
 
 protocol EventScreenRouterInput: class {
+    func sendToEventsScreen(id: Int)
     func organizerScreen(vc: EventScreenViewController, organizerID: Int)
 }
