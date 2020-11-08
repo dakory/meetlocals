@@ -5,6 +5,7 @@ import UIKit
 final class EventScreenViewController: UIViewController {
 
     let imageOfPerson = UIImageView()
+    let imageSignOfPeople = UIImageView()
     let nameOfPerson = UILabel()
     let labelTimeTitle = UILabel()
     let labelTime = UILabel()
@@ -19,7 +20,9 @@ final class EventScreenViewController: UIViewController {
     let stackViewTime = UIStackView()
     let stackViewDescription = UIStackView()
     let stackViewPlace = UIStackView()
+    let stackViewMembers = UIStackView()
     let stackViewButtons = UIStackView()
+    
     
     
     let commonStack = UIStackView()
@@ -42,6 +45,10 @@ final class EventScreenViewController: UIViewController {
     override func loadView() {
         self.view = UIView()
         self.view.backgroundColor = .secondarySystemBackground
+        
+        imageSignOfPeople.image = UIImage(systemName: "person.3")
+        stackViewMembers.addArrangedSubview(imageSignOfPeople)
+        
         output.getData()    //обращение к Presenter, для получение данных о пользователе
         
         labelTimeTitle.text = "Дата"
@@ -59,6 +66,7 @@ final class EventScreenViewController: UIViewController {
         commonStack.addArrangedSubview(stackViewTime)
         commonStack.addArrangedSubview(stackViewDescription)
         commonStack.addArrangedSubview(stackViewPlace)
+        commonStack.addArrangedSubview(stackViewMembers)
         commonStack.addArrangedSubview(stackViewButtons)
 
         commonStack.spacing = 30
@@ -110,6 +118,7 @@ final class EventScreenViewController: UIViewController {
             $0.backgroundColor = .systemBlue
         });
         ButtonPrivateMessage.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
 
         
         stackViewTopLabel.axis = .horizontal
@@ -121,6 +130,18 @@ final class EventScreenViewController: UIViewController {
         
         stackViewTopLabel.addArrangedSubview(imageOfPerson)
         stackViewTopLabel.addArrangedSubview(nameOfPerson)
+        
+        stackViewMembers.axis = .horizontal
+        stackViewMembers.distribution = .fill
+        stackViewMembers.spacing = 6
+        
+        imageSignOfPeople.contentMode = .scaleAspectFit
+        imageSignOfPeople.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imageSignOfPeople.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
+        
+    
+        stackViewMembers.addArrangedSubview(UIImageView())
         
         let organizerScreen = UITapGestureRecognizer(target: self, action:#selector(self.pressedOrganizerScreen)) //добавление действие на stackview
         stackViewTopLabel.addGestureRecognizer(organizerScreen)
@@ -192,8 +213,10 @@ final class EventScreenViewController: UIViewController {
         self.stackViewTime.translatesAutoresizingMaskIntoConstraints = false
         self.stackViewPlace.translatesAutoresizingMaskIntoConstraints = false
         self.stackViewButtons.translatesAutoresizingMaskIntoConstraints = false
+        self.stackViewMembers.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.commonStack.translatesAutoresizingMaskIntoConstraints = false
+        
         
         [
             
@@ -210,7 +233,7 @@ final class EventScreenViewController: UIViewController {
             stackViewTopLabel.heightAnchor.constraint(equalToConstant: 50),
             stackViewTopLabel.leadingAnchor.constraint(equalTo: scrollView.layoutMarginsGuide.leadingAnchor, constant: 10),
             stackViewTopLabel.trailingAnchor.constraint(equalTo: scrollView.layoutMarginsGuide.trailingAnchor, constant: -10),
-            stackViewButtons.heightAnchor.constraint(equalToConstant: 50),
+            stackViewButtons.heightAnchor.constraint(equalToConstant: 50)
         ].forEach({
             $0.isActive = true
         })

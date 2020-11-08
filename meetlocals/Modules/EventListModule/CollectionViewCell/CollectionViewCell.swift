@@ -70,10 +70,6 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: EventViewModel, collectionView: UICollectionView, index: Int) {
-//        print(model.name)
-//        print(model.userName)
-//        print(model.userImage)
-        print(model)
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == model.idOrganizer })
         let person = Common.profiles.profiles[indexPerson!]
         EventName.text = model.name

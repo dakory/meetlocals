@@ -71,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func signedIn(state: VKAuthorizationState, error: Error!) {
         if (state == VKAuthorizationState.authorized) {
+            
             print("User already has been authorized")
             print("Everything is cool!")
             

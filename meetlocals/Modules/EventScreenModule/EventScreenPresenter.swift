@@ -23,8 +23,20 @@ extension EventScreenPresenter: EventScreenModuleInput {
         (self.view as! EventScreenViewController).labelTime.text = event.date.dayMonthYearFormat()
         (self.view as! EventScreenViewController).labelPlace.text = event.place
         (self.view as! EventScreenViewController).labelDescription.text = event.description
+        
+        
+        for i in 0..<event.idMembers.count {
+            let imageUrl = Common.profiles.profiles[event.idMembers[i]].avatarUrl
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: imageUrl ?? "person.circle")
+            imageView.contentMode = .scaleAspectFit
+            imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            imageView.layer.cornerRadius = 25
+            imageView.clipsToBounds = true
+        (self.view as! EventScreenViewController).stackViewMembers.addArrangedSubview(imageView)
+        }
     }
-    
 }
 
 extension EventScreenPresenter: EventScreenViewOutput {
