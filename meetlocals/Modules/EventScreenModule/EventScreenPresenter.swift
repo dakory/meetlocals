@@ -20,7 +20,7 @@ extension EventScreenPresenter: EventScreenModuleInput {
     func sendEventAndOrganizerData(_ person: Profile, _ event: Event){ //функция, в которую положили данные о мероприятии и его организаторе, чтобы вывести на экран
         (self.view as! EventScreenViewController).nameOfPerson.text = "\(person.name) \(person.surname)"
         (self.view as! EventScreenViewController).imageOfPerson.image = UIImage(named: person.avatarUrl!)
-        (self.view as! EventScreenViewController).labelTime.text = event.date
+        (self.view as! EventScreenViewController).labelTime.text = event.date.dayMonthYearFormat()
         (self.view as! EventScreenViewController).labelPlace.text = event.place
         (self.view as! EventScreenViewController).labelDescription.text = event.description
     }
@@ -46,4 +46,12 @@ extension EventScreenPresenter: EventScreenViewOutput {
 }
 
 extension EventScreenPresenter: EventScreenInteractorOutput {
+}
+
+extension Date {
+    func dayMonthYearFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/mm/yyyy"
+        return dateFormatter.string(from: self)
+    }
 }
