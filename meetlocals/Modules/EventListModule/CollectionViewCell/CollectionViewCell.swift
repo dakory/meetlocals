@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
+    let eventId: Int
+    
     fileprivate let UserName: UILabel = { () -> UILabel in
         let UserName = UILabel()
         UserName.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +62,6 @@ class CollectionViewCell: UICollectionViewCell {
         EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
         EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        //EventName.backgroundColor = .black
     }
     
     required init?(coder: NSCoder) {
@@ -68,8 +69,9 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: EventViewModel, collectionView: UICollectionView, index: Int) {
-        EventName.text = model.eventName
+        EventName.text = model.name
         UserName.text = model.userName
-        UserImage.image = UIImage(named: "userimage")
+        UserImage.image = UIImage(named: model.userImage)
+        eventId = model.id
     }
 }

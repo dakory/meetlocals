@@ -8,15 +8,19 @@
 import Foundation
 
 struct EventViewModel {
-    let description: String
-    let userName: String
-    let eventName: String
+    let id: Int
+    let idOrganizer: Int
+    let name: String
     let userImage: String
+    let userName: String
+    
 
-    init(description: String, userName: String, eventName: String, userImage: String) {
-        self.eventName = "Хочет \(eventName.lowercased())"
-        self.description = description
-        self.userName = userName
-        self.userImage = userImage
+    init(id: Int, idOrganizer: Int, name: String, description: String) {
+        self.name = "Хочет \(name.lowercased())"
+        self.id = id
+        self.name = name
+        // TODO: прописать получение имени пользователя и аватарки из бд.
+         self.userImage = "None"
+         self.userName = "None"
     }
 }

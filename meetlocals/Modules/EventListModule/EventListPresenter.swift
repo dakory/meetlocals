@@ -47,6 +47,6 @@ extension EventListPresenter: EventListInteractorOutput {
 
 private extension EventListPresenter {
     func makeViewModels(events: [Event]) -> [EventViewModel] {
-        return events.map { EventViewModel(description: $0.description, userName: $0.userName, eventName: $0.eventName, userImage: $0.userImage) }
+        return events.map { EventViewModel(id: $0.id, idOrganizer: $0.idOrganizer, name: $0.name, description: $0.description) }
     }
 }

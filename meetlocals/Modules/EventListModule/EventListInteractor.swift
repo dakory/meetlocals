@@ -9,15 +9,9 @@ import Foundation
 
 final class EventListInteractor {
     weak var output: EventListInteractorOutput?
+    // TODO: Подгружать события.
     private var events: [Event] =
-        [Event(description: "1", userName: "Катя", eventName: "прогуляться в парке", userImage: ""),
-         Event(description: "1", userName: "Саша", eventName: "прогуляться в парке", userImage: ""),
-         Event(description: "1", userName: "Вася", eventName: "прогуляться в парке", userImage: ""),
-         Event(description: "1", userName: "Петя", eventName: "прогуляться в парке", userImage: ""),
-         Event(description: "1", userName: "Ира", eventName: "прогуляться в парке", userImage: ""),
-         Event(description: "1", userName: "Ира", eventName: "прогуляться в парке", userImage: ""),
-        Event(description: "1", userName: "Ира", eventName: "прогуляться в парке", userImage: ""),
-        Event(description: "1", userName: "Ира", eventName: "прогуляться в парке", userImage: "")]
+        [Event(id: 1, idOrganizer: 1, idMembers: [], name: "1", description: "1", place: "1", date: NSDate.now)]
 }
 
 extension EventListInteractor: EventListInteractorInput {
