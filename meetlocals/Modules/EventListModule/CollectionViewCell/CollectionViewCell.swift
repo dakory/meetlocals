@@ -8,8 +8,8 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-
-    let eventId: Int
+//    TODO: привязать к ячейке id
+//    var eventId: Int
     
     fileprivate let UserName: UILabel = { () -> UILabel in
         let UserName = UILabel()
@@ -43,7 +43,7 @@ class CollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
+//        eventId = eventId;
         contentView.addSubview(UserImage)
         UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         UserImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
@@ -72,6 +72,6 @@ class CollectionViewCell: UICollectionViewCell {
         EventName.text = model.name
         UserName.text = model.userName
         UserImage.image = UIImage(named: model.userImage)
-        eventId = model.id
+//        eventId = model.id
     }
 }

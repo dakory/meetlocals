@@ -1,0 +1,30 @@
+PODS:
+  - RxCocoa (6.0.0-rc.1):
+    - RxRelay (= 6.0.0-rc.1)
+    - RxSwift (= 6.0.0-rc.1)
+  - RxRelay (6.0.0-rc.1):
+    - RxSwift (= 6.0.0-rc.1)
+  - RxSwift (6.0.0-rc.1)
+  - VK-ios-sdk (1.5.1)
+
+DEPENDENCIES:
+  - RxCocoa (= 6.0.0-rc.1)
+  - RxSwift (= 6.0.0-rc.1)
+  - VK-ios-sdk
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - VK-ios-sdk
+
+SPEC CHECKSUMS:
+  RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
+  RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
+  RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
+  VK-ios-sdk: 62a10b6571fbcda0657f455fedce7fedf55b4cd0
+
+PODFILE CHECKSUM: 2391d50b47632976e3df7f4a7a890642f2f2e691
+
+COCOAPODS: 1.10.0

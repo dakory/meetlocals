@@ -18,6 +18,7 @@ struct EventViewModel {
     init(id: Int, idOrganizer: Int, name: String, description: String) {
         self.name = "Хочет \(name.lowercased())"
         self.id = id
+        self.idOrganizer = idOrganizer
         // TODO: прописать получение имени пользователя и аватарки из бд.
          self.userImage = "None"
          self.userName = "None"

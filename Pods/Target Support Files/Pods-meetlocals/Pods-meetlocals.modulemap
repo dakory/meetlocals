@@ -1,0 +1,6 @@
+framework module Pods_meetlocals {
+  umbrella header "Pods-meetlocals-umbrella.h"
+
+  export *
+  module * { export * }
+}
