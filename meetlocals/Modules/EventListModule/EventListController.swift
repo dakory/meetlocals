@@ -1,5 +1,5 @@
 //
-//  EventListViewController.swift
+//  EventListController.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -47,6 +47,7 @@ final class EventListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "События"
         self.output.viewDidLoad()
     }
     

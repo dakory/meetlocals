@@ -13,22 +13,16 @@ final class EventListRouter {
 
 extension EventListRouter: EventListRouterInput {
     func showAddEvent() {
-        // TODO открыть AddEventModule
-        let alertController = UIAlertController(title: "Добавить событие", message: nil, preferredStyle: .alert)
-        alertController.addTextField()
-        alertController.addAction(UIAlertAction(title: "Добавить", style: .default)
-        )
-        
-
-    viewController?.present(alertController, animated: true)
+        let context = AddEventContext(moduleOutput: nil)
+        let container = AddEventContainer.assemble(with: context)
+        let navVC = UINavigationController(rootViewController: container.viewController)
+        self.viewController?.present(navVC, animated: true)
     }
     
     func showEvent() {
         let alertController = UIAlertController(title: "Показать событие", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Закрыть", style: .default))
         viewController?.present(alertController, animated: true)
-
-        // TODO открыть EventModule
     }
 }
 

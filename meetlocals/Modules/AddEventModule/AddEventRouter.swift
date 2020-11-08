@@ -28,12 +28,9 @@ extension AddEventRouter: AddEventRouterInput {
                 viewController?.present(alertController, animated: true)
                 return
         }
-        // TODO: переносить данные в бд, обновить экран событий 
+        // TODO: переносить данные в бд, обновлять экран событий
         else {
-            let alertController = UIAlertController(title: "Все хорошо", message: "Событие добавлено", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Ок", style: .default)
-            )
-        viewController?.present(alertController, animated: true)
-    }
+            self.viewController?.dismiss(animated: true)
+        }
     }
 }

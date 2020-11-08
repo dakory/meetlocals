@@ -10,7 +10,7 @@
 		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
 		B02DD02A8C3438744756839E /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */; };
-		B02DD075D7C1848824238256 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD65263FAF7F3660C28FE /* EventListViewController.swift */; };
+		B02DD075D7C1848824238256 /* EventListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD65263FAF7F3660C28FE /* EventListController.swift */; };
 		B02DD07EAC66ABDDA6CAE87E /* EventScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */; };
 		B02DD0BCD1A170D1D26D75B0 /* AddEventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */; };
 		B02DD0F88505917341D4693A /* EventListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6B3DD9BE16B1BAEE1AB /* EventListProtocols.swift */; };
@@ -92,7 +92,7 @@
 		B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Layout_utils.swift; sourceTree = "<group>"; };
 		B02DD5D24B3B028419DFD4CD /* OrganizerScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenPresenter.swift; sourceTree = "<group>"; };
-		B02DD65263FAF7F3660C28FE /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		B02DD65263FAF7F3660C28FE /* EventListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListController.swift; sourceTree = "<group>"; };
 		B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenProtocols.swift; sourceTree = "<group>"; };
 		B02DD6B3DD9BE16B1BAEE1AB /* EventListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListProtocols.swift; sourceTree = "<group>"; };
 		B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListInteractor.swift; sourceTree = "<group>"; };
@@ -195,15 +195,15 @@
 		B02DD3994CBE65AE30BF34B7 /* EventListModule */ = {
 			isa = PBXGroup;
 			children = (
-				B02DD47E62559131BBAE25F8 /* ViewModels */,
 				B02DD66C1FA05F23C5514A9C /* CollectionViewCell */,
-				B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */,
+				B02DD47E62559131BBAE25F8 /* ViewModels */,
 				B02DD6A22379ADD9F637989D /* CollectionViewFlowLayout */,
+				B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */,
 				B02DD030DDA0225B9D39474F /* EventListContainer.swift */,
 				B02DD75863A90D9F5A4F0666 /* EventListPresenter.swift */,
 				B02DD6B3DD9BE16B1BAEE1AB /* EventListProtocols.swift */,
 				B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */,
-				B02DD65263FAF7F3660C28FE /* EventListViewController.swift */,
+				B02DD65263FAF7F3660C28FE /* EventListController.swift */,
 			);
 			path = EventListModule;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 				B02DDDB8270F39B8CF671D43 /* EventListPresenter.swift in Sources */,
 				B02DD0F88505917341D4693A /* EventListProtocols.swift in Sources */,
 				B02DD7FCC572870FF3A84DE8 /* EventListInteractor.swift in Sources */,
-				B02DD075D7C1848824238256 /* EventListViewController.swift in Sources */,
+				B02DD075D7C1848824238256 /* EventListController.swift in Sources */,
 				B02DDAEF4F74C81B4490D2E8 /* EventScreenRouter.swift in Sources */,
 				B02DD58CEC49AF7E2FF1DCE1 /* EventScreenContainer.swift in Sources */,
 				B02DD07EAC66ABDDA6CAE87E /* EventScreenPresenter.swift in Sources */,
