@@ -24,8 +24,8 @@ extension EventListPresenter: EventListModuleInput {
 }
 
 extension EventListPresenter: EventListViewOutput {
-    func didTabEvent() {
-        router.goToEventScreen(vc: self.view as! EventListController, meetingID: 0)
+    func didTabEvent(meetingID: Int) {
+        self.router.goToEventScreen(vc: self.view as! EventListController, meetingID: meetingID)
     }
     
     func didTabAddEvent() {

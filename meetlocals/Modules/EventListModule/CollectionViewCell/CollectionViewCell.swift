@@ -8,9 +8,9 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-//    TODO: привязать к ячейке id
-//    var eventId: Int
     
+    var eventId: Int
+
     fileprivate let UserName: UILabel = { () -> UILabel in
         let UserName = UILabel()
         UserName.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +41,7 @@ class CollectionViewCell: UICollectionViewCell {
     }()
     
     override init(frame: CGRect) {
+        self.eventId = 0
         super.init(frame: frame)
         
 //        eventId = eventId;
@@ -78,6 +79,6 @@ class CollectionViewCell: UICollectionViewCell {
         EventName.text = model.name
         UserName.text = "\(person.name) \(person.surname)"
         UserImage.image = UIImage(named: person.avatarUrl!)
-//        eventId = model.id
+        eventId = model.id
     }
 }

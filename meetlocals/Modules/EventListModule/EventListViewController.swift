@@ -69,13 +69,13 @@ extension EventListController: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.configure(with: self.viewModels[indexPath.row], collectionView: collectionView, index: indexPath.row)
         
-     //   print(self.viewModels[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) -> () {
-        self.output.didTabEvent()
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        self.output.didTabEvent(meetingID: cell.eventId)
     }
     
 }
