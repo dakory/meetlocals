@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         VKSdk.processOpen(url, fromApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
         print("url: \(url)")
         print("Everything is cool!")
-        //TODO открыть другой экран
+        //TODO открыть другой экран -- Какой?
         return true
     }
 
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (state == VKAuthorizationState.authorized) {
             print("User already has been authorized")
             print("Everything is cool!")
-            //TODO открыть другой экран
+            //TODO открыть EventListModule
         } else if (state == VKAuthorizationState.error) {
             print("Some error happened")
         }

@@ -16,8 +16,10 @@ class Common: NSObject { //какие-то данные с БД
     }
     
     class func generateEventsData() {
-        let event1 = Event(id: 0, idOrganizer: 0, idMembers: [], description: "Хочу просто погулять в компании молодых людей", place: "Москва, Газетный переулок, 4", date: "10.03.2020")
-        let event2 = Event(id: 1, idOrganizer: 1, idMembers: [], description: "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей", place: "Москва, Брюсов переулок, 6", date: "06.04.2020")
+        let event1 = EventDaniil(id: 0, idOrganizer: 0, idMembers: [],
+                description: "Хочу просто погулять в компании молодых людей", place: "Москва, Газетный переулок, 4", date: "10.03.2020")
+        let event2 = EventDaniil(id: 1, idOrganizer: 1, idMembers: [],
+                description: "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей", place: "Москва, Брюсов переулок, 6", date: "06.04.2020")
         self.events = Events(listOfEvents: [event1, event2])
     }
 }
