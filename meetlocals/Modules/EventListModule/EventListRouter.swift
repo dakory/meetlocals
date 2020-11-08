@@ -13,6 +13,7 @@ final class EventListRouter {
 
 extension EventListRouter: EventListRouterInput {
     func showAddEvent() {
+        // TODO открыть AddEventModule
         let alertController = UIAlertController(title: "Добавить событие", message: nil, preferredStyle: .alert)
         alertController.addTextField()
         alertController.addAction(UIAlertAction(title: "Добавить", style: .default)
