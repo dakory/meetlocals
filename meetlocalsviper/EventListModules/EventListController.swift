@@ -1,5 +1,5 @@
 //
-//  EventScreenController.swift
+//  EventListController.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class EventScreenController: UIViewController {
-    private let output: EventScreenViewOutput
+final class EventListController: UIViewController {
+    private let output: EventListViewOutput
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private let buttonAddEvent = UIButton(type: .custom)
     private var viewModels = [EventViewModel]()
 
     
-    init(output: EventScreenViewOutput) {
+    init(output: EventListViewOutput) {
         self.output = output
         
         super.init(nibName: nil, bundle: nil)
@@ -52,7 +52,7 @@ final class EventScreenController: UIViewController {
     
 }
 
-extension EventScreenController: EventScreenViewInput {
+extension EventListController: EventListViewInput {
     
     func set(viewModels: [EventViewModel]) {
         self.viewModels = viewModels
@@ -60,7 +60,7 @@ extension EventScreenController: EventScreenViewInput {
     }
 }
 
-extension EventScreenController: UICollectionViewDataSource {
+extension EventListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModels.count
     }
@@ -78,11 +78,11 @@ extension EventScreenController: UICollectionViewDataSource {
     
 }
 
-extension EventScreenController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension EventListController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 }
     
     
-private extension EventScreenController {
+private extension EventListController {
     func setupCollectionView() {
         
         self.collectionView.clipsToBounds = true

@@ -1,5 +1,5 @@
 //
-//  EventScreenPresenter.swift
+//  EventListPresenter.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,23 +7,23 @@
 
 import Foundation
 
-final class EventScreenPresenter {
-    weak var view: EventScreenViewInput?
-    weak var moduleOutput: EventScreenModuleOutput?
+final class EventListPresenter {
+    weak var view: EventListViewInput?
+    weak var moduleOutput: EventListModuleOutput?
     
-    private let router: EventScreenRouterInput
-    private let interactor: EventScreenInteractorInput
+    private let router: EventListRouterInput
+    private let interactor: EventListInteractorInput
     
-    init(router: EventScreenRouterInput, interactor:EventScreenInteractorInput) {
+    init(router: EventListRouterInput, interactor:EventListInteractorInput) {
         self.router = router
         self.interactor = interactor
     }
 }
 
-extension EventScreenPresenter: EventScreenModuleInput {
+extension EventListPresenter: EventListModuleInput {
 }
 
-extension EventScreenPresenter: EventScreenViewOutput {
+extension EventListPresenter: EventListViewOutput {
     func didTabEvent() {
         self.router.showEvent()
     }
@@ -38,14 +38,14 @@ extension EventScreenPresenter: EventScreenViewOutput {
     }
 }
 
-extension EventScreenPresenter: EventScreenInteractorOutput {
+extension EventListPresenter: EventListInteractorOutput {
     func didLoad(events: [Event]) {
         let viewModels = self.makeViewModels(events: events)
         self.view?.set(viewModels: viewModels)
     }
 }
 
-private extension EventScreenPresenter {
+private extension EventListPresenter {
     func makeViewModels(events: [Event]) -> [EventViewModel] {
         return events.map { EventViewModel(description: $0.description, userName: $0.userName, eventName: $0.eventName, userImage: $0.userImage) }
     }

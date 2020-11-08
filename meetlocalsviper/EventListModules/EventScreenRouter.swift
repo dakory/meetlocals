@@ -1,5 +1,5 @@
 //
-//  EventScreenRouter.swift
+//  EventListRouter.swift
 //  meetlocalsviper
 //
 //  Created by Софья Тимохина on 25.10.2020.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class EventScreenRouter {
+final class EventListRouter {
     var viewController: UIViewController?
 }
 
-extension EventScreenRouter: EventScreenRouterInput {
+extension EventListRouter: EventListRouterInput {
     func showAddEvent() {
         let alertController = UIAlertController(title: "Добавить событие", message: nil, preferredStyle: .alert)
         alertController.addTextField()
