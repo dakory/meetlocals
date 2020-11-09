@@ -9,7 +9,7 @@ import UIKit
 
 final class EventListController: UIViewController {
     private let output: EventListViewOutput
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 65, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private let buttonAddEvent = UIButton(type: .custom)
     private var viewModels = [EventViewModel]()
 
@@ -37,7 +37,7 @@ final class EventListController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let collectionViewFrameTopOffset: CGFloat = 100
+        let collectionViewFrameTopOffset: CGFloat = 65
         self.collectionView.frame = CGRect(
             x: 0,
             y: collectionViewFrameTopOffset,

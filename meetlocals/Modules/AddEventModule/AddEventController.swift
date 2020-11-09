@@ -70,7 +70,7 @@ private extension AddEventViewController {
         
     }
     func setupwandLabel() {
-        self.wantLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        self.wantLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         self.wantLabel.bottomAnchor.constraint(equalTo: self.wantLabel.topAnchor, constant: 30).isActive = true
         self.wantLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
         self.wantLabel.trailingAnchor.constraint(equalTo: self.wantLabel.leadingAnchor, constant: 55).isActive = true

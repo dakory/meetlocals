@@ -15,14 +15,7 @@ extension EventListRouter: EventListRouterInput {
     func showAddEvent() {
             let context = AddEventContext(moduleOutput: nil)
             let container = AddEventContainer.assemble(with: context)
-            let navVC = UINavigationController(rootViewController: container.viewController)
-            self.viewController?.present(navVC, animated: true)
-        }
-        
-        func showEvent() {
-            let alertController = UIAlertController(title: "Показать событие", message: nil, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Закрыть", style: .default))
-            viewController?.present(alertController, animated: true)
+        self.viewController?.navigationController?.pushViewController(container.viewController, animated: true)
         }
     
     func goToEventScreen(vc: EventListController, meetingID: Int){ //здесь осуществляем переход на "Профиль организатора"
