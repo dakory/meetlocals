@@ -22,7 +22,7 @@ struct Events {
 struct Event {
     let id: Int
     let idOrganizer: Int
-    let idMembers: [Int]
+    var idMembers: [Int]
     let name: String
     let description: String
     let place: String

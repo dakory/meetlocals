@@ -49,8 +49,11 @@ final class EventScreenViewController: UIViewController {
         imageSignOfPeople.image = UIImage(systemName: "person.3")
         stackViewMembers.addArrangedSubview(imageSignOfPeople)
         
-        output.getData()    //обращение к Presenter, для получение данных о пользователе
         
+        output.getData()    //обращение к Presenter, для получение данных о пользователе
+        output.checkMembership()
+
+    
         labelTimeTitle.text = "Дата"
         labelDescriptionTitle.text = "Описание"
         labelPlaceTitle.text = "Место"
@@ -71,18 +74,9 @@ final class EventScreenViewController: UIViewController {
 
         commonStack.spacing = 30
         
-            
-        
-        // imageOfPerson.image = UIImage(named: "exampleImageOfPerson") //должны достать из БД
-        //    nameOfPerson.text = "Иванов Иван" //должны достать из БД
-        //    labelTime.text = "25.04.2020"  //должны достать из БД
-        //     labelPlace.text = "Москва, Подкопаевский переулок, 5"  //должны достать из БД
-        //     labelDescription.text = "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей"      //должны достать из БД
 
 
-
-
-        imageOfPerson.contentMode = .scaleAspectFit
+        imageOfPerson.contentMode = .scaleAspectFill
         imageOfPerson.widthAnchor.constraint(equalToConstant: 50).isActive = true
         imageOfPerson.heightAnchor.constraint(equalToConstant: 50).isActive = true
         imageOfPerson.layer.cornerRadius = 10
@@ -103,20 +97,18 @@ final class EventScreenViewController: UIViewController {
             $0.font = labelPlace.font.withSize(20)
         })
         
-        ButtonSignUp.setTitle("Хочу пойти", for: .normal)
         ButtonPrivateMessage.setTitle("VK", for: .normal)
-        ButtonSignUp.addTarget(self, action:#selector(self.pressedButtonSignUp), for: .touchUpInside) //привязали к кнопке функцию, которая будет выполняться, при ее нажатии
         ButtonPrivateMessage.addTarget(self, action:#selector(self.pressedButtonPrivateMessage), for: .touchUpInside) //привязали к кнопке функцию, которая будет выполняться, при ее нажатии
+        ButtonSignUp.addTarget(self, action:#selector(self.pressedButtonSignUp), for: .touchUpInside) //привязали к кнопке функцию, которая будет выполняться, при ее нажатии
 
         
-        [ButtonSignUp,
-         ButtonPrivateMessage
-        ].forEach({
-            $0.setTitleColor(.secondarySystemBackground, for: .normal)
-            $0.titleLabel?.font = .systemFont(ofSize: 20)
-            $0.layer.cornerRadius = 10
-            $0.backgroundColor = .systemBlue
-        });
+        
+        ButtonPrivateMessage.setTitleColor(.secondarySystemBackground, for: .normal)
+        ButtonPrivateMessage.titleLabel?.font = .systemFont(ofSize: 20)
+        ButtonSignUp.layer.cornerRadius = 10
+        ButtonPrivateMessage.layer.cornerRadius = 10
+        ButtonPrivateMessage.backgroundColor = .systemBlue
+
         ButtonPrivateMessage.widthAnchor.constraint(equalToConstant: 70).isActive = true
         
 
@@ -142,6 +134,7 @@ final class EventScreenViewController: UIViewController {
         
     
         stackViewMembers.addArrangedSubview(UIImageView())
+        
         
         let organizerScreen = UITapGestureRecognizer(target: self, action:#selector(self.pressedOrganizerScreen)) //добавление действие на stackview
         stackViewTopLabel.addGestureRecognizer(organizerScreen)
@@ -188,19 +181,10 @@ final class EventScreenViewController: UIViewController {
     
     
     @IBAction func pressedButtonSignUp(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-              if sender.isSelected{
-                sender.backgroundColor = UIColor.systemGray
-                sender.setTitleColor(UIColor.white, for: .normal)
-                sender.setTitle("Вы подали заявку", for: .normal)
-                 }
-              else{
-                sender.backgroundColor = UIColor.systemBlue
-                sender.setTitleColor(UIColor.white, for: .normal)
-                sender.setTitle("Хочу пойти", for: .normal)
-
-               }
-        
+        if self.ButtonSignUp.titleLabel?.text != "Вы подали заявку"{
+            output.singUpForEvent()
+            loadView()
+        }
     }
     
     @IBAction func pressedButtonPrivateMessage(_ sender: UIButton) {

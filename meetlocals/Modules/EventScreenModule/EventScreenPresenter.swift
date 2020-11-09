@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 
 private var organizerID: Int = -1;
+private var eventID: Int = -1;
+
 
 final class EventScreenPresenter {
 	weak var view: EventScreenViewInput?
@@ -24,15 +26,17 @@ extension EventScreenPresenter: EventScreenModuleInput {
         (self.view as! EventScreenViewController).labelPlace.text = event.place
         (self.view as! EventScreenViewController).labelDescription.text = event.description
         
-        
+
         for i in 0..<event.idMembers.count {
-            let imageUrl = Common.profiles.profiles[event.idMembers[i]].avatarUrl
+            print((self.view as! EventScreenViewController).stackViewMembers)
+            let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == event.idMembers[i] })!
+            let imageUrl = Common.profiles.profiles[indexPerson].avatarUrl
             let imageView = UIImageView()
             imageView.image = UIImage(named: imageUrl ?? "person.circle")
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
             imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            imageView.layer.cornerRadius = 25
+            imageView.layer.cornerRadius = 20
             imageView.clipsToBounds = true
         (self.view as! EventScreenViewController).stackViewMembers.addArrangedSubview(imageView)
         }
@@ -44,12 +48,28 @@ extension EventScreenPresenter: EventScreenViewOutput {
         let event = interactor.getInfoOfEvent()   //обращаемся к interactor для получения информации и мероприятии
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
         organizerID = person.id
+        eventID = event.id
         sendEventAndOrganizerData(person, event)
     }
     
     func singUpForEvent(){
-        print("SingUpForEvent")
+        interactor.addDataNewMember(eventId: eventID)
     }
+    
+    func checkMembership(){
+        let check = interactor.checkMembershipData(eventId: eventID)
+        if check {
+            (self.view as! EventScreenViewController).ButtonSignUp.backgroundColor = UIColor.systemGray
+            (self.view as! EventScreenViewController).ButtonSignUp.setTitleColor(UIColor.white, for: .normal)
+            (self.view as! EventScreenViewController).ButtonSignUp.setTitle("Вы подали заявку", for: .normal)
+
+            }
+        else {
+            (self.view as! EventScreenViewController).ButtonSignUp.backgroundColor = UIColor.systemBlue
+            (self.view as! EventScreenViewController).ButtonSignUp.setTitleColor(UIColor.white, for: .normal)
+            (self.view as! EventScreenViewController).ButtonSignUp.setTitle("Хочу пойти", for: .normal)
+            }
+            }
     
     func goToOrganizerScreen(){
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID)

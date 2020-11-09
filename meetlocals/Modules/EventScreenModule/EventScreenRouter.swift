@@ -16,8 +16,6 @@ extension EventScreenRouter: EventScreenRouterInput {
         let contexOrganizerScreen = OrganizerScreenContext(moduleOutput: nil)
         let containerOrganizerScreen = OrganizerScreenContainer.assemble(with: contexOrganizerScreen)
         containerOrganizerScreen.router.sendPersonToOrganizerScreen(id: organizerID)
-        vc.navigationController?.pushViewController(containerOrganizerScreen.viewController, animated: true) //подходит для перехода стэком с возможностью вернуться назад
-
-  //      vc.view.window?.rootViewController = container2.viewController //подходит для полного перехода, с удалением первого экрана
+        vc.navigationController?.pushViewController(containerOrganizerScreen.viewController, animated: true)
     }
 }

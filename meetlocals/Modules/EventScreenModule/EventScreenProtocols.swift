@@ -14,6 +14,7 @@ protocol EventScreenViewInput: class {
 }
 
 protocol EventScreenViewOutput: class {
+    func checkMembership()
     func getData()
     func singUpForEvent()
     func goToOrganizerScreen()
@@ -21,7 +22,9 @@ protocol EventScreenViewOutput: class {
 
 protocol EventScreenInteractorInput: class {
     func getInfoOfEvent() -> Event
+    func addDataNewMember(eventId: Int)
     func getInfoOrganizer(id: Int) -> Profile
+    func checkMembershipData(eventId: Int) -> Bool
 }
 
 protocol EventScreenInteractorOutput: class {

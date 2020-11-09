@@ -9,10 +9,26 @@ final class EventScreenInteractor {
 extension EventScreenInteractor: EventScreenInteractorInput {
 
     
-    func getInfoOfEvent() -> Event { //функция, для получения даных с Common
-        Common.generateEventsData()   //подгружаем общий список мероприятий
-        Common.generateProfilesData() //подгружаем общий список пользователей
-        
+
+    func addDataNewMember(eventId: Int) {
+        let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
+        if !Common.events.listOfEvents[indexEvent!].idMembers.contains(Common.myProfile.id) {
+            Common.events.listOfEvents[indexEvent!].idMembers.append(Common.myProfile.id)
+            }
+    }
+    
+    func checkMembershipData(eventId: Int) -> Bool {
+        let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
+        if Common.events.listOfEvents[indexEvent!].idMembers.contains(Common.myProfile.id) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    
+    func getInfoOfEvent() -> Event {
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == EventScreenRouter.eventID })
         return Common.events.listOfEvents[indexEvent!]
     }

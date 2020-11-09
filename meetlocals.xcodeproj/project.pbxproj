@@ -391,11 +391,6 @@
 		B02DDE810373A58960ACE233 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				TargetAttributes = {
-					B02DD2180AEE55B6D35571D3 = {
-						DevelopmentTeam = 43DAR95BYV;
-					};
-				};
 			};
 			buildConfigurationList = B02DDB14A2B5E87D1D624AF4 /* Build configuration list for PBXProject "meetlocals" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -562,7 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				DEVELOPMENT_ASSET_PATHS = "\"meetlocals/Preview Content\"";
-				DEVELOPMENT_TEAM = 43DAR95BYV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meetlocals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -634,7 +629,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				DEVELOPMENT_ASSET_PATHS = "\"meetlocals/Preview Content\"";
-				DEVELOPMENT_TEAM = 43DAR95BYV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = meetlocals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

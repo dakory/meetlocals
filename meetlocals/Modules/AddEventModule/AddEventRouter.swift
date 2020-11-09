@@ -33,7 +33,7 @@ extension AddEventRouter: AddEventRouterInput {
         
         // TODO: переносить данные в бд, обновлять экран событий
         else {
-            Common.events.listOfEvents.append(Event(id: 3, idOrganizer: 1, idMembers: [], name: name, description: description, place: place, date: date))
+            Common.events.listOfEvents.append(Event(id: 3, idOrganizer: Common.myProfile.id, idMembers: [], name: name, description: description, place: place, date: date))
             let contex = EventListContext(moduleOutput: nil)
             let container = EventListContainer.assemble(with: contex)
             let navigationController = UINavigationController(rootViewController: container.viewController)
