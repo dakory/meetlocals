@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("url: \(url)")
         print("Everything is cool!")
         
+        Common.generateEventsData()   //подгружаем общий список мероприятий
+        Common.generateProfilesData() //подгружаем общий список пользователей
         let context = EventListContext(moduleOutput: nil)
         let container = EventListContainer.assemble(with: context)
         let appWindow = UIWindow(frame: UIScreen.main.bounds)
@@ -75,6 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("User already has been authorized")
             print("Everything is cool!")
             
+            Common.generateEventsData()   //подгружаем общий список мероприятий
+            Common.generateProfilesData() //подгружаем общий список пользователей
             let context = EventListContext(moduleOutput: nil)
             let container = EventListContainer.assemble(with: context)
             let appWindow = UIWindow(frame: UIScreen.main.bounds)
