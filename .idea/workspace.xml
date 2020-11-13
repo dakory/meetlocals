@@ -27,27 +27,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="Добавил авторизацию через ВК (Игорь)&#10;-Добавил Cocoa&#10;-Поключил SDK ВК&#10;-Обновил info.plist на предмет Вк подключения &#10;-Убрал SceneDelegate&#10;-Добавил делегаты ВК">
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/ArrayCreator/UserStringArrayCreator.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/ConvertationError.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/Converter.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/ConverterFactory.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/ConverterResolver.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Factory/JsonConverterFactory.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/JsonUserArrayConverter.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Error/NetError.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Interactor/Interactor.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Interactor/InteractorImpl.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Repository/Repository.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetlocals/Modules/Alert/AlertDialogDelegate.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetlocals/Modules/Alert/AlertDialogDescription.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/JsonUserConverter.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Authorize/VkDelegateImpl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Authorize/VkDelegateImpl.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/ArrayCreator/UserStringArrayCreator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/ArrayCreator/UserStringArrayCreator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/Factory/JsonConverterFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Factory/JsonConverterFactory.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Interactor/Interactor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Interactor/Interactor.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Interactor/InteractorImpl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Interactor/InteractorImpl.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Repository/Repository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Repository/Repository.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_952E30F6-7E46-42FC-A7E8-2ACA55C7AE10" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_F77785F7-8C62-4DB9-BEE9-C0137668ED56" />
   <component name="Git.Pull.Settings">
     <option name="BRANCH" value="main" />
   </component>
@@ -60,7 +58,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="OCResolveContextSettings">
-    <option name="configuration" value="Pods-64894-0E4E8C0F5072831C87828B52D8F95DC6-iphonesimulator14.1:null:14.1-x86_64" />
+    <option name="configuration" value="meetlocals-30-B02DD3AAE5347974BF2B3DB0-iphoneos14.2:null:14.2-arm64" />
   </component>
   <component name="ProjectId" id="1irk3PDtOboG7DZZGIEbfZERQOR" />
   <component name="ProjectLevelVcsManager">
@@ -85,7 +83,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Swift" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -120,6 +118,10 @@
       <workItem from="1603805152972" duration="21579000" />
       <workItem from="1604052544984" duration="5396000" />
       <workItem from="1604139063181" duration="21237000" />
+      <workItem from="1605180052526" duration="10392000" />
+      <workItem from="1605260472825" duration="1287000" />
+      <workItem from="1605263298102" duration="1060000" />
+      <workItem from="1605264378500" duration="12836000" />
     </task>
     <servers />
   </component>
@@ -155,10 +157,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Добавил авторизацию через ВК (Игорь)&#10;-Добавил Cocoa&#10;-Поключил SDK ВК&#10;-Обновил info.plist на предмет Вк подключения &#10;-Убрал SceneDelegate&#10;-Добавил делегаты ВК" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="569" y="356" key="#Notifications" timestamp="1603278801262">
+    <state x="569" y="356" key="#Notifications" timestamp="1605263438427">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="569" y="356" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1603278801262" />
+    <state x="569" y="356" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1605263438427" />
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603528641750">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -167,77 +169,93 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1604001654917" />
-    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate" timestamp="1604264414955">
+    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate" timestamp="1605212245968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1604264414955" />
+    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1605212245968" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1603554769697">
       <screen x="0" y="23" width="1680" height="975" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603554662890" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.23.1680.975@0.23.1680.975" timestamp="1603554769697" />
-    <state width="1638" height="435" key="GridCell.Tab.0.bottom" timestamp="1604264461736">
+    <state width="1638" height="362" key="GridCell.Tab.0.bottom" timestamp="1605286450692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="435" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604264461736" />
+    <state width="1638" height="362" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1605286450692" />
+    <state width="1638" height="268" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1605283034325" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1603314926924" />
-    <state width="1638" height="435" key="GridCell.Tab.0.center" timestamp="1604264461734">
+    <state width="1638" height="268" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1605269716092" />
+    <state width="1638" height="362" key="GridCell.Tab.0.center" timestamp="1605286450691">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="435" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604264461734" />
+    <state width="1638" height="362" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1605286450691" />
+    <state width="1638" height="268" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1605283034324" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1603314926923" />
-    <state width="1638" height="435" key="GridCell.Tab.0.left" timestamp="1604264461733">
+    <state width="1638" height="268" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1605269716091" />
+    <state width="1638" height="362" key="GridCell.Tab.0.left" timestamp="1605286450691">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="435" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604264461733" />
+    <state width="1638" height="362" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1605286450691" />
+    <state width="1638" height="268" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1605283034323" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1603314926922" />
-    <state width="1638" height="435" key="GridCell.Tab.0.right" timestamp="1604264461735">
+    <state width="1638" height="268" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1605269716090" />
+    <state width="1638" height="362" key="GridCell.Tab.0.right" timestamp="1605286450692">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="435" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604264461735" />
+    <state width="1638" height="362" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1605286450692" />
+    <state width="1638" height="268" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1605283034325" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1603314926923" />
-    <state width="1638" height="358" key="GridCell.Tab.1.bottom" timestamp="1604264418916">
+    <state width="1638" height="268" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1605269716092" />
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom" timestamp="1605285154437">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1604264418916" />
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1605285154437" />
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.23.1680.973@0.23.1680.973" timestamp="1605212309451" />
     <state width="1638" height="451" key="GridCell.Tab.1.bottom/0.23.1680.975@0.23.1680.975" timestamp="1604237223566" />
-    <state width="1638" height="358" key="GridCell.Tab.1.center" timestamp="1604264418914">
+    <state width="1638" height="358" key="GridCell.Tab.1.center" timestamp="1605285154435">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1604264418914" />
+    <state width="1638" height="358" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1605285154435" />
+    <state width="1638" height="358" key="GridCell.Tab.1.center/0.23.1680.973@0.23.1680.973" timestamp="1605212309450" />
     <state width="1638" height="451" key="GridCell.Tab.1.center/0.23.1680.975@0.23.1680.975" timestamp="1604237223564" />
-    <state width="1638" height="358" key="GridCell.Tab.1.left" timestamp="1604264418914">
+    <state width="1638" height="358" key="GridCell.Tab.1.left" timestamp="1605285154435">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1604264418914" />
+    <state width="1638" height="358" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1605285154435" />
+    <state width="1638" height="358" key="GridCell.Tab.1.left/0.23.1680.973@0.23.1680.973" timestamp="1605212309449" />
     <state width="1638" height="451" key="GridCell.Tab.1.left/0.23.1680.975@0.23.1680.975" timestamp="1604237223564" />
-    <state width="1638" height="358" key="GridCell.Tab.1.right" timestamp="1604264418915">
+    <state width="1638" height="358" key="GridCell.Tab.1.right" timestamp="1605285154436">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1604264418915" />
+    <state width="1638" height="358" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1605285154436" />
+    <state width="1638" height="358" key="GridCell.Tab.1.right/0.23.1680.973@0.23.1680.973" timestamp="1605212309451" />
     <state width="1638" height="451" key="GridCell.Tab.1.right/0.23.1680.975@0.23.1680.975" timestamp="1604237223565" />
     <state width="600" height="400" key="NewXcodeProjectWizard" timestamp="1602673334292">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state width="600" height="400" key="NewXcodeProjectWizard/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673334292" />
-    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1603283311574">
+    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1605179623631">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603283311574" />
-    <state x="469" y="135" key="SettingsEditor" timestamp="1603986699282">
-      <screen x="0" y="23" width="1680" height="975" />
+    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1605179623631" />
+    <state x="469" y="121" key="SettingsEditor" timestamp="1605262902368">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="469" y="121" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603314828855" />
+    <state x="469" y="121" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1605262902368" />
     <state x="341" y="70" key="SettingsEditor/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673186656" />
     <state x="469" y="135" key="SettingsEditor/0.23.1680.975@0.23.1680.975" timestamp="1603986699282" />
-    <state x="538" y="157" width="604" height="735" key="find.popup" timestamp="1604307773428">
+    <state x="553" y="128" width="604" height="735" key="find.popup" timestamp="1605269148135">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="538" y="157" width="604" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1604307773428" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1603813091452">
+    <state x="553" y="128" width="604" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605269148135" />
+    <state x="505" y="248" key="run.anything.popup" timestamp="1605263493296">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603813091452" />
+    <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605263493296" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1605263482436">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605263482436" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604228510784">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -245,6 +263,22 @@
   </component>
   <component name="XCUnloadedResolveContextsSettings">
     <option name="loadedSdks" value="Simulator + Device" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/meetlocals/AppDelegate.swift</url>
+          <line>29</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/meetlocals/Network/Converter/JsonUserConverter.swift</url>
+          <line>49</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -9,4 +9,8 @@ import RxSwift
 protocol Interactor {
 
     func getFriends() -> Observable<[VKUser]>
+
+    func getCurrentUser() -> Observable<VKUser>
+
+    func getUser() -> Observable<VKUser>
 }

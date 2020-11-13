@@ -9,7 +9,6 @@
 import UIKit
 import VK_ios_sdk
 
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,22 +22,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         VKSdk.processOpen(url, fromApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
         print("url: \(url)")
         print("Everything is cool!")
-        
-        Common.generateEventsData()   //подгружаем общий список мероприятий
-        Common.generateProfilesData() //подгружаем общий список пользователей
-        let context = EventListContext(moduleOutput: nil)
-        let container = EventListContainer.assemble(with: context)
-        let appWindow = UIWindow(frame: UIScreen.main.bounds)
-        self.appWindow = appWindow
-    let navigationController = UINavigationController(rootViewController: container.viewController)
-        appWindow.rootViewController = navigationController
-        appWindow.makeKeyAndVisible()
-        return true
-        
+
+        if (VKSdk.isLoggedIn()) {
+            Common.generateEventsData()   //подгружаем общий список мероприятий
+            Common.generateProfilesData() //подгружаем общий список пользователей
+            let context = EventListContext(moduleOutput: nil)
+            let container = EventListContainer.assemble(with: context)
+            let appWindow = UIWindow(frame: UIScreen.main.bounds)
+            self.appWindow = appWindow
+            let navigationController = UINavigationController(rootViewController: container.viewController)
+            appWindow.rootViewController = navigationController
+            appWindow.makeKeyAndVisible()
+            return true
+        } else {
+            showErrorDialog()
+            return true
+        }
         //TODO открыть другой экран -- Какой?
     }
 
@@ -73,17 +76,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func signedIn(state: VKAuthorizationState, error: Error!) {
         if (state == VKAuthorizationState.authorized) {
-            
+
             print("User already has been authorized")
             print("Everything is cool!")
-            
+
+            let interactor = InteractorImpl()
+            interactor.getUser()
+                    .subscribe(
+                            onNext: { (response: VKUser) in
+                                print(response)
+                            }, onError:
+                    { error in
+                        print(error)
+                    }, onCompleted:
+                    { print("Completed") })
+
             Common.generateEventsData()   //подгружаем общий список мероприятий
             Common.generateProfilesData() //подгружаем общий список пользователей
             let context = EventListContext(moduleOutput: nil)
             let container = EventListContainer.assemble(with: context)
             let appWindow = UIWindow(frame: UIScreen.main.bounds)
             self.appWindow = appWindow
-        let navigationController = UINavigationController(rootViewController: container.viewController)
+            let navigationController = UINavigationController(rootViewController: container.viewController)
             appWindow.rootViewController = navigationController
             appWindow.makeKeyAndVisible()
 
@@ -91,5 +105,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else if (state == VKAuthorizationState.error) {
             print("Some error happened")
         }
+    }
+
+    private func showErrorDialog() {
+        let alertDescription: AlertDialogDescription = AlertDialogDescription(title: "Ошибка",
+                subtitle: "Для продолжения необходимо авторизоваться",
+                positiveButtonText: "ОК",
+                positiveButtonAction: { VKSdk.authorize(VkInfo.PERMISSIONS) },
+                negativeButtonText: "Закрыть приложение",
+                negativeButtonAction: { exit(0) }
+        )
+
+        let alertDialogDelegate = AlertDialogDelegate(alertDescription: alertDescription)
+        let controller = self.appWindow?.rootViewController
+        alertDialogDelegate.show(viewController: controller)
     }
 }

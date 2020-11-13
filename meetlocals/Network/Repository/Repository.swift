@@ -13,6 +13,17 @@ class Repository {
         return tryToSend(request: vkRequest)
     }
 
+    public func getUser(_ additionalParams: [String: String]? = nil) -> Observable<VKResponse<VKApiObject>> {
+        var params: [String: String] = ["fields": "domain", "name_case": "Nom"]
+        if (additionalParams != nil) {
+            additionalParams?.forEach { key, value in
+                params.updateValue(value, forKey: key)
+            }
+        }
+        let vkRequest = VKApi.users().get(params)
+        return tryToSend(request: vkRequest)
+    }
+
     private func tryToSend(request: VKRequest?) -> Observable<VKResponse<VKApiObject>> {
         request?.makeRequest() ?? Observable.error(NetError(cause: "Request cannot be null"))
     }

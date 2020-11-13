@@ -19,7 +19,7 @@ class UserStringArrayCreator {
         let domain = from[1].string(after: DOMAIN)
         let firstName = from[2].string(after: FIRST_NAME)
         let lastName = from[3].string(after: LAST_NAME)
-        let trackCode = from[4].string(after: TRACK_CODE) //хз что это, поэтому не стал убирать окончательно
+//        let trackCode = from[4].string(after: TRACK_CODE) //хз что это, поэтому не стал убирать окончательно
         return createUser(id: id, firstName: firstName, lastname: lastName, domain: domain)
     }
 

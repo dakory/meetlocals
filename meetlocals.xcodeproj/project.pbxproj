@@ -57,7 +57,10 @@
 		B02DDFD797B553BC13995E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02DD102639215962BD46FFC /* LaunchScreen.storyboard */; };
 		C2A4F0C536DB1DB98D45F178 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5105AFFD5FE1E7C214E /* Converter.swift */; };
 		C2A4F0FAD07DBCD05DFBE607 /* JsonUserArrayConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F7AE5BD09B16830B582C /* JsonUserArrayConverter.swift */; };
+		C2A4F1F9F69F3671ED50F052 /* JsonUserConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F07805FB243A5DCC6E9D /* JsonUserConverter.swift */; };
 		C2A4F331ABB68926A49B4D23 /* UserStringArrayCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */; };
+		C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F144C23666303B5A171B /* AlertDialogDescription.swift */; };
+		C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F00839149D220B072726 /* AlertDialogDelegate.swift */; };
 		C2A4FAA04918454F915F7B91 /* JsonConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */; };
 		C2A4FB217ADCC5A98ECE11F1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* Repository.swift */; };
 		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
@@ -118,6 +121,9 @@
 		B02DDFC9942A421486F30438 /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
 		B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutView.swift; sourceTree = "<group>"; };
 		B02DDFFE3F08F0CA548D08CF /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		C2A4F00839149D220B072726 /* AlertDialogDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDialogDelegate.swift; path = Alert/AlertDialogDelegate.swift; sourceTree = "<group>"; };
+		C2A4F07805FB243A5DCC6E9D /* JsonUserConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonUserConverter.swift; path = Network/Converter/JsonUserConverter.swift; sourceTree = "<group>"; };
+		C2A4F144C23666303B5A171B /* AlertDialogDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDialogDescription.swift; path = Alert/AlertDialogDescription.swift; sourceTree = "<group>"; };
 		C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonConverterFactory.swift; path = Network/Converter/Factory/JsonConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F42526DC0B4EF836DCBD /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = Network/Interactor/Interactor.swift; sourceTree = "<group>"; };
 		C2A4F43E9153ECE4DD515B75 /* NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetError.swift; path = Network/Error/NetError.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 				B02DD3994CBE65AE30BF34B7 /* EventListModule */,
 				B02DD1340D6D4BB2B2B32D82 /* EventScreenModule */,
 				B02DDDF30B553C9BB6399557 /* OrganizerScreenModule */,
+				C2A4F144C23666303B5A171B /* AlertDialogDescription.swift */,
+				C2A4F00839149D220B072726 /* AlertDialogDelegate.swift */,
 			);
 			name = Modules;
 			path = meetlocals/Modules;
@@ -338,6 +346,7 @@
 				C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */,
 				C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */,
 				C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */,
+				C2A4F07805FB243A5DCC6E9D /* JsonUserConverter.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -391,6 +400,7 @@
 		B02DDE810373A58960ACE233 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = B02DDB14A2B5E87D1D624AF4 /* Build configuration list for PBXProject "meetlocals" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -533,6 +543,9 @@
 				B02DD42A0E78DB72CA97C676 /* OrganizerScreenProtocols.swift in Sources */,
 				B02DDF07DD08EC34995746A5 /* OrganizerScreenInteractor.swift in Sources */,
 				B02DD622017199131F2C6459 /* OrganizerScreenViewController.swift in Sources */,
+				C2A4F1F9F69F3671ED50F052 /* JsonUserConverter.swift in Sources */,
+				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
+				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,12 +626,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_OWNER = "$(Igor Akhmarov)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VERSION_INFO_BUILDER = "$(Igor Akhmarov)";
 			};
 			name = Release;
 		};
@@ -691,6 +706,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_OWNER = "$(Igor Akhmarov)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -698,6 +714,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSION_INFO_BUILDER = "$(Igor Akhmarov)";
 			};
 			name = Debug;
 		};

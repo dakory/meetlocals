@@ -17,4 +17,18 @@ class InteractorImpl: Interactor {
                     (self.converter.convert(to: [VKUser].self, from: response.json) ?? [VKUser]())
                 }
     }
+
+    func getCurrentUser() -> Observable<VKUser> {
+        repository.getUser()
+                .map { (response: VKResponse<VKApiObject>) in
+                    (self.converter.convert(to: VKUser.self, from: response.json) ?? VKUser())
+                }
+    }
+
+    func getUser() -> Observable<VKUser> {
+        repository.getUser(["user_ids": "sushkoruslan"])
+                .map { (response: VKResponse<VKApiObject>) in
+                    (self.converter.convert(to: VKUser.self, from: response.json) ?? VKUser())
+                }
+    }
 }
