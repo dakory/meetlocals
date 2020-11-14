@@ -66,9 +66,6 @@ final class OrganizerScreenViewController: UIViewController {
         self.stackViewTopLabel.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
 
-
-
-        
         [
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
@@ -87,4 +84,8 @@ final class OrganizerScreenViewController: UIViewController {
 
 
 extension OrganizerScreenViewController: OrganizerScreenViewInput {
+    func setOrganizerData(person: Profile) {
+        nameOfPerson.text = "\(person.name) \(person.surname)"
+        imageOfPerson.image =  UIImage(named: person.avatarUrl!)
+    }
 }
