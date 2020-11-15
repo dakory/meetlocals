@@ -28,9 +28,9 @@ extension EventListPresenter: EventListViewOutput {
         self.router.goToEventScreen(vc: self.view as! EventListController, meetingID: meetingID)
     }
     
-    func didTabAddEvent() {
-        self.router.showAddEvent()
-    }
+//    func didTabAddEvent() {
+//          self.router.showAddEvent()
+//    }
     
     
     func viewDidLoad() {

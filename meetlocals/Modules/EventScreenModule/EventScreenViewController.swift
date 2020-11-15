@@ -44,7 +44,7 @@ final class EventScreenViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = .secondarySystemBackground
+        self.view.backgroundColor = UIColor.systemBackground
         
         imageSignOfPeople.image = UIImage(systemName: "person.3")
         stackViewMembers.addArrangedSubview(imageSignOfPeople)
@@ -105,6 +105,7 @@ final class EventScreenViewController: UIViewController {
         
         ButtonPrivateMessage.setTitleColor(.secondarySystemBackground, for: .normal)
         ButtonPrivateMessage.titleLabel?.font = .systemFont(ofSize: 20)
+        ButtonPrivateMessage.setTitleColor(UIColor.white, for: .normal)
         ButtonSignUp.layer.cornerRadius = 10
         ButtonPrivateMessage.layer.cornerRadius = 10
         ButtonPrivateMessage.backgroundColor = .systemBlue

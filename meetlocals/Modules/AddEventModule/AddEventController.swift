@@ -37,12 +37,24 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Добавить событие"
+        self.tabBarItem =
+           UITabBarItem(
+            title: "Новое событие",
+            image: UIImage(systemName: "plus"),
+            tag: 2)
+        self.navigationItem.title = "Новое событие"
+        
+        
     }
 }
 
 
 extension AddEventViewController: AddEventViewInput {
+    func cleanScreen() { //эту функция очищения полей, вызываем после добавления мероприятия
+        textEventName.text = ""
+        textEventDescription.text = ""
+        placeText.text = ""
+    }
 }
 
 
