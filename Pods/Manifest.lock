@@ -5,11 +5,13 @@ PODS:
   - RxRelay (6.0.0-rc.1):
     - RxSwift (= 6.0.0-rc.1)
   - RxSwift (6.0.0-rc.1)
+  - "UITextView+Placeholder (1.4.0)"
   - VK-ios-sdk (1.5.1)
 
 DEPENDENCIES:
   - RxCocoa (= 6.0.0-rc.1)
   - RxSwift (= 6.0.0-rc.1)
+  - "UITextView+Placeholder (~> 1.2)"
   - VK-ios-sdk
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - "UITextView+Placeholder"
     - VK-ios-sdk
 
 SPEC CHECKSUMS:
   RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
   RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
   RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
   VK-ios-sdk: 62a10b6571fbcda0657f455fedce7fedf55b4cd0
 
-PODFILE CHECKSUM: 2391d50b47632976e3df7f4a7a890642f2f2e691
+PODFILE CHECKSUM: f587f1f5007bbed1e67081a722eace33c9faa608
 
 COCOAPODS: 1.10.0

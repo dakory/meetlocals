@@ -19,6 +19,8 @@ target 'meetlocals' do
   pod 'RxSwift', '6.0.0-rc.1'
   pod 'RxCocoa', '6.0.0-rc.1'
 
+  # placeholder
+  pod 'UITextView+Placeholder', '~> 1.2'
   # Pods for meetlocals
 
 end
