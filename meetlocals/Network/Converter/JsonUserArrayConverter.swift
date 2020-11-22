@@ -50,8 +50,8 @@ class JsonUserArrayConverter: Converter {
 
     private func getUsers(data: [String]) throws -> [VKUser] {
         var users = [VKUser]()
-        let countOfNodes = try getTotalCount(countLine: data[1])
-        print("countOfNodes = \(countOfNodes)")
+//        let countOfNodes = try getTotalCount(countLine: data[1])
+//        print("countOfNodes = \(countOfNodes)")
 
         var nodeIndex = FIRST_NODE
         while (data[nodeIndex].starts(with: FIRST_USER_FIELD)) {
@@ -59,10 +59,10 @@ class JsonUserArrayConverter: Converter {
             let firstName = data[nodeIndex + 1]
             let id = data[nodeIndex + 2]
             let lastName = data[nodeIndex + 3]
-            let trackCode = data[nodeIndex + 4]
+//            let trackCode = data[nodeIndex + 4]
             nodeIndex += PERIOD_CYCLE
 
-            let userNode: [String] = [id, domain, firstName, lastName, trackCode]
+            let userNode: [String] = [id, domain, firstName, lastName, ""]
             users.append(userCreator.create(from: userNode))
         }
 

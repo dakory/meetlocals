@@ -13,12 +13,9 @@ import VK_ios_sdk
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var appWindow: UIWindow?
-    var vkDelegate: VKSdkDelegate?
-    var vkUiDelegate: VKSdkUIDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        vkAuthorization()
-        clearDelegates()
+        openWelcomeScreen()
         return true
     }
 
@@ -51,62 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    private func vkAuthorization() {
-        let vkUrl = VkInfo.VK_AUTHORIZATION_URL
-        print(vkUrl)
-        VKSdk.processOpen(vkUrl, fromApplication: VkInfo.APPLICATION_ID)
-        initVkDelegates()
-        VKSdk.wakeUpSession(VkInfo.PERMISSIONS, complete: signedIn)
-        VKSdk.authorize(VkInfo.PERMISSIONS)
-        print("authorize")
-    }
-
-    private func initVkDelegates() {
-        vkDelegate = VkDelegate()
-        vkUiDelegate = VkUiDelegate()
-        let sdkInstance = VKSdk.initialize(withAppId: VkInfo.APPLICATION_ID)
-        sdkInstance?.register(vkDelegate)
-        sdkInstance?.uiDelegate = vkUiDelegate
-    }
-
-    private func clearDelegates() {
-        vkDelegate = nil
-        vkUiDelegate = nil
-    }
-
-    private func signedIn(state: VKAuthorizationState, error: Error!) {
-        if (state == VKAuthorizationState.authorized) {
-
-            print("User already has been authorized")
-            print("Everything is cool!")
-
-            let interactor = InteractorImpl()
-            interactor.getUser()
-                    .subscribe(
-                            onNext: { (response: VKUser) in
-                                print(response)
-                            }, onError:
-                    { error in
-                        print(error)
-                    }, onCompleted:
-                    { print("Completed") })
-
-            Common.generateEventsData()   //подгружаем общий список мероприятий
-            Common.generateProfilesData() //подгружаем общий список пользователей
-            let context = EventListContext(moduleOutput: nil)
-            let container = EventListContainer.assemble(with: context)
-            let appWindow = UIWindow(frame: UIScreen.main.bounds)
-            self.appWindow = appWindow
-            let navigationController = UINavigationController(rootViewController: container.viewController)
-            appWindow.rootViewController = navigationController
-            appWindow.makeKeyAndVisible()
-
-            //TODO открыть EventListModule
-        } else if (state == VKAuthorizationState.error) {
-            print("Some error happened")
-        }
-    }
-
     private func showErrorDialog() {
         let alertDescription: AlertDialogDescription = AlertDialogDescription(title: "Ошибка",
                 subtitle: "Для продолжения необходимо авторизоваться",
@@ -119,5 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let alertDialogDelegate = AlertDialogDelegate(alertDescription: alertDescription)
         let controller = self.appWindow?.rootViewController
         alertDialogDelegate.show(viewController: controller)
+    }
+
+    private func openWelcomeScreen() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: MainViewController())
+        self.appWindow = window
+        window.makeKeyAndVisible()
     }
 }

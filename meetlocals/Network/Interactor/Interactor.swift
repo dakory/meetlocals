@@ -12,5 +12,5 @@ protocol Interactor {
 
     func getCurrentUser() -> Observable<VKUser>
 
-    func getUser() -> Observable<VKUser>
+    func getUser(userId: String) -> Observable<VKUser>
 }
