@@ -24,7 +24,7 @@ final class OrganizerScreenViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = .secondarySystemBackground
+        self.view.backgroundColor = UIColor.systemBackground
         output.getData()
         
         scrollView.alwaysBounceVertical = true
@@ -32,7 +32,7 @@ final class OrganizerScreenViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(stackViewTopLabel)
         
-        imageOfPerson.contentMode = .scaleAspectFit
+        imageOfPerson.contentMode = .scaleAspectFill
         imageOfPerson.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageOfPerson.heightAnchor.constraint(equalToConstant: 100).isActive = true
         imageOfPerson.layer.cornerRadius = imageOfPerson.frame.height/2
@@ -40,7 +40,6 @@ final class OrganizerScreenViewController: UIViewController {
         imageOfPerson.clipsToBounds = true
         
         
-        nameOfPerson.textColor = .black
         nameOfPerson.font = nameOfPerson.font.withSize(25)
         
         
@@ -58,17 +57,18 @@ final class OrganizerScreenViewController: UIViewController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
-        self.navigationItem.title = "Организатор"
+        self.tabBarItem =
+           UITabBarItem(
+            title: "Профиль",
+            image: UIImage(systemName: "person.circle"),
+            tag: 3)
+        self.navigationItem.title = "Профиль"
 	}
     
     func setupConstraints() {
         self.stackViewTopLabel.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
 
-
-
-        
         [
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
@@ -87,4 +87,8 @@ final class OrganizerScreenViewController: UIViewController {
 
 
 extension OrganizerScreenViewController: OrganizerScreenViewInput {
+    func setOrganizerData(person: Profile) {
+        nameOfPerson.text = "\(person.name) \(person.surname)"
+        imageOfPerson.image =  UIImage(named: person.avatarUrl!)
+    }
 }

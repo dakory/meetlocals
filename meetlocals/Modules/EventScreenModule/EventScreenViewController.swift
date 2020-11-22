@@ -44,7 +44,7 @@ final class EventScreenViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = .secondarySystemBackground
+        self.view.backgroundColor = UIColor.systemBackground
         
         imageSignOfPeople.image = UIImage(systemName: "person.3")
         stackViewMembers.addArrangedSubview(imageSignOfPeople)
@@ -105,6 +105,7 @@ final class EventScreenViewController: UIViewController {
         
         ButtonPrivateMessage.setTitleColor(.secondarySystemBackground, for: .normal)
         ButtonPrivateMessage.titleLabel?.font = .systemFont(ofSize: 20)
+        ButtonPrivateMessage.setTitleColor(UIColor.white, for: .normal)
         ButtonSignUp.layer.cornerRadius = 10
         ButtonPrivateMessage.layer.cornerRadius = 10
         ButtonPrivateMessage.backgroundColor = .systemBlue
@@ -225,6 +226,40 @@ final class EventScreenViewController: UIViewController {
 }
 
 extension EventScreenViewController: EventScreenViewInput {
+    func setButtonOn() {
+        ButtonSignUp.backgroundColor = UIColor.systemBlue
+        ButtonSignUp.setTitleColor(UIColor.white, for: .normal)
+        ButtonSignUp.setTitle("Хочу пойти", for: .normal)
+    }
+    
+    func setButtonOff() {
+        ButtonSignUp.backgroundColor = UIColor.systemGray
+        ButtonSignUp.setTitleColor(UIColor.white, for: .normal)
+        ButtonSignUp.setTitle("Вы подали заявку", for: .normal)
+    }
+    
+    func setEventAndOrganizerData(_ person: Profile, _ event: Event){
+        nameOfPerson.text = "\(person.name) \(person.surname)"
+        imageOfPerson.image = UIImage(named: person.avatarUrl!)
+        labelTime.text = event.date.dayMonthYearFormat()
+        labelPlace.text = event.place
+        labelDescription.text = event.description
+        
+
+        for i in 0..<event.idMembers.count {
+            let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == event.idMembers[i] })!
+            let imageUrl = Common.profiles.profiles[indexPerson].avatarUrl
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: imageUrl ?? "person.circle")
+            imageView.contentMode = .scaleAspectFill
+            imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            imageView.layer.cornerRadius = 20
+            imageView.clipsToBounds = true
+            stackViewMembers.addArrangedSubview(imageView)
+        }
+    }
+    
 
 }
 

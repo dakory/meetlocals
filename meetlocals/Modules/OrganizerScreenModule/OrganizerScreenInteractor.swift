@@ -13,4 +13,5 @@ final class OrganizerScreenInteractor {
 }
 
 extension OrganizerScreenInteractor: OrganizerScreenInteractorInput {
+    
 }

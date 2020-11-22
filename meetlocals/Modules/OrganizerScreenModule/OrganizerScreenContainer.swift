@@ -17,6 +17,9 @@ final class OrganizerScreenContainer {
         let router = OrganizerScreenRouter()
         let interactor = OrganizerScreenInteractor()
         let presenter = OrganizerScreenPresenter(router: router, interactor: interactor)
+        
+        presenter.personId = context.personID
+                
 		let viewController = OrganizerScreenViewController(output: presenter)
 
 		presenter.view = viewController
@@ -36,5 +39,5 @@ final class OrganizerScreenContainer {
 
 struct OrganizerScreenContext {
 	weak var moduleOutput: OrganizerScreenModuleOutput?
-    
+    let personID: Int
 }

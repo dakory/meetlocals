@@ -11,6 +11,9 @@ final class EventScreenContainer {
         let presenter = EventScreenPresenter(router: router, interactor: interactor)
 		let viewController = EventScreenViewController(output: presenter)
 
+        presenter.eventId = context.meetingID
+
+        
 		presenter.view = viewController
 		presenter.moduleOutput = context.moduleOutput
 
@@ -28,4 +31,5 @@ final class EventScreenContainer {
 
 struct EventScreenContext {
 	weak var moduleOutput: EventScreenModuleOutput?
+    let meetingID: Int
 }

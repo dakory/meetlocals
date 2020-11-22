@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder
 
 final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let output: AddEventViewOutput
@@ -16,7 +17,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let dateLabel = UILabel()
     private let placeLabel = UILabel()
     private let placeText = UITextView()
-    private let buttonAddEvent = UIButton(type: .custom)
+    private let buttonAddEvent = UIButton()
+    var offsetBeforeShowKeyboard: CGPoint?
 
     init(output: AddEventViewOutput) {
         self.output = output
@@ -37,12 +39,24 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Добавить событие"
+        self.tabBarItem =
+           UITabBarItem(
+            title: "Новое событие",
+            image: UIImage(systemName: "plus"),
+            tag: 2)
+        self.navigationItem.title = "Новое событие"
+        
+        
     }
 }
 
 
 extension AddEventViewController: AddEventViewInput {
+    func cleanScreen() { //эту функция очищения полей, вызываем после добавления мероприятия
+        textEventName.text = ""
+        textEventDescription.text = ""
+        placeText.text = ""
+    }
 }
 
 
@@ -89,14 +103,10 @@ private extension AddEventViewController {
         
         
         self.textEventName.backgroundColor = #colorLiteral(red: 0.9021419287, green: 0.9022932649, blue: 0.9021219611, alpha: 1)
-        self.textEventName.textColor = UIColor.lightGray
         self.textEventName.font = .systemFont(ofSize: 20)
-        self.textEventName.text = "Опишите кратко"
-        self.textEventName.becomeFirstResponder()
+        self.textEventName.placeholder = "Опишите кратко"
         self.textEventName.delegate = self
         self.textEventName.layer.cornerRadius = 10.0
-        self.textEventName.selectedTextRange = self.textEventName.textRange(from: self.textEventName.beginningOfDocument, to: self.textEventName.beginningOfDocument)
-        
     }
     
     func setupTextEventDescription() {
@@ -110,12 +120,9 @@ private extension AddEventViewController {
         self.textEventDescription.backgroundColor = #colorLiteral(red: 0.9017923474, green: 0.9021018744, blue: 0.89753896, alpha: 1)
         self.textEventDescription.delegate = self
         self.textEventDescription.font = .systemFont(ofSize: 20)
-        self.textEventDescription.textColor = UIColor.lightGray
-        self.textEventDescription.text = "А здесь подробнее"
+        self.textEventDescription.placeholder = "А здесь подробнее"
         self.textEventDescription.becomeFirstResponder()
         self.textEventDescription.layer.cornerRadius = 10.0
-        self.textEventDescription.selectedTextRange = self.textEventDescription.textRange(from: self.textEventDescription.beginningOfDocument, to: self.textEventDescription.beginningOfDocument)
-        
     }
     
     func setupDateText() {
@@ -125,6 +132,13 @@ private extension AddEventViewController {
         self.textDate.leadingAnchor.constraint(equalTo: self.textEventName.leadingAnchor, constant: 0).isActive = true
         self.textDate.translatesAutoresizingMaskIntoConstraints = false
         
+        self.textDate.minimumDate = { () -> Date in
+            let calendar = Calendar(identifier: .gregorian)
+            var components = DateComponents()
+            components.hour = 1
+            let minDate = calendar.date(byAdding: components, to: Date())
+            return minDate!
+        }()
         self.textDate.backgroundColor = #colorLiteral(red: 0.9017923474, green: 0.9021018744, blue: 0.89753896, alpha: 1)
     }
     
@@ -144,6 +158,7 @@ private extension AddEventViewController {
         self.placeLabel.trailingAnchor.constraint(equalTo: self.wantLabel.trailingAnchor, constant: 0).isActive = true
         self.placeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.placeLabel.text = "Где?"
+        self.placeText.placeholder = "Место"
     }
     
     func setupPlaceText() {
@@ -151,11 +166,10 @@ private extension AddEventViewController {
         self.placeText.bottomAnchor.constraint(equalTo: self.placeText.topAnchor, constant: 75).isActive = true
         self.placeText.trailingAnchor.constraint(equalTo: self.textEventName.trailingAnchor, constant: 0).isActive = true
         self.placeText.leadingAnchor.constraint(equalTo: self.textEventName.leadingAnchor, constant: 0).isActive = true
+        
+        
         self.placeText.translatesAutoresizingMaskIntoConstraints = false
         self.placeText.delegate = self
-        self.placeText.textColor = UIColor.lightGray
-        self.placeText.selectedTextRange = self.placeText.textRange(from: self.placeText.beginningOfDocument, to: self.placeText.beginningOfDocument)
-        self.placeText.text = "Место"
         self.placeText.font = .systemFont(ofSize: 20)
         self.placeText.layer.cornerRadius = 10.0
         self.placeText.becomeFirstResponder()
@@ -165,14 +179,14 @@ private extension AddEventViewController {
     func setupButtonAddEvent() {
         self.buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
         self.buttonAddEvent.backgroundColor = .blue
-        self.buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15).isActive = true
-        self.buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
-        self.buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
-        self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
-        
+        self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60).isActive = true
+        self.buttonAddEvent.bottomAnchor.constraint(equalTo: self.buttonAddEvent.topAnchor, constant: 45).isActive = true
+        self.buttonAddEvent.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 35).isActive = true
+        self.buttonAddEvent.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -35).isActive = true
         self.buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
-        self.buttonAddEvent.setImage(UIImage(named: "plus"), for: .normal)
-        self.buttonAddEvent.layer.cornerRadius = UIScreen.main.bounds.height / 20
+        self.buttonAddEvent.layer.cornerRadius = 20
+        self.buttonAddEvent.setTitle("Добавить", for: .normal)
+
         self.buttonAddEvent.clipsToBounds = true
     }
     
@@ -184,26 +198,4 @@ private extension AddEventViewController {
                                    place: self.placeText.text)
     }
 }
-
-extension AddEventViewController {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let currentText: String = textView.text
-        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
-        
-        if updatedText.isEmpty {
-            textView.text = "Введите что-нибудь"
-            textView.textColor = UIColor.lightGray
-            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-        }
-         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.textColor = UIColor.black
-            textView.text = text
-        }
-        else {
-            return true
-        }
-        return false
-    }
-}
-
 

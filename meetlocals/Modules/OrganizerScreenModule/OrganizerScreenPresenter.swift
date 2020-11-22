@@ -3,6 +3,8 @@ import UIKit
 
 
 final class OrganizerScreenPresenter {
+    var personId: Int?
+    
 	weak var view: OrganizerScreenViewInput?
     weak var moduleOutput: OrganizerScreenModuleOutput?
     
@@ -16,18 +18,13 @@ final class OrganizerScreenPresenter {
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenModuleInput {
-    func setOrganizerData(person: Profile){
-        (self.view as! OrganizerScreenViewController).nameOfPerson.text = "\(person.name) \(person.surname)"
-        (self.view as! OrganizerScreenViewController).imageOfPerson.image =  UIImage(named: person.avatarUrl!)
-
-    }
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenViewOutput {
     func getData(){
-        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  OrganizerScreenRouter.personID})
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})
         let organizer = Common.profiles.profiles[indexPerson!]
-        setOrganizerData(person: organizer)
+        self.view!.setOrganizerData(person: organizer)
     }
 }
 

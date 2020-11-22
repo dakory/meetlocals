@@ -16,6 +16,7 @@ protocol AddEventModuleOutput: class {
 }
 
 protocol AddEventViewInput: class {
+    func cleanScreen()
 }
 
 protocol AddEventViewOutput: class {

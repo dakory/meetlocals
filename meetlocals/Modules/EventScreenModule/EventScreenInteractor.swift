@@ -28,8 +28,8 @@ extension EventScreenInteractor: EventScreenInteractorInput {
     }
     
     
-    func getInfoOfEvent() -> Event {
-        let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == EventScreenRouter.eventID })
+    func getInfoOfEvent(eventId: Int) -> Event {
+        let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
         return Common.events.listOfEvents[indexEvent!]
     }
         
