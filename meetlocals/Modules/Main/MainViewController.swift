@@ -56,27 +56,6 @@ class MainViewController: UIViewController {
             print("User already has been authorized")
             print("Everything is cool!")
 
-            let interactor = InteractorImpl()
-            interactor.getUser(userId: "sushkoruslan")
-                    .subscribe(
-                            onNext: { (response: VKUser) in
-                                print(response)
-                            }, onError:
-                    { error in
-                        print(error)
-                    }, onCompleted:
-                    { print("Completed") })
-
-            Common.generateEventsData()   //подгружаем общий список мероприятий
-            Common.generateProfilesData() //подгружаем общий список пользователей
-            let context = EventListContext(moduleOutput: nil)
-            let container = EventListContainer.assemble(with: context)
-            let appWindow = UIWindow(frame: UIScreen.main.bounds)
-            (UIApplication.shared.delegate as! AppDelegate).appWindow = appWindow
-            let navigationController = UINavigationController(rootViewController: container.viewController)
-            appWindow.rootViewController = navigationController
-            appWindow.makeKeyAndVisible()
-
             //TODO открыть EventListModule
         } else if (state == VKAuthorizationState.error) {
             print("Some error happened")
