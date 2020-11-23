@@ -18,7 +18,11 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let placeLabel = UILabel()
     private let placeText = UITextView()
     private let buttonAddEvent = UIButton()
-    var offsetBeforeShowKeyboard: CGPoint?
+    private let scrollView: UIScrollView = {
+        var scrollView: UIScrollView!
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0,width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        return scrollView
+    }()
 
     init(output: AddEventViewOutput) {
         self.output = output
@@ -39,14 +43,19 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         self.tabBarItem =
            UITabBarItem(
             title: "Новое событие",
             image: UIImage(systemName: "plus"),
             tag: 2)
         self.navigationItem.title = "Новое событие"
-        
-        
+        super.viewDidLoad()
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 50)
     }
 }
 
@@ -63,14 +72,16 @@ extension AddEventViewController: AddEventViewInput {
 
 private extension AddEventViewController {
     func addAll(_ view: UIView) {
-        view.addSubview(wantLabel)
-        view.addSubview(textEventName)
-        view.addSubview(textEventDescription)
-        view.addSubview(textDate)
-        view.addSubview(dateLabel)
-        view.addSubview(placeText)
-        view.addSubview(placeLabel)
+        scrollView.addSubview(wantLabel)
+        scrollView.addSubview(textEventName)
+        scrollView.addSubview(textEventDescription)
+        scrollView.addSubview(textDate)
+        scrollView.addSubview(dateLabel)
+        scrollView.addSubview(placeText)
+        scrollView.addSubview(placeLabel)
+        view.addSubview(scrollView)
         view.addSubview(buttonAddEvent)
+        view.layoutIfNeeded()
     }
     func setupAll() {
         setupTextEventName()
@@ -84,118 +95,132 @@ private extension AddEventViewController {
         
     }
     func setupwandLabel() {
-        self.wantLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        self.wantLabel.bottomAnchor.constraint(equalTo: self.wantLabel.topAnchor, constant: 30).isActive = true
-        self.wantLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
-        self.wantLabel.trailingAnchor.constraint(equalTo: self.wantLabel.leadingAnchor, constant: 55).isActive = true
-        self.wantLabel.translatesAutoresizingMaskIntoConstraints = false
+        wantLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
+        wantLabel.bottomAnchor.constraint(equalTo: wantLabel.topAnchor, constant: 30).isActive = true
+        wantLabel.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
+        wantLabel.trailingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 55).isActive = true
+        wantLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
-        self.wantLabel.text = "Я хочу"
+        wantLabel.text = "Я хочу"
     }
     
     func setupTextEventName() {
-        self.textEventName.topAnchor.constraint(equalTo: self.wantLabel.topAnchor, constant: 0).isActive = true
-        self.textEventName.bottomAnchor.constraint(equalTo: self.wantLabel.bottomAnchor, constant: 30).isActive = true
-        self.textEventName.leadingAnchor.constraint(equalTo: self.wantLabel.trailingAnchor, constant: 15).isActive = true
-        self.textEventName.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15).isActive = true
-        self.textEventName.translatesAutoresizingMaskIntoConstraints = false
+        textEventName.topAnchor.constraint(equalTo: wantLabel.topAnchor, constant: 0).isActive = true
+        textEventName.bottomAnchor.constraint(equalTo: wantLabel.bottomAnchor, constant: 30).isActive = true
+        textEventName.leadingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 15).isActive = true
+        textEventName.trailingAnchor.constraint(equalTo: self.scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
+        textEventName.translatesAutoresizingMaskIntoConstraints = false
         
         
-        self.textEventName.backgroundColor = #colorLiteral(red: 0.9021419287, green: 0.9022932649, blue: 0.9021219611, alpha: 1)
-        self.textEventName.font = .systemFont(ofSize: 20)
-        self.textEventName.placeholder = "Опишите кратко"
-        self.textEventName.delegate = self
-        self.textEventName.layer.cornerRadius = 10.0
+        textEventName.backgroundColor = #colorLiteral(red: 0.9026893973, green: 0.8979343176, blue: 0.8978550434, alpha: 1)
+        textEventName.font = .systemFont(ofSize: 20)
+        textEventName.placeholder = "Опишите кратко"
+        textEventName.delegate = self
+        textEventName.layer.cornerRadius = 10.0
     }
     
     func setupTextEventDescription() {
-        self.textEventDescription.topAnchor.constraint(equalTo: self.textEventName.bottomAnchor, constant: 40).isActive = true
-        self.textEventDescription.bottomAnchor.constraint(equalTo: self.textEventDescription.topAnchor, constant: 200).isActive = true
-        self.textEventDescription.leadingAnchor.constraint(equalTo: self.wantLabel.leadingAnchor, constant: 0).isActive = true
-        self.textEventDescription.trailingAnchor.constraint(equalTo: self.textEventName.trailingAnchor, constant: 0).isActive = true
-        self.textEventDescription.translatesAutoresizingMaskIntoConstraints = false
+        textEventDescription.topAnchor.constraint(equalTo: textEventName.bottomAnchor, constant: 40).isActive = true
+        textEventDescription.bottomAnchor.constraint(equalTo: textEventDescription.topAnchor, constant: 200).isActive = true
+        textEventDescription.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
+        textEventDescription.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
+        textEventDescription.translatesAutoresizingMaskIntoConstraints = false
         
         
-        self.textEventDescription.backgroundColor = #colorLiteral(red: 0.9017923474, green: 0.9021018744, blue: 0.89753896, alpha: 1)
-        self.textEventDescription.delegate = self
-        self.textEventDescription.font = .systemFont(ofSize: 20)
-        self.textEventDescription.placeholder = "А здесь подробнее"
-        self.textEventDescription.becomeFirstResponder()
-        self.textEventDescription.layer.cornerRadius = 10.0
+        textEventDescription.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
+        textEventDescription.delegate = self
+        textEventDescription.font = .systemFont(ofSize: 20)
+        textEventDescription.placeholder = "А здесь подробнее"
+        textEventDescription.becomeFirstResponder()
+        textEventDescription.layer.cornerRadius = 10.0
     }
     
     func setupDateText() {
-        self.textDate.topAnchor.constraint(equalTo: self.textEventDescription.bottomAnchor, constant: 15).isActive = true
-        self.textDate.bottomAnchor.constraint(equalTo: self.dateLabel.topAnchor, constant: 30).isActive = true
-        self.textDate.trailingAnchor.constraint(equalTo: self.textEventName.trailingAnchor, constant: 0).isActive = true
-        self.textDate.leadingAnchor.constraint(equalTo: self.textEventName.leadingAnchor, constant: 0).isActive = true
-        self.textDate.translatesAutoresizingMaskIntoConstraints = false
+        textDate.topAnchor.constraint(equalTo: textEventDescription.bottomAnchor, constant: 15).isActive = true
+        textDate.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: 30).isActive = true
+        textDate.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
+        textDate.leadingAnchor.constraint(equalTo: textEventName.leadingAnchor, constant: 0).isActive = true
+        textDate.translatesAutoresizingMaskIntoConstraints = false
         
-        self.textDate.minimumDate = { () -> Date in
+        textDate.minimumDate = { () -> Date in
             let calendar = Calendar(identifier: .gregorian)
             var components = DateComponents()
             components.hour = 1
             let minDate = calendar.date(byAdding: components, to: Date())
             return minDate!
         }()
-        self.textDate.backgroundColor = #colorLiteral(red: 0.9017923474, green: 0.9021018744, blue: 0.89753896, alpha: 1)
+        textDate.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
     }
     
     func setupDateLabel() {
-        self.dateLabel.topAnchor.constraint(equalTo: self.textDate.topAnchor, constant: 0).isActive = true
-        self.dateLabel.bottomAnchor.constraint(equalTo: self.textDate.bottomAnchor, constant: 0).isActive = true
-        self.dateLabel.leadingAnchor.constraint(equalTo: self.wantLabel.leadingAnchor, constant: 0).isActive = true
-        self.dateLabel.trailingAnchor.constraint(equalTo: self.wantLabel.trailingAnchor, constant: 0).isActive = true
-        self.dateLabel.text = "Когда?"
-        self.dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.topAnchor.constraint(equalTo: textDate.topAnchor, constant: 0).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 0).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 0).isActive = true
+        dateLabel.text = "Когда?"
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func setupPlaceLabel() {
-        self.placeLabel.topAnchor.constraint(equalTo: self.textDate.bottomAnchor, constant: 15).isActive = true
-        self.placeLabel.bottomAnchor.constraint(equalTo: self.placeLabel.topAnchor, constant: 30).isActive = true
-        self.placeLabel.leadingAnchor.constraint(equalTo: self.wantLabel.leadingAnchor, constant: 0).isActive = true
-        self.placeLabel.trailingAnchor.constraint(equalTo: self.wantLabel.trailingAnchor, constant: 0).isActive = true
-        self.placeLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.placeLabel.text = "Где?"
-        self.placeText.placeholder = "Место"
+        placeLabel.topAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 15).isActive = true
+        placeLabel.bottomAnchor.constraint(equalTo: placeLabel.topAnchor, constant: 30).isActive = true
+        placeLabel.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
+        placeLabel.trailingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 0).isActive = true
+        placeLabel.translatesAutoresizingMaskIntoConstraints = false
+        placeLabel.text = "Где?"
+        placeText.placeholder = "Место"
     }
     
     func setupPlaceText() {
-        self.placeText.topAnchor.constraint(equalTo: self.placeLabel.topAnchor, constant: 0).isActive = true
-        self.placeText.bottomAnchor.constraint(equalTo: self.placeText.topAnchor, constant: 75).isActive = true
-        self.placeText.trailingAnchor.constraint(equalTo: self.textEventName.trailingAnchor, constant: 0).isActive = true
-        self.placeText.leadingAnchor.constraint(equalTo: self.textEventName.leadingAnchor, constant: 0).isActive = true
+        placeText.topAnchor.constraint(equalTo: placeLabel.topAnchor, constant: 0).isActive = true
+        placeText.bottomAnchor.constraint(equalTo: placeText.topAnchor, constant: 75).isActive = true
+        placeText.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
+        placeText.leadingAnchor.constraint(equalTo: textEventName.leadingAnchor, constant: 0).isActive = true
         
         
-        self.placeText.translatesAutoresizingMaskIntoConstraints = false
-        self.placeText.delegate = self
-        self.placeText.font = .systemFont(ofSize: 20)
-        self.placeText.layer.cornerRadius = 10.0
-        self.placeText.becomeFirstResponder()
-        self.placeText.backgroundColor = #colorLiteral(red: 0.9017923474, green: 0.9021018744, blue: 0.89753896, alpha: 1)
+        placeText.translatesAutoresizingMaskIntoConstraints = false
+        placeText.delegate = self
+        placeText.font = .systemFont(ofSize: 20)
+        placeText.layer.cornerRadius = 10.0
+        placeText.becomeFirstResponder()
+        placeText.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
         
     }
     func setupButtonAddEvent() {
-        self.buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonAddEvent.backgroundColor = .blue
-        self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60).isActive = true
-        self.buttonAddEvent.bottomAnchor.constraint(equalTo: self.buttonAddEvent.topAnchor, constant: 45).isActive = true
-        self.buttonAddEvent.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 35).isActive = true
-        self.buttonAddEvent.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -35).isActive = true
-        self.buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
-        self.buttonAddEvent.layer.cornerRadius = 20
-        self.buttonAddEvent.setTitle("Добавить", for: .normal)
+        buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
+        buttonAddEvent.backgroundColor = .blue
+        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 35).isActive = true
+        buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -35).isActive = true
+        buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
+        buttonAddEvent.layer.cornerRadius = 20
+        buttonAddEvent.setTitle("Добавить", for: .normal)
 
-        self.buttonAddEvent.clipsToBounds = true
+        buttonAddEvent.clipsToBounds = true
     }
-    
+
     @objc
     func didTapButtonAddEvent() {
-        self.output.didTabAddEvent(name: self.textEventName.text,
-                                  description: self.textEventDescription.text,
-                                  date: self.textDate.date,
-                                   place: self.placeText.text)
+        output.didTabAddEvent(name: textEventName.text,
+                                  description: textEventDescription.text,
+                                  date: textDate.date,
+                                   place: placeText.text)
+    }
+    @objc func keyboardWillChange(_ notification: NSNotification) {
+        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
+        let beginningFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let endFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let deltaY = endFrame.origin.y - beginningFrame.origin.y
+        if (deltaY != 0) {
+        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
+//            self.scrollView.contentSize.height -= deltaY
+            self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
+            self.view.layoutIfNeeded()
+    }, completion: nil)
+        }
+        self.view.layoutIfNeeded()
     }
 }
 
