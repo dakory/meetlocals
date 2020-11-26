@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69099F6225618B99005E3CCC /* FavoriteEventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F5C25618B99005E3CCC /* FavoriteEventsPresenter.swift */; };
-		69099F6325618B99005E3CCC /* FavoriteEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F5D25618B99005E3CCC /* FavoriteEventsRouter.swift */; };
-		69099F6425618B99005E3CCC /* FavoriteEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F5E25618B99005E3CCC /* FavoriteEventsViewController.swift */; };
-		69099F6525618B99005E3CCC /* FavoriteEventsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F5F25618B99005E3CCC /* FavoriteEventsProtocols.swift */; };
-		69099F6625618B99005E3CCC /* FavoriteEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F6025618B99005E3CCC /* FavoriteEventsInteractor.swift */; };
-		69099F6725618B99005E3CCC /* FavoriteEventsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69099F6125618B99005E3CCC /* FavoriteEventsContainer.swift */; };
 		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
 		B02DD02A8C3438744756839E /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */; };
@@ -80,12 +74,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		69099F5C25618B99005E3CCC /* FavoriteEventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsPresenter.swift; sourceTree = "<group>"; };
-		69099F5D25618B99005E3CCC /* FavoriteEventsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsRouter.swift; sourceTree = "<group>"; };
-		69099F5E25618B99005E3CCC /* FavoriteEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsViewController.swift; sourceTree = "<group>"; };
-		69099F5F25618B99005E3CCC /* FavoriteEventsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsProtocols.swift; sourceTree = "<group>"; };
-		69099F6025618B99005E3CCC /* FavoriteEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsInteractor.swift; sourceTree = "<group>"; };
-		69099F6125618B99005E3CCC /* FavoriteEventsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsContainer.swift; sourceTree = "<group>"; };
 		B02DD02EB32769A16BDE545F /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD030DDA0225B9D39474F /* EventListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListContainer.swift; sourceTree = "<group>"; };
 		B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
@@ -168,19 +156,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		69099F5B25618B6D005E3CCC /* FavoriteEvents */ = {
-			isa = PBXGroup;
-			children = (
-				69099F5C25618B99005E3CCC /* FavoriteEventsPresenter.swift */,
-				69099F5D25618B99005E3CCC /* FavoriteEventsRouter.swift */,
-				69099F5E25618B99005E3CCC /* FavoriteEventsViewController.swift */,
-				69099F5F25618B99005E3CCC /* FavoriteEventsProtocols.swift */,
-				69099F6025618B99005E3CCC /* FavoriteEventsInteractor.swift */,
-				69099F6125618B99005E3CCC /* FavoriteEventsContainer.swift */,
-			);
-			path = FavoriteEvents;
-			sourceTree = "<group>";
-		};
 		978D901214666F54B2F5964F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +191,6 @@
 		B02DD2039538DE8870212930 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				69099F5B25618B6D005E3CCC /* FavoriteEvents */,
 				B02DD4F7DA57F6E7215DE74A /* ProfileModule */,
 				B02DD8185BB43F377438ACD2 /* AddEventModule */,
 				B02DD6459FB7A77235349BBE /* AuthorizeModule */,
@@ -544,13 +518,11 @@
 				B02DD28EDAB75DCA9E78B71D /* UIImageViewExtension.swift in Sources */,
 				B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */,
 				B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */,
-				69099F6725618B99005E3CCC /* FavoriteEventsContainer.swift in Sources */,
 				B02DD7F0501837F5FD655A0F /* Events.swift in Sources */,
 				B02DD6D04D586498568BAB5A /* Profiles.swift in Sources */,
 				B02DD1E54329199ED78CEC8B /* ProfileModuleRouter.swift in Sources */,
 				B02DD79D69C58BA519CA8436 /* ProfileModuleContainer.swift in Sources */,
 				B02DDDD55312880681BDD9AF /* ProfileModulePresenter.swift in Sources */,
-				69099F6225618B99005E3CCC /* FavoriteEventsPresenter.swift in Sources */,
 				B02DD92F5A70FBF767021377 /* ProfileModuleProtocols.swift in Sources */,
 				B02DD194D522BE3447EF0D6E /* ProfileModuleInteractor.swift in Sources */,
 				B02DD233283D89B9F2BCFF50 /* ProfileModuleViewController.swift in Sources */,
@@ -564,7 +536,6 @@
 				B02DD7B17195E6966C867A99 /* VkDelegate.swift in Sources */,
 				B02DDDA910D9EFAA726793CB /* VkUiDelegate.swift in Sources */,
 				B02DD9DD2A6368C224171819 /* VkDelegateImpl.swift in Sources */,
-				69099F6625618B99005E3CCC /* FavoriteEventsInteractor.swift in Sources */,
 				B02DD92DB9F7A8911D39B88E /* EventViewModel.swift in Sources */,
 				B02DD94DB0B1E2157A665D67 /* CollectionViewCell.swift in Sources */,
 				B02DD374DDCD4FE80EF595CD /* EventListRouter.swift in Sources */,
@@ -577,7 +548,6 @@
 				B02DDAEF4F74C81B4490D2E8 /* EventScreenRouter.swift in Sources */,
 				B02DD58CEC49AF7E2FF1DCE1 /* EventScreenContainer.swift in Sources */,
 				B02DD07EAC66ABDDA6CAE87E /* EventScreenPresenter.swift in Sources */,
-				69099F6325618B99005E3CCC /* FavoriteEventsRouter.swift in Sources */,
 				B02DD7CC910E371FE27D69B6 /* EventScreenProtocols.swift in Sources */,
 				B02DDFBF79BC19E2177F0966 /* EventScreenInteractor.swift in Sources */,
 				B02DDE488B66BF772748B268 /* EventScreenViewController.swift in Sources */,
@@ -586,8 +556,6 @@
 				B02DDD309335DF8414075B23 /* OrganizerScreenPresenter.swift in Sources */,
 				B02DD42A0E78DB72CA97C676 /* OrganizerScreenProtocols.swift in Sources */,
 				B02DDF07DD08EC34995746A5 /* OrganizerScreenInteractor.swift in Sources */,
-				69099F6525618B99005E3CCC /* FavoriteEventsProtocols.swift in Sources */,
-				69099F6425618B99005E3CCC /* FavoriteEventsViewController.swift in Sources */,
 				B02DD622017199131F2C6459 /* OrganizerScreenViewController.swift in Sources */,
 				C2A4F1F9F69F3671ED50F052 /* JsonUserConverter.swift in Sources */,
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,

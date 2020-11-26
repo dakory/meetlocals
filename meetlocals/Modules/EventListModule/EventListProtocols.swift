@@ -18,6 +18,7 @@ protocol EventListModuleOutput: class {
 protocol EventListViewInput: class {
     func set(viewModels: [EventViewModel])
     func updateList()
+    func selectingScreenListType(type: TypeOfListScreen)
 }
 
 protocol EventListViewOutput: class {
@@ -27,7 +28,7 @@ protocol EventListViewOutput: class {
 }
 
 protocol EventListInteractorInput: class {
-    func fetchEvents()
+    func fetchEvents(type: TypeOfListScreen)
 }
 
 protocol EventListInteractorOutput: class {

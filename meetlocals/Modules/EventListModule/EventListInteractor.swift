@@ -13,10 +13,22 @@ final class EventListInteractor {
 }
 extension EventListInteractor: EventListInteractorInput {
     
-    func fetchEvents() {
+    
+    func fetchEvents(type: TypeOfListScreen) {
         
-        self.output?.didLoad(events: Common.events.listOfEvents)
         
+        
+        if type == .common {
+            self.output?.didLoad(events: Common.events.listOfEvents)
+        }
+        else if type == .participating {
+            self.output?.didLoad(events:
+                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}))
+        }
+        else if type == .organizing {
+            self.output?.didLoad(events:
+                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}))
+        }
     }
 }
 

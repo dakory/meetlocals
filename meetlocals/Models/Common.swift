@@ -1,7 +1,11 @@
 import UIKit
 import Foundation
 
-
+enum TypeOfListScreen {
+    case common
+    case participating
+    case organizing
+}
 
 class Common: NSObject { //какие-то данные с БД
     
@@ -18,10 +22,12 @@ class Common: NSObject { //какие-то данные с БД
     }
     
     class func generateEventsData() {
-        let event1 = Event(id: 0, idOrganizer: 0, idMembers: [], name: "Прогулка",
+        let event1 = Event(id: 0, idOrganizer: 0, idMembers: [0, 3], name: "Прогулка",
                 description: "Хочу просто погулять в компании молодых людей", place: "Москва, Газетный переулок, 4", date: Date(timeIntervalSinceReferenceDate: -123456789.0))
-        let event2 = Event(id: 1, idOrganizer: 1, idMembers: [], name: "Фестиваль",
+        let event2 = Event(id: 1, idOrganizer: 1, idMembers: [1], name: "Фестиваль",
                            description: "Ищу компанию для похода на фестиваль из 4 человек. Хочу пообщаться и найти новых друзей", place: "Москва, Брюсов переулок, 6", date: Date(timeIntervalSinceReferenceDate: -123456789.0))
-        self.events = Events(listOfEvents: [event1, event2])
+        let event3 = Event(id: 2, idOrganizer: 3, idMembers: [3], name: "Поход в кино",
+                           description: "Хочу сходить в кино с небольшой компанией молодых людей", place: "Москва, ул. Арбат, 9", date: Date(timeIntervalSinceReferenceDate: -123456789.0))
+        self.events = Events(listOfEvents: [event1, event2, event3])
     }
 }

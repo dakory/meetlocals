@@ -30,8 +30,9 @@ final class EventListController: UIViewController {
         view.backgroundColor = .white
         self.view = view
         setupCollectionView()
-  //      setupButtonAddEvent()
-   //     self.buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
+ 
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +48,7 @@ final class EventListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tabBarItem =
            UITabBarItem(
             title: "Лента",
@@ -69,6 +71,36 @@ extension EventListController: EventListViewInput {
         self.viewModels = viewModels
         self.collectionView.reloadData()
     }
+    
+    func selectingScreenListType(type: TypeOfListScreen){
+        if type == .common {
+            self.tabBarItem =
+               UITabBarItem(
+                title: "Лента",
+                image: UIImage(systemName: "magnifyingglass"),
+                tag: 0)
+            self.navigationItem.title = "Лента"
+        }
+        else if type == .participating {
+            self.tabBarItem =
+               UITabBarItem(
+                title: "Участвую",
+                image: UIImage(systemName: "person.2.fill"),
+                tag: 1)
+            self.navigationItem.title = "Участвую"
+        }
+        else {
+            self.tabBarItem =
+               UITabBarItem(
+                title: "Организую",
+                image: UIImage(systemName: "text.badge.plus"),
+                tag: 2)
+            self.navigationItem.title = "Организую"
+        }
+    }
+    
+    
+    
 }
 
 extension EventListController: UICollectionViewDataSource {

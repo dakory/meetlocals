@@ -8,6 +8,9 @@
 import Foundation
 
 final class EventListPresenter {
+    var typeOfScreen: TypeOfListScreen? //определяет какой список отобразить (все мероприятия, созданные, учавствую)
+
+    
     weak var view: EventListViewInput?
     weak var moduleOutput: EventListModuleOutput?
     
@@ -28,13 +31,11 @@ extension EventListPresenter: EventListViewOutput {
         self.router.goToEventScreen(vc: self.view as! EventListController, meetingID: meetingID)
     }
     
-//    func didTabAddEvent() {
-//          self.router.showAddEvent()
-//    }
-    
-    
+
+
     func viewDidLoad() {
-        self.interactor.fetchEvents()
+        self.interactor.fetchEvents(type: typeOfScreen!)
+        self.view!.selectingScreenListType(type: typeOfScreen!)
     }
 }
 

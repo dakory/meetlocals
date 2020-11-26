@@ -18,6 +18,8 @@ final class EventListContainer {
         let interactor = EventListInteractor()
         let presenter = EventListPresenter(router: router, interactor: interactor)
         let viewController = EventListController(output: presenter)
+        
+        presenter.typeOfScreen = context.typeOfScreen
 
         presenter.view = viewController
         presenter.moduleOutput = context.moduleOutput
@@ -35,5 +37,6 @@ final class EventListContainer {
 }
 
 struct EventListContext {
-    weak var moduleOutput:EventListModuleOutput?
+    weak var moduleOutput: EventListModuleOutput?
+    let typeOfScreen: TypeOfListScreen?
 }

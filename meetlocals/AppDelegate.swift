@@ -31,13 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let appWindow = UIWindow(frame: UIScreen.main.bounds)
             self.appWindow = appWindow
 
-            let eventListContext = EventListContext(moduleOutput: nil)
+            let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
             let eventListContainer = EventListContainer.assemble(with: eventListContext)
             let eventListNavigationController = UINavigationController(rootViewController: eventListContainer.viewController)
 
-            let favoriteEventsContext = FavoriteEventsContext(moduleOutput: nil)
-            let favoriteEventsContainer = FavoriteEventsContainer.assemble(with: favoriteEventsContext)
-            let favoriteEventsNavigationController = UINavigationController(rootViewController: favoriteEventsContainer.viewController)
+            let organizingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .organizing)
+            let organizingListContainer = EventListContainer.assemble(with: organizingListContext)
+            let organizingListNavigationController = UINavigationController(rootViewController: organizingListContainer.viewController)
+            
+            let participatingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .participating)
+            let participatingListContainer = EventListContainer.assemble(with: participatingListContext)
+            let participatingListNavigationController = UINavigationController(rootViewController: participatingListContainer.viewController)
 
             let addEventContext = AddEventContext(moduleOutput: nil)
             let addEventContainer = AddEventContainer.assemble(with: addEventContext)
@@ -49,18 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let tabBar = UITabBarController()
 
-            favoriteEventsContainer.viewController.loadViewIfNeeded()
+            eventListContainer.viewController.loadViewIfNeeded()
+            organizingListContainer.viewController.loadViewIfNeeded()
+            participatingListContainer.viewController.loadViewIfNeeded()
             addEventContainer.viewController.loadViewIfNeeded()
             organizerScreenContainer.viewController.loadViewIfNeeded()
 
-            tabBar.setViewControllers([eventListNavigationController,favoriteEventsNavigationController, addEventNavigationController, organizerScreeNavigationController], animated: true)
+            tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, organizerScreeNavigationController], animated: true)
 
             appWindow.rootViewController = tabBar
-
-
-
-
-
             appWindow.makeKeyAndVisible()
 
             return true

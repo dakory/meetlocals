@@ -32,19 +32,27 @@ extension AddEventRouter: AddEventRouterInput {
         
         // TODO: переносить данные в бд, обновлять экран событий
         else {
-            Common.events.listOfEvents.append(Event(id: 3, idOrganizer: Common.myProfile.id, idMembers: [], name: name, description: description, place: place, date: date))
+            Common.events.listOfEvents.append(Event(id: 3, idOrganizer: Common.myProfile.id, idMembers: [3], name: name, description: description, place: place, date: date))
             
             let successfullyСreatedController = UIAlertController(title: "Успех", message: "Ваше мероприятие успешно создано", preferredStyle: .alert)
             successfullyСreatedController.addAction(UIAlertAction(title: "Ок", style: .default))
             viewController?.present(successfullyСreatedController, animated: true)
 
-            let listNavigationController  = viewController?.tabBarController!.viewControllers![0] as! UINavigationController
-            let listNavigationControllers = listNavigationController.viewControllers[0] as! EventListController
-            listNavigationControllers.updateList()
+            let listNavigationControllers  = viewController?.tabBarController!.viewControllers![0] as! UINavigationController
+            let listNavigationController = listNavigationControllers.viewControllers[0] as! EventListController
+            listNavigationController.updateList()
+                                    
+            let organizingListNavigationControllers  = viewController?.tabBarController!.viewControllers![1] as! UINavigationController
+            let organizingListNavigationController = organizingListNavigationControllers.viewControllers[0] as! EventListController
+            organizingListNavigationController.updateList()
             
-            let addEventNavigationController  = viewController?.tabBarController!.viewControllers![2] as! UINavigationController
-            let addEventNavigationControllers = addEventNavigationController.viewControllers[0] as! AddEventViewController
-            addEventNavigationControllers.cleanScreen()
+            let participatingListNavigationControllers  = viewController?.tabBarController!.viewControllers![2] as! UINavigationController
+            let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
+            participatingListNavigationController.updateList()
+            
+            let addEventNavigationControllers  = viewController?.tabBarController!.viewControllers![3] as! UINavigationController
+            let addEventNavigationController = addEventNavigationControllers.viewControllers[0] as! AddEventViewController
+            addEventNavigationController.cleanScreen()
             
         }
     }
