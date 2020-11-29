@@ -19,11 +19,13 @@ class MainViewController: UIViewController {
         super.loadView()
 
         self.view = MainView()
+        self.view.backgroundColor = #colorLiteral(red: 0.9685224891, green: 0.9686880708, blue: 0.9685119987, alpha: 1)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         mainView.authorizeButton.addTarget(self, action: #selector(authorize), for: .touchUpInside)
     }
 

@@ -86,11 +86,11 @@ final class ProfileModuleView: AutoLayoutView {
 
         [
             self.userAvatarImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide
-                    .topAnchor, constant: 16),
+                    .topAnchor, constant: 229),
             self.userAvatarImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide
-                    .leadingAnchor, constant: 16),
-            self.userAvatarImageView.heightAnchor.constraint(equalToConstant: 100),
-            self.userAvatarImageView.widthAnchor.constraint(equalToConstant: 100),
+                    .leadingAnchor, constant: 136),
+            self.userAvatarImageView.heightAnchor.constraint(equalToConstant: 102),
+            self.userAvatarImageView.widthAnchor.constraint(equalToConstant: 102),
 
             self.userNameLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide
                     .topAnchor, constant: 36),
@@ -123,7 +123,7 @@ final class ProfileModuleView: AutoLayoutView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.userAvatarImageView.setRounded()
+//        self.userAvatarImageView.setRounded()
     }
 }
 

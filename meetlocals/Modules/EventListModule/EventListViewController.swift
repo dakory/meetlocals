@@ -9,7 +9,9 @@ import UIKit
 
 final class EventListController: UIViewController {
     private let output: EventListViewOutput
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    let collectionViewFrameTopOffset: CGFloat = 20
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    let scrollView = UIScrollView()
     private var viewModels = [EventViewModel]()
 
     
@@ -24,10 +26,12 @@ final class EventListController: UIViewController {
     
     override func loadView() {
         let view = UIView()
-        view.addSubview(self.collectionView)
-        view.backgroundColor = UIColor(hexString: "#E5E5E5")
+        scrollView.alwaysBounceVertical = true
+        view.addSubview(self.scrollView)
+        self.scrollView.addSubview(collectionView)
+        view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         self.view = view
-        setupCollectionView()
+        setupView()
  
         
         
@@ -35,8 +39,6 @@ final class EventListController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        let collectionViewFrameTopOffset: CGFloat = 100
         self.collectionView.frame = CGRect(
             x: 0,
             y: collectionViewFrameTopOffset,
@@ -141,32 +143,22 @@ extension EventListController: UICollectionViewDelegate, UICollectionViewDelegat
     
     
 private extension EventListController {
-    func setupCollectionView() {
+    func setupView() {
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+
+        [
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+        ].forEach({
+            $0.isActive = true
+        })
         
         self.collectionView.clipsToBounds = true
         self.collectionView.backgroundColor = view.backgroundColor
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-    }
-}
-
-extension UIColor {
-    convenience init(hexString: String) {
-        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int = UInt64()
-        Scanner(string: hex).scanHexInt64(&int)
-        let a, r, g, b: UInt64
-        switch hex.count {
-        case 3:
-            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6:
-            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8:
-            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-        default:
-            (a, r, g, b) = (255, 0, 0, 0)
-        }
-        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
