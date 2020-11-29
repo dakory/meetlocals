@@ -10,13 +10,14 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     var eventId: Int
+    var height = CGFloat(75)
 
     fileprivate let UserName: UILabel = { () -> UILabel in
         let UserName = UILabel()
         UserName.translatesAutoresizingMaskIntoConstraints = false
-        UserName.font = UserName.font.withSize(15)
+        UserName.font = UIFont(name: "Avenir-Light", size: 13)
+        UserName.textColor = .systemGray
         UserName.textAlignment = .left
-  //      UserName.text = "Аня"
         return UserName
     }()
     
@@ -30,13 +31,13 @@ class CollectionViewCell: UICollectionViewCell {
         return EventName
     }()
     fileprivate let UserImage: UIImageView = { ( ) -> UIImageView in
-        let UserImage = UIImageView()
+        let UserImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         
         UserImage.contentMode = UIView.ContentMode.scaleAspectFill
-        UserImage.layer.borderWidth = 1.5
+        UserImage.layer.borderWidth = 0
         UserImage.clipsToBounds = true
-        UserImage.translatesAutoresizingMaskIntoConstraints = false
         
+        UserImage.translatesAutoresizingMaskIntoConstraints = false
         return UserImage
     }()
     
@@ -44,25 +45,27 @@ class CollectionViewCell: UICollectionViewCell {
         self.eventId = 0
         super.init(frame: frame)
         
-//        eventId = eventId;
         contentView.addSubview(UserImage)
-        UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        UserImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        UserImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
-        UserImage.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.bounds.height + 5).isActive = true
-        UserImage.layer.cornerRadius = self.bounds.height / 2
+        UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        UserImage.bottomAnchor.constraint(equalTo: UserImage.topAnchor, constant: height).isActive = true
+        UserImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        UserImage.trailingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height).isActive = true
+        UserImage.layer.cornerRadius = height / 2
+        
         
         contentView.addSubview(UserName)
-        UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        UserName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
+        UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+        UserName.leadingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height + 16).isActive = true
         UserName.bottomAnchor.constraint(equalTo: UserName.topAnchor, constant: 15).isActive = true
         UserName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        
         
         contentView.addSubview(EventName)
         EventName.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 5).isActive = true
         EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
-        EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
-        EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -21).isActive = true
+        EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        EventName.numberOfLines = 0
     }
     
     required init?(coder: NSCoder) {

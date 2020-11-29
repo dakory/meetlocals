@@ -9,8 +9,7 @@ import UIKit
 
 final class EventListController: UIViewController {
     private let output: EventListViewOutput
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 65, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
- //   private let buttonAddEvent = UIButton(type: .custom)
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private var viewModels = [EventViewModel]()
 
     
@@ -26,8 +25,7 @@ final class EventListController: UIViewController {
     override func loadView() {
         let view = UIView()
         view.addSubview(self.collectionView)
-    //    view.addSubview(self.buttonAddEvent)
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: "#E5E5E5")
         self.view = view
         setupCollectionView()
  
@@ -38,7 +36,7 @@ final class EventListController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let collectionViewFrameTopOffset: CGFloat = 65
+        let collectionViewFrameTopOffset: CGFloat = 100
         self.collectionView.frame = CGRect(
             x: 0,
             y: collectionViewFrameTopOffset,
@@ -54,7 +52,8 @@ final class EventListController: UIViewController {
             title: "Лента",
             image: UIImage(systemName: "magnifyingglass"),
             tag: 0)
-        self.navigationItem.title = "Лента"
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         self.output.viewDidLoad()
         
     }
@@ -79,7 +78,16 @@ extension EventListController: EventListViewInput {
                 title: "Лента",
                 image: UIImage(systemName: "magnifyingglass"),
                 tag: 0)
-            self.navigationItem.title = "Лента"
+            self.navigationItem.titleView = {
+                let titleView = UIView(frame: CGRect(x: view.safeAreaInsets.top + 10, y: 0, width: 90, height: 30))
+                let titleImageView = UIImageView(image: UIImage(named: "promoIcon"))
+                titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
+                titleView.addSubview(titleImageView)
+                titleView.clipsToBounds = true
+                titleView.contentMode = .scaleAspectFill
+                return titleView
+                
+            }()
         }
         else if type == .participating {
             self.tabBarItem =
@@ -111,6 +119,11 @@ extension EventListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.configure(with: self.viewModels[indexPath.row], collectionView: collectionView, index: indexPath.row)
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 15
+        cell.layer.shadowRadius = cell.layer.cornerRadius
+        cell.layer.shadowOpacity = 0.1
+        cell.layer.shadowColor = UIColor.gray.cgColor
         
         return cell
     }
@@ -136,22 +149,24 @@ private extension EventListController {
         self.collectionView.dataSource = self
         self.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
     }
+}
 
-//    func setupButtonAddEvent() {
-//        self.buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
-//        self.buttonAddEvent.backgroundColor = .blue
-//        self.buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15).isActive = true
-//        self.buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
-//        self.buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
-//        self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -UIScreen.main.bounds.height/8).isActive = true
-//
-//        self.buttonAddEvent.setImage(UIImage(named: "plus"), for: .normal)
-//        self.buttonAddEvent.layer.cornerRadius = UIScreen.main.bounds.height / 20
-//        self.buttonAddEvent.clipsToBounds = true
-//    }
-    
-//    @objc
-//    func didTapButtonAddEvent() {
-//        self.output.didTabAddEvent()
-//    }
+extension UIColor {
+    convenience init(hexString: String) {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt64()
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3:
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6:
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8:
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
+    }
 }
