@@ -12,11 +12,6 @@ final class EventListRouter {
 }
 
 extension EventListRouter: EventListRouterInput {
-//    func showAddEvent() {
-//            let context = AddEventContext(moduleOutput: nil)
-//            let container = AddEventContainer.assemble(with: context)
-//        self.viewController?.navigationController?.pushViewController(container.viewController, animated: true)
-//        }
     
     func goToEventScreen(vc: EventListController, meetingID: Int){ //здесь осуществляем переход на "Профиль организатора"
         let contexEventScreen = EventScreenContext(moduleOutput: nil, meetingID: meetingID)

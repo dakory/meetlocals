@@ -8,6 +8,7 @@ final class OrganizerScreenViewController: UIViewController {
     let stackViewTopLabel = UIStackView()
     
     let scrollView = UIScrollView()
+    let buttonExit = UIButton()
 
     
 	private let output: OrganizerScreenViewOutput
@@ -30,8 +31,9 @@ final class OrganizerScreenViewController: UIViewController {
         scrollView.alwaysBounceVertical = true
 
         view.addSubview(scrollView)
-        scrollView.addSubview(imageOfPerson)
-        scrollView.addSubview(nameOfPerson)
+        self.scrollView.addSubview(imageOfPerson)
+        self.scrollView.addSubview(nameOfPerson)
+        self.scrollView.addSubview(buttonExit)
         self.setupConstraints()
     }
     
@@ -43,12 +45,14 @@ final class OrganizerScreenViewController: UIViewController {
             image: UIImage(systemName: "person.circle"),
             tag: 3)
         self.navigationItem.title = "Профиль"
+
+        
 	}
     
     func setupConstraints() {
         self.imageOfPerson.translatesAutoresizingMaskIntoConstraints = false
         self.nameOfPerson.translatesAutoresizingMaskIntoConstraints = false
-        
+        self.buttonExit.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         [
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -67,16 +71,36 @@ final class OrganizerScreenViewController: UIViewController {
         
         
         nameOfPerson.font = nameOfPerson.font.withSize(16)
-        nameOfPerson.numberOfLines = 1
-        nameOfPerson.textAlignment = .center
-        nameOfPerson.backgroundColor = .black
+        nameOfPerson.numberOfLines = 0
+
             
-        imageOfPerson.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 229).isActive = true
+        imageOfPerson.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 229).isActive = true
         imageOfPerson.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -60).isActive = true
         imageOfPerson.trailingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 60).isActive = true
         imageOfPerson.bottomAnchor.constraint(equalTo: imageOfPerson.topAnchor, constant: 120).isActive = true
         
         nameOfPerson.topAnchor.constraint(equalTo: imageOfPerson.bottomAnchor, constant: 26).isActive = true
+        nameOfPerson.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        nameOfPerson.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        nameOfPerson.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        nameOfPerson.textAlignment = NSTextAlignment.center
+        
+//        buttonExit.setTitle("Выйти", for: .normal)
+//        buttonExit.titleLabel?.font.withSize(17)
+//        buttonExit.backgroundColor = #colorLiteral(red: 0.9139195085, green: 0.2209282517, blue: 0.7613213658, alpha: 1)
+//        
+//        buttonExit.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32).isActive = true
+//        buttonExit.topAnchor.constraint(equalTo: buttonExit.bottomAnchor, constant: -47).isActive = true
+//        buttonExit.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37).isActive = true
+//        buttonExit.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37).isActive = true
+//        buttonExit.layer.cornerRadius = 24
+//        buttonExit.addTarget(self, action: #selector(didTapButtonExit), for: .touchUpInside)
+//    }
+//    
+//    @objc
+//    func didTapButtonExit() {
+//        output.didTapButtonExit()
+//    }
     }
 }
 

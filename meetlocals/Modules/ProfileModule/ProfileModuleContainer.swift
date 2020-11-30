@@ -17,12 +17,15 @@ final class ProfileModuleContainer {
         let router = ProfileModuleRouter()
         let interactor = ProfileModuleInteractor()
         let presenter = ProfileModulePresenter(router: router, interactor: interactor)
-		let viewController = ProfileModuleViewController(output: presenter)
+        let viewController = ProfileModuleViewController(output: presenter)
 
 		presenter.view = viewController
 		presenter.moduleOutput = context.moduleOutput
+        presenter.personId = context.personID
 
 		interactor.output = presenter
+        router.viewController = viewController
+
 
         return ProfileModuleContainer(view: viewController, input: presenter, router: router)
 	}
@@ -36,4 +39,5 @@ final class ProfileModuleContainer {
 
 struct ProfileModuleContext {
 	weak var moduleOutput: ProfileModuleModuleOutput?
+    let personID: Int
 }
