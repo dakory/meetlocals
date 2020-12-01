@@ -32,22 +32,23 @@ extension EventScreenPresenter: EventScreenViewOutput {
     }
     
     func singUpForEvent(){
-        interactor.addDataNewMember(eventId: eventId!)
+        interactor.addOrDeleteDataNewMember(eventId: eventId!)
     }
     
     func checkMembership(){
         let check = interactor.checkMembershipData(eventId: eventId!)
-        if check {
-            self.view!.setButtonOff()
-        }
-        else {
-            self.view!.setButtonOn()
-        }
+        self.view!.setButton(check)
     }
     
     func goToOrganizerScreen(){
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID!)
     }
+    
+    func goToVkPresenter(){
+        router.goToVk()
+        
+    }
+    
 
 }
 

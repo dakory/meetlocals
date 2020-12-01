@@ -178,11 +178,11 @@
 		B02DD1340D6D4BB2B2B32D82 /* EventScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				B02DD37C806822870DF7FC65 /* EventScreenRouter.swift */,
 				B02DD7DA8C6E775DD5960674 /* EventScreenContainer.swift */,
 				B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */,
 				B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */,
 				B02DD06CC7A794DE62E89A4C /* EventScreenInteractor.swift */,
+				B02DD37C806822870DF7FC65 /* EventScreenRouter.swift */,
 				B02DD3299F9BF394915149D1 /* EventScreenViewController.swift */,
 			);
 			path = EventScreenModule;
