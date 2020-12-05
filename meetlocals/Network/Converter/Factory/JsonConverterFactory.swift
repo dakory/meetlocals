@@ -9,7 +9,7 @@ class JsonConverterFactory: ConverterFactory {
     let jsonConverters: [Converter]
 
     init() {
-        jsonConverters = [JsonUserArrayConverter(), JsonUserConverter()]
+        jsonConverters = [JsonAppUserConverter()]
     }
 
     func converters() -> [Converter] {

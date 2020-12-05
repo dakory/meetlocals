@@ -6,7 +6,7 @@ import Foundation
 import VK_ios_sdk
 import RxSwift
 
-class Repository {
+class VKRepository {
 
     public func getFriends(_ params: [String: String] = ["fields": "domain", "count": "3"]) -> Observable<VKResponse<VKApiObject>> {
         let vkRequest = VKApi.friends().get(params)

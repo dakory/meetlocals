@@ -8,28 +8,33 @@ import RxSwift
 
 class InteractorImpl: Interactor {
 
-    private let repository = Repository()
-    private let converter = ConverterResolver(fabric: JsonConverterFactory())
+    private let vkRepository = VKRepository()
+    private let appRepository = AppRepository()
+    private let converter = ConverterResolver(fabric: VkConverterFactory())
 
-    func getFriends() -> Observable<[VKUser]> {
-        repository.getFriends()
+    func getVkFriends() -> Observable<[VKUser]> {
+        vkRepository.getFriends()
                 .map { (response: VKResponse<VKApiObject>) in
                     (self.converter.convert(to: [VKUser].self, from: response.json) ?? [VKUser]())
                 }
     }
 
-    func getCurrentUser() -> Observable<VKUser> {
-        repository.getUser()
+    func getVkCurrentUser() -> Observable<VKUser> {
+        vkRepository.getUser()
                 .map { (response: VKResponse<VKApiObject>) in
                     (self.converter.convert(to: VKUser.self, from: response.json) ?? VKUser())
                 }
     }
 
-    func getUser(userId: String) -> Observable<VKUser> {
+    func getVkUser(userId: String) -> Observable<VKUser> {
         let userIdsParam = ["user_ids": userId]
-        return repository.getUser(userIdsParam)
+        return vkRepository.getUser(userIdsParam)
                 .map { (response: VKResponse<VKApiObject>) in
                     (self.converter.convert(to: VKUser.self, from: response.json) ?? VKUser())
                 }
+    }
+
+    func getAppUsers() -> Observable<[AppUser]> {
+        appRepository.getUsers()
     }
 }

@@ -64,6 +64,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appWindow.rootViewController = tabBar
             appWindow.makeKeyAndVisible()
 
+//                    let inter = InteractorImpl()
+//                    inter.getAppUsers().subscribe(
+//                            onNext: { (response: [AppUser]) in
+//                                print("response:")
+//                                print(response)
+//                            }, onError:
+//                    { error in
+//                        print(error)
+//                    }, onCompleted:
+//                    { print("Completed") })
+            let session = URLSession(configuration: .default)
+            var urlRequest = URLRequest(url: URL(string: "http://api.shlyapa.fun/users/1")!)
+
+            urlRequest.httpMethod = "GET"
+            urlRequest.httpBody = Data()
+
+            session.dataTask(with: urlRequest) { (data, response, error) in
+                if let data = data {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print("result:")
+                        print(jsonString)
+                    }
+                }
+            }.resume()
+
             return true
         } else {
             showErrorDialog()

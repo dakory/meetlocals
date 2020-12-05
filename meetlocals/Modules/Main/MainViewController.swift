@@ -88,7 +88,7 @@ class MainView: AutoLayoutView {
             self.promoIconView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -112),
 
             self.welcomeTextView.topAnchor.constraint(equalTo: self.promoIconView
-                    .bottomAnchor, constant: 4),
+                    .bottomAnchor, constant: 28),
             self.welcomeTextView.leadingAnchor.constraint(equalTo: self.promoIconView
                     .leadingAnchor),
             self.welcomeTextView.trailingAnchor.constraint(equalTo: self.promoIconView
@@ -118,8 +118,9 @@ class MainView: AutoLayoutView {
         welcomeTextView.textColor = .gray
 
         authorizeButton.setTitle("Войти через VK", for: .normal)
+        authorizeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         authorizeButton.setTitleColor(.white, for: .normal)
-        authorizeButton.backgroundColor = .blue
+        authorizeButton.backgroundColor = AppColors().vkColor
         authorizeButton.layer.cornerRadius = 24
         authorizeButton.layer.masksToBounds = true
     }
