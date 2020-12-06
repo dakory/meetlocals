@@ -29,7 +29,7 @@ struct EventResponse: Codable {
 }
 
 
-struct Events: Codable {
+struct Events: {
     var listOfEvents: [Event]
 
     mutating func post(list: Event) {

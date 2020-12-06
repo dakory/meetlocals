@@ -102,3 +102,27 @@ final class APIClient {
 //        print(error)
 //    }
 //}
+
+
+// Получение user
+//client.dataTask("users/1") { (result: Result<ProfileResponse, Error>) in
+//    do {
+//        let profileResponse = try result.get()
+//        print(profileResponse.profile)
+//    }
+//    catch {
+//        print(error)
+//    }
+//}
+
+
+// Получение users
+//client.dataTask("users") { (result: Result<ProfilesResponse, Error>) in
+//    do {
+//        let profilesResponse = try result.get()
+//        print(profilesResponse.profiles)
+//    }
+//    catch {
+//        print(error)
+//    }
+//}
