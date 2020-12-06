@@ -16,7 +16,6 @@ extension EventScreenInteractor: EventScreenInteractorInput {
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
         if !Common.events.listOfEvents[indexEvent!].idMembers.contains(Common.myProfile.id) {
             Common.events.listOfEvents[indexEvent!].idMembers.append(Common.myProfile.id)
-            
             }
         else {
             let index = Common.events.listOfEvents[indexEvent!].idMembers.firstIndex(where: { $0 == Common.myProfile.id })

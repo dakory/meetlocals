@@ -14,8 +14,8 @@ extension EventScreenRouter: EventScreenRouterInput {
         vc.navigationController?.pushViewController(containerOrganizerScreen.viewController, animated: true)
     }
     
-    func goToVk() {
-        let vkID = 1
+    func goToVk(id: Int) {
+        let vkID = id
         let appURL = NSURL(string: "vk://vk.com/id\(vkID)")!
         let safariURL = URL(string: "https://vk.com/id\(vkID)")!
 

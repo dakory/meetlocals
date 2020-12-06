@@ -19,7 +19,7 @@ protocol EventScreenViewOutput: class {
     func getData()
     func singUpForEvent()
     func goToOrganizerScreen()
-    func goToVkPresenter()
+    func goToVkPresenter(toOrganizer: Bool, id: Int?)
 }
 
 protocol EventScreenInteractorInput: class {
@@ -34,5 +34,5 @@ protocol EventScreenInteractorOutput: class {
 
 protocol EventScreenRouterInput: class {
     func organizerScreen(vc: EventScreenViewController, organizerID: Int)
-    func goToVk()
+    func goToVk(id: Int)
 }

@@ -44,12 +44,13 @@ extension EventScreenPresenter: EventScreenViewOutput {
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID!)
     }
     
-    func goToVkPresenter(){
-        router.goToVk()
-        
+    func goToVkPresenter(toOrganizer: Bool, id: Int?) {
+        if toOrganizer {
+            router.goToVk(id: organizerID!) }
+        else {
+            router.goToVk(id: id!)
+        }
     }
-    
-
 }
 
 extension EventScreenPresenter: EventScreenInteractorOutput {
