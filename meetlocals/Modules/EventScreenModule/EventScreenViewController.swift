@@ -299,7 +299,7 @@ extension EventScreenViewController: EventScreenViewInput {
 
     
     func setEventAndOrganizerData(_ person: Profile, _ event: Event){
-        nameOfPerson.text = "\(person.name) \(person.surname)"
+        nameOfPerson.text = "\(person.name)"
         nameEvent.text = event.name
         imageOfPerson.image = UIImage(named: person.avatarUrl!)
         labelTime.text = event.date.dayMonthYearFormat()

@@ -76,7 +76,7 @@ class CollectionViewCell: UICollectionViewCell {
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == model.idOrganizer })
         let person = Common.profiles.profiles[indexPerson!]
         EventName.text = model.name
-        UserName.text = "\(person.name) \(person.surname)"
+        UserName.text = "\(person.name)"
         UserImage.image = UIImage(named: person.avatarUrl!)
         eventId = model.id
     }

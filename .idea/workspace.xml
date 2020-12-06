@@ -21,21 +21,18 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/app_user_request" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/meetlocals/Model/AppUsers.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Model/AppUser.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Model/AppUser.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/ConverterResolver.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Common/ConverterResolver.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/Json/JsonAppUserConverter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/Json/JsonAppUserConverter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Interactor/InteractorImpl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Interactor/InteractorImpl.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Repository/AppRepository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Repository/AppRepository.swift" afterDir="false" />
+    <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="Добавил стартовый экран&#10;Поправил работу с vkApi">
+      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Common.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Common.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Events.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Events.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/EventScreenModule/EventScreenViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/EventScreenModule/EventScreenViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/OrganizerScreenModule/OrganizerScreenViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/OrganizerScreenModule/OrganizerScreenViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModuleViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModuleViewController.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +53,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="meetlocals-30-B02DD3AAE5347974BF2B3DB0-iphoneos14.2:null:14.2-arm64" />
@@ -183,13 +181,28 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="app_user_request" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="app_user_request" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -223,10 +236,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1606945385001" />
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1606120648963">
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1607261131977">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648963" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261131977" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.23.1680.975@0.23.1680.975" timestamp="1603554769697" />
     <state width="1638" height="352" key="GridCell.Tab.0.bottom" timestamp="1607257328158">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -280,32 +293,32 @@
     <state width="1638" height="358" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1607018527616" />
     <state width="1638" height="358" key="GridCell.Tab.1.right/0.23.1680.973@0.23.1680.973" timestamp="1606931526955" />
     <state width="1638" height="451" key="GridCell.Tab.1.right/0.23.1680.975@0.23.1680.975" timestamp="1604237223565" />
-    <state x="86" y="53" key="MergeDialog" timestamp="1606053035921">
+    <state x="86" y="53" key="MergeDialog" timestamp="1607261220739">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="86" y="53" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606053035921" />
-    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog" timestamp="1606053035954">
+    <state x="86" y="53" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261220739" />
+    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog" timestamp="1607261183788">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606053035954" />
+    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261183788" />
     <state width="600" height="400" key="NewXcodeProjectWizard" timestamp="1602673334292">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state width="600" height="400" key="NewXcodeProjectWizard/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673334292" />
-    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1605179623631">
+    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1607261061341">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1605179623631" />
+    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261061341" />
     <state x="469" y="121" key="SettingsEditor" timestamp="1605262902368">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="469" y="121" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1605262902368" />
     <state x="341" y="70" key="SettingsEditor/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673186656" />
     <state x="469" y="135" key="SettingsEditor/0.23.1680.975@0.23.1680.975" timestamp="1603986699282" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1607198702138">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1607261134929">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1607198702138" />
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1607261134929" />
     <state x="553" y="128" width="604" height="735" key="find.popup" timestamp="1606931276699">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -314,10 +327,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605263493296" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1607257047524">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1607261083448">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1607257047524" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1607261083448" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.973@0.23.1680.973" timestamp="1606123813098" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604228510784">
       <screen x="0" y="0" width="1680" height="1050" />
