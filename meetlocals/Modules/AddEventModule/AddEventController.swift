@@ -53,7 +53,11 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width,
-                                        height: UIScreen.main.bounds.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom)
+                                        height: 519)
+        let distance = scrollView.convert(textEventDescription.frame.origin, to: buttonAddEvent).y + 84
+        if distance > 0 {
+            scrollView.contentSize.height += distance
+        }
     }
 }
 
@@ -235,9 +239,8 @@ private extension AddEventViewController {
                 UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
                     self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
     }, completion: nil)
-            let distance = scrollView.convert(textEventDescription.frame.origin, to: buttonAddEvent).y - textEventDescription.frame.height - 40
-            scrollView.contentSize.height += (deltaY < 0 ? -distance:
-                distance)
+            scrollView.contentSize.height -= deltaY
+            
         }
     }
 }
