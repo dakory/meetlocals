@@ -30,6 +30,7 @@
 		B02DD7B17195E6966C867A99 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDADAD066A4A034BA565 /* VkDelegate.swift */; };
 		B02DD7CC910E371FE27D69B6 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */; };
 		B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */; };
+		B02DD7DAB74F1C83EF63A9BE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0028F3096E27C9B859E /* APIClient.swift */; };
 		B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD45266B8FD7BC61668C0 /* Common.swift */; };
 		B02DD7F0501837F5FD655A0F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFFE3F08F0CA548D08CF /* Events.swift */; };
 		B02DD7FCC572870FF3A84DE8 /* EventListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02DD0028F3096E27C9B859E /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Network/APIClient.swift; sourceTree = "<group>"; };
 		B02DD02EB32769A16BDE545F /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD030DDA0225B9D39474F /* EventListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListContainer.swift; sourceTree = "<group>"; };
 		B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				C2A4F3404249511A7E162C19 /* JsonConverterFactory.swift */,
 				C2A4F07805FB243A5DCC6E9D /* JsonUserConverter.swift */,
 				C2A4FE6B1567758460773090 /* Contents.json */,
+				B02DD0028F3096E27C9B859E /* APIClient.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
+				B02DD7DAB74F1C83EF63A9BE /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

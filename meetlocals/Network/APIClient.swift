@@ -4,7 +4,7 @@
 
 import Foundation
 
-class APIClient {
+final class APIClient {
 
     private let session = URLSession(configuration: .default)
 
@@ -19,8 +19,10 @@ class APIClient {
 
     private let jsonDecoder: JSONDecoder = {
         let result = JSONDecoder()
-        result.keyDecodingStrategy = .convertFromSnakeCase
 
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        result.dateDecodingStrategy = .formatted(dateFormatter)
 
 
         return result
@@ -42,7 +44,7 @@ class APIClient {
             } else if let data = data {
                 do {
                     //let result = try self.jsonDecoder.decode(T.self, from: data)
-                    //print(String(data: data, encoding: .utf8))
+//                    print(String(data: data, encoding: .utf8))
                     let result = try self.jsonDecoder.decode(T.self, from: data)
 
                     DispatchQueue.main.async {
@@ -75,10 +77,28 @@ class APIClient {
     }
 }
 
-
-// Пользоваться так:
 //let client = APIClient()
 
-//client.dataTask("events/1") { (result: Result<EventApiWrapper, Error>) in
-//    print(result)
+
+// Получение event
+//client.dataTask("events/1") { (result: Result<EventResponse, Error>) in
+//    do {
+//        let eventResponse = try result.get()
+//        print(eventResponse.event)
+//    }
+//    catch {
+//        print(error)
+//    }
+//}
+
+
+// Получение events
+//client.dataTask("events") { (result: Result<EventsResponse, Error>) in
+//    do {
+//        let eventsResponse = try result.get()
+//        print(eventsResponse.events)
+//    }
+//    catch {
+//        print(error)
+//    }
 //}

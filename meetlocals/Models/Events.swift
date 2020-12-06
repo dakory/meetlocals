@@ -1,17 +1,5 @@
 import Foundation
 
-struct Events: Codable {
-    var listOfEvents: [Event]
-
-    mutating func post(list: Event) {
-        self.listOfEvents.append(list)
-    }
-}
-
-struct EventApiWrapper: Codable {
-    let event: Event
-}
-
 struct Event: Codable {
     let id: Int
     let idOrganizer: Int
@@ -22,6 +10,37 @@ struct Event: Codable {
     let date: Date
 
     private enum CodingKeys : String, CodingKey {
-        case id = "_id", idOrganizer = "organizer_id", idMembers = "members", name, description, place = "location", date
+        case id = "_id"
+        case idOrganizer = "organizer_id"
+        case idMembers = "members"
+        case name
+        case description
+        case place = "location"
+        case date
+    }
+}
+
+struct EventResponse: Codable {
+    let event: Event
+
+    private enum CodingKeys : String, CodingKey {
+        case event
+    }
+}
+
+
+struct Events: Codable {
+    var listOfEvents: [Event]
+
+    mutating func post(list: Event) {
+        self.listOfEvents.append(list)
+    }
+}
+
+struct EventsResponse: Codable {
+    let events: [Event]
+
+    private enum CodingKeys : String, CodingKey {
+        case events
     }
 }
