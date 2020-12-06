@@ -27,33 +27,33 @@ class AppUser: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.id, forKey: .id)
+        try container.encode(self.id, forKey: ._id)
         try container.encode(self.name, forKey: .name)
         try container.encode(self.avatarUrl, forKey: .avatar_url)
         try container.encode(self.location, forKey: .location)
         try container.encode(self.description, forKey: .description)
-        try container.encode(self.memberEventsList, forKey: .is_member_events)
-        try container.encode(self.organizerEventsList, forKey: .is_organizer_events)
+        try container.encode(self.memberEventsList, forKey: .is_member__events)
+        try container.encode(self.organizerEventsList, forKey: .is_organizer__events)
     }
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
+        self.id = try container.decode(Int.self, forKey: ._id)
         self.name = try container.decode(String.self, forKey: .name)
         self.avatarUrl = try container.decode(String.self, forKey: .avatar_url)
         self.location = try container.decode(String.self, forKey: .location)
         self.description = try container.decode(String.self, forKey: .description)
-        self.memberEventsList = try container.decode([UInt64].self, forKey: .is_member_events)
-        self.organizerEventsList = try container.decode([UInt64].self, forKey: .is_organizer_events)
+        self.memberEventsList = try container.decode([UInt64].self, forKey: .is_member__events)
+        self.organizerEventsList = try container.decode([UInt64].self, forKey: .is_organizer__events)
     }
 }
 
-private enum CodingKeys: String, CodingKey {
-    case id
+enum CodingKeys: String, CodingKey {
+    case _id
     case name
     case avatar_url
     case location
     case description
-    case is_member_events
-    case is_organizer_events
+    case is_member__events
+    case is_organizer__events
 }

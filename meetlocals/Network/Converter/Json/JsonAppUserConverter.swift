@@ -12,7 +12,8 @@ class JsonAppUserConverter: Converter {
 
     func convert<To>(_ from: String) -> To {
         let data = from.data(using: .utf8)
-        let users: [AppUser] = try! JSONDecoder().decode([AppUser].self, from: data!)
-        return users as! To
+        print(from)
+        let usersList: AppUsers = try! JSONDecoder().decode(AppUsers.self, from: data!)
+        return usersList.users as! To
     }
 }

@@ -67,6 +67,7 @@
 		C2A4F9BF26F60BF08177BF5F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */; };
 		C2A4FAA04918454F915F7B91 /* VkConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */; };
 		C2A4FB217ADCC5A98ECE11F1 /* VKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* VKRepository.swift */; };
+		C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F46A3755194B571EB5B7 /* AppUsers.swift */; };
 		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
 		C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */; };
 		C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F2D4A6FC78DDEA38A646 /* AppRepository.swift */; };
@@ -137,6 +138,7 @@
 		C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkConverterFactory.swift; path = Network/Converter/Factory/VkConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F42526DC0B4EF836DCBD /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = Network/Interactor/Interactor.swift; sourceTree = "<group>"; };
 		C2A4F43E9153ECE4DD515B75 /* NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetError.swift; path = Network/Error/NetError.swift; sourceTree = "<group>"; };
+		C2A4F46A3755194B571EB5B7 /* AppUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUsers.swift; path = Model/AppUsers.swift; sourceTree = "<group>"; };
 		C2A4F5105AFFD5FE1E7C214E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Network/Converter/Common/Converter.swift; sourceTree = "<group>"; };
 		C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterFactory.swift; path = Network/Converter/Common/ConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStringArrayCreator.swift; path = Network/Converter/ArrayCreator/UserStringArrayCreator.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */,
 				C2A4FEB4026601ACCC5D553B /* VkUserArrayConverter.swift */,
 				C2A4F146380F7A5519E8AE0F /* JsonAppUserConverter.swift */,
+				C2A4F46A3755194B571EB5B7 /* AppUsers.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				C2A4F54791E49E02A80D8F97 /* VkUserConverter.swift in Sources */,
 				C2A4F4A90BE28EF0721B98E3 /* VkUserArrayConverter.swift in Sources */,
 				C2A4F1488B5A9DAB32F4618F /* JsonAppUserConverter.swift in Sources */,
+				C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
