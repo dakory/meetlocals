@@ -216,7 +216,7 @@ final class APIClient {
     }
 }
 
-let client = APIClient()
+// let client = APIClient()
 
 
 // Получение event
