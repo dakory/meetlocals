@@ -21,6 +21,7 @@ extension OrganizerScreenPresenter: OrganizerScreenModuleInput {
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenViewOutput {
+    
     func getData(){
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})
         let organizer = Common.profiles.profiles[indexPerson!]

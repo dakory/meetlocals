@@ -1,25 +1,6 @@
-import UIKit
+import Foundation
 
-struct Events {
-    var listOfEvents: [Event]
-
-    mutating func post(list: Event) {
-        self.listOfEvents.append(list)
-    }
-}
-
-
-//struct EventDaniil {
-//    let id: Int
-//    let idOrganizer: Int
-//    let idMembers: [Int]
-//    let description: String
-//    let place: String
-//    let date: String
-//}
-
-// Оставил вариант Сони, чтобы ничего не сломалось в EventScreenModule
-struct Event {
+struct Event: Codable {
     let id: Int
     let idOrganizer: Int
     var idMembers: [Int]
@@ -27,7 +8,39 @@ struct Event {
     let description: String
     let place: String
     let date: Date
-//    let userName: String
-//    let eventName: String
-//    let userImage: String
+
+    private enum CodingKeys : String, CodingKey {
+        case id = "_id"
+        case idOrganizer = "organizer_id"
+        case idMembers = "members"
+        case name
+        case description
+        case place = "location"
+        case date
+    }
+}
+
+struct EventResponse: Codable {
+    let event: Event
+
+    private enum CodingKeys : String, CodingKey {
+        case event
+    }
+}
+
+
+struct Events: {
+    var listOfEvents: [Event]
+
+    mutating func post(list: Event) {
+        self.listOfEvents.append(list)
+    }
+}
+
+struct EventsResponse: Codable {
+    let events: [Event]
+
+    private enum CodingKeys : String, CodingKey {
+        case events
+    }
 }

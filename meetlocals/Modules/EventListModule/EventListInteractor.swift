@@ -19,15 +19,15 @@ extension EventListInteractor: EventListInteractorInput {
         
         
         if type == .common {
-            self.output?.didLoad(events: Common.events.listOfEvents)
+            self.output?.didLoad(events: Common.events.listOfEvents.reversed())
         }
         else if type == .participating {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}))
+                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}).reversed())
         }
         else if type == .organizing {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}))
+                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).reversed())
         }
     }
 }

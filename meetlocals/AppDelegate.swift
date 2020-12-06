@@ -48,19 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let addEventContainer = AddEventContainer.assemble(with: addEventContext)
             let addEventNavigationController = UINavigationController(rootViewController: addEventContainer.viewController)
 
-            let organizerScreenContext = OrganizerScreenContext(moduleOutput: nil, personID: Common.myProfile.id)
-            let organizerScreenContainer = OrganizerScreenContainer.assemble(with: organizerScreenContext)
-            let organizerScreeNavigationController = UINavigationController(rootViewController: organizerScreenContainer.viewController)
+//            let organizerScreenContext = OrganizerScreenContext(moduleOutput: nil, personID: Common.myProfile.id)
+//            let organizerScreenContainer = OrganizerScreenContainer.assemble(with: organizerScreenContext)
+//            let organizerScreeNavigationController = UINavigationController(rootViewController: organizerScreenContainer.viewController)
 
+            let profileModuleContext = ProfileModuleContext(moduleOutput: nil, personID: Common.myProfile.id)
+            let profileModuleContainer = ProfileModuleContainer.assemble(with: profileModuleContext)
+            let profileModuleNavigationController = UINavigationController(rootViewController: profileModuleContainer.viewController)
             let tabBar = UITabBarController()
 
             eventListContainer.viewController.loadViewIfNeeded()
             organizingListContainer.viewController.loadViewIfNeeded()
             participatingListContainer.viewController.loadViewIfNeeded()
             addEventContainer.viewController.loadViewIfNeeded()
-            organizerScreenContainer.viewController.loadViewIfNeeded()
+            profileModuleContainer.viewController.loadViewIfNeeded()
 
-            tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, organizerScreeNavigationController], animated: true)
+            tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
 
             appWindow.rootViewController = tabBar
             appWindow.makeKeyAndVisible()

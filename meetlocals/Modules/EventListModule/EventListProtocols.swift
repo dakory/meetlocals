@@ -23,7 +23,6 @@ protocol EventListViewInput: class {
 
 protocol EventListViewOutput: class {
     func viewDidLoad()
- //   func didTabAddEvent()
     func didTabEvent(meetingID: Int)
 }
 
@@ -37,6 +36,5 @@ protocol EventListInteractorOutput: class {
 
 protocol EventListRouterInput: class {
     func goToEventScreen(vc: EventListController, meetingID: Int)
-  //  func showAddEvent()
 }
 

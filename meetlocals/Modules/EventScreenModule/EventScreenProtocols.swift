@@ -10,8 +10,7 @@ protocol EventScreenModuleOutput: class {
 
 protocol EventScreenViewInput: class {
     func setEventAndOrganizerData(_ person: Profile, _ event: Event)
-    func setButtonOn()
-    func setButtonOff()
+    func setButton(_: Bool)
 
 }
 
@@ -20,11 +19,12 @@ protocol EventScreenViewOutput: class {
     func getData()
     func singUpForEvent()
     func goToOrganizerScreen()
+    func goToVkPresenter()
 }
 
 protocol EventScreenInteractorInput: class {
     func getInfoOfEvent(eventId: Int) -> Event
-    func addDataNewMember(eventId: Int)
+    func addOrDeleteDataNewMember(eventId: Int)
     func getInfoOrganizer(id: Int) -> Profile
     func checkMembershipData(eventId: Int) -> Bool
 }
@@ -34,4 +34,5 @@ protocol EventScreenInteractorOutput: class {
 
 protocol EventScreenRouterInput: class {
     func organizerScreen(vc: EventScreenViewController, organizerID: Int)
+    func goToVk()
 }

@@ -9,6 +9,8 @@
 import Foundation
 
 final class ProfileModulePresenter {
+    var personId: Int?
+    
 	weak var view: ProfileModuleViewInput?
     weak var moduleOutput: ProfileModuleModuleOutput?
     
@@ -25,6 +27,15 @@ extension ProfileModulePresenter: ProfileModuleModuleInput {
 }
 
 extension ProfileModulePresenter: ProfileModuleViewOutput {
+    func didTapButtonExit() {
+        self.router.exit()
+    }
+    
+    func getData(){
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})
+        let person = Common.profiles.profiles[indexPerson!]
+        self.view!.setProfileData(person: person)
+    }
 }
 
 extension ProfileModulePresenter: ProfileModuleInteractorOutput {

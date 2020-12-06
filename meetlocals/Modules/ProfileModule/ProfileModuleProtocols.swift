@@ -16,9 +16,12 @@ protocol ProfileModuleModuleOutput: class {
 }
 
 protocol ProfileModuleViewInput: class {
+    func setProfileData(person: Profile)
 }
 
 protocol ProfileModuleViewOutput: class {
+    func didTapButtonExit()
+    func getData()
 }
 
 protocol ProfileModuleInteractorInput: class {
@@ -28,4 +31,5 @@ protocol ProfileModuleInteractorOutput: class {
 }
 
 protocol ProfileModuleRouterInput: class {
+    func exit()
 }

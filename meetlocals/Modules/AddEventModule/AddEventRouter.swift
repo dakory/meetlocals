@@ -20,17 +20,8 @@ extension AddEventRouter: AddEventRouterInput {
             viewController?.present(alertController, animated: true)
             return
         }
-        else if (date as NSDate).timeIntervalSinceNow.sign == .minus {
-                let alertController = UIAlertController(title: "Ошибка", message: "Вы не можете создавать событие в прошлом", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "Ок", style: .default)
-                )
-                viewController?.present(alertController, animated: true)
-                return
-        }
         
-        
-        
-        // TODO: переносить данные в бд, обновлять экран событий
+
         else {
             Common.events.listOfEvents.append(Event(id: 3, idOrganizer: Common.myProfile.id, idMembers: [3], name: name, description: description, place: place, date: date))
             

@@ -1,4 +1,6 @@
 import Foundation
+import UIKit
+
 
 final class EventScreenInteractor {
     weak var output: EventScreenInteractorOutput?
@@ -10,11 +12,17 @@ extension EventScreenInteractor: EventScreenInteractorInput {
 
     
 
-    func addDataNewMember(eventId: Int) {
+    func addOrDeleteDataNewMember(eventId: Int) {
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
         if !Common.events.listOfEvents[indexEvent!].idMembers.contains(Common.myProfile.id) {
             Common.events.listOfEvents[indexEvent!].idMembers.append(Common.myProfile.id)
+            
             }
+        else {
+            let index = Common.events.listOfEvents[indexEvent!].idMembers.firstIndex(where: { $0 == Common.myProfile.id })
+            Common.events.listOfEvents[indexEvent!].idMembers.remove(at: index!)
+        }
+        print(Common.events.listOfEvents[indexEvent!].idMembers)
     }
     
     func checkMembershipData(eventId: Int) -> Bool {
@@ -26,7 +34,6 @@ extension EventScreenInteractor: EventScreenInteractorInput {
             return false
         }
     }
-    
     
     func getInfoOfEvent(eventId: Int) -> Event {
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
