@@ -46,26 +46,30 @@ class CollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.addSubview(UserImage)
-        UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-        UserImage.bottomAnchor.constraint(equalTo: UserImage.topAnchor, constant: height).isActive = true
-        UserImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
-        UserImage.trailingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height).isActive = true
-        UserImage.layer.cornerRadius = height / 2
-        
-        
-        contentView.addSubview(UserName)
-        UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-        UserName.leadingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height + 16).isActive = true
-        UserName.bottomAnchor.constraint(equalTo: UserName.topAnchor, constant: 15).isActive = true
-        UserName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        
-        
         contentView.addSubview(EventName)
-        EventName.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 5).isActive = true
-        EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15).isActive = true
-        EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -21).isActive = true
-        EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        contentView.addSubview(UserName)
+        
+        UserImage.layer.cornerRadius = height / 2
         EventName.numberOfLines = 0
+        
+        [
+        UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+        UserImage.bottomAnchor.constraint(equalTo: UserImage.topAnchor, constant: height),
+        UserImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+        UserImage.trailingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height),
+        UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+        UserName.leadingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height + 16),
+        UserName.bottomAnchor.constraint(equalTo: UserName.topAnchor, constant: 15),
+        UserName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+        
+        
+
+        EventName.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 5),
+        EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15),
+        EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -21),
+        EventName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+        ].forEach({$0.isActive = true})
+        
     }
     
     required init?(coder: NSCoder) {

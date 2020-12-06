@@ -10,20 +10,17 @@ import UITextView_Placeholder
 
 final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let output: AddEventViewOutput
-    private let wantLabel = UILabel()
+    private let eventNameLabel = UILabel()
     private let textEventName = UITextView()
-    private let textEventDescription = UITextView()
+    private let dateTimeLabel = UILabel()
     private let textDate = UIDatePicker()
-    private let dateLabel = UILabel()
     private let placeLabel = UILabel()
     private let placeText = UITextView()
+    private let textEventLabel = UILabel()
+    private let textEventDescription = UITextView()
     private let buttonAddEvent = UIButton()
-    private let scrollView: UIScrollView = {
-        var scrollView: UIScrollView!
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0,width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        return scrollView
-    }()
-
+    private let scrollView = UIScrollView()
+    
     init(output: AddEventViewOutput) {
         self.output = output
         
@@ -55,7 +52,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
 
     
     override func viewDidAppear(_ animated: Bool) {
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 50)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width,
+                                        height: UIScreen.main.bounds.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom)
     }
 }
 
@@ -72,132 +70,152 @@ extension AddEventViewController: AddEventViewInput {
 
 private extension AddEventViewController {
     func addAll(_ view: UIView) {
-        scrollView.addSubview(wantLabel)
+        scrollView.addSubview(eventNameLabel)
         scrollView.addSubview(textEventName)
-        scrollView.addSubview(textEventDescription)
+        scrollView.addSubview(dateTimeLabel)
         scrollView.addSubview(textDate)
-        scrollView.addSubview(dateLabel)
-        scrollView.addSubview(placeText)
         scrollView.addSubview(placeLabel)
+        scrollView.addSubview(textEventLabel)
+        scrollView.addSubview(textEventDescription)
+        scrollView.addSubview(placeText)
         view.addSubview(scrollView)
         view.addSubview(buttonAddEvent)
-        view.layoutIfNeeded()
     }
     func setupAll() {
-        setupTextEventName()
-        setupwandLabel()
-        setupTextEventDescription()
-        setupDateLabel()
-        setupDateText()
-        setupPlaceLabel()
-        setupPlaceText()
-        setupButtonAddEvent()
-        
-    }
-    func setupwandLabel() {
-        wantLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20).isActive = true
-        wantLabel.bottomAnchor.constraint(equalTo: wantLabel.topAnchor, constant: 30).isActive = true
-        wantLabel.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor, constant: 15).isActive = true
-        wantLabel.trailingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 55).isActive = true
-        wantLabel.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        [
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top),
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+        ].forEach({$0.isActive = true})
         
         
-        wantLabel.text = "Я хочу"
-    }
-    
-    func setupTextEventName() {
-        textEventName.topAnchor.constraint(equalTo: wantLabel.topAnchor, constant: 0).isActive = true
-        textEventName.bottomAnchor.constraint(equalTo: wantLabel.bottomAnchor, constant: 30).isActive = true
-        textEventName.leadingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 15).isActive = true
-        textEventName.trailingAnchor.constraint(equalTo: self.scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
+        
+        eventNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        eventNameLabel.font.withSize(14)
+        eventNameLabel.textColor = #colorLiteral(red: 0.329372257, green: 0.3294344842, blue: 0.3293683231, alpha: 1)
+        eventNameLabel.text = "Название"
+        
+        [
+        eventNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+        eventNameLabel.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: 39),
+        eventNameLabel.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+        eventNameLabel.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+        ].forEach({$0.isActive = true})
+        
         textEventName.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        textEventName.backgroundColor = #colorLiteral(red: 0.9026893973, green: 0.8979343176, blue: 0.8978550434, alpha: 1)
+        textEventName.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventName.font = .systemFont(ofSize: 20)
-        textEventName.placeholder = "Опишите кратко"
+        textEventName.placeholder = "Поездка на велосипеде"
         textEventName.delegate = self
-        textEventName.layer.cornerRadius = 10.0
-    }
-    
-    func setupTextEventDescription() {
-        textEventDescription.topAnchor.constraint(equalTo: textEventName.bottomAnchor, constant: 40).isActive = true
-        textEventDescription.bottomAnchor.constraint(equalTo: textEventDescription.topAnchor, constant: 200).isActive = true
-        textEventDescription.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
-        textEventDescription.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
-        textEventDescription.translatesAutoresizingMaskIntoConstraints = false
+        textEventName.layer.cornerRadius = 15
+        [
+        textEventName.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 8),
+        textEventName.bottomAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 54),
+        textEventName.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        textEventName.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
+        ].forEach({$0.isActive = true})
+        textEventName.textContainer.maximumNumberOfLines = 5
+        textEventName.textContainer.lineBreakMode = .byTruncatingTail
         
         
-        textEventDescription.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
-        textEventDescription.delegate = self
-        textEventDescription.font = .systemFont(ofSize: 20)
-        textEventDescription.placeholder = "А здесь подробнее"
-        textEventDescription.becomeFirstResponder()
-        textEventDescription.layer.cornerRadius = 10.0
-    }
-    
-    func setupDateText() {
-        textDate.topAnchor.constraint(equalTo: textEventDescription.bottomAnchor, constant: 15).isActive = true
-        textDate.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: 30).isActive = true
-        textDate.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
-        textDate.leadingAnchor.constraint(equalTo: textEventName.leadingAnchor, constant: 0).isActive = true
+        dateTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateTimeLabel.font.withSize(14)
+        dateTimeLabel.textColor = #colorLiteral(red: 0.3236899972, green: 0.3337572813, blue: 0.3291268349, alpha: 1)
+        dateTimeLabel.text = "Дата и время"
+        [
+        dateTimeLabel.topAnchor.constraint(equalTo: textEventName.bottomAnchor, constant: 28),
+        dateTimeLabel.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        dateTimeLabel.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
+        dateTimeLabel.bottomAnchor.constraint(equalTo: textEventName.bottomAnchor, constant: 47),
+        ].forEach({$0.isActive = true})
+
+        
+        
         textDate.translatesAutoresizingMaskIntoConstraints = false
+        textDate.locale = Locale(identifier: "ru_RU")
+        textDate.datePickerMode = .dateAndTime
+        textDate.preferredDatePickerStyle = .wheels
+        [
+        textDate.topAnchor.constraint(equalTo: dateTimeLabel.bottomAnchor, constant: 8),
+        textDate.bottomAnchor.constraint(equalTo: dateTimeLabel.bottomAnchor, constant: 100),
+        textDate.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        textDate.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
+        ].forEach({$0.isActive = true})
+        textDate.layer.cornerRadius = 15
         
-        textDate.minimumDate = { () -> Date in
-            let calendar = Calendar(identifier: .gregorian)
-            var components = DateComponents()
-            components.hour = 1
-            let minDate = calendar.date(byAdding: components, to: Date())
-            return minDate!
-        }()
-        textDate.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
-    }
-    
-    func setupDateLabel() {
-        dateLabel.topAnchor.constraint(equalTo: textDate.topAnchor, constant: 0).isActive = true
-        dateLabel.bottomAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 0).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 0).isActive = true
-        dateLabel.text = "Когда?"
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func setupPlaceLabel() {
-        placeLabel.topAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 15).isActive = true
-        placeLabel.bottomAnchor.constraint(equalTo: placeLabel.topAnchor, constant: 30).isActive = true
-        placeLabel.leadingAnchor.constraint(equalTo: wantLabel.leadingAnchor, constant: 0).isActive = true
-        placeLabel.trailingAnchor.constraint(equalTo: wantLabel.trailingAnchor, constant: 0).isActive = true
         placeLabel.translatesAutoresizingMaskIntoConstraints = false
-        placeLabel.text = "Где?"
-        placeText.placeholder = "Место"
-    }
-    
-    func setupPlaceText() {
-        placeText.topAnchor.constraint(equalTo: placeLabel.topAnchor, constant: 0).isActive = true
-        placeText.bottomAnchor.constraint(equalTo: placeText.topAnchor, constant: 75).isActive = true
-        placeText.trailingAnchor.constraint(equalTo: textEventName.trailingAnchor, constant: 0).isActive = true
-        placeText.leadingAnchor.constraint(equalTo: textEventName.leadingAnchor, constant: 0).isActive = true
-        
+        placeLabel.font.withSize(14)
+        placeLabel.textColor = #colorLiteral(red: 0.329372257, green: 0.3294344842, blue: 0.3293683231, alpha: 1)
+        placeLabel.text = "Местоположение"
+        [
+        placeLabel.topAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 28),
+        placeLabel.bottomAnchor.constraint(equalTo: textDate.bottomAnchor, constant: 28 + 19),
+        placeLabel.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        placeLabel.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
+        ].forEach({$0.isActive = true})
+
         
         placeText.translatesAutoresizingMaskIntoConstraints = false
-        placeText.delegate = self
+        placeText.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         placeText.font = .systemFont(ofSize: 20)
-        placeText.layer.cornerRadius = 10.0
-        placeText.becomeFirstResponder()
-        placeText.backgroundColor =  #colorLiteral(red: 0.9035104513, green: 0.8938501477, blue: 0.8938568234, alpha: 1)
+        placeText.placeholder = "г. Москва, Парк Лосиный остров, главный вход"
+        placeText.delegate = self
+        placeText.layer.cornerRadius = 15
+        [
+        placeText.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 8),
+        placeText.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        placeText.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
+        placeText.bottomAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 54)
+        ].forEach({$0.isActive = true})
+        placeText.textContainer.maximumNumberOfLines = 2
+        placeText.textContainer.lineBreakMode = .byTruncatingTail
         
-    }
-    func setupButtonAddEvent() {
+        
+        textEventLabel.translatesAutoresizingMaskIntoConstraints = false
+        textEventLabel.font.withSize(14)
+        textEventLabel.textColor = #colorLiteral(red: 0.329372257, green: 0.3294344842, blue: 0.3293683231, alpha: 1)
+        textEventLabel.text = "Описание"
+        [
+        textEventLabel.topAnchor.constraint(equalTo: placeText.bottomAnchor, constant: 28),
+        textEventLabel.bottomAnchor.constraint(equalTo: textEventLabel.topAnchor, constant: 19),
+        textEventLabel.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        textEventLabel.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
+        ].forEach({$0.isActive = true})
+        
+        
+
+        
+        textEventDescription.translatesAutoresizingMaskIntoConstraints = false
+        textEventDescription.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
+        textEventDescription.font = .systemFont(ofSize: 20)
+        textEventDescription.placeholder = "Супер мероприятие, бери свой байк и присоединяйся ко мне :)"
+        textEventDescription.delegate = self
+        textEventDescription.layer.cornerRadius = 15
+        [
+        textEventDescription.topAnchor.constraint(equalTo: textEventLabel.bottomAnchor, constant: 8),
+        textEventDescription.bottomAnchor.constraint(equalTo: textEventDescription.topAnchor, constant: 92),
+        textEventDescription.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
+        textEventDescription.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
+        ].forEach({$0.isActive = true})
+        textEventDescription.textContainer.maximumNumberOfLines = 15
+        textEventDescription.textContainer.lineBreakMode = .byTruncatingTail
+        
+        
         buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
-        buttonAddEvent.backgroundColor = .blue
-        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 35).isActive = true
-        buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -35).isActive = true
+        buttonAddEvent.backgroundColor = #colorLiteral(red: 0.2197580338, green: 0.4078575969, blue: 0.901501596, alpha: 1)
         buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
         buttonAddEvent.layer.cornerRadius = 20
         buttonAddEvent.setTitle("Добавить", for: .normal)
-
         buttonAddEvent.clipsToBounds = true
+        [
+        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+        buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79),
+        buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
+        buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -37)
+        ].forEach({$0.isActive = true})
     }
 
     @objc
@@ -214,13 +232,28 @@ private extension AddEventViewController {
         let endFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let deltaY = endFrame.origin.y - beginningFrame.origin.y
         if (deltaY != 0) {
-        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
-//            self.scrollView.contentSize.height -= deltaY
-            self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
-            self.view.layoutIfNeeded()
+                UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
+                    self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
     }, completion: nil)
+            let distance = scrollView.convert(textEventDescription.frame.origin, to: buttonAddEvent).y - textEventDescription.frame.height - 40
+            scrollView.contentSize.height += (deltaY < 0 ? -distance:
+                distance)
         }
-        self.view.layoutIfNeeded()
     }
 }
+
+//extension AddEventViewController {
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        realOrigin = 0
+//        self.scrollView.frame.origin.y = 0
+//    }
+//
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        realOrigin = scrollView.convert(textView.frame.origin, to: scrollView).y -
+//            scrollView.convert(placeText.frame.origin, to: scrollView).y
+//        if realOrigin > 0 {
+//    self.scrollView.frame.origin.y =  -realOrigin
+//        }
+//    }
+//}
 

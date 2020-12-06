@@ -67,39 +67,38 @@ final class ProfileModuleViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             
+        
+            imageOfPerson.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 229),
+            imageOfPerson.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -60),
+            imageOfPerson.trailingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 60),
+            imageOfPerson.bottomAnchor.constraint(equalTo: imageOfPerson.topAnchor, constant: 120),
+        
+            nameOfPerson.topAnchor.constraint(equalTo: imageOfPerson.bottomAnchor, constant: 26),
+            nameOfPerson.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            nameOfPerson.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            nameOfPerson.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            buttonExit.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+            buttonExit.topAnchor.constraint(equalTo: buttonExit.bottomAnchor, constant: -47),
+            buttonExit.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
+            buttonExit.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37)
         ].forEach({
-            $0.isActive = true
+                    $0.isActive = true
         })
-    
+        
         imageOfPerson.contentMode = .scaleAspectFill
         imageOfPerson.layer.cornerRadius = 35
         imageOfPerson.clipsToBounds = true
-        
-        
-        
+            
+            
+            
         nameOfPerson.font = nameOfPerson.font.withSize(16)
         nameOfPerson.numberOfLines = 0
-
-            
-        imageOfPerson.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 229).isActive = true
-        imageOfPerson.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -60).isActive = true
-        imageOfPerson.trailingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 60).isActive = true
-        imageOfPerson.bottomAnchor.constraint(equalTo: imageOfPerson.topAnchor, constant: 120).isActive = true
-        
-        nameOfPerson.topAnchor.constraint(equalTo: imageOfPerson.bottomAnchor, constant: 26).isActive = true
-        nameOfPerson.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        nameOfPerson.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        nameOfPerson.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
         nameOfPerson.textAlignment = NSTextAlignment.center
         
         buttonExit.setTitle("Выйти", for: .normal)
         buttonExit.titleLabel?.font.withSize(17)
         buttonExit.backgroundColor = #colorLiteral(red: 0.9139195085, green: 0.2209282517, blue: 0.7613213658, alpha: 1)
-        
-        buttonExit.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32).isActive = true
-        buttonExit.topAnchor.constraint(equalTo: buttonExit.bottomAnchor, constant: -47).isActive = true
-        buttonExit.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37).isActive = true
-        buttonExit.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37).isActive = true
         buttonExit.layer.cornerRadius = 24
         buttonExit.addTarget(self, action: #selector(didTapButtonExit), for: .touchUpInside)
     }
