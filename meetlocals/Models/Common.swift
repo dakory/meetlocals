@@ -15,9 +15,9 @@ class Common: NSObject { //какие-то данные с БД
 
     
     class func generateProfilesData() {
-        let profile0 = Profile(id: 3, name: "Дмитрий", surname: "", isMale: true, avatarUrl: "userAvatar", idOrganizedEvents: [], idParticipateEvents: [])
-        let profile1 = Profile(id: 0, name: "Кристиан", surname: "Бейл", isMale: true, avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
-        let profile2 = Profile(id: 1, name: "Бен", surname: "Аффлек", isMale: true, avatarUrl: "exampleImageOfPerson2", idOrganizedEvents: [], idParticipateEvents: [])
+        let profile0 = Profile(id: 3, name: "Дмитрий", description: "", avatarUrl: "userAvatar", idOrganizedEvents: [], idParticipateEvents: [])
+        let profile1 = Profile(id: 0, name: "Кристиан", description: "", avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
+        let profile2 = Profile(id: 1, name: "Бен", description: "", avatarUrl: "exampleImageOfPerson2", idOrganizedEvents: [], idParticipateEvents: [])
         self.profiles = Profiles(profiles: [profile0, profile1, profile2])
     }
     

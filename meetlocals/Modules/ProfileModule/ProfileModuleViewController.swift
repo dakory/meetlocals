@@ -112,7 +112,7 @@ final class ProfileModuleViewController: UIViewController {
 extension ProfileModuleViewController: ProfileModuleViewInput {
     
     func setProfileData(person: Profile) {
-        nameOfPerson.text = "\(person.name) \(person.surname)"
+        nameOfPerson.text = "\(person.name)"
         imageOfPerson.image =  UIImage(named: person.avatarUrl!)
     }
 }

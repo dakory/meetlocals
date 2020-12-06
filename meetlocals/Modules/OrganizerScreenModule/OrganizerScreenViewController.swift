@@ -88,7 +88,7 @@ final class OrganizerScreenViewController: UIViewController {
 
 extension OrganizerScreenViewController: OrganizerScreenViewInput {
     func setOrganizerData(person: Profile) {
-        nameOfPerson.text = "\(person.name) \(person.surname)"
+        nameOfPerson.text = "\(person.name)"
         imageOfPerson.image =  UIImage(named: person.avatarUrl!)
     }
 }

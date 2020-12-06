@@ -5,7 +5,7 @@
 import Foundation
 import VK_ios_sdk
 
-class JsonUserArrayConverter: Converter {
+class VkUserArrayConverter: Converter {
 
     private let COUNT = "count = "
     private let FIRST_NODE = 4

@@ -5,7 +5,7 @@
 import Foundation
 import VK_ios_sdk
 
-class JsonUserConverter: Converter {
+class VkUserConverter: Converter {
 
     private let FIRST_NODE = 2
     private let userCreator = UserStringArrayCreator()
@@ -39,7 +39,7 @@ class JsonUserConverter: Converter {
     private func getUser(data: [String]) throws -> VKUser {
         var user: VKUser
 
-        var nodeIndex = FIRST_NODE
+        let nodeIndex = FIRST_NODE
         do {
             let domain = data[nodeIndex]
             let firstName = data[nodeIndex + 1]

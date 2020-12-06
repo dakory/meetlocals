@@ -21,14 +21,18 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/app_user_request" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="Добавил стартовый экран&#10;Поправил работу с vkApi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/Main/MainViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/Main/MainViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Common.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Common.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Events.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Events.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/EventScreenModule/EventScreenViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/EventScreenModule/EventScreenViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/OrganizerScreenModule/OrganizerScreenViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/OrganizerScreenModule/OrganizerScreenViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModuleViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModuleViewController.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +53,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="meetlocals-30-B02DD3AAE5347974BF2B3DB0-iphoneos14.2:null:14.2-arm64" />
@@ -67,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/meetlocals/Assets.xcassets/promoIcon.imageset" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,13 +84,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets/promIcon" />
-      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets/promoIcon.imageset" />
       <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
       <recent name="$PROJECT_DIR$/meetlocals" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/meetlocals/Network/Converter" />
+      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets/promIcon" />
+      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
     </key>
   </component>
   <component name="RunManager">
@@ -125,6 +132,13 @@
       <workItem from="1605798240251" duration="57000" />
       <workItem from="1606050954240" duration="607000" />
       <workItem from="1606120231064" duration="601000" />
+      <workItem from="1606487619765" duration="102000" />
+      <workItem from="1606487765015" duration="8988000" />
+      <workItem from="1606565662181" duration="749000" />
+      <workItem from="1606928077047" duration="1733000" />
+      <workItem from="1606929939253" duration="2621000" />
+      <workItem from="1607198538305" duration="181000" />
+      <workItem from="1607199387767" duration="3637000" />
     </task>
     <task id="LOCAL-00001" summary="Обработал кейс при отмене авторизации&#10;Добавил метод получения текущего пользователя&#10;Добавил метод получения пользователя по его логину (домену)">
       <created>1605288198527</created>
@@ -133,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605288198527</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавил стартовый экран&#10;Поправил работу с vkApi">
+      <created>1607198661427</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607198661427</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +181,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="app_user_request" />
                       </list>
                     </value>
                   </entry>
@@ -171,12 +192,28 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="app_user_request" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавил авторизацию через ВК (Игорь)&#10;-Добавил Cocoa&#10;-Поключил SDK ВК&#10;-Обновил info.plist на предмет Вк подключения &#10;-Убрал SceneDelegate&#10;-Добавил делегаты ВК" />
     <MESSAGE value="Обработал кейс при отмене авторизации&#10;Добавил метод получения текущего пользователя&#10;Добавил метод получения пользователя по его логину (домену)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обработал кейс при отмене авторизации&#10;Добавил метод получения текущего пользователя&#10;Добавил метод получения пользователя по его логину (домену)" />
+    <MESSAGE value="Добавил стартовый экран&#10;Поправил работу с vkApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил стартовый экран&#10;Поправил работу с vkApi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="356" key="#Notifications" timestamp="1605263438427">
@@ -191,109 +228,110 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="537" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1605688250158" />
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605688766749">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606492408434">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1605688766749" />
-    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate" timestamp="1605212245968">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606492408434" />
+    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate" timestamp="1606945385001">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1605212245968" />
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1606120648963">
+    <state x="385" y="471" width="765" height="579" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1606945385001" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1607261131977">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648963" />
+    <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261131977" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.23.1680.975@0.23.1680.975" timestamp="1603554769697" />
-    <state width="1638" height="352" key="GridCell.Tab.0.bottom" timestamp="1606120648024">
+    <state width="1638" height="352" key="GridCell.Tab.0.bottom" timestamp="1607257328158">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="352" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648024" />
-    <state width="1638" height="362" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1606053071399" />
+    <state width="1638" height="352" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1607257328158" />
+    <state width="1638" height="352" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1606490520580" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1603314926924" />
     <state width="1638" height="268" key="GridCell.Tab.0.bottom/0.23.1680.976@0.23.1680.976" timestamp="1605269716092" />
-    <state width="1638" height="352" key="GridCell.Tab.0.center" timestamp="1606120648022">
+    <state width="1638" height="352" key="GridCell.Tab.0.center" timestamp="1607257328157">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="352" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648022" />
-    <state width="1638" height="362" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1606053071397" />
+    <state width="1638" height="352" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1607257328157" />
+    <state width="1638" height="352" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1606490520579" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1603314926923" />
     <state width="1638" height="268" key="GridCell.Tab.0.center/0.23.1680.976@0.23.1680.976" timestamp="1605269716091" />
-    <state width="1638" height="352" key="GridCell.Tab.0.left" timestamp="1606120648021">
+    <state width="1638" height="352" key="GridCell.Tab.0.left" timestamp="1607257328156">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="352" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648021" />
-    <state width="1638" height="362" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1606053071397" />
+    <state width="1638" height="352" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1607257328156" />
+    <state width="1638" height="352" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1606490520578" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1603314926922" />
     <state width="1638" height="268" key="GridCell.Tab.0.left/0.23.1680.976@0.23.1680.976" timestamp="1605269716090" />
-    <state width="1638" height="352" key="GridCell.Tab.0.right" timestamp="1606120648023">
+    <state width="1638" height="352" key="GridCell.Tab.0.right" timestamp="1607257328157">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="352" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1606120648023" />
-    <state width="1638" height="362" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1606053071398" />
+    <state width="1638" height="352" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1607257328157" />
+    <state width="1638" height="352" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1606490520579" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1603314926923" />
     <state width="1638" height="268" key="GridCell.Tab.0.right/0.23.1680.976@0.23.1680.976" timestamp="1605269716092" />
-    <state width="1638" height="358" key="GridCell.Tab.1.bottom" timestamp="1605785267254">
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom" timestamp="1607018527616">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1605785267254" />
-    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.23.1680.973@0.23.1680.973" timestamp="1605344013183" />
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1607018527616" />
+    <state width="1638" height="358" key="GridCell.Tab.1.bottom/0.23.1680.973@0.23.1680.973" timestamp="1606931526956" />
     <state width="1638" height="451" key="GridCell.Tab.1.bottom/0.23.1680.975@0.23.1680.975" timestamp="1604237223566" />
-    <state width="1638" height="358" key="GridCell.Tab.1.center" timestamp="1605785267253">
+    <state width="1638" height="358" key="GridCell.Tab.1.center" timestamp="1607018527616">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1605785267253" />
-    <state width="1638" height="358" key="GridCell.Tab.1.center/0.23.1680.973@0.23.1680.973" timestamp="1605344013182" />
+    <state width="1638" height="358" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1607018527616" />
+    <state width="1638" height="358" key="GridCell.Tab.1.center/0.23.1680.973@0.23.1680.973" timestamp="1606931526954" />
     <state width="1638" height="451" key="GridCell.Tab.1.center/0.23.1680.975@0.23.1680.975" timestamp="1604237223564" />
-    <state width="1638" height="358" key="GridCell.Tab.1.left" timestamp="1605785267252">
+    <state width="1638" height="358" key="GridCell.Tab.1.left" timestamp="1607018527615">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1605785267252" />
-    <state width="1638" height="358" key="GridCell.Tab.1.left/0.23.1680.973@0.23.1680.973" timestamp="1605344013182" />
+    <state width="1638" height="358" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1607018527615" />
+    <state width="1638" height="358" key="GridCell.Tab.1.left/0.23.1680.973@0.23.1680.973" timestamp="1606931526954" />
     <state width="1638" height="451" key="GridCell.Tab.1.left/0.23.1680.975@0.23.1680.975" timestamp="1604237223564" />
-    <state width="1638" height="358" key="GridCell.Tab.1.right" timestamp="1605785267253">
+    <state width="1638" height="358" key="GridCell.Tab.1.right" timestamp="1607018527616">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="358" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1605785267253" />
-    <state width="1638" height="358" key="GridCell.Tab.1.right/0.23.1680.973@0.23.1680.973" timestamp="1605344013183" />
+    <state width="1638" height="358" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1607018527616" />
+    <state width="1638" height="358" key="GridCell.Tab.1.right/0.23.1680.973@0.23.1680.973" timestamp="1606931526955" />
     <state width="1638" height="451" key="GridCell.Tab.1.right/0.23.1680.975@0.23.1680.975" timestamp="1604237223565" />
-    <state x="86" y="53" key="MergeDialog" timestamp="1606053035921">
+    <state x="86" y="53" key="MergeDialog" timestamp="1607261220739">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="86" y="53" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606053035921" />
-    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog" timestamp="1606053035954">
+    <state x="86" y="53" key="MergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261220739" />
+    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog" timestamp="1607261183788">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1606053035954" />
+    <state x="314" y="211" width="888" height="545" key="MultipleFileMergeDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261183788" />
     <state width="600" height="400" key="NewXcodeProjectWizard" timestamp="1602673334292">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state width="600" height="400" key="NewXcodeProjectWizard/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673334292" />
-    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1605179623631">
+    <state x="604" y="234" key="RollbackChangesDialog" timestamp="1607261061341">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1605179623631" />
+    <state x="604" y="234" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607261061341" />
     <state x="469" y="121" key="SettingsEditor" timestamp="1605262902368">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="469" y="121" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1605262902368" />
     <state x="341" y="70" key="SettingsEditor/0.23.1440.822/1440.-480.1920.1057@0.23.1440.822" timestamp="1602673186656" />
     <state x="469" y="135" key="SettingsEditor/0.23.1680.975@0.23.1680.975" timestamp="1603986699282" />
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1606053237471">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2" timestamp="1607261134929">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1606053237471" />
-    <state x="553" y="128" width="604" height="735" key="find.popup" timestamp="1605784634670">
+    <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1607261134929" />
+    <state x="553" y="128" width="604" height="735" key="find.popup" timestamp="1606931276699">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="553" y="128" width="604" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605784634670" />
+    <state x="553" y="128" width="604" height="735" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1606931276699" />
     <state x="505" y="248" key="run.anything.popup" timestamp="1605263493296">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605263493296" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1606053217237">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1607261083448">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1606053217237" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1607261083448" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.973@0.23.1680.973" timestamp="1606123813098" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604228510784">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -306,14 +344,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/meetlocals/Network/Converter/JsonUserArrayConverter.swift</url>
+          <url>file://$PROJECT_DIR$/meetlocals/Network/Converter/VK/VkUserArrayConverter.swift</url>
           <line>57</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/meetlocals/Network/Converter/JsonUserArrayConverter.swift</url>
-          <line>25</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/meetlocals/Network/Repository/AppRepository.swift</url>
+          <line>33</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/meetlocals/Network/Converter/Json/JsonAppUserConverter.swift</url>
+          <line>15</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

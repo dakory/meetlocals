@@ -8,6 +8,7 @@
 
 import UIKit
 import VK_ios_sdk
+import RxSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let organizingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .organizing)
             let organizingListContainer = EventListContainer.assemble(with: organizingListContext)
             let organizingListNavigationController = UINavigationController(rootViewController: organizingListContainer.viewController)
-            
+
             let participatingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .participating)
             let participatingListContainer = EventListContainer.assemble(with: participatingListContext)
             let participatingListNavigationController = UINavigationController(rootViewController: participatingListContainer.viewController)

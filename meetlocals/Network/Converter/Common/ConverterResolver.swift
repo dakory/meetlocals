@@ -7,10 +7,12 @@ import VK_ios_sdk
 
 class ConverterResolver {
 
-    let converters: [Converter]
+    var converters = [Converter]()
 
-    init(fabric: ConverterFactory) {
-        self.converters = fabric.converters()
+    init(fabric: [ConverterFactory]) {
+        fabric.forEach { factory in
+            self.converters.append(contentsOf: factory.converters())
+        }
     }
 
     func convert<To>(to: To.Type, from: Any?) -> To? {
