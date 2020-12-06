@@ -1,6 +1,6 @@
-import UIKit
+import Foundation
 
-struct Events {
+struct Events: Codable {
     var listOfEvents: [Event]
 
     mutating func post(list: Event) {
@@ -8,18 +8,11 @@ struct Events {
     }
 }
 
+struct EventApiWrapper: Codable {
+    let event: Event
+}
 
-//struct EventDaniil {
-//    let id: Int
-//    let idOrganizer: Int
-//    let idMembers: [Int]
-//    let description: String
-//    let place: String
-//    let date: String
-//}
-
-// Оставил вариант Сони, чтобы ничего не сломалось в EventScreenModule
-struct Event {
+struct Event: Codable {
     let id: Int
     let idOrganizer: Int
     var idMembers: [Int]
@@ -27,7 +20,8 @@ struct Event {
     let description: String
     let place: String
     let date: Date
-//    let userName: String
-//    let eventName: String
-//    let userImage: String
+
+    private enum CodingKeys : String, CodingKey {
+        case id = "_id", idOrganizer = "organizer_id", idMembers = "members", name, description, place = "location", date
+    }
 }
