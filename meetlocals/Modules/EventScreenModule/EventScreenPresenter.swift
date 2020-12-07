@@ -4,6 +4,7 @@ import UIKit
 
 final class EventScreenPresenter {
     var organizerID: Int?
+    var organizerVkID: Int?
     var eventId: Int?
 
 	weak var view: EventScreenViewInput?
@@ -27,6 +28,7 @@ extension EventScreenPresenter: EventScreenViewOutput {
         let event = interactor.getInfoOfEvent(eventId: eventId!)   //обращаемся к interactor для получения информации и мероприятии
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
         organizerID = person.id
+        organizerVkID  = person.vkId
         eventId = event.id
         self.view!.setEventAndOrganizerData(person, event)
     }
@@ -46,7 +48,7 @@ extension EventScreenPresenter: EventScreenViewOutput {
     
     func goToVkPresenter(toOrganizer: Bool, id: Int?) {
         if toOrganizer {
-            router.goToVk(id: organizerID!) }
+            router.goToVk(id: organizerVkID!) }
         else {
             router.goToVk(id: id!)
         }

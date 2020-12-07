@@ -382,7 +382,7 @@ extension EventScreenViewController: EventScreenViewInput {
             button.trailingAnchor.constraint(equalTo: viewPerson.trailingAnchor).isActive = true
             button.bottomAnchor.constraint(equalTo: viewPerson.bottomAnchor).isActive = true
             
-            button.setTitle(String(Common.profiles.profiles[indexPerson].id), for: .normal)
+            button.setTitle(String(Common.profiles.profiles[indexPerson].vkId), for: .normal)
             button.setTitleColor(.clear, for: .normal)
             button.addTarget(self, action: #selector(self.pressedMember(_:)), for: .touchUpInside)
 
