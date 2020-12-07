@@ -1,6 +1,11 @@
+import Foundation
+
 struct Profile: Codable {
     let id: Int
+    let vkId: Int
     let name: String
+    let sex: Int
+    let birthDate: Date?
     let description: String?
     let avatarUrl: String?
     let idOrganizedEvents: [Int]
@@ -13,7 +18,10 @@ struct Profile: Codable {
 
     private enum CodingKeys : String, CodingKey {
         case id = "_id"
+        case vkId = "vk_id"
         case name
+        case sex
+        case birthDate = "birth_date"
         case description
         case avatarUrl = "avatar_url"
         case idOrganizedEvents = "is_organizer__events"
