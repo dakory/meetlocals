@@ -20,6 +20,10 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let textEventDescription = UITextView()
     private let buttonAddEvent = UIButton()
     private let scrollView = UIScrollView()
+    var textEventNameHeightConstraint: NSLayoutConstraint!
+    var placeTextHeightConstraint: NSLayoutConstraint!
+    var textEventDescriptionNameHeightConstraint: NSLayoutConstraint!
+    var addToScroll: CGFloat!
     
     init(output: AddEventViewOutput) {
         self.output = output
@@ -53,12 +57,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width,
-                                        height: 519)
-        let distance = scrollView.convert(textEventDescription.frame.origin, to: buttonAddEvent).y + 84
-        if distance > 0 {
-            scrollView.contentSize.height += distance
+                                        height: UIScreen.main.bounds.height - view.safeAreaInsets.bottom + scrollView.convert(textEventDescription.frame.origin, to: buttonAddEvent).y)
         }
-    }
 }
 
 
@@ -88,10 +88,10 @@ private extension AddEventViewController {
     func setupAll() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         [
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top),
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ].forEach({$0.isActive = true})
         
         
@@ -114,13 +114,14 @@ private extension AddEventViewController {
         textEventName.placeholder = "Поездка на велосипеде"
         textEventName.delegate = self
         textEventName.layer.cornerRadius = 15
+        self.textEventNameHeightConstraint = textEventName.heightAnchor.constraint(equalToConstant: 19)
+        textEventName.delegate = self
         [
         textEventName.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 8),
-        textEventName.bottomAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 54),
+        self.textEventNameHeightConstraint,
         textEventName.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
         textEventName.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
         ].forEach({$0.isActive = true})
-        textEventName.textContainer.maximumNumberOfLines = 5
         textEventName.textContainer.lineBreakMode = .byTruncatingTail
         
         
@@ -142,6 +143,13 @@ private extension AddEventViewController {
         textDate.locale = Locale(identifier: "ru_RU")
         textDate.datePickerMode = .dateAndTime
         textDate.preferredDatePickerStyle = .wheels
+        textDate.minimumDate = { () -> Date in
+            let calendar = Calendar(identifier: .gregorian)
+            var components = DateComponents()
+            components.hour = 1
+            let minDate = calendar.date(byAdding: components, to: Date())
+            return minDate!
+        }()
         [
         textDate.topAnchor.constraint(equalTo: dateTimeLabel.bottomAnchor, constant: 8),
         textDate.bottomAnchor.constraint(equalTo: dateTimeLabel.bottomAnchor, constant: 100),
@@ -165,16 +173,16 @@ private extension AddEventViewController {
         placeText.translatesAutoresizingMaskIntoConstraints = false
         placeText.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         placeText.font = .systemFont(ofSize: 20)
-        placeText.placeholder = "г. Москва, Парк Лосиный остров, главный вход"
+        placeText.placeholder = "Парк Лосиный остров, главный вход"
+        self.placeTextHeightConstraint = placeText.heightAnchor.constraint(equalToConstant: 19)
         placeText.delegate = self
         placeText.layer.cornerRadius = 15
         [
         placeText.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 8),
+        self.placeTextHeightConstraint,
         placeText.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
-        placeText.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor),
-        placeText.bottomAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 54)
+        placeText.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
         ].forEach({$0.isActive = true})
-        placeText.textContainer.maximumNumberOfLines = 2
         placeText.textContainer.lineBreakMode = .byTruncatingTail
         
         
@@ -195,16 +203,17 @@ private extension AddEventViewController {
         textEventDescription.translatesAutoresizingMaskIntoConstraints = false
         textEventDescription.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventDescription.font = .systemFont(ofSize: 20)
-        textEventDescription.placeholder = "Супер мероприятие, бери свой байк и присоединяйся ко мне :)"
+        textEventDescription.placeholder = "Присоединяйся ко мне :)"
         textEventDescription.delegate = self
         textEventDescription.layer.cornerRadius = 15
+        self.textEventDescriptionNameHeightConstraint = textEventDescription.heightAnchor.constraint(equalToConstant: 19)
+        placeText.delegate = self
         [
         textEventDescription.topAnchor.constraint(equalTo: textEventLabel.bottomAnchor, constant: 8),
-        textEventDescription.bottomAnchor.constraint(equalTo: textEventDescription.topAnchor, constant: 92),
+        self.textEventDescriptionNameHeightConstraint,
         textEventDescription.leadingAnchor.constraint(equalTo: eventNameLabel.leadingAnchor),
         textEventDescription.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
         ].forEach({$0.isActive = true})
-        textEventDescription.textContainer.maximumNumberOfLines = 15
         textEventDescription.textContainer.lineBreakMode = .byTruncatingTail
         
         
@@ -220,8 +229,39 @@ private extension AddEventViewController {
         buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
         buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -37)
         ].forEach({$0.isActive = true})
+        
+        
+        self.addToScroll = 19
+        self.adjustTextViewHeightForTextEventName()
+        self.adjustTextViewHeightForTextEventDescription()
+        self.adjustTextViewHeightForPlaceText()
     }
 
+    
+    func adjustTextViewHeightForTextEventName() {
+        let fixedWidth = textEventName.frame.size.width
+        let newSize = textEventName.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.textEventNameHeightConstraint.constant - newSize.height
+        self.textEventNameHeightConstraint.constant = newSize.height
+        self.view.layoutIfNeeded()
+    }
+    
+    func adjustTextViewHeightForTextEventDescription() {
+        let fixedWidth = textEventDescription.frame.size.width
+        let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
+        self.textEventDescriptionNameHeightConstraint.constant = newSize.height
+        self.view.layoutIfNeeded()
+    }
+    func adjustTextViewHeightForPlaceText() {
+        let fixedWidth = placeText.frame.size.width
+        let newSize = placeText.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.placeTextHeightConstraint.constant - newSize.height
+        self.placeTextHeightConstraint.constant = newSize.height
+        self.view.layoutIfNeeded()
+    }
+    
+    
     @objc
     func didTapButtonAddEvent() {
         output.didTabAddEvent(name: textEventName.text,
@@ -239,24 +279,17 @@ private extension AddEventViewController {
                 UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
                     self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
     }, completion: nil)
-            scrollView.contentSize.height -= deltaY
+            scrollView.contentSize.height -= deltaY  + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
             
         }
     }
 }
 
-//extension AddEventViewController {
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        realOrigin = 0
-//        self.scrollView.frame.origin.y = 0
-//    }
-//
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        realOrigin = scrollView.convert(textView.frame.origin, to: scrollView).y -
-//            scrollView.convert(placeText.frame.origin, to: scrollView).y
-//        if realOrigin > 0 {
-//    self.scrollView.frame.origin.y =  -realOrigin
-//        }
-//    }
-//}
+extension AddEventViewController {
+    func textViewDidChange(_ textView: UITextView) {
+        self.adjustTextViewHeightForTextEventName()
+        self.adjustTextViewHeightForPlaceText()
+        self.adjustTextViewHeightForTextEventDescription()
+    }
+}
 
