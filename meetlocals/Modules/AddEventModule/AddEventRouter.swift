@@ -23,7 +23,7 @@ extension AddEventRouter: AddEventRouterInput {
         
 
         else {
-            Common.events.listOfEvents.append(Event(id: 4, idOrganizer: Common.myProfile.id, idMembers: [1], name: name, description: description, place: place, date: date))
+            Common.events.listOfEvents.append(Event(id: 4, idOrganizer: Common.myProfile.id, idMembers: [Common.myProfile.id], name: name, description: description, place: place, date: date))
             
             let successfullyСreatedController = UIAlertController(title: "Успех", message: "Ваше мероприятие успешно создано", preferredStyle: .alert)
             successfullyСreatedController.addAction(UIAlertAction(title: "Ок", style: .default))
