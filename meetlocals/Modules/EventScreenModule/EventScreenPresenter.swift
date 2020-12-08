@@ -24,6 +24,8 @@ extension EventScreenPresenter: EventScreenModuleInput {
 }
 
 extension EventScreenPresenter: EventScreenViewOutput {
+
+    
     func getData(){
         let event = interactor.getInfoOfEvent(eventId: eventId!)   //обращаемся к interactor для получения информации и мероприятии
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
@@ -35,6 +37,7 @@ extension EventScreenPresenter: EventScreenViewOutput {
     
     func singUpForEvent(){
         interactor.addOrDeleteDataNewMember(eventId: eventId!)
+        router.updateScreens(vc: self.view as! EventScreenViewController)
     }
     
     func checkMembership(){

@@ -2,6 +2,7 @@
 import UIKit
 
 final class EventScreenRouter {
+        var viewController: UIViewController?
 }
 
 extension EventScreenRouter: EventScreenRouterInput {
@@ -12,6 +13,12 @@ extension EventScreenRouter: EventScreenRouterInput {
         let contexOrganizerScreen = OrganizerScreenContext(moduleOutput: nil, personID: organizerID)
         let containerOrganizerScreen = OrganizerScreenContainer.assemble(with: contexOrganizerScreen)
         vc.navigationController?.pushViewController(containerOrganizerScreen.viewController, animated: true)
+    }
+    
+    func updateScreens (vc: EventScreenViewController){
+        let participatingListNavigationControllers  = vc.tabBarController!.viewControllers![2] as! UINavigationController
+        let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
+        participatingListNavigationController.updateList()
     }
     
     func goToVk(id: Int) {

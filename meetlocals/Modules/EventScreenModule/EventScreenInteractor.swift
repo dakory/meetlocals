@@ -22,6 +22,7 @@ extension EventScreenInteractor: EventScreenInteractorInput {
             Common.events.listOfEvents[indexEvent!].idMembers.remove(at: index!)
         }
         print(Common.events.listOfEvents[indexEvent!].idMembers)
+        
     }
     
     func checkMembershipData(eventId: Int) -> Bool {

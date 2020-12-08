@@ -35,4 +35,6 @@ protocol EventScreenInteractorOutput: class {
 protocol EventScreenRouterInput: class {
     func organizerScreen(vc: EventScreenViewController, organizerID: Int)
     func goToVk(id: Int)
+    func updateScreens(vc: EventScreenViewController)
+
 }
