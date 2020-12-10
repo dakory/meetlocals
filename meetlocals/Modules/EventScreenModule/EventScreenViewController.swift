@@ -141,7 +141,7 @@ final class EventScreenViewController: UIViewController {
         stackTopLabelNames.distribution = .fillEqually
 
 
-        [nameEvent, stackViewTopLabel, stackViewTime, stackViewPlace, stackViewDescription, stackViewMembers, stackViewMembers, viewButtonSignUp
+        [nameEvent, stackViewTopLabel, stackViewTime, stackViewPlace, stackViewDescription, stackViewMembers, viewButtonSignUp
         ].forEach({
             commonStack.addArrangedSubview($0)
         });
