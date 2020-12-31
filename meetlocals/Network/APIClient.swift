@@ -7,6 +7,8 @@ import Foundation
 
 final class APIClient {
 
+//    let client = APIClient()
+
     private let session = URLSession(configuration: .default)
 
     private let baseComponents: URLComponents = {
@@ -215,9 +217,64 @@ final class APIClient {
     enum DataTaskErrors: Error {
         case badURL, responseHasNoData
     }
-}
 
-// let client = APIClient()
+    func getEvents(currentClient: APIClient) {currentClient.getDataTask("events") { (result: Result<EventsResponse, Error>) in
+            do {
+                let eventsResponse = try result.get()
+                Common.events = Events(listOfEvents: eventsResponse.events)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
+    func getUsers(currentClient: APIClient){
+        currentClient.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
+            do {
+                let profilesResponse = try result.get()
+                Common.profiles = Profiles(profiles: profilesResponse.profiles)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
+    func authorization(currentClient: APIClient, user: [String : Any]){
+        currentClient.getDataTask("users-by-vk-id/\(String(describing: user["vk_id"]!))") { (result: Result<ProfileResponse, Error>) in             //если пользователь есть в БД
+            do {
+                let profileResponse = try result.get()
+                Common.myProfile = profileResponse.profile
+            }
+            catch {     //если пользователя нет в БД
+                
+                currentClient.postDataTask("users", data: user) { (result: Result<ProfileResponse, Error>) in
+                    do {
+                        let profileResponse = try result.get()
+                        print(profileResponse.profile)
+                    }
+                    catch {
+                        print(error)
+                    }
+                    
+                    currentClient.getDataTask("users/4") { (result: Result<ProfileResponse, Error>) in 
+                        do {
+                            let profileResponse = try result.get()
+                            Common.myProfile = Profile(id: profileResponse.profile.id, vkId: user["vk_id"] as! Int, name: user["name"] as! String, sex: 0, birthDate: Date(timeIntervalSinceReferenceDate: 0), description: "", avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
+                        }
+                        catch {
+                            print(error)
+                        }
+                    }
+                }
+                print(error)
+            }
+        }
+    }
+    
+    
+}
 
 
 // Получение event

@@ -37,40 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         currentVkUser.observe(on: MainScheduler.instance)
             .subscribe(
                     onNext: { (response: VKUser) in
-                        
-                        self.client.getDataTask("users-by-vk-id/\(String(describing: response.id!))") { (result: Result<ProfileResponse, Error>) in             //если пользователь есть в БД
-                            do {
-                                let profileResponse = try result.get()
-                                Common.myProfile = profileResponse.profile
-                            }
-                            catch {     //если пользователя нет в БД
-                                let newUser = [
-                                    "name": "\(response.first_name!) \(response.last_name!)",
-                                    "vk_id": Int(response.id!),
-                                    "avatar_url": "exampleImageOfPerson"] as [String : Any]
-                                self.client.postDataTask("users", data: newUser) { (result: Result<ProfileResponse, Error>) in
-                                    do {
-                                        let profileResponse = try result.get()
-                                        print(profileResponse.profile)
-                                    }
-                                    catch {
-                                        print(error)
-                                    }
-                                    
-                                    self.client.getDataTask("users/4") { (result: Result<ProfileResponse, Error>) in
-                                        do {
-                                            let profileResponse = try result.get()
-                                            Common.myProfile = Profile(id: profileResponse.profile.id, vkId: Int(response.id!), name: "\(response.first_name!) \(response.last_name!)", sex: 0, birthDate: Date(timeIntervalSinceReferenceDate: 0), description: "", avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
-                                        }
-                                        catch {
-                                            print(error)
-                                        }
-                                    }
-                                }
-                                print(error)
-                            }
-                        }
-
+                        let newUser = [
+                            "name": "\(response.first_name!) \(response.last_name!)",
+                            "vk_id": Int(truncating: response.id!),
+                            "avatar_url": "exampleImageOfPerson"] as [String : Any]
+                        self.client.authorization(currentClient: self.client, user: newUser)
                     }, onError:
             { error in
                 print(error)
@@ -82,35 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            Common.generateEventsData()   //подгружаем общий список мероприятий
 //            Common.generateProfilesData() //подгружаем общий список пользователей
             
-        //      Получение events
-            client.getDataTask("events") { (result: Result<EventsResponse, Error>) in
-                do {
-                    let eventsResponse = try result.get()
-                    Common.events = Events(listOfEvents: eventsResponse.events)
-                }
-                catch {
-                    print(error)
-                }
-            }
-            
-       //      Получение users
-            client.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
-                do {
-                    let profilesResponse = try result.get()
-                    Common.profiles = Profiles(profiles: profilesResponse.profiles)
-                }
-                catch {
-                    print(error)
-                }
-            }
-            
+            client.getUsers(currentClient: client) //подгружаем общий список пользователей
+            client.getEvents(currentClient: client) //подгружаем общий список мероприятий
+
             
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = UINavigationController(rootViewController: LoadViewController());
             self.appWindow = window
             window.makeKeyAndVisible()
             
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in // после трёхсекундной задержки отображаем список мероприятий
                 let appWindow = UIWindow(frame: UIScreen.main.bounds)
                 self.appWindow = appWindow
 
