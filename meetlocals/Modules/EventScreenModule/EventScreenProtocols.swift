@@ -11,11 +11,11 @@ protocol EventScreenModuleOutput: class {
 protocol EventScreenViewInput: class {
     func setEventAndOrganizerData(_ person: Profile, _ event: Event)
     func setButton(_: Bool)
-
+    func reloadMembers()
 }
 
 protocol EventScreenViewOutput: class {
-    func checkMembership()
+    func checkMembershipPresenter()
     func getData()
     func singUpForEvent()
     func goToOrganizerScreen()
@@ -30,6 +30,7 @@ protocol EventScreenInteractorInput: class {
 }
 
 protocol EventScreenInteractorOutput: class {
+    func checkMembership()
 }
 
 protocol EventScreenRouterInput: class {
