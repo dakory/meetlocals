@@ -14,7 +14,7 @@ class VKRepository {
     }
 
     public func getUser(_ additionalParams: [String: String]? = nil) -> Observable<VKResponse<VKApiObject>> {
-        var params: [String: String] = ["fields": "domain", "name_case": "Nom"]
+        var params: [String: String] = ["fields": "domain, photo_200", "name_case": "Nom"]
         if (additionalParams != nil) {
             additionalParams?.forEach { key, value in
                 params.updateValue(value, forKey: key)

@@ -59,10 +59,11 @@ class VkUserArrayConverter: Converter {
             let firstName = data[nodeIndex + 1]
             let id = data[nodeIndex + 2]
             let lastName = data[nodeIndex + 3]
+            let photo_200 = data[nodeIndex + 4]
 //            let trackCode = data[nodeIndex + 4]
             nodeIndex += PERIOD_CYCLE
 
-            let userNode: [String] = [id, domain, firstName, lastName, ""]
+            let userNode: [String] = [id, domain, firstName, lastName, photo_200, ""]
             users.append(userCreator.create(from: userNode))
         }
 

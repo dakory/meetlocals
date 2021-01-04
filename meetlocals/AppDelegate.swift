@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    let apiClient = APIClient()
 
-    let client = APIClient()
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         VKSdk.processOpen(url, fromApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
@@ -37,22 +38,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let currentVkUser = interactor.getVkCurrentUser()
 
-        //      Получение events
+   //      Получение events
 
         currentVkUser.observe(on: MainScheduler.instance)
-                .subscribe(
-                        onNext: { (response: VKUser) in
-                            let newUser = [
-                                "name": "\(response.first_name!) \(response.last_name!)",
-                                "vk_id": Int(truncating: response.id!),
-                                "avatar_url": "exampleImageOfPerson"] as [String: Any]
-                            self.client.authorization(currentClient: self.client, user: newUser)
-                        }, onError:
-                { error in
-                    print(error)
-                }, onCompleted:
-                { print("Completed") })
+            .subscribe(
+                onNext: { (response: VKUser) in
+                    let newUser: [String : Any] = [
+                        "name": "\(response.first_name!) \(response.last_name!)",
+                        "vk_id": Int(truncating: response.id!),
+                        "avatar_url": response.photo_200 ?? "exampleImageOfPerson"
+                    ]
 
+                    self.apiClient.authorization(user: newUser)
+                },
+                onError: { error in
+                    print(error)
+                },
+                onCompleted: {
+                    print("Completed")
+                })
+        
 
         if (VKSdk.isLoggedIn()) {
             openMainScreen()
@@ -64,18 +69,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func openMainScreen() {
-        client.getUsers(currentClient: client) //подгружаем общий список пользователей
-        client.getEvents(currentClient: client) //подгружаем общий список мероприятий
+        apiClient.getUsers() //подгружаем общий список пользователей
+        apiClient.getEvents() //подгружаем общий список мероприятий
 
-
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController(rootViewController: LoadViewController());
-        self.appWindow = window
-        window.makeKeyAndVisible()
-
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in // после трёхсекундной задержки отображаем список мероприятий
-            let appWindow = UIWindow(frame: UIScreen.main.bounds)
-            self.appWindow = appWindow
+            
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = UINavigationController(rootViewController: LoadViewController());
+            self.appWindow = window
+            window.makeKeyAndVisible()
+            
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in // после
+                // трёхсекундной задержки отображаем список мероприятий
+                let appWindow = UIWindow(frame: UIScreen.main.bounds)
+                self.appWindow = appWindow
 
             let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
             let eventListContainer = EventListContainer.assemble(with: eventListContext)

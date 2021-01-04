@@ -2,7 +2,6 @@
 // Created by 17099611 on 27.11.2020.
 //
 
-import Foundation
 import UIKit
 
 struct AppColors {

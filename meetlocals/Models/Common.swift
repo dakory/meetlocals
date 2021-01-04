@@ -1,5 +1,4 @@
 import UIKit
-import Foundation
 
 enum TypeOfListScreen {
     case common
@@ -9,7 +8,7 @@ enum TypeOfListScreen {
 
 class Common: NSObject { //какие-то данные с БД
     
-    static var myProfile = Profile(id: 1, vkId: 0, name: "", sex: 0, birthDate: Date(timeIntervalSinceReferenceDate: -123456789.0), description: "", avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
+    static var myProfile: Profile!
 //
 
 //    static var myProfile = Profile(id: 0, vkId: 0, name: "", sex: 0, birthDate: Date(timeIntervalSinceReferenceDate: -123456789.0), description: "", avatarUrl: "", idOrganizedEvents: [], idParticipateEvents: [])
