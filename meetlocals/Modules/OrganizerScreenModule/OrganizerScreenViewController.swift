@@ -55,14 +55,14 @@ final class OrganizerScreenViewController: UIViewController {
         self.buttonExit.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         [
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             imageOfPerson.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 229),
             imageOfPerson.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -60),
             imageOfPerson.trailingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 60),
-            imageOfPerson.bottomAnchor.constraint(equalTo: imageOfPerson.topAnchor, constant: 120),
+            imageOfPerson.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: 120 + 229),
         
             nameOfPerson.topAnchor.constraint(equalTo: imageOfPerson.bottomAnchor, constant: 26),
             nameOfPerson.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),

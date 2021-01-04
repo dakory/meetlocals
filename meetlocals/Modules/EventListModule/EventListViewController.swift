@@ -26,9 +26,7 @@ final class EventListController: UIViewController {
     
     override func loadView() {
         let view = UIView()
-        scrollView.alwaysBounceVertical = true
-        view.addSubview(self.scrollView)
-        self.scrollView.addSubview(collectionView)
+        view.addSubview(collectionView)
         view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         self.view = view
         setupView()
@@ -108,9 +106,6 @@ extension EventListController: EventListViewInput {
             self.navigationItem.title = "Организую"
         }
     }
-    
-    
-    
 }
 
 extension EventListController: UICollectionViewDataSource {
@@ -126,7 +121,6 @@ extension EventListController: UICollectionViewDataSource {
         cell.layer.shadowRadius = cell.layer.cornerRadius
         cell.layer.shadowOpacity = 0.1
         cell.layer.shadowColor = UIColor.gray.cgColor
-        
         return cell
     }
     
@@ -144,17 +138,6 @@ extension EventListController: UICollectionViewDelegate, UICollectionViewDelegat
     
 private extension EventListController {
     func setupView() {
-        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
-
-        [
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-        ].forEach({
-            $0.isActive = true
-        })
-        
         self.collectionView.clipsToBounds = true
         self.collectionView.backgroundColor = view.backgroundColor
         self.collectionView.delegate = self

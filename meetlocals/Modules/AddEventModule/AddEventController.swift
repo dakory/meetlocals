@@ -37,6 +37,7 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     
     override func loadView() {
         let view = UIView()
+        scrollView.alwaysBounceVertical = true
         view.backgroundColor = .white
         addAll(view)
         self.view = view
@@ -89,8 +90,8 @@ private extension AddEventViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         [
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ].forEach({$0.isActive = true})
         
@@ -104,8 +105,8 @@ private extension AddEventViewController {
         [
         eventNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
         eventNameLabel.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: 39),
-        eventNameLabel.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-        eventNameLabel.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            eventNameLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16),
+            eventNameLabel.trailingAnchor.constraint(equalTo: self.eventNameLabel.leadingAnchor, constant: UIScreen.main.bounds.width - 32),
         ].forEach({$0.isActive = true})
         
         textEventName.translatesAutoresizingMaskIntoConstraints = false
@@ -203,11 +204,12 @@ private extension AddEventViewController {
         textEventDescription.translatesAutoresizingMaskIntoConstraints = false
         textEventDescription.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventDescription.font = .systemFont(ofSize: 20)
-        textEventDescription.placeholder = "Присоединяйся ко мне :)"
+        textEventDescription.placeholder = "Супер мероприятие, бери свой бак и присоединяйся ко мне :)"
         textEventDescription.delegate = self
         textEventDescription.layer.cornerRadius = 15
         self.textEventDescriptionNameHeightConstraint = textEventDescription.heightAnchor.constraint(equalToConstant: 19)
         placeText.delegate = self
+        
         [
         textEventDescription.topAnchor.constraint(equalTo: textEventLabel.bottomAnchor, constant: 8),
         self.textEventDescriptionNameHeightConstraint,
@@ -226,8 +228,9 @@ private extension AddEventViewController {
         [
         buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
         buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79),
+            // проблема
         buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
-        buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -37)
+            buttonAddEvent.trailingAnchor.constraint(equalTo: buttonAddEvent.leadingAnchor, constant: UIScreen.main.bounds.width - 74)
         ].forEach({$0.isActive = true})
         
         
@@ -250,7 +253,7 @@ private extension AddEventViewController {
         let fixedWidth = textEventDescription.frame.size.width
         let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
-        self.textEventDescriptionNameHeightConstraint.constant = newSize.height
+        self.textEventDescriptionNameHeightConstraint.constant = newSize.height < 80 ? 80: newSize.height
         self.view.layoutIfNeeded()
     }
     func adjustTextViewHeightForPlaceText() {

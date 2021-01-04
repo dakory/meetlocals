@@ -54,16 +54,18 @@ class CollectionViewCell: UICollectionViewCell {
         
         [
         UserImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-        UserImage.bottomAnchor.constraint(equalTo: UserImage.topAnchor, constant: height),
+        UserImage.bottomAnchor.constraint(equalTo: self.topAnchor, constant: height + 16),
         UserImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-        UserImage.trailingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height),
+            UserImage.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: height + 16),
+        ].forEach({$0.isActive = true})
+        [
         UserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
         UserName.leadingAnchor.constraint(equalTo: UserImage.leadingAnchor, constant: height + 16),
-        UserName.bottomAnchor.constraint(equalTo: UserName.topAnchor, constant: 15),
+        UserName.bottomAnchor.constraint(equalTo: self.topAnchor, constant: 35),
         UserName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+        ].forEach({$0.isActive = true})
         
-        
-
+        [
         EventName.topAnchor.constraint(equalTo: UserName.bottomAnchor, constant: 5),
         EventName.leadingAnchor.constraint(equalTo: UserImage.trailingAnchor, constant: 15),
         EventName.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -21),
