@@ -7,27 +7,6 @@ import Foundation
 
 final class APIClient {
 
-    private let session = URLSession(configuration: .default)
-
-    private let baseComponents: URLComponents = {
-        var baseComponents = URLComponents()
-
-        baseComponents.scheme = "http"
-        baseComponents.host = "api.shlyapa.fun"
-
-        return baseComponents
-    }()
-
-    private let jsonDecoder: JSONDecoder = {
-        let result = JSONDecoder()
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        result.dateDecodingStrategy = .formatted(dateFormatter)
-
-        return result
-    }()
-
     func getDataTask<T: Decodable>(_ path: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = self.makeURL(path: path) else {
             completion(.failure(DataTaskErrors.badURL))
@@ -63,7 +42,6 @@ final class APIClient {
         }
         task.resume()
     }
-
 
     func postDataTask<T: Decodable>(_ path: String, data: [String: Any],
                                     completion: @escaping (Result<T, Error>) -> Void) {
@@ -114,7 +92,6 @@ final class APIClient {
 
     }
 
-
     func putDataTask<T: Decodable>(_ path: String, data: [String: Any],
                                    completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = makeURL(path: path) else {
@@ -164,7 +141,6 @@ final class APIClient {
 
     }
 
-
     func deleteDataTask(_ path: String,
                         completion: @escaping (Result<Any, Error>) -> Void) {
         guard let url = makeURL(path: path) else {
@@ -205,16 +181,6 @@ final class APIClient {
     }
 
 
-    private func makeURL(path: String) -> URL? {
-        var result = self.baseComponents
-        result.path = "/\(path)"
-        return result.url
-    }
-
-    enum DataTaskErrors: Error {
-        case badURL, responseHasNoData
-    }
-
     func getEvents() {
         self.getDataTask("events") { (result: Result<EventsResponse, Error>) in
             do {
@@ -226,7 +192,7 @@ final class APIClient {
             }
         }
     }
-    
+
     func getUsers(){
         self.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
             do {
@@ -238,7 +204,8 @@ final class APIClient {
             }
         }
     }
-    
+
+
     func authorization(user: [String : Any]){
 
         guard let vk_user_id = user["vk_id"] else {
@@ -267,6 +234,38 @@ final class APIClient {
                 print(error)
             }
         }
+    }
+
+
+    private func makeURL(path: String) -> URL? {
+        var result = self.baseComponents
+        result.path = "/\(path)"
+        return result.url
+    }
+
+    private let session = URLSession(configuration: .default)
+
+    private let baseComponents: URLComponents = {
+        var baseComponents = URLComponents()
+
+        baseComponents.scheme = "http"
+        baseComponents.host = "api.shlyapa.fun"
+
+        return baseComponents
+    }()
+
+    private let jsonDecoder: JSONDecoder = {
+        let result = JSONDecoder()
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        result.dateDecodingStrategy = .formatted(dateFormatter)
+
+        return result
+    }()
+
+    private enum DataTaskErrors: Error {
+        case badURL, responseHasNoData
     }
 }
 

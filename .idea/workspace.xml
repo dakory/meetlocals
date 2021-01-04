@@ -26,22 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="Добавил стартовый экран&#10;Поправил работу с vkApi">
-      <change afterPath="$PROJECT_DIR$/meetlocals/Additions/UIImageView_downloaded_extension.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Assets.xcassets/AccentColor.colorset/AppColors.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Assets.xcassets/AccentColor.colorset/AppColors.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Common.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Common.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Models/Profiles.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Models/Profiles.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/EventListModule/CollectionViewCell/CollectionViewCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModulePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Modules/ProfileModule/ProfileModulePresenter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/APIClient.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/APIClient.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/ArrayCreator/UserStringArrayCreator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/ArrayCreator/UserStringArrayCreator.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/VK/VkUserArrayConverter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/VK/VkUserArrayConverter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Converter/VK/VkUserConverter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Converter/VK/VkUserConverter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetlocals/Network/Repository/VKRepository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/meetlocals/Network/Repository/VKRepository.swift" afterDir="false" />
-    </list>
+    <list default="true" id="4c22624c-95ef-443d-8b4e-93bf55ac27e1" name="Default Changelist" comment="Добавил стартовый экран&#10;Поправил работу с vkApi" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,17 +78,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets/promoIcon.imageset" />
-      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
-      <recent name="$PROJECT_DIR$/meetlocals" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/meetlocals/Modules" />
       <recent name="$PROJECT_DIR$/meetlocals/Modules/" />
       <recent name="$PROJECT_DIR$/Modules/" />
       <recent name="$PROJECT_DIR$/Modules" />
       <recent name="$PROJECT_DIR$/meetlocals/Network/Converter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets/promoIcon.imageset" />
+      <recent name="$PROJECT_DIR$/meetlocals/Assets.xcassets" />
+      <recent name="$PROJECT_DIR$/meetlocals" />
     </key>
   </component>
   <component name="RunManager">
