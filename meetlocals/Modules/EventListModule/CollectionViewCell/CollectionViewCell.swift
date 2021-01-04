@@ -81,7 +81,14 @@ class CollectionViewCell: UICollectionViewCell {
         let person = Common.profiles.profiles[indexPerson!]
         EventName.text = model.name
         UserName.text = "\(person.name)"
-        UserImage.image = UIImage(named: person.avatarUrl!)
+        guard let avatarUrl = person.avatarUrl else {
+            print("Error: User has no avatar")
+            return
+        }
+        UserImage.image = UIImage(named: avatarUrl)
+        if avatarUrl != "exampleImageOfPerson" {
+            UserImage.downloaded(from: avatarUrl)
+        }
         eventId = model.id
     }
 }

@@ -10,6 +10,7 @@
 		6905814B2582150C00833C29 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905814A2582150C00833C29 /* LoadViewController.swift */; };
 		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
+		B02DD01D41E90622F69EDEDC /* UIImageView_downloaded_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD034F04E55F26E8F128E /* UIImageView_downloaded_extension.swift */; };
 		B02DD02A8C3438744756839E /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */; };
 		B02DD075D7C1848824238256 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD65263FAF7F3660C28FE /* EventListViewController.swift */; };
 		B02DD07EAC66ABDDA6CAE87E /* EventScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */; };
@@ -85,6 +86,7 @@
 		6905814A2582150C00833C29 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B02DD02EB32769A16BDE545F /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD030DDA0225B9D39474F /* EventListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListContainer.swift; sourceTree = "<group>"; };
+		B02DD034F04E55F26E8F128E /* UIImageView_downloaded_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView_downloaded_extension.swift; sourceTree = "<group>"; };
 		B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
 		B02DD06CC7A794DE62E89A4C /* EventScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenInteractor.swift; sourceTree = "<group>"; };
 		B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListRouter.swift; sourceTree = "<group>"; };
@@ -216,10 +218,18 @@
 				C2A4F144C23666303B5A171B /* AlertDialogDescription.swift */,
 				C2A4F00839149D220B072726 /* AlertDialogDelegate.swift */,
 				C2A4F303477C977E27D5E426 /* MainViewController.swift */,
+				B02DD28C12E42EEEBF353425 /* LoadingModule */,
 			);
 			name = Modules;
 			path = meetlocals/Modules;
 			sourceTree = "<group>";
+		};
+		B02DD28C12E42EEEBF353425 /* LoadingModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoadingModule;
+			sourceTree = SOURCE_ROOT;
 		};
 		B02DD3994CBE65AE30BF34B7 /* EventListModule */ = {
 			isa = PBXGroup;
@@ -300,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */,
+				B02DD034F04E55F26E8F128E /* UIImageView_downloaded_extension.swift */,
 			);
 			name = Additions;
 			path = meetlocals/Additions;
@@ -593,6 +604,7 @@
 				C2A4F1488B5A9DAB32F4618F /* JsonAppUserConverter.swift in Sources */,
 				C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */,
 				B02DD51DA791ED615C538837 /* APIClient.swift in Sources */,
+				B02DD01D41E90622F69EDEDC /* UIImageView_downloaded_extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

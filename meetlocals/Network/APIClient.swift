@@ -7,8 +7,6 @@ import Foundation
 
 final class APIClient {
 
-//    let client = APIClient()
-
     private let session = URLSession(configuration: .default)
 
     private let baseComponents: URLComponents = {
@@ -26,7 +24,6 @@ final class APIClient {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         result.dateDecodingStrategy = .formatted(dateFormatter)
-
 
         return result
     }()
@@ -218,7 +215,8 @@ final class APIClient {
         case badURL, responseHasNoData
     }
 
-    func getEvents(currentClient: APIClient) {currentClient.getDataTask("events") { (result: Result<EventsResponse, Error>) in
+    func getEvents() {
+        self.getDataTask("events") { (result: Result<EventsResponse, Error>) in
             do {
                 let eventsResponse = try result.get()
                 Common.events = Events(listOfEvents: eventsResponse.events)
@@ -229,8 +227,8 @@ final class APIClient {
         }
     }
     
-    func getUsers(currentClient: APIClient){
-        currentClient.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
+    func getUsers(){
+        self.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
             do {
                 let profilesResponse = try result.get()
                 Common.profiles = Profiles(profiles: profilesResponse.profiles)
@@ -241,39 +239,35 @@ final class APIClient {
         }
     }
     
-    func authorization(currentClient: APIClient, user: [String : Any]){
-        currentClient.getDataTask("users-by-vk-id/\(String(describing: user["vk_id"]!))") { (result: Result<ProfileResponse, Error>) in             //если пользователь есть в БД
+    func authorization(user: [String : Any]){
+
+        guard let vk_user_id = user["vk_id"] else {
+            print("Error: user[vk_id] is nil")
+            return
+        }
+
+        self.getDataTask("users-by-vk-id/\(vk_user_id)") {
+            (result: Result<ProfileResponse, Error>) in             //если пользователь есть в БД
             do {
                 let profileResponse = try result.get()
                 Common.myProfile = profileResponse.profile
             }
             catch {     //если пользователя нет в БД
                 
-                currentClient.postDataTask("users", data: user) { (result: Result<ProfileResponse, Error>) in
+                self.postDataTask("users", data: user) { (result: Result<ProfileResponse, Error>) in
                     do {
                         let profileResponse = try result.get()
-                        print(profileResponse.profile)
+                        Common.myProfile = profileResponse.profile
+                        //print(profileResponse.profile)
                     }
                     catch {
                         print(error)
-                    }
-                    
-                    currentClient.getDataTask("users/4") { (result: Result<ProfileResponse, Error>) in 
-                        do {
-                            let profileResponse = try result.get()
-                            Common.myProfile = Profile(id: profileResponse.profile.id, vkId: user["vk_id"] as! Int, name: user["name"] as! String, sex: 0, birthDate: Date(timeIntervalSinceReferenceDate: 0), description: "", avatarUrl: "exampleImageOfPerson", idOrganizedEvents: [], idParticipateEvents: [])
-                        }
-                        catch {
-                            print(error)
-                        }
                     }
                 }
                 print(error)
             }
         }
     }
-    
-    
 }
 
 

@@ -11,10 +11,6 @@ struct Profile: Codable {
     let idOrganizedEvents: [Int]
     let idParticipateEvents: [Int]
 
-    // изменения полей структуры по сравнению с прошлой версией:
-    // -isMale
-    // -surname
-    // +description
 
     private enum CodingKeys : String, CodingKey {
         case id = "_id"

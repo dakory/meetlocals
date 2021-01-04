@@ -45,8 +45,9 @@ class VkUserConverter: Converter {
             let firstName = data[nodeIndex + 1]
             let id = data[nodeIndex + 2]
             let lastName = data[nodeIndex + 3]
+            let photo_200 = data[nodeIndex + 4]
 
-            let userNode: [String] = [id, domain, firstName, lastName, "trackCode"]
+            let userNode: [String] = [id, domain, firstName, lastName, photo_200, "trackCode"]
             user = userCreator.create(from: userNode)
         }
 
