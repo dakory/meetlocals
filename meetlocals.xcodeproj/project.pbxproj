@@ -45,6 +45,7 @@
 		B02DD9DD2A6368C224171819 /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFC9942A421486F30438 /* VkDelegateImpl.swift */; };
 		B02DDAEF4F74C81B4490D2E8 /* EventScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD37C806822870DF7FC65 /* EventScreenRouter.swift */; };
 		B02DDB78551BCAF9178FED81 /* OrganizerScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB875821236EB013C859 /* OrganizerScreenContainer.swift */; };
+		B02DDB85E0D0BB994B494F67 /* UIImageView_downloaded_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */; };
 		B02DDBE4C8A2D7038401CC91 /* EventListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD030DDA0225B9D39474F /* EventListContainer.swift */; };
 		B02DDC28404BF65D0B9BE955 /* OrganizerScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD228741DC43040D200A9 /* OrganizerScreenRouter.swift */; };
 		B02DDD309335DF8414075B23 /* OrganizerScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD5D24B3B028419DFD4CD /* OrganizerScreenPresenter.swift */; };
@@ -55,6 +56,7 @@
 		B02DDDD55312880681BDD9AF /* ProfileModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD34686BEFE50D9A7ECB5 /* ProfileModulePresenter.swift */; };
 		B02DDE488B66BF772748B268 /* EventScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD3299F9BF394915149D1 /* EventScreenViewController.swift */; };
 		B02DDF07DD08EC34995746A5 /* OrganizerScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD1C4525504753510576B /* OrganizerScreenInteractor.swift */; };
+		B02DDF4112B98D8D5F743FC4 /* VkAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD1D1476FDF60CF2CBE35 /* VkAuthorizer.swift */; };
 		B02DDFBF79BC19E2177F0966 /* EventScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD06CC7A794DE62E89A4C /* EventScreenInteractor.swift */; };
 		B02DDFD797B553BC13995E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02DD102639215962BD46FFC /* LaunchScreen.storyboard */; };
 		C2A4F0C536DB1DB98D45F178 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5105AFFD5FE1E7C214E /* Converter.swift */; };
@@ -92,6 +94,7 @@
 		B02DD16D141DA7F86B5BD92E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B02DD19BA5D3038B6BEAA875 /* Profiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		B02DD1C4525504753510576B /* OrganizerScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenInteractor.swift; sourceTree = "<group>"; };
+		B02DD1D1476FDF60CF2CBE35 /* VkAuthorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkAuthorizer.swift; sourceTree = "<group>"; };
 		B02DD228741DC43040D200A9 /* OrganizerScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenRouter.swift; sourceTree = "<group>"; };
 		B02DD2485B74316D21781CB3 /* ProfileModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleProtocols.swift; sourceTree = "<group>"; };
 		B02DD277E4134B8C64C89616 /* AddEventInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventInteractor.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		B02DD883CCB588A07C467D57 /* AddEventContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventContainer.swift; sourceTree = "<group>"; };
 		B02DD99359A6393635080897 /* ProfileModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleRouter.swift; sourceTree = "<group>"; };
 		B02DD9C69D4CBB005A84DDFE /* OrganizerScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenProtocols.swift; sourceTree = "<group>"; };
+		B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView_downloaded_extension.swift; sourceTree = "<group>"; };
 		B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenPresenter.swift; sourceTree = "<group>"; };
 		B02DDB875821236EB013C859 /* OrganizerScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenContainer.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				B02DDDADAD066A4A034BA565 /* VkDelegate.swift */,
 				B02DDDD0390EC26E2F0E88CB /* VkUiDelegate.swift */,
 				B02DDFC9942A421486F30438 /* VkDelegateImpl.swift */,
+				B02DD1D1476FDF60CF2CBE35 /* VkAuthorizer.swift */,
 			);
 			path = AuthorizeModule;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */,
+				B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */,
 			);
 			name = Additions;
 			path = meetlocals/Additions;
@@ -593,6 +599,8 @@
 				C2A4F1488B5A9DAB32F4618F /* JsonAppUserConverter.swift in Sources */,
 				C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */,
 				B02DD51DA791ED615C538837 /* APIClient.swift in Sources */,
+				B02DDB85E0D0BB994B494F67 /* UIImageView_downloaded_extension.swift in Sources */,
+				B02DDF4112B98D8D5F743FC4 /* VkAuthorizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@ extension ProfileModuleRouter: ProfileModuleRouterInput {
     private func openWelcomeScreen() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController: MainViewController())
-        (UIApplication.shared.delegate as! AppDelegate).appWindow = window
+        (UIApplication.shared.delegate as! AppDelegate).window = window
         window.makeKeyAndVisible()
     }
 }

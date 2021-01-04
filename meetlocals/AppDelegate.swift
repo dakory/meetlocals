@@ -13,10 +13,12 @@ import RxSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var appWindow: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    let apiClient = APIClient()
     let vkAuthorizer = VkAuthorizer()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if (vkAuthorizer.userWasAuthorized()) {
             openMainScreen()
         } else {
@@ -25,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
-    let apiClient = APIClient()
+
 
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -37,8 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let interactor = InteractorImpl()
 
         let currentVkUser = interactor.getVkCurrentUser()
-
-   //      Получение events
 
         currentVkUser.observe(on: MainScheduler.instance)
             .subscribe(
@@ -68,20 +67,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+
+    private func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        VKSdk.processOpen(url as URL?, fromApplication: sourceApplication)
+        print("url: \(url)")
+        return true
+    }
+
+
+    private func showErrorDialog() {
+        let alertDescription: AlertDialogDescription = AlertDialogDescription(title: "Ошибка",
+                subtitle: "Для продолжения необходимо авторизоваться",
+                positiveButtonText: "ОК",
+                positiveButtonAction: { VKSdk.authorize(VkInfo.PERMISSIONS) },
+                negativeButtonText: "Закрыть приложение",
+                negativeButtonAction: { exit(0) }
+        )
+
+        let alertDialogDelegate = AlertDialogDelegate(alertDescription: alertDescription)
+        let controller = self.window?.rootViewController
+        alertDialogDelegate.show(viewController: controller)
+    }
+
+
+    private func openWelcomeScreen() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: MainViewController())
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+
     private func openMainScreen() {
         apiClient.getUsers() //подгружаем общий список пользователей
         apiClient.getEvents() //подгружаем общий список мероприятий
 
-            
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = UINavigationController(rootViewController: LoadViewController());
-            self.appWindow = window
-            window.makeKeyAndVisible()
-            
-            Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in // после
-                // трёхсекундной задержки отображаем список мероприятий
-                let appWindow = UIWindow(frame: UIScreen.main.bounds)
-                self.appWindow = appWindow
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: LoadViewController());
+        self.window = window
+        window.makeKeyAndVisible()
+
+        Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { (_) in // после
+            // трёхсекундной задержки отображаем список мероприятий
+            let appWindow = UIWindow(frame: UIScreen.main.bounds)
+            self.window = appWindow
 
             let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
             let eventListContainer = EventListContainer.assemble(with: eventListContext)
@@ -121,31 +150,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appWindow.makeKeyAndVisible()
         }
     }
-
-    private func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        VKSdk.processOpen(url as URL?, fromApplication: sourceApplication)
-        print("url: \(url)")
-        return true
-    }
-
-    private func showErrorDialog() {
-        let alertDescription: AlertDialogDescription = AlertDialogDescription(title: "Ошибка",
-                subtitle: "Для продолжения необходимо авторизоваться",
-                positiveButtonText: "ОК",
-                positiveButtonAction: { VKSdk.authorize(VkInfo.PERMISSIONS) },
-                negativeButtonText: "Закрыть приложение",
-                negativeButtonAction: { exit(0) }
-        )
-
-        let alertDialogDelegate = AlertDialogDelegate(alertDescription: alertDescription)
-        let controller = self.appWindow?.rootViewController
-        alertDialogDelegate.show(viewController: controller)
-    }
-
-    private func openWelcomeScreen() {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController(rootViewController: MainViewController())
-        self.appWindow = window
-        window.makeKeyAndVisible()
-    }
 }
+

@@ -220,12 +220,10 @@ final class APIClient {
                 Common.myProfile = profileResponse.profile
             }
             catch {     //если пользователя нет в БД
-                
                 self.postDataTask("users", data: user) { (result: Result<ProfileResponse, Error>) in
                     do {
                         let profileResponse = try result.get()
                         Common.myProfile = profileResponse.profile
-                        //print(profileResponse.profile)
                     }
                     catch {
                         print(error)
