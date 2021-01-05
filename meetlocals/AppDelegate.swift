@@ -15,11 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     let apiClient = APIClient()
-    let vkAuthorizer = VkAuthorizer()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if (vkAuthorizer.userWasAuthorized()) {
+        if (VkAuthorizer().userWasAuthorized()) {
             openMainScreen()
         } else {
             openWelcomeScreen()
@@ -35,36 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("url: \(url)")
         print("Everything is cool!")
 
-        let interactor = InteractorImpl()
 
-        let currentVkUser = interactor.getVkCurrentUser()
-
-        currentVkUser.observe(on: MainScheduler.instance)
-            .subscribe(
-                onNext: { (response: VKUser) in
-                    let newUser: [String : Any] = [
-                        "name": "\(response.first_name!) \(response.last_name!)",
-                        "vk_id": Int(truncating: response.id!),
-                        "avatar_url": response.photo_200 ?? "exampleImageOfPerson"
-                    ]
-
-                    self.apiClient.authorization(user: newUser)
-                },
-                onError: { error in
-                    print(error)
-                },
-                onCompleted: {
-                    print("Completed")
-                })
-        
 
         if (VKSdk.isLoggedIn()) {
             openMainScreen()
-            return true
         } else {
             showErrorDialog()
-            return true
         }
+
+        return true
     }
 
 
@@ -98,8 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func openMainScreen() {
-        apiClient.getUsers() //подгружаем общий список пользователей
-        apiClient.getEvents() //подгружаем общий список мероприятий
+        self.apiClient.getCurrentUser()
+        self.apiClient.getUsers() //подгружаем общий список пользователей
+        self.apiClient.getEvents() //подгружаем общий список мероприятий
 
 
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -107,10 +86,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { (_) in // после
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in // после
             // трёхсекундной задержки отображаем список мероприятий
-            let appWindow = UIWindow(frame: UIScreen.main.bounds)
-            self.window = appWindow
 
             let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
             let eventListContainer = EventListContainer.assemble(with: eventListContext)
@@ -146,8 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
 
-            appWindow.rootViewController = tabBar
-            appWindow.makeKeyAndVisible()
+            self.window?.rootViewController = tabBar
         }
     }
 }

@@ -3,6 +3,8 @@
 //
 
 import Foundation
+import VK_ios_sdk
+import RxSwift
 
 
 final class APIClient {
@@ -205,8 +207,31 @@ final class APIClient {
         }
     }
 
+    func getCurrentUser() {
+        let interactor = InteractorImpl()
+        let currentVkUser = interactor.getVkCurrentUser()
 
-    func authorization(user: [String : Any]){
+        currentVkUser.observe(on: MainScheduler.instance)
+                .subscribe(
+                        onNext: { (response: VKUser) in
+                            let newUser: [String : Any] = [
+                                "name": "\(response.first_name!) \(response.last_name!)",
+                                "vk_id": Int(truncating: response.id!),
+                                "avatar_url": response.photo_200 ?? "exampleImageOfPerson"
+                            ]
+
+                            self.authorization(user: newUser)
+                        },
+                        onError: { error in
+                            print(error)
+                        },
+                        onCompleted: {
+                            print("Completed")
+                        })
+    }
+
+
+    private func authorization(user: [String : Any]){
 
         guard let vk_user_id = user["vk_id"] else {
             print("Error: user[vk_id] is nil")
@@ -233,7 +258,6 @@ final class APIClient {
             }
         }
     }
-
 
     private func makeURL(path: String) -> URL? {
         var result = self.baseComponents

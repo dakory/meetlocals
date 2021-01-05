@@ -19,11 +19,7 @@ class VkAuthorizer {
         initVkDelegates()
         VKSdk.wakeUpSession(VkInfo.PERMISSIONS, complete: signedIn)
 
-        if (VKSdk.isLoggedIn()) {
-            return true
-        } else {
-            return false
-        }
+        return VKSdk.isLoggedIn()
     }
 
     private func initVkDelegates() {
