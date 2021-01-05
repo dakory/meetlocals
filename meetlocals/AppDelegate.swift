@@ -8,7 +8,7 @@
 
 import UIKit
 import VK_ios_sdk
-import RxSwift
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
