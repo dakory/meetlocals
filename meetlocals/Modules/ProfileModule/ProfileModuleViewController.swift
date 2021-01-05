@@ -67,17 +67,17 @@ final class ProfileModuleViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             
-        
+
             imageOfPerson.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 229),
             imageOfPerson.leadingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: -60),
             imageOfPerson.trailingAnchor.constraint(equalTo: scrollView.centerXAnchor, constant: 60),
             imageOfPerson.bottomAnchor.constraint(equalTo: imageOfPerson.topAnchor, constant: 120),
-        
+
             nameOfPerson.topAnchor.constraint(equalTo: imageOfPerson.bottomAnchor, constant: 26),
             nameOfPerson.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             nameOfPerson.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             nameOfPerson.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
+
             buttonExit.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
             buttonExit.topAnchor.constraint(equalTo: buttonExit.bottomAnchor, constant: -47),
             buttonExit.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
@@ -90,8 +90,8 @@ final class ProfileModuleViewController: UIViewController {
         imageOfPerson.layer.cornerRadius = 35
         imageOfPerson.clipsToBounds = true
             
-            
-            
+
+
         nameOfPerson.font = nameOfPerson.font.withSize(16)
         nameOfPerson.numberOfLines = 0
         nameOfPerson.textAlignment = NSTextAlignment.center

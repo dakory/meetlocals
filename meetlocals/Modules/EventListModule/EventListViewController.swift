@@ -108,9 +108,9 @@ extension EventListController: EventListViewInput {
             self.navigationItem.title = "Организую"
         }
     }
-    
-    
-    
+
+
+
 }
 
 extension EventListController: UICollectionViewDataSource {
@@ -126,7 +126,7 @@ extension EventListController: UICollectionViewDataSource {
         cell.layer.shadowRadius = cell.layer.cornerRadius
         cell.layer.shadowOpacity = 0.1
         cell.layer.shadowColor = UIColor.gray.cgColor
-        
+
         return cell
     }
     
@@ -154,7 +154,7 @@ private extension EventListController {
         ].forEach({
             $0.isActive = true
         })
-        
+
         self.collectionView.clipsToBounds = true
         self.collectionView.backgroundColor = view.backgroundColor
         self.collectionView.delegate = self
