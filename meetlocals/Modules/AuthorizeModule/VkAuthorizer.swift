@@ -22,6 +22,16 @@ class VkAuthorizer {
         return VKSdk.isLoggedIn()
     }
 
+    @objc
+    public func authorize() {
+        let vkUrl = VkInfo.VK_AUTHORIZATION_URL
+        print(vkUrl)
+        VKSdk.processOpen(vkUrl, fromApplication: VkInfo.APPLICATION_ID)
+        self.initVkDelegates()
+        VKSdk.wakeUpSession(VkInfo.PERMISSIONS, complete: signedIn)
+        VKSdk.authorize(VkInfo.PERMISSIONS)
+    }
+
     private func initVkDelegates() {
         vkDelegate = VkDelegate()
         vkUiDelegate = VkUiDelegate()

@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
 
     @objc
     public func authorize() {
-        VKSdk.authorize(VkInfo.PERMISSIONS)
+        authorizer.authorize()
     }
 }
 
@@ -96,3 +96,6 @@ class MainView: AutoLayoutView {
         authorizeButton.layer.masksToBounds = true
     }
 }
+
+
+
