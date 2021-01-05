@@ -320,7 +320,17 @@ extension EventScreenViewController: EventScreenViewInput {
     func setEventAndOrganizerData(_ person: Profile, _ event: Event){
         nameOfPerson.text = person.name
         nameEvent.text = event.name
-        imageOfPerson.image = UIImage(named: person.avatarUrl!)
+
+        guard let avatarUrl = person.avatarUrl else {
+            print("Error: User has no avatar")
+            return
+        }
+        imageOfPerson.image = UIImage(named: "exampleImageOfPerson")
+        if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
+            print("Url: \(avatarUrl)")
+            imageOfPerson.downloaded(from: avatarUrl)
+        }
+
         labelTime.text = event.date.dayMonthYearFormat()
         labelPlace.text = event.place
         labelDescription.text = event.description
@@ -340,9 +350,16 @@ extension EventScreenViewController: EventScreenViewInput {
                 })
 
             let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == event.idMembers[i] })!
-            let imageUrl = Common.profiles.profiles[indexPerson].avatarUrl
 
-            imageView.image = UIImage(named: imageUrl ?? "person.circle")
+            guard let avatarUrl = Common.profiles.profiles[indexPerson].avatarUrl else {
+                print("Error: User has no avatar")
+                return
+            }
+            imageView.image = UIImage(named: "exampleImageOfPerson")
+            if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
+                print("Url: \(avatarUrl)")
+                imageView.downloaded(from: avatarUrl)
+            }
             
             let fullName = Common.profiles.profiles[indexPerson].name.split(separator: " ")
             name.text = String(fullName[0])

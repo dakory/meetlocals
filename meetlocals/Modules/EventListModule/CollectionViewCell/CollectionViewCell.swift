@@ -85,8 +85,9 @@ class CollectionViewCell: UICollectionViewCell {
             print("Error: User has no avatar")
             return
         }
-        UserImage.image = UIImage(named: avatarUrl)
-        if avatarUrl != "exampleImageOfPerson" {
+        UserImage.image = UIImage(named: "exampleImageOfPerson")
+        if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
+            print("Url: \(avatarUrl)")
             UserImage.downloaded(from: avatarUrl)
         }
         eventId = model.id

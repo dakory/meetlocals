@@ -113,7 +113,16 @@ extension ProfileModuleViewController: ProfileModuleViewInput {
     
     func setProfileData(person: Profile) {
         nameOfPerson.text = "\(person.name)"
-        imageOfPerson.image =  UIImage(named: person.avatarUrl!)
+
+        guard let avatarUrl = person.avatarUrl else {
+            print("Error: User has no avatar")
+            return
+        }
+        imageOfPerson.image = UIImage(named: "exampleImageOfPerson")
+        if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
+            print("Url: \(avatarUrl)")
+            imageOfPerson.downloaded(from: avatarUrl)
+        }
     }
 }
 

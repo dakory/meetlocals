@@ -26,12 +26,14 @@ extension LoadingModuleInteractor: LoadingModuleInteractorInput {
 		currentVkUser.observe(on: MainScheduler.instance)
 				.subscribe(
 						onNext: { (response: VKUser) in
+							let avatarUrl = response.photo_200?.dropFirst().dropFirst().dropLast()
 							let newUser: [String : Any] = [
 								"name": "\(response.first_name!) \(response.last_name!)",
 								"vk_id": Int(truncating: response.id!),
-								"avatar_url": response.photo_200 ?? "exampleImageOfPerson"
+								"avatar_url": avatarUrl ?? "exampleImageOfPerson"
 							]
-
+//							print("newUser avatar: \(response.photo_200.dropLast())")
+//							print("newUser avatar: \(newUser["avatar_url"]!)")
 //							self.output?.moduleOutput?.apiClient.authorization(user: newUser)
 							guard let vk_user_id = newUser["vk_id"] else {
 								print("Error: user[vk_id] is nil")

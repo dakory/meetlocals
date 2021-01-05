@@ -12,7 +12,8 @@ class UserStringArrayCreator {
     private let LAST_NAME = "\"last_name\" = "
     private let TRACK_CODE = "\"track_code\" = "
     private let ID = "id = "
-    private let PHOTO_200 = "\"photo_200\" = "
+//    private let PHOTO_200 = "\"photo_200\" = "
+    private let PHOTO_200 = "photo_200\" = "
 
     //TODO определиться какие поля обязательные, а какие могут и не прийти
     func create(from: [String]) -> VKUser {
