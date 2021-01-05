@@ -7,34 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6905814B2582150C00833C29 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6905814A2582150C00833C29 /* LoadViewController.swift */; };
 		A8E3A7D0A03D51B3039D8423 /* Pods_meetlocals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */; };
 		B02DD0084ED673BA21A84EC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */; };
 		B02DD02A8C3438744756839E /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */; };
 		B02DD075D7C1848824238256 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD65263FAF7F3660C28FE /* EventListViewController.swift */; };
+		B02DD076A61690F074358577 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB60359196D3C04715CB /* AppUser.swift */; };
 		B02DD07EAC66ABDDA6CAE87E /* EventScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */; };
 		B02DD0BCD1A170D1D26D75B0 /* AddEventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */; };
 		B02DD0F88505917341D4693A /* EventListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6B3DD9BE16B1BAEE1AB /* EventListProtocols.swift */; };
 		B02DD194D522BE3447EF0D6E /* ProfileModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0CAB81F9D066C579ED3 /* ProfileModuleInteractor.swift */; };
 		B02DD1E54329199ED78CEC8B /* ProfileModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD99359A6393635080897 /* ProfileModuleRouter.swift */; };
 		B02DD233283D89B9F2BCFF50 /* ProfileModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD3D477F13149A990C9CA /* ProfileModuleViewController.swift */; };
+		B02DD25F1930551ED63C23C3 /* LoadingModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD823662E6474B15178C5 /* LoadingModuleViewController.swift */; };
 		B02DD28EDAB75DCA9E78B71D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */; };
 		B02DD3116318065B08F2001D /* AddEventContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD883CCB588A07C467D57 /* AddEventContainer.swift */; };
 		B02DD374DDCD4FE80EF595CD /* EventListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */; };
+		B02DD38E753721FB28FF25E9 /* LoadingModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0A909AB41E367C8CEB6 /* LoadingModuleInteractor.swift */; };
 		B02DD42A0E78DB72CA97C676 /* OrganizerScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD9C69D4CBB005A84DDFE /* OrganizerScreenProtocols.swift */; };
+		B02DD4AED7B5FFBE86C7E8CF /* LoadingModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0CDC07863F4DC04D796 /* LoadingModulePresenter.swift */; };
 		B02DD51DA791ED615C538837 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7719A71CCDDE67C38F7 /* APIClient.swift */; };
 		B02DD58CEC49AF7E2FF1DCE1 /* EventScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7DA8C6E775DD5960674 /* EventScreenContainer.swift */; };
 		B02DD622017199131F2C6459 /* OrganizerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD02EB32769A16BDE545F /* OrganizerScreenViewController.swift */; };
 		B02DD638B088146C089322AB /* AutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */; };
 		B02DD66F685DF5539FFAC1BB /* AddEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFC3C85FA7690C3D5EC3 /* AddEventRouter.swift */; };
 		B02DD6D04D586498568BAB5A /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD19BA5D3038B6BEAA875 /* Profiles.swift */; };
+		B02DD74A845BFC11CC4F55D4 /* LoadingModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD16FDE19A148256AA8FA /* LoadingModuleContainer.swift */; };
 		B02DD79D69C58BA519CA8436 /* ProfileModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD0EB62A466A32D333E0 /* ProfileModuleContainer.swift */; };
 		B02DD7B17195E6966C867A99 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDADAD066A4A034BA565 /* VkDelegate.swift */; };
 		B02DD7CC910E371FE27D69B6 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */; };
-		B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */; };
 		B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD45266B8FD7BC61668C0 /* Common.swift */; };
 		B02DD7F0501837F5FD655A0F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFFE3F08F0CA548D08CF /* Events.swift */; };
 		B02DD7FCC572870FF3A84DE8 /* EventListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */; };
+		B02DD807F9DFFDF281083E67 /* LoadingModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD349E1B5EAFB3D748EF1 /* LoadingModuleProtocols.swift */; };
+		B02DD858DDB8EB3B0FC0AA1B /* UIImageView_downloaded_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */; };
 		B02DD8BD1E52880CEC61269D /* AddEventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD277E4134B8C64C89616 /* AddEventInteractor.swift */; };
 		B02DD8BE1D9BC1262548235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */; };
 		B02DD90A7D745C329B663E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02DDCF3F744873D79528951 /* Assets.xcassets */; };
@@ -45,14 +50,17 @@
 		B02DD9DD2A6368C224171819 /* VkDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFC9942A421486F30438 /* VkDelegateImpl.swift */; };
 		B02DDAEF4F74C81B4490D2E8 /* EventScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD37C806822870DF7FC65 /* EventScreenRouter.swift */; };
 		B02DDB78551BCAF9178FED81 /* OrganizerScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDB875821236EB013C859 /* OrganizerScreenContainer.swift */; };
-		B02DDB85E0D0BB994B494F67 /* UIImageView_downloaded_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */; };
 		B02DDBE4C8A2D7038401CC91 /* EventListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD030DDA0225B9D39474F /* EventListContainer.swift */; };
+		B02DDC0B3ABBED1D2613864B /* AppUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDA167D88F204FBBF19AC /* AppUsers.swift */; };
 		B02DDC28404BF65D0B9BE955 /* OrganizerScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD228741DC43040D200A9 /* OrganizerScreenRouter.swift */; };
 		B02DDD309335DF8414075B23 /* OrganizerScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD5D24B3B028419DFD4CD /* OrganizerScreenPresenter.swift */; };
+		B02DDD32BFE966D06A257FEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD4D04613A31BA6DD8D90 /* AppCoordinator.swift */; };
 		B02DDD47E715864B5C97AC6B /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD73120E0493A290978B /* AddEventController.swift */; };
 		B02DDD574B79E73FAA50D6B3 /* VkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD5EDD79EC6F92FC6EF7 /* VkInfo.swift */; };
 		B02DDDA910D9EFAA726793CB /* VkUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDD0390EC26E2F0E88CB /* VkUiDelegate.swift */; };
 		B02DDDB8270F39B8CF671D43 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD75863A90D9F5A4F0666 /* EventListPresenter.swift */; };
+		B02DDDB8C455ECD67C42EE9F /* LoadingModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD3F71F03D1BE47AAF9A6 /* LoadingModuleRouter.swift */; };
+		B02DDDC53069E1B2ADB15687 /* UIView_Layout_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDC279F5131EDD48D8D15 /* UIView_Layout_utils.swift */; };
 		B02DDDD55312880681BDD9AF /* ProfileModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD34686BEFE50D9A7ECB5 /* ProfileModulePresenter.swift */; };
 		B02DDE488B66BF772748B268 /* EventScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD3299F9BF394915149D1 /* EventScreenViewController.swift */; };
 		B02DDF07DD08EC34995746A5 /* OrganizerScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD1C4525504753510576B /* OrganizerScreenInteractor.swift */; };
@@ -71,7 +79,6 @@
 		C2A4F9BF26F60BF08177BF5F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */; };
 		C2A4FAA04918454F915F7B91 /* VkConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */; };
 		C2A4FB217ADCC5A98ECE11F1 /* VKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* VKRepository.swift */; };
-		C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F46A3755194B571EB5B7 /* AppUsers.swift */; };
 		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
 		C2A4FCD06CB31F43EAB9E6CD /* InteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */; };
 		C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F2D4A6FC78DDEA38A646 /* AppRepository.swift */; };
@@ -80,18 +87,20 @@
 		C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */; };
 		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
 		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
-		C2A4FF1CA05A72B9D20CF6DA /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FB6DA87B99C889D86325 /* AppUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6905814A2582150C00833C29 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		B02DD02EB32769A16BDE545F /* OrganizerScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD030DDA0225B9D39474F /* EventListContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListContainer.swift; sourceTree = "<group>"; };
 		B02DD05AAAEEA5E1B319CC36 /* AddEventProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventProtocols.swift; sourceTree = "<group>"; };
 		B02DD06CC7A794DE62E89A4C /* EventScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenInteractor.swift; sourceTree = "<group>"; };
 		B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListRouter.swift; sourceTree = "<group>"; };
+		B02DD0A909AB41E367C8CEB6 /* LoadingModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleInteractor.swift; sourceTree = "<group>"; };
+		B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView_downloaded_extension.swift; sourceTree = "<group>"; };
 		B02DD0CAB81F9D066C579ED3 /* ProfileModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleInteractor.swift; sourceTree = "<group>"; };
+		B02DD0CDC07863F4DC04D796 /* LoadingModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModulePresenter.swift; sourceTree = "<group>"; };
 		B02DD16D141DA7F86B5BD92E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B02DD16FDE19A148256AA8FA /* LoadingModuleContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleContainer.swift; sourceTree = "<group>"; };
 		B02DD19BA5D3038B6BEAA875 /* Profiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		B02DD1C4525504753510576B /* OrganizerScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenInteractor.swift; sourceTree = "<group>"; };
 		B02DD1D1476FDF60CF2CBE35 /* VkAuthorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkAuthorizer.swift; sourceTree = "<group>"; };
@@ -102,12 +111,14 @@
 		B02DD3299F9BF394915149D1 /* EventScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenViewController.swift; sourceTree = "<group>"; };
 		B02DD33475CA722FEC2D8072 /* AddEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventPresenter.swift; sourceTree = "<group>"; };
 		B02DD34686BEFE50D9A7ECB5 /* ProfileModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModulePresenter.swift; sourceTree = "<group>"; };
+		B02DD349E1B5EAFB3D748EF1 /* LoadingModuleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleProtocols.swift; sourceTree = "<group>"; };
 		B02DD37C806822870DF7FC65 /* EventScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenRouter.swift; sourceTree = "<group>"; };
 		B02DD3D477F13149A990C9CA /* ProfileModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleViewController.swift; sourceTree = "<group>"; };
 		B02DD3E3733E227E0CF4BE21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B02DD3F71F03D1BE47AAF9A6 /* LoadingModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleRouter.swift; sourceTree = "<group>"; };
 		B02DD45266B8FD7BC61668C0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B02DD4BA34ABB235BAA766A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Layout_utils.swift; sourceTree = "<group>"; };
+		B02DD4D04613A31BA6DD8D90 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinator/AppCoordinator.swift; sourceTree = "<group>"; };
 		B02DD5D24B3B028419DFD4CD /* OrganizerScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenPresenter.swift; sourceTree = "<group>"; };
 		B02DD65263FAF7F3660C28FE /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenProtocols.swift; sourceTree = "<group>"; };
@@ -116,14 +127,17 @@
 		B02DD75863A90D9F5A4F0666 /* EventListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListPresenter.swift; sourceTree = "<group>"; };
 		B02DD7719A71CCDDE67C38F7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Network/APIClient.swift; sourceTree = "<group>"; };
 		B02DD7DA8C6E775DD5960674 /* EventScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenContainer.swift; sourceTree = "<group>"; };
+		B02DD823662E6474B15178C5 /* LoadingModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleViewController.swift; sourceTree = "<group>"; };
 		B02DD82C1D788ACDE510DDB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B02DD883CCB588A07C467D57 /* AddEventContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventContainer.swift; sourceTree = "<group>"; };
 		B02DD99359A6393635080897 /* ProfileModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleRouter.swift; sourceTree = "<group>"; };
 		B02DD9C69D4CBB005A84DDFE /* OrganizerScreenProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenProtocols.swift; sourceTree = "<group>"; };
-		B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView_downloaded_extension.swift; sourceTree = "<group>"; };
+		B02DDA167D88F204FBBF19AC /* AppUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUsers.swift; sourceTree = "<group>"; };
 		B02DDB48FE1353355ED131B4 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		B02DDB60359196D3C04715CB /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		B02DDB6D820C0E639726CB4F /* EventScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenPresenter.swift; sourceTree = "<group>"; };
 		B02DDB875821236EB013C859 /* OrganizerScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizerScreenContainer.swift; sourceTree = "<group>"; };
+		B02DDC279F5131EDD48D8D15 /* UIView_Layout_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Layout_utils.swift; sourceTree = "<group>"; };
 		B02DDC5443CF873D3E031A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B02DDCF3F744873D79528951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02DDD0EB62A466A32D333E0 /* ProfileModuleContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModuleContainer.swift; sourceTree = "<group>"; };
@@ -142,11 +156,10 @@
 		C2A4F146380F7A5519E8AE0F /* JsonAppUserConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonAppUserConverter.swift; path = Network/Converter/Json/JsonAppUserConverter.swift; sourceTree = "<group>"; };
 		C2A4F1C54FFB35D318204205 /* JsonConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonConverterFactory.swift; path = Network/Converter/Factory/JsonConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F2D4A6FC78DDEA38A646 /* AppRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppRepository.swift; path = Network/Repository/AppRepository.swift; sourceTree = "<group>"; };
-		C2A4F303477C977E27D5E426 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
+		C2A4F303477C977E27D5E426 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "WelcomeScreen (Main)/MainViewController.swift"; sourceTree = "<group>"; };
 		C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkConverterFactory.swift; path = Network/Converter/Factory/VkConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F42526DC0B4EF836DCBD /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = Network/Interactor/Interactor.swift; sourceTree = "<group>"; };
 		C2A4F43E9153ECE4DD515B75 /* NetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetError.swift; path = Network/Error/NetError.swift; sourceTree = "<group>"; };
-		C2A4F46A3755194B571EB5B7 /* AppUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUsers.swift; path = Model/AppUsers.swift; sourceTree = "<group>"; };
 		C2A4F5105AFFD5FE1E7C214E /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Network/Converter/Common/Converter.swift; sourceTree = "<group>"; };
 		C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterFactory.swift; path = Network/Converter/Common/ConverterFactory.swift; sourceTree = "<group>"; };
 		C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStringArrayCreator.swift; path = Network/Converter/ArrayCreator/UserStringArrayCreator.swift; sourceTree = "<group>"; };
@@ -154,7 +167,6 @@
 		C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertationError.swift; path = Network/Converter/Common/ConvertationError.swift; sourceTree = "<group>"; };
 		C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Assets.xcassets/AccentColor.colorset/AppColors.swift; sourceTree = "<group>"; };
 		C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkUserConverter.swift; path = Network/Converter/VK/VkUserConverter.swift; sourceTree = "<group>"; };
-		C2A4FB6DA87B99C889D86325 /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppUser.swift; path = Model/AppUser.swift; sourceTree = "<group>"; };
 		C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterResolver.swift; path = Network/Converter/Common/ConverterResolver.swift; sourceTree = "<group>"; };
 		C2A4FE6B1567758460773090 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = Assets.xcassets/promoIcon.imageset/Contents.json; sourceTree = "<group>"; };
 		C2A4FEB4026601ACCC5D553B /* VkUserArrayConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkUserArrayConverter.swift; path = Network/Converter/VK/VkUserArrayConverter.swift; sourceTree = "<group>"; };
@@ -190,6 +202,8 @@
 			children = (
 				B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */,
 				B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */,
+				B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */,
+				B02DDC279F5131EDD48D8D15 /* UIView_Layout_utils.swift */,
 			);
 			name = Common;
 			path = meetlocals/Common;
@@ -223,6 +237,20 @@
 			);
 			name = Modules;
 			path = meetlocals/Modules;
+			sourceTree = "<group>";
+		};
+		B02DD32B61EBB1AC27762499 /* LoadingModule */ = {
+			isa = PBXGroup;
+			children = (
+				B02DD3F71F03D1BE47AAF9A6 /* LoadingModuleRouter.swift */,
+				B02DD16FDE19A148256AA8FA /* LoadingModuleContainer.swift */,
+				B02DD0CDC07863F4DC04D796 /* LoadingModulePresenter.swift */,
+				B02DD349E1B5EAFB3D748EF1 /* LoadingModuleProtocols.swift */,
+				B02DD0A909AB41E367C8CEB6 /* LoadingModuleInteractor.swift */,
+				B02DD823662E6474B15178C5 /* LoadingModuleViewController.swift */,
+			);
+			name = LoadingModule;
+			path = meetlocals/Modules/LoadingModule;
 			sourceTree = "<group>";
 		};
 		B02DD3994CBE65AE30BF34B7 /* EventListModule */ = {
@@ -276,6 +304,8 @@
 				B02DD45266B8FD7BC61668C0 /* Common.swift */,
 				B02DDFFE3F08F0CA548D08CF /* Events.swift */,
 				B02DD19BA5D3038B6BEAA875 /* Profiles.swift */,
+				B02DDA167D88F204FBBF19AC /* AppUsers.swift */,
+				B02DDB60359196D3C04715CB /* AppUser.swift */,
 			);
 			name = Models;
 			path = meetlocals/Models;
@@ -299,16 +329,6 @@
 				B02DD16D141DA7F86B5BD92E /* CollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
-			sourceTree = "<group>";
-		};
-		B02DD686B5B87077183867A0 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				B02DD57E7B4ED93BF659646C /* UIView_Layout_utils.swift */,
-				B02DDAE047AC2FE30DE87F12 /* UIImageView_downloaded_extension.swift */,
-			);
-			name = Additions;
-			path = meetlocals/Additions;
 			sourceTree = "<group>";
 		};
 		B02DD6A22379ADD9F637989D /* CollectionViewFlowLayout */ = {
@@ -348,9 +368,9 @@
 				978D901214666F54B2F5964F /* Pods */,
 				ED0FADE70DC7D79824F03FBC /* Frameworks */,
 				B02DD0897423B085E454A7A1 /* Common */,
-				B02DD686B5B87077183867A0 /* Additions */,
 				B02DD6333A2FB5B42A35D9F8 /* Models */,
 				B02DD2039538DE8870212930 /* Modules */,
+				B02DD32B61EBB1AC27762499 /* LoadingModule */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,15 +394,13 @@
 				C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */,
 				C2A4FE6B1567758460773090 /* Contents.json */,
 				C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */,
-				C2A4FB6DA87B99C889D86325 /* AppUser.swift */,
 				C2A4F2D4A6FC78DDEA38A646 /* AppRepository.swift */,
 				C2A4F1C54FFB35D318204205 /* JsonConverterFactory.swift */,
 				C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */,
 				C2A4FEB4026601ACCC5D553B /* VkUserArrayConverter.swift */,
 				C2A4F146380F7A5519E8AE0F /* JsonAppUserConverter.swift */,
-				C2A4F46A3755194B571EB5B7 /* AppUsers.swift */,
 				B02DD7719A71CCDDE67C38F7 /* APIClient.swift */,
-				6905814A2582150C00833C29 /* LoadViewController.swift */,
+				B02DD4D04613A31BA6DD8D90 /* AppCoordinator.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -545,7 +563,6 @@
 				C2A4FAA04918454F915F7B91 /* VkConverterFactory.swift in Sources */,
 				B02DD638B088146C089322AB /* AutoLayoutView.swift in Sources */,
 				B02DD28EDAB75DCA9E78B71D /* UIImageViewExtension.swift in Sources */,
-				B02DD7D8F87C4CDDD30A4128 /* UIView_Layout_utils.swift in Sources */,
 				B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */,
 				B02DD7F0501837F5FD655A0F /* Events.swift in Sources */,
 				B02DD6D04D586498568BAB5A /* Profiles.swift in Sources */,
@@ -590,17 +607,24 @@
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
 				C2A4F9BF26F60BF08177BF5F /* AppColors.swift in Sources */,
-				C2A4FF1CA05A72B9D20CF6DA /* AppUser.swift in Sources */,
 				C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */,
 				C2A4F2DC4190A9C8706E9F61 /* JsonConverterFactory.swift in Sources */,
 				C2A4F54791E49E02A80D8F97 /* VkUserConverter.swift in Sources */,
 				C2A4F4A90BE28EF0721B98E3 /* VkUserArrayConverter.swift in Sources */,
-				6905814B2582150C00833C29 /* LoadViewController.swift in Sources */,
 				C2A4F1488B5A9DAB32F4618F /* JsonAppUserConverter.swift in Sources */,
-				C2A4FB525175CE650E528FE0 /* AppUsers.swift in Sources */,
 				B02DD51DA791ED615C538837 /* APIClient.swift in Sources */,
-				B02DDB85E0D0BB994B494F67 /* UIImageView_downloaded_extension.swift in Sources */,
 				B02DDF4112B98D8D5F743FC4 /* VkAuthorizer.swift in Sources */,
+				B02DDC0B3ABBED1D2613864B /* AppUsers.swift in Sources */,
+				B02DD076A61690F074358577 /* AppUser.swift in Sources */,
+				B02DD858DDB8EB3B0FC0AA1B /* UIImageView_downloaded_extension.swift in Sources */,
+				B02DDDC53069E1B2ADB15687 /* UIView_Layout_utils.swift in Sources */,
+				B02DDDB8C455ECD67C42EE9F /* LoadingModuleRouter.swift in Sources */,
+				B02DD74A845BFC11CC4F55D4 /* LoadingModuleContainer.swift in Sources */,
+				B02DD4AED7B5FFBE86C7E8CF /* LoadingModulePresenter.swift in Sources */,
+				B02DD807F9DFFDF281083E67 /* LoadingModuleProtocols.swift in Sources */,
+				B02DD38E753721FB28FF25E9 /* LoadingModuleInteractor.swift in Sources */,
+				B02DD25F1930551ED63C23C3 /* LoadingModuleViewController.swift in Sources */,
+				B02DDD32BFE966D06A257FEA /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

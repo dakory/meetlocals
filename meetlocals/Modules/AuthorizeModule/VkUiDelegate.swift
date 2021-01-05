@@ -15,7 +15,7 @@ class VkUiDelegate: NSObject, VKSdkUIDelegate {
         let window = UIWindow()
         window.rootViewController = controller
         window.makeKeyAndVisible()
-        (UIApplication.shared.delegate as! AppDelegate).window = window
+        (UIApplication.shared.delegate as! AppDelegate).coordinator.window = window
     }
 
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {

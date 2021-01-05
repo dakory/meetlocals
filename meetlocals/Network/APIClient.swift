@@ -231,7 +231,7 @@ final class APIClient {
     }
 
 
-    private func authorization(user: [String : Any]){
+    func authorization(user: [String : Any]){
 
         guard let vk_user_id = user["vk_id"] else {
             print("Error: user[vk_id] is nil")

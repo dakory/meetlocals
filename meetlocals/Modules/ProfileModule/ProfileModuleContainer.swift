@@ -40,4 +40,9 @@ final class ProfileModuleContainer {
 struct ProfileModuleContext {
 	weak var moduleOutput: ProfileModuleModuleOutput?
     let personID: Int
+
+    init<T>(moduleOutput: T, personID: Int) {
+        self.moduleOutput = moduleOutput as? ProfileModuleModuleOutput
+        self.personID = personID
+    }
 }

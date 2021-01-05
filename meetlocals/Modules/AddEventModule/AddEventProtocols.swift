@@ -5,14 +5,15 @@
 //  Created by Софья Тимохина on 25.10.2020.
 //
 
-import Foundation
+import UIKit
 
 protocol AddEventModuleInput {
     var moduleOutput: AddEventModuleOutput? { get }
 }
 
 protocol AddEventModuleOutput: class {
-    func viewDidLoad()
+//    func viewDidLoad()
+    var tabBar: UITabBarController { get set }
 }
 
 protocol AddEventViewInput: class {

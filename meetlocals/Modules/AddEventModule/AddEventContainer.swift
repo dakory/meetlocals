@@ -36,4 +36,8 @@ final class AddEventContainer {
 
 struct AddEventContext {
     weak var moduleOutput: AddEventModuleOutput?
+
+    init<T>(moduleOutput: T) {
+        self.moduleOutput = moduleOutput as? AddEventModuleOutput
+    }
 }

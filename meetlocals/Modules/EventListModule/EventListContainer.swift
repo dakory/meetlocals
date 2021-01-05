@@ -39,4 +39,9 @@ final class EventListContainer {
 struct EventListContext {
     weak var moduleOutput: EventListModuleOutput?
     let typeOfScreen: TypeOfListScreen?
+
+    init<T>(moduleOutput: T?, typeOfScreen: TypeOfListScreen) {
+        self.moduleOutput = moduleOutput as? EventListModuleOutput
+        self.typeOfScreen = typeOfScreen
+    }
 }
