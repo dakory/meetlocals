@@ -80,10 +80,12 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configure(with model: EventViewModel, collectionView: UICollectionView, index: Int) {
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == model.idOrganizer })
-        let person = Common.profiles.profiles[indexPerson!]
+        if let index = indexPerson {
+            let person = Common.profiles.profiles[index]
         EventName.text = model.name
         UserName.text = "\(person.name)"
         UserImage.image = UIImage(named: person.avatarUrl!)
         eventId = model.id
+        }
     }
 }

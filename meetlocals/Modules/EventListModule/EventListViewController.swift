@@ -29,6 +29,7 @@ final class EventListController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         self.view = view
+        collectionView.alwaysBounceVertical = true
         setupView()
  
         
