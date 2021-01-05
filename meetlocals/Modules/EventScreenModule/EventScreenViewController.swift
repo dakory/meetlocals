@@ -65,8 +65,9 @@ final class EventScreenViewController: UIViewController {
         self.view = UIView()
         self.view.backgroundColor = UIColor.systemBackground
         
-        output.checkMembership()
-        output.getData()    //обращение к Presenter, для получение данных о пользователе
+        output.checkMembershipPresenter()
+    //    output.getData()
+        
         
         scrollView.alwaysBounceVertical = true
         scrollViewFriends.alwaysBounceHorizontal = true
@@ -212,15 +213,9 @@ final class EventScreenViewController: UIViewController {
     
     @IBAction func pressedButtonSignUp(_ sender: UIButton) {
         output.singUpForEvent()
-        output.checkMembership()
-        stackListMembers.subviews.forEach({ (view) in
-            view.removeFromSuperview()
-        })
-        output.getData()
-        stackListMembers.addArrangedSubview(UIImageView())
-        self.setupConstraints()
-        
+        output.checkMembershipPresenter()
     }
+
     
     @IBAction func pressedButtonPrivateMessage(_ sender: UIButton) {
         output.goToVkPresenter(toOrganizer: true, id: 0)
@@ -299,15 +294,25 @@ final class EventScreenViewController: UIViewController {
 }
 
 extension EventScreenViewController: EventScreenViewInput {
+    
+    func reloadMembers(){
+        stackListMembers.subviews.forEach({ (view) in
+            view.removeFromSuperview()
+        })
+        output.getData()
+        stackListMembers.addArrangedSubview(UIImageView())
+    }
+    
+    
     func setButton(_ check: Bool) {
         buttonSignUp.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
-        if !check {
-            buttonSignUp.setTitle("Участвовать", for: .normal)
-            buttonSignUp.backgroundColor = UIColor.systemBlue
-        }
-        else {
+        if check {
             buttonSignUp.setTitle("Отменить заявку", for: .normal)
             buttonSignUp.backgroundColor = UIColor.systemRed
+        }
+        else {
+            buttonSignUp.setTitle("Участвовать", for: .normal)
+            buttonSignUp.backgroundColor = UIColor.systemBlue
         }
     }
 
@@ -391,5 +396,6 @@ extension EventScreenViewController: EventScreenViewInput {
     }
 
 }
+
 
 

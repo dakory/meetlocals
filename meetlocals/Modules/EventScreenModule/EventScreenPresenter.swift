@@ -25,6 +25,9 @@ extension EventScreenPresenter: EventScreenModuleInput {
 
 extension EventScreenPresenter: EventScreenViewOutput {
 
+    func checkMembershipPresenter(){
+        checkMembership()
+    }
     
     func getData(){
         let event = interactor.getInfoOfEvent(eventId: eventId!)   //обращаемся к interactor для получения информации и мероприятии
@@ -37,13 +40,9 @@ extension EventScreenPresenter: EventScreenViewOutput {
     
     func singUpForEvent(){
         interactor.addOrDeleteDataNewMember(eventId: eventId!)
-        router.updateScreens(vc: self.view as! EventScreenViewController)
+    //    router.updateScreens(vc: self.view as! EventScreenViewController)
     }
-    
-    func checkMembership(){
-        let check = interactor.checkMembershipData(eventId: eventId!)
-        self.view!.setButton(check)
-    }
+
     
     func goToOrganizerScreen(){
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: organizerID!)
@@ -59,6 +58,16 @@ extension EventScreenPresenter: EventScreenViewOutput {
 }
 
 extension EventScreenPresenter: EventScreenInteractorOutput {
+    func checkMembership(){
+        let check = interactor.checkMembershipData(eventId: eventId!)
+        self.view!.setButton(check)
+        self.view!.reloadMembers()
+        let vc = self.view as! EventScreenViewController
+        let participatingListNavigationControllers  = vc.tabBarController!.viewControllers![2] as! UINavigationController
+        let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
+        participatingListNavigationController.updateList()
+    }
+    
 }
 
 extension Date {

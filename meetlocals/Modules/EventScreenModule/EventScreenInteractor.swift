@@ -13,16 +13,45 @@ extension EventScreenInteractor: EventScreenInteractorInput {
     
 
     func addOrDeleteDataNewMember(eventId: Int) {
+        let client = APIClient()
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
+        
+        var newIdParticipateEvents = Common.events.listOfEvents[indexEvent!].idMembers
+        let id = Common.events.listOfEvents[indexEvent!].id
+
         if !Common.events.listOfEvents[indexEvent!].idMembers.contains(Common.myProfile.id) {
-            Common.events.listOfEvents[indexEvent!].idMembers.append(Common.myProfile.id)
+            newIdParticipateEvents.append(Common.myProfile.id)
             }
         else {
             let index = Common.events.listOfEvents[indexEvent!].idMembers.firstIndex(where: { $0 == Common.myProfile.id })
-            Common.events.listOfEvents[indexEvent!].idMembers.remove(at: index!)
+            newIdParticipateEvents.remove(at: index!)
         }
-        print(Common.events.listOfEvents[indexEvent!].idMembers)
-        
+                
+        let updatesToEvent: [String: Any] = [
+            "members": newIdParticipateEvents
+        ]
+                
+        client.putDataTask("events/\(String(describing: id))", data: updatesToEvent) { (result: Result<EventResponse, Error>) in
+            do {
+                let eventResponse = try result.get()
+                print(eventResponse.event)
+
+                client.getDataTask("events/\(String(describing: id))") { (result: Result<EventResponse, Error>) in
+                    do {
+                        let eventResponse = try result.get()
+                        print(eventResponse.event)
+                        Common.events.listOfEvents[indexEvent!] = eventResponse.event
+                        self.output?.checkMembership()
+                    }
+                    catch {
+                        print(error)
+                    }
+                }
+            }
+            catch {
+                print(error)
+            }
+        }
     }
     
     func checkMembershipData(eventId: Int) -> Bool {

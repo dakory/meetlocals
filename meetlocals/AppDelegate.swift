@@ -14,13 +14,18 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var appWindow: UIWindow?
-    
+    let vkAuthorizer = VkAuthorizer()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        openWelcomeScreen()
+        if (vkAuthorizer.userWasAuthorized()) {
+            openMainScreen()
+        } else {
+            openWelcomeScreen()
+        }
+
         return true
     }
-    
+
     let client = APIClient()
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
@@ -29,91 +34,86 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Everything is cool!")
 
         let interactor = InteractorImpl()
-        
+
         let currentVkUser = interactor.getVkCurrentUser()
-        
-   //      Получение events
+
+        //      Получение events
 
         currentVkUser.observe(on: MainScheduler.instance)
-            .subscribe(
-                    onNext: { (response: VKUser) in
-                        let newUser = [
-                            "name": "\(response.first_name!) \(response.last_name!)",
-                            "vk_id": Int(truncating: response.id!),
-                            "avatar_url": "exampleImageOfPerson"] as [String : Any]
-                        self.client.authorization(currentClient: self.client, user: newUser)
-                    }, onError:
-            { error in
-                print(error)
-            }, onCompleted:
-            { print("Completed") })
-        
+                .subscribe(
+                        onNext: { (response: VKUser) in
+                            let newUser = [
+                                "name": "\(response.first_name!) \(response.last_name!)",
+                                "vk_id": Int(truncating: response.id!),
+                                "avatar_url": "exampleImageOfPerson"] as [String: Any]
+                            self.client.authorization(currentClient: self.client, user: newUser)
+                        }, onError:
+                { error in
+                    print(error)
+                }, onCompleted:
+                { print("Completed") })
+
 
         if (VKSdk.isLoggedIn()) {
-//            Common.generateEventsData()   //подгружаем общий список мероприятий
-//            Common.generateProfilesData() //подгружаем общий список пользователей
-            
-            client.getUsers(currentClient: client) //подгружаем общий список пользователей
-            client.getEvents(currentClient: client) //подгружаем общий список мероприятий
-
-            
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = UINavigationController(rootViewController: LoadViewController());
-            self.appWindow = window
-            window.makeKeyAndVisible()
-            
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in // после трёхсекундной задержки отображаем список мероприятий
-                let appWindow = UIWindow(frame: UIScreen.main.bounds)
-                self.appWindow = appWindow
-
-                let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
-                let eventListContainer = EventListContainer.assemble(with: eventListContext)
-                let eventListNavigationController = UINavigationController(rootViewController: eventListContainer.viewController)
-
-                let organizingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .organizing)
-                let organizingListContainer = EventListContainer.assemble(with: organizingListContext)
-                let organizingListNavigationController = UINavigationController(rootViewController: organizingListContainer.viewController)
-
-                let participatingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .participating)
-                let participatingListContainer = EventListContainer.assemble(with: participatingListContext)
-                let participatingListNavigationController = UINavigationController(rootViewController: participatingListContainer.viewController)
-
-                let addEventContext = AddEventContext(moduleOutput: nil)
-                let addEventContainer = AddEventContainer.assemble(with: addEventContext)
-                let addEventNavigationController = UINavigationController(rootViewController: addEventContainer.viewController)
-
-                let profileModuleContext = ProfileModuleContext(moduleOutput: nil, personID: Common.myProfile.id)
-                let profileModuleContainer = ProfileModuleContainer.assemble(with: profileModuleContext)
-                let profileModuleNavigationController = UINavigationController(rootViewController: profileModuleContainer.viewController)
-                let tabBar = UITabBarController()
-
-                eventListContainer.viewController.loadViewIfNeeded()
-                organizingListContainer.viewController.loadViewIfNeeded()
-                participatingListContainer.viewController.loadViewIfNeeded()
-                addEventContainer.viewController.loadViewIfNeeded()
-                profileModuleContainer.viewController.loadViewIfNeeded()
-                
-                
-                organizingListNavigationController.navigationBar.prefersLargeTitles = true
-                participatingListNavigationController.navigationBar.prefersLargeTitles = true
-
-
-                tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
-
-                appWindow.rootViewController = tabBar
-                appWindow.makeKeyAndVisible()
-                }
-            
+            openMainScreen()
             return true
         } else {
             showErrorDialog()
             return true
         }
-        
-        
+    }
+
+    private func openMainScreen() {
+        client.getUsers(currentClient: client) //подгружаем общий список пользователей
+        client.getEvents(currentClient: client) //подгружаем общий список мероприятий
 
 
-        //TODO открыть другой экран -- Какой?
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: LoadViewController());
+        self.appWindow = window
+        window.makeKeyAndVisible()
+
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (_) in // после трёхсекундной задержки отображаем список мероприятий
+            let appWindow = UIWindow(frame: UIScreen.main.bounds)
+            self.appWindow = appWindow
+
+            let eventListContext = EventListContext(moduleOutput: nil, typeOfScreen: .common)
+            let eventListContainer = EventListContainer.assemble(with: eventListContext)
+            let eventListNavigationController = UINavigationController(rootViewController: eventListContainer.viewController)
+
+            let organizingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .organizing)
+            let organizingListContainer = EventListContainer.assemble(with: organizingListContext)
+            let organizingListNavigationController = UINavigationController(rootViewController: organizingListContainer.viewController)
+
+            let participatingListContext = EventListContext(moduleOutput: nil, typeOfScreen: .participating)
+            let participatingListContainer = EventListContainer.assemble(with: participatingListContext)
+            let participatingListNavigationController = UINavigationController(rootViewController: participatingListContainer.viewController)
+
+            let addEventContext = AddEventContext(moduleOutput: nil)
+            let addEventContainer = AddEventContainer.assemble(with: addEventContext)
+            let addEventNavigationController = UINavigationController(rootViewController: addEventContainer.viewController)
+
+            let profileModuleContext = ProfileModuleContext(moduleOutput: nil, personID: Common.myProfile.id)
+            let profileModuleContainer = ProfileModuleContainer.assemble(with: profileModuleContext)
+            let profileModuleNavigationController = UINavigationController(rootViewController: profileModuleContainer.viewController)
+            let tabBar = UITabBarController()
+
+            eventListContainer.viewController.loadViewIfNeeded()
+            organizingListContainer.viewController.loadViewIfNeeded()
+            participatingListContainer.viewController.loadViewIfNeeded()
+            addEventContainer.viewController.loadViewIfNeeded()
+            profileModuleContainer.viewController.loadViewIfNeeded()
+
+
+            organizingListNavigationController.navigationBar.prefersLargeTitles = true
+            participatingListNavigationController.navigationBar.prefersLargeTitles = true
+
+
+            tabBar.setViewControllers([eventListNavigationController, organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
+
+            appWindow.rootViewController = tabBar
+            appWindow.makeKeyAndVisible()
+        }
     }
 
     private func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -142,5 +142,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.appWindow = window
         window.makeKeyAndVisible()
     }
-
 }
