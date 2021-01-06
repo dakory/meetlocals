@@ -73,6 +73,9 @@ extension AddEventViewController: AddEventViewInput {
         textEventName.text = ""
         textEventDescription.text = ""
         placeText.text = ""
+        textViewDidChange(placeText)
+        textViewDidChange(textEventName)
+        textViewDidChange(textEventDescription)
     }
 }
 

@@ -12,8 +12,6 @@ final class AddEventRouter {
 }
 
 extension AddEventRouter: AddEventRouterInput {
-<<<<<<< HEAD
-=======
     func addEvent(name: String, description: String, date: Date, place: String) {
         if CheckIsEmptyOrNot(text: name) || CheckIsEmptyOrNot(text: description) || CheckIsEmptyOrNot(text: place) {
             let alertController = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)
@@ -90,5 +88,4 @@ extension AddEventRouter: AddEventRouterInput {
         return text.isEmpty || (text.rangeOfCharacter(from: letters) == nil && text.rangeOfCharacter(from: numbers) == nil)
         
     }
->>>>>>> c1405313ae4e6c0876c2e8562435d4f82b14fb3c
 }

@@ -25,12 +25,14 @@ extension AddEventPresenter: AddEventModuleInput {
 }
 
 extension AddEventPresenter: AddEventViewOutput {
+    func CheckIsEmptyOrNot(text: String) -> Bool {
+        let letters = CharacterSet.letters
+        let numbers = CharacterSet.decimalDigits
+        return text.isEmpty || (text.rangeOfCharacter(from: letters) == nil && text.rangeOfCharacter(from: numbers) == nil)
+    }
+    
     func didTabAddEvent(name: String, description: String, date: Date, place: String) {
-<<<<<<< HEAD
         if CheckIsEmptyOrNot(text: name) || CheckIsEmptyOrNot(text: description) || CheckIsEmptyOrNot(text: place) {
-=======
-        if name.isEmpty || description.isEmpty || place.isEmpty {
->>>>>>> c1405313ae4e6c0876c2e8562435d4f82b14fb3c
             let alertController = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Ок", style: .default)
             )
@@ -41,14 +43,6 @@ extension AddEventPresenter: AddEventViewOutput {
             self.interactor.addEvent(name: name, description: description, date: date, place: place)
         }
     }
-    
-    func CheckIsEmptyOrNot(text: String) -> Bool {
-        let letters = CharacterSet.letters
-        let numbers = CharacterSet.decimalDigits
-        return text.isEmpty || (text.rangeOfCharacter(from: letters) == nil && text.rangeOfCharacter(from: numbers) == nil)
-        
-    }
-    
 }
 
 extension AddEventPresenter: AddEventInteractorOutput {
