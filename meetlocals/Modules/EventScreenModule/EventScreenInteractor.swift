@@ -9,6 +9,10 @@ final class EventScreenInteractor {
 
 
 extension EventScreenInteractor: EventScreenInteractorInput {
+    func deleteEvent(eventId: Int) {
+        print("Придется поработать с базой данных")
+    }
+    
 
     
 

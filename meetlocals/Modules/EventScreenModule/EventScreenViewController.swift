@@ -49,6 +49,9 @@ final class EventScreenViewController: UIViewController {
     private let buttonSignUp = UIButton()
 
     private let output: EventScreenViewOutput
+    
+    var meetingId: Int?
+    var organizerId: Int?
 
     init(output: EventScreenViewOutput) {
         self.output = output
@@ -212,8 +215,14 @@ final class EventScreenViewController: UIViewController {
     
     
     @IBAction func pressedButtonSignUp(_ sender: UIButton) {
+        if output.checkCurrentUserIsOrganizer()
+        {
+            output.DidTabDeleteEvent()
+        }
+        else {
         output.singUpForEvent()
         output.checkMembershipPresenter()
+        }
     }
 
     
@@ -295,6 +304,7 @@ final class EventScreenViewController: UIViewController {
 
 extension EventScreenViewController: EventScreenViewInput {
     
+    
     func reloadMembers(){
         stackListMembers.subviews.forEach({ (view) in
             view.removeFromSuperview()
@@ -306,7 +316,11 @@ extension EventScreenViewController: EventScreenViewInput {
     
     func setButton(_ check: Bool) {
         buttonSignUp.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
-        if check {
+        if output.checkCurrentUserIsOrganizer() {
+            buttonSignUp.setTitle("Удалить событие", for: .normal)
+            buttonSignUp.backgroundColor = UIColor.systemRed
+        }
+        else if check {
             buttonSignUp.setTitle("Отменить заявку", for: .normal)
             buttonSignUp.backgroundColor = UIColor.systemRed
         }

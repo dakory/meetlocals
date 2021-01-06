@@ -18,6 +18,8 @@ final class EventScreenContainer {
 		presenter.moduleOutput = context.moduleOutput
 
 		interactor.output = presenter
+        
+        router.viewController = viewController
 
         return EventScreenContainer(view: viewController, input: presenter, router: router)
 	}

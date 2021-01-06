@@ -20,6 +20,8 @@ protocol EventScreenViewOutput: class {
     func singUpForEvent()
     func goToOrganizerScreen()
     func goToVkPresenter(toOrganizer: Bool, id: Int?)
+    func checkCurrentUserIsOrganizer() -> Bool
+    func DidTabDeleteEvent()
 }
 
 protocol EventScreenInteractorInput: class {
@@ -27,6 +29,7 @@ protocol EventScreenInteractorInput: class {
     func addOrDeleteDataNewMember(eventId: Int)
     func getInfoOrganizer(id: Int) -> Profile
     func checkMembershipData(eventId: Int) -> Bool
+    func deleteEvent(eventId: Int)
 }
 
 protocol EventScreenInteractorOutput: class {
@@ -37,5 +40,6 @@ protocol EventScreenRouterInput: class {
     func organizerScreen(vc: EventScreenViewController, organizerID: Int)
     func goToVk(id: Int)
     func updateScreens(vc: EventScreenViewController)
+    func deleteEvent(eventId: Int)
 
 }

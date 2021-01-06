@@ -29,6 +29,13 @@ extension EventScreenPresenter: EventScreenViewOutput {
         checkMembership()
     }
     
+    func checkCurrentUserIsOrganizer() -> Bool {
+        let event = interactor.getInfoOfEvent(eventId: eventId!)
+        let person = interactor.getInfoOrganizer(id: event.idOrganizer)
+        organizerID = person.id
+        return organizerID == Common.myProfile.id
+    }
+    
     func getData(){
         let event = interactor.getInfoOfEvent(eventId: eventId!)   //обращаемся к interactor для получения информации и мероприятии
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
@@ -54,6 +61,11 @@ extension EventScreenPresenter: EventScreenViewOutput {
         else {
             router.goToVk(id: id!)
         }
+    }
+    
+    func DidTabDeleteEvent() {
+        let event = interactor.getInfoOfEvent(eventId: eventId!)
+        router.deleteEvent(eventId: event.id)
     }
 }
 
