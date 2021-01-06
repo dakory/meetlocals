@@ -22,6 +22,7 @@ protocol AddEventViewInput: class {
 
 protocol AddEventViewOutput: class {
     func didTabAddEvent(name: String, description: String, date: Date, place: String)
+    func CheckIsEmptyOrNot(text: String) -> Bool
 }
 
 protocol AddEventInteractorInput: class {
