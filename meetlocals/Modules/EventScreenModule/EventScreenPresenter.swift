@@ -73,7 +73,7 @@ extension EventScreenPresenter: EventScreenInteractorOutput {
 extension Date {
     func dayMonthYearFormat() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/mm/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         return dateFormatter.string(from: self)
     }
 }

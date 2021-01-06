@@ -25,11 +25,12 @@ protocol AddEventViewOutput: class {
 }
 
 protocol AddEventInteractorInput: class {
+    func addEvent(name: String, description: String, date: Date, place: String)
 }
 
 protocol AddEventInteractorOutput: class {
+    func reloadScreens()
 }
 
 protocol AddEventRouterInput: class {
-    func addEvent(name: String, description: String, date: Date, place: String)
 }

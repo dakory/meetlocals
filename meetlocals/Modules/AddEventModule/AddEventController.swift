@@ -51,9 +51,15 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
             image: UIImage(systemName: "plus"),
             tag: 2)
         self.navigationItem.title = "Новое событие"
+        
+        self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()
     }
 
+    
+    @objc override func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width,
@@ -115,7 +121,6 @@ private extension AddEventViewController {
         textEventName.delegate = self
         textEventName.layer.cornerRadius = 15
         self.textEventNameHeightConstraint = textEventName.heightAnchor.constraint(equalToConstant: 19)
-        textEventName.delegate = self
         [
         textEventName.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 8),
         self.textEventNameHeightConstraint,
@@ -290,6 +295,18 @@ extension AddEventViewController {
         self.adjustTextViewHeightForTextEventName()
         self.adjustTextViewHeightForPlaceText()
         self.adjustTextViewHeightForTextEventDescription()
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

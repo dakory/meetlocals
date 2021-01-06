@@ -31,7 +31,7 @@ class AppRepository {
 
     private func processResponse<T>(subscriber: AnyObserver<T>, data: Data?, response: URLResponse?, error: Error?) {
         if (response != nil) {
-            print(response)
+//            print(response)
             subscriber.onNext(response as! T)
             subscriber.onCompleted()
         } else if (error != nil) {
