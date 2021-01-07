@@ -63,6 +63,13 @@ extension EventScreenRouter: EventScreenRouterInput {
     func organizerScreen(vc: EventScreenViewController, organizerID: Int){ //здесь осуществляем переход на "Профиль организатора"
         let contexOrganizerScreen = OrganizerScreenContext(moduleOutput: nil, personID: organizerID)
         let containerOrganizerScreen = OrganizerScreenContainer.assemble(with: contexOrganizerScreen)
+        
+        let transition = CATransition()
+        transition.duration = 0.6
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromRight
+        vc.navigationController?.view.layer.add(transition, forKey: kCATransition)
         vc.navigationController?.pushViewController(containerOrganizerScreen.viewController, animated: true)
     }
     

@@ -15,9 +15,6 @@ extension EventListInteractor: EventListInteractorInput {
     
     
     func fetchEvents(type: TypeOfListScreen) {
-        
-        
-        
         if type == .common {
             self.output?.didLoad(events: Common.events.listOfEvents.reversed())
         }
@@ -28,6 +25,15 @@ extension EventListInteractor: EventListInteractorInput {
         else if type == .organizing {
             self.output?.didLoad(events:
                                     Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).reversed())
+        }
+    }
+    
+    func reloadEventsWithTheSearch(text: String) {
+        if text.isEmpty || text == "" {
+            fetchEvents(type: .common)
+        }
+        else {
+        self.output?.didLoad(events: Common.events.listOfEvents.reversed().filter({$0.name.contains(text)}))
         }
     }
 }

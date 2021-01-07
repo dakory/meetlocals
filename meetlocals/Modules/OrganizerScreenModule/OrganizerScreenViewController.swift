@@ -44,14 +44,14 @@ final class OrganizerScreenViewController: UIViewController {
             title: "Профиль",
             image: UIImage(systemName: "person.circle"),
             tag: 3)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Назад",
             style: .plain,
-            target: nil,
-            action: nil
+            target: self,
+            action: #selector(self.back)
         )
         self.navigationItem.title = "Профиль"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
 	}
     
     func setupConstraints() {
@@ -104,5 +104,14 @@ extension OrganizerScreenViewController: OrganizerScreenViewInput {
             print("Url: \(avatarUrl)")
             imageOfPerson.downloaded(from: avatarUrl)
         }
+    }
+    
+    @objc func back(){
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

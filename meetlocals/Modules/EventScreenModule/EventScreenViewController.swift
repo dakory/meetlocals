@@ -67,7 +67,7 @@ final class EventScreenViewController: UIViewController {
     override func loadView() {
         self.view = UIView()
         self.view.backgroundColor = UIColor.systemBackground
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         output.checkMembershipPresenter()
     //    output.getData()
         
@@ -207,11 +207,12 @@ final class EventScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Назад",
             style: .plain,
-            target: nil,
-            action: nil
+            target: self,
+            action: #selector(self.back)
         )
     }
     
@@ -432,7 +433,15 @@ extension EventScreenViewController: EventScreenViewInput {
             stackListMembers.addArrangedSubview(viewPerson)
         }
     }
-
+    
+    @objc func back(){
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 

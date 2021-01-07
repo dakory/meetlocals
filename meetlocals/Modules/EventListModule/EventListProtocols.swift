@@ -24,10 +24,12 @@ protocol EventListViewInput: class {
 protocol EventListViewOutput: class {
     func viewDidLoad()
     func didTabEvent(meetingID: Int)
+    func reloadEventsWithTheSearch(text: String)
 }
 
 protocol EventListInteractorInput: class {
     func fetchEvents(type: TypeOfListScreen)
+    func reloadEventsWithTheSearch(text: String)
 }
 
 protocol EventListInteractorOutput: class {

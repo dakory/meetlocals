@@ -27,6 +27,10 @@ extension EventListPresenter: EventListModuleInput {
 }
 
 extension EventListPresenter: EventListViewOutput {
+    func reloadEventsWithTheSearch(text: String) {
+        self.interactor.reloadEventsWithTheSearch(text: text)
+    }
+    
     func didTabEvent(meetingID: Int) {
         self.router.goToEventScreen(vc: self.view as! EventListController, meetingID: meetingID)
     }

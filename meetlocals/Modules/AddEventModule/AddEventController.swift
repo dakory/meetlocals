@@ -52,15 +52,9 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
             tag: 2)
         self.navigationItem.title = "Новое событие"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         
         self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()
-    }
-
-    
-    @objc override func dismissKeyboard() {
-        view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -122,8 +116,8 @@ private extension AddEventViewController {
         [
         eventNameLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
         eventNameLabel.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: 39),
-        eventNameLabel.leadingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-        eventNameLabel.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            eventNameLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16),
+             eventNameLabel.trailingAnchor.constraint(equalTo: self.eventNameLabel.leadingAnchor, constant: UIScreen.main.bounds.width - 32),
         ].forEach({$0.isActive = true})
         
         textEventName.translatesAutoresizingMaskIntoConstraints = false
@@ -244,7 +238,7 @@ private extension AddEventViewController {
         buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
         buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79),
         buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
-        buttonAddEvent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -37)
+            buttonAddEvent.trailingAnchor.constraint(equalTo: buttonAddEvent.leadingAnchor, constant: UIScreen.main.bounds.width - 74)
         ].forEach({$0.isActive = true})
         
         

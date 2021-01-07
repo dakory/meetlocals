@@ -256,9 +256,9 @@
 			children = (
 				B02DD47E62559131BBAE25F8 /* ViewModels */,
 				B02DD66C1FA05F23C5514A9C /* CollectionViewCell */,
-				B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */,
 				B02DD6A22379ADD9F637989D /* CollectionViewFlowLayout */,
 				B02DD030DDA0225B9D39474F /* EventListContainer.swift */,
+				B02DD09A5A31A74CADFE1B1F /* EventListRouter.swift */,
 				B02DD75863A90D9F5A4F0666 /* EventListPresenter.swift */,
 				B02DD6B3DD9BE16B1BAEE1AB /* EventListProtocols.swift */,
 				B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */,

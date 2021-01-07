@@ -7,10 +7,9 @@
 
 import UIKit
 
-final class EventListController: UIViewController {
+final class EventListController: UIViewController, UISearchBarDelegate{
     private let output: EventListViewOutput
-    let collectionViewFrameTopOffset: CGFloat = -20
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: -20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private var viewModels = [EventViewModel]()
 
     
@@ -30,23 +29,33 @@ final class EventListController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         self.view = view
         setupView()
- 
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.collectionView.frame = CGRect(
             x: 0,
-            y: collectionViewFrameTopOffset,
+            y: 0,
             width: self.view.frame.width,
-            height: self.view.frame.height - collectionViewFrameTopOffset)
+            height: self.view.frame.height)
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        attemptToHideKeyboard()
+    }
+    
+    private func attemptToHideKeyboard() {
+        self.navigationItem.searchController?.searchBar.resignFirstResponder()
+        self.navigationItem.searchController?.searchBar.endEditing(true)
+        self.view.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.definesPresentationContext = true
+        self.hideKeyboardWhenTappedAround()
         self.tabBarItem =
            UITabBarItem(
             title: "Лента",
@@ -55,9 +64,7 @@ final class EventListController: UIViewController {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         self.output.viewDidLoad()
-        
     }
-    
 }
 
 extension EventListController: EventListViewInput {
@@ -79,17 +86,18 @@ extension EventListController: EventListViewInput {
                 image: UIImage(systemName: "magnifyingglass"),
                 tag: 0)
             self.navigationItem.titleView = {
-                let titleView = UIView(frame: CGRect(x: view.safeAreaInsets.top + 10, y: 0, width: 90, height: 30))
+                let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 90, height: 30))
                 let titleImageView = UIImageView(image: UIImage(named: "promoIcon"))
                 titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
                 titleView.addSubview(titleImageView)
                 titleView.clipsToBounds = true
                 titleView.contentMode = .scaleAspectFill
                 return titleView
-                
             }()
-            self.navigationController?.navigationBar.prefersLargeTitles = true
+            makeSearchController()
         }
+        
+        
         else if type == .participating {
             self.tabBarItem =
                UITabBarItem(
@@ -132,9 +140,28 @@ extension EventListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) -> () {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        attemptToHideKeyboard()
         self.output.didTabEvent(meetingID: cell.eventId)
+        self.viewDidLoad()
+        
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.output.reloadEventsWithTheSearch(text: searchText)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.output.viewDidLoad()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        attemptToHideKeyboard()
+    }
+
 }
 
 extension EventListController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -143,10 +170,26 @@ extension EventListController: UICollectionViewDelegate, UICollectionViewDelegat
     
 private extension EventListController {
     func setupView() {
-        self.collectionView.clipsToBounds = true
+        self.collectionView.clipsToBounds = false
         self.collectionView.backgroundColor = view.backgroundColor
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+    }
+    
+    
+    func makeSearchController() {
+        navigationItem.searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController?.searchBar.delegate = self
+        
+        navigationItem.searchController?.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController?.hidesNavigationBarDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController?.searchBar.showsCancelButton = false
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.searchController?.searchBar.placeholder = "Поиск"
+//        navigationItem.searchController?.searchBar.setValue("Отмена", forKey: "cancelButtonText")
+        navigationItem.searchController?.searchBar.backgroundColor = #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998806119, alpha: 1)
     }
 }
