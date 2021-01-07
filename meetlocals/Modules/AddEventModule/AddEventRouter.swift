@@ -18,6 +18,10 @@ extension AddEventRouter: AddEventRouterInput {
             alertController.addAction(UIAlertAction(title: "Ок", style: .default)
             )
             viewController?.present(alertController, animated: true)
+            
+            let addEventNavigationControllers  = self.viewController?.tabBarController!.viewControllers![3] as! UINavigationController
+            let addEventNavigationController = addEventNavigationControllers.viewControllers[0] as! AddEventViewController
+            addEventNavigationController.makeButtonUserEnabled()
             return
         }
         
@@ -68,6 +72,7 @@ extension AddEventRouter: AddEventRouterInput {
                             let addEventNavigationController = addEventNavigationControllers.viewControllers[0] as! AddEventViewController
 
                             addEventNavigationController.cleanScreen()
+                            addEventNavigationController.makeButtonUserEnabled()
                         }
                         catch {
                             print(error)

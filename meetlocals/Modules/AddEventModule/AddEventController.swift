@@ -51,6 +51,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
             image: UIImage(systemName: "plus"),
             tag: 2)
         self.navigationItem.title = "Новое событие"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         
         self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()
@@ -69,6 +71,10 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
 
 
 extension AddEventViewController: AddEventViewInput {
+    func makeButtonUserEnabled() {
+        self.buttonAddEvent.isUserInteractionEnabled = true
+    }
+    
     func cleanScreen() { //эту функция очищения полей, вызываем после добавления мероприятия
         textEventName.text = ""
         textEventDescription.text = ""
@@ -76,6 +82,8 @@ extension AddEventViewController: AddEventViewInput {
         textViewDidChange(placeText)
         textViewDidChange(textEventName)
         textViewDidChange(textEventDescription)
+        
+        makeButtonUserEnabled()
     }
 }
 
@@ -212,10 +220,10 @@ private extension AddEventViewController {
         textEventDescription.translatesAutoresizingMaskIntoConstraints = false
         textEventDescription.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventDescription.font = .systemFont(ofSize: 20)
-        textEventDescription.placeholder = "Присоединяйся ко мне :)"
+        textEventDescription.placeholder = "Супер мероприятие, бери свой бак и присоединяйся ко мне :)"
         textEventDescription.delegate = self
         textEventDescription.layer.cornerRadius = 15
-        self.textEventDescriptionNameHeightConstraint = textEventDescription.heightAnchor.constraint(equalToConstant: 19)
+        self.textEventDescriptionNameHeightConstraint = textEventDescription.heightAnchor.constraint(equalToConstant: 76)
         placeText.delegate = self
         [
         textEventDescription.topAnchor.constraint(equalTo: textEventLabel.bottomAnchor, constant: 8),
@@ -227,9 +235,9 @@ private extension AddEventViewController {
         
         
         buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
-        buttonAddEvent.backgroundColor = #colorLiteral(red: 0.2197580338, green: 0.4078575969, blue: 0.901501596, alpha: 1)
+        buttonAddEvent.backgroundColor = #colorLiteral(red: 0.01627545618, green: 0.4538905025, blue: 0.9498452544, alpha: 1)
         buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
-        buttonAddEvent.layer.cornerRadius = 20
+        buttonAddEvent.layer.cornerRadius = 25
         buttonAddEvent.setTitle("Добавить", for: .normal)
         buttonAddEvent.clipsToBounds = true
         [
@@ -259,7 +267,7 @@ private extension AddEventViewController {
         let fixedWidth = textEventDescription.frame.size.width
         let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
-        self.textEventDescriptionNameHeightConstraint.constant = newSize.height
+        self.textEventDescriptionNameHeightConstraint.constant = newSize.height < 76 ? 76: newSize.height
         self.view.layoutIfNeeded()
     }
     func adjustTextViewHeightForPlaceText() {
@@ -273,6 +281,7 @@ private extension AddEventViewController {
     
     @objc
     func didTapButtonAddEvent() {
+        self.buttonAddEvent.isUserInteractionEnabled = false
         output.didTabAddEvent(name: textEventName.text,
                                   description: textEventDescription.text,
                                   date: textDate.date,

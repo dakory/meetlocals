@@ -37,6 +37,7 @@ extension AddEventPresenter: AddEventViewOutput {
             alertController.addAction(UIAlertAction(title: "Ок", style: .default)
             )
             (self.view as! AddEventViewController).present(alertController, animated: true)
+            self.view?.makeButtonUserEnabled()
             return
         }
         else {

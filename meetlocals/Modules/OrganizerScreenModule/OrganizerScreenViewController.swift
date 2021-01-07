@@ -44,9 +44,14 @@ final class OrganizerScreenViewController: UIViewController {
             title: "Профиль",
             image: UIImage(systemName: "person.circle"),
             tag: 3)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+            title: "Назад",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
         self.navigationItem.title = "Профиль"
-
-        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
 	}
     
     func setupConstraints() {

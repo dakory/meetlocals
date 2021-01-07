@@ -207,6 +207,12 @@ final class EventScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+            title: "Назад",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
     
     @IBAction func pressedOrganizerScreen(_ sender: UIButton) {
@@ -218,10 +224,11 @@ final class EventScreenViewController: UIViewController {
         if output.checkCurrentUserIsOrganizer()
         {
             output.DidTabDeleteEvent()
+            self.navigationController?.navigationBar.isUserInteractionEnabled = false
         }
         else {
-        output.singUpForEvent()
-        output.checkMembershipPresenter()
+            output.singUpForEvent()
+            output.checkMembershipPresenter()
         }
     }
 

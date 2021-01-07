@@ -91,7 +91,7 @@ class MainView: AutoLayoutView {
         authorizeButton.setTitle("Войти через VK", for: .normal)
         authorizeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         authorizeButton.setTitleColor(.white, for: .normal)
-        authorizeButton.backgroundColor = AppColors().vkColor
+        authorizeButton.backgroundColor = #colorLiteral(red: 0.01627545618, green: 0.4538905025, blue: 0.9498452544, alpha: 1)
         authorizeButton.layer.cornerRadius = 24
         authorizeButton.layer.masksToBounds = true
     }

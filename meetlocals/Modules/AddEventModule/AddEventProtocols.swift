@@ -18,6 +18,7 @@ protocol AddEventModuleOutput: class {
 
 protocol AddEventViewInput: class {
     func cleanScreen()
+    func makeButtonUserEnabled()
 }
 
 protocol AddEventViewOutput: class {

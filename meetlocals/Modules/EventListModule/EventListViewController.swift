@@ -9,8 +9,8 @@ import UIKit
 
 final class EventListController: UIViewController {
     private let output: EventListViewOutput
-    let collectionViewFrameTopOffset: CGFloat = 20
-    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
+    let collectionViewFrameTopOffset: CGFloat = -20
+    private let collectionView = UICollectionView(frame: CGRect(x: 0, y: -20, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private var viewModels = [EventViewModel]()
 
     
@@ -88,6 +88,7 @@ extension EventListController: EventListViewInput {
                 return titleView
                 
             }()
+            self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         else if type == .participating {
             self.tabBarItem =

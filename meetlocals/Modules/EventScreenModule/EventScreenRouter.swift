@@ -52,6 +52,7 @@ extension EventScreenRouter: EventScreenRouterInput {
         }
         let NoAction = UIAlertAction(title: "Нет", style: .default) { action in
             print("Мероприятие не удалено")
+            self.viewController?.navigationController?.navigationBar.isUserInteractionEnabled = true
         }
 
         alertView.addAction(YesAction)

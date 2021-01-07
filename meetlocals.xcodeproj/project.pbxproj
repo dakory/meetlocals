@@ -76,7 +76,6 @@
 		C2A4F54791E49E02A80D8F97 /* VkUserConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */; };
 		C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F00839149D220B072726 /* AlertDialogDelegate.swift */; };
 		C2A4F9A403B3F8ABB9C25D9F /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A4FE6B1567758460773090 /* Contents.json */; };
-		C2A4F9BF26F60BF08177BF5F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */; };
 		C2A4FAA04918454F915F7B91 /* VkConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */; };
 		C2A4FB217ADCC5A98ECE11F1 /* VKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FF7B82E5FB57EEA2CB2B /* VKRepository.swift */; };
 		C2A4FB65AD870E89F0E37D4B /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F43E9153ECE4DD515B75 /* NetError.swift */; };
@@ -165,7 +164,6 @@
 		C2A4F6233B316CDCE3412585 /* UserStringArrayCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStringArrayCreator.swift; path = Network/Converter/ArrayCreator/UserStringArrayCreator.swift; sourceTree = "<group>"; };
 		C2A4F6AE3AC8050880A20708 /* InteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractorImpl.swift; path = Network/Interactor/InteractorImpl.swift; sourceTree = "<group>"; };
 		C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConvertationError.swift; path = Network/Converter/Common/ConvertationError.swift; sourceTree = "<group>"; };
-		C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = Assets.xcassets/AccentColor.colorset/AppColors.swift; sourceTree = "<group>"; };
 		C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VkUserConverter.swift; path = Network/Converter/VK/VkUserConverter.swift; sourceTree = "<group>"; };
 		C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConverterResolver.swift; path = Network/Converter/Common/ConverterResolver.swift; sourceTree = "<group>"; };
 		C2A4FE6B1567758460773090 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = Assets.xcassets/promoIcon.imageset/Contents.json; sourceTree = "<group>"; };
@@ -393,7 +391,6 @@
 				C2A4F6E6D26B2FDAE15BE5D8 /* ConvertationError.swift */,
 				C2A4F3404249511A7E162C19 /* VkConverterFactory.swift */,
 				C2A4FE6B1567758460773090 /* Contents.json */,
-				C2A4F8EFA773ABFFD25BCB96 /* AppColors.swift */,
 				C2A4F2D4A6FC78DDEA38A646 /* AppRepository.swift */,
 				C2A4F1C54FFB35D318204205 /* JsonConverterFactory.swift */,
 				C2A4FB46FD46AD3625CB7946 /* VkUserConverter.swift */,
@@ -606,7 +603,6 @@
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
-				C2A4F9BF26F60BF08177BF5F /* AppColors.swift in Sources */,
 				C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */,
 				C2A4F2DC4190A9C8706E9F61 /* JsonConverterFactory.swift in Sources */,
 				C2A4F54791E49E02A80D8F97 /* VkUserConverter.swift in Sources */,
