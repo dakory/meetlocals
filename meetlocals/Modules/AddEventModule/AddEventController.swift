@@ -51,7 +51,6 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
             image: UIImage(systemName: "plus"),
             tag: 2)
         self.navigationItem.title = "Новое событие"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()

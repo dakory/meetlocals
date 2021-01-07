@@ -21,6 +21,7 @@ protocol OrganizerScreenViewInput: class {
 
 protocol OrganizerScreenViewOutput: class {
     func getData()
+    func didTapButtonOpenVK()
 }
 
 protocol OrganizerScreenInteractorInput: class {

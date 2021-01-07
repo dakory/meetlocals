@@ -20,6 +20,7 @@ protocol EventScreenViewOutput: class {
     func singUpForEvent()
     func goToOrganizerScreen()
     func goToVkPresenter(toOrganizer: Bool, id: Int?)
+    func goToProfile(id: Int?)
     func checkCurrentUserIsOrganizer() -> Bool
     func DidTabDeleteEvent()
 }

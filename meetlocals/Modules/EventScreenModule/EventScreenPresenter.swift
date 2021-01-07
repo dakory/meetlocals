@@ -63,6 +63,10 @@ extension EventScreenPresenter: EventScreenViewOutput {
         }
     }
     
+    func goToProfile(id: Int?) {
+        router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: id!)
+    }
+    
     func DidTabDeleteEvent() {
         let event = interactor.getInfoOfEvent(eventId: eventId!)
         router.deleteEvent(eventId: event.id)

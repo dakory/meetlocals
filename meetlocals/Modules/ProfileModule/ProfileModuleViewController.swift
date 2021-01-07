@@ -52,7 +52,6 @@ final class ProfileModuleViewController: UIViewController {
             image: UIImage(systemName: "person.circle"),
             tag: 3)
         self.navigationItem.title = "Профиль"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
 
         
     }

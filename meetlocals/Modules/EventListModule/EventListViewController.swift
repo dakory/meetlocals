@@ -56,13 +56,7 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         super.viewDidLoad()
         self.definesPresentationContext = true
         self.hideKeyboardWhenTappedAround()
-        self.tabBarItem =
-           UITabBarItem(
-            title: "Лента",
-            image: UIImage(systemName: "magnifyingglass"),
-            tag: 0)
         UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         self.output.viewDidLoad()
     }
 }
