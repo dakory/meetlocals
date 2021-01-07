@@ -183,11 +183,12 @@ final class APIClient {
     }
 
 
-    func getEvents() {
+    func getEvents(completion: @escaping () -> Void = {}) {
         self.getDataTask("events") { (result: Result<EventsResponse, Error>) in
             do {
                 let eventsResponse = try result.get()
                 Common.events = Events(listOfEvents: eventsResponse.events)
+                completion()
             }
             catch {
                 print(error)
@@ -195,11 +196,12 @@ final class APIClient {
         }
     }
 
-    func getUsers(){
+    func getUsers(completion: @escaping () -> Void = {}){
         self.getDataTask("users") { (result: Result<ProfilesResponse, Error>) in
             do {
                 let profilesResponse = try result.get()
                 Common.profiles = Profiles(profiles: profilesResponse.profiles)
+                completion()
             }
             catch {
                 print(error)
@@ -207,20 +209,23 @@ final class APIClient {
         }
     }
 
-    func getCurrentUser() {
+    func getCurrentUser(completion: @escaping () -> Void = {}) {
         let interactor = InteractorImpl()
         let currentVkUser = interactor.getVkCurrentUser()
 
         currentVkUser.observe(on: MainScheduler.instance)
                 .subscribe(
                         onNext: { (response: VKUser) in
+                            // Строка ниже — костыль, который отрезает лишние символы в ссылке,
+                            // полученной от VK API
+                            let avatarUrl = response.photo_200?.dropFirst().dropFirst().dropLast()
                             let newUser: [String : Any] = [
                                 "name": "\(response.first_name!) \(response.last_name!)",
                                 "vk_id": Int(truncating: response.id!),
-                                "avatar_url": response.photo_200 ?? "exampleImageOfPerson"
+                                "avatar_url": avatarUrl ?? "exampleImageOfPerson"
                             ]
 
-                            self.authorization(user: newUser)
+                            self.authorization(user: newUser, completion: completion)
                         },
                         onError: { error in
                             print(error)
@@ -231,7 +236,7 @@ final class APIClient {
     }
 
 
-    func authorization(user: [String : Any]){
+    private func authorization(user: [String : Any], completion: @escaping () -> Void = {}){
 
         guard let vk_user_id = user["vk_id"] else {
             print("Error: user[vk_id] is nil")
@@ -239,16 +244,18 @@ final class APIClient {
         }
 
         self.getDataTask("users-by-vk-id/\(vk_user_id)") {
-            (result: Result<ProfileResponse, Error>) in             //если пользователь есть в БД
+            (result: Result<ProfileResponse, Error>) in
             do {
                 let profileResponse = try result.get()
                 Common.myProfile = profileResponse.profile
+                completion()
             }
-            catch {     //если пользователя нет в БД
+            catch {     // если пользователя нет в БД
                 self.postDataTask("users", data: user) { (result: Result<ProfileResponse, Error>) in
                     do {
                         let profileResponse = try result.get()
                         Common.myProfile = profileResponse.profile
+                        completion()
                     }
                     catch {
                         print(error)
