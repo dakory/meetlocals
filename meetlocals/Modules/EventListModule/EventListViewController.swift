@@ -11,6 +11,7 @@ final class EventListController: UIViewController, UISearchBarDelegate{
     private let output: EventListViewOutput
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private var viewModels = [EventViewModel]()
+    private var isCommon: Bool = false
 
     
     init(output: EventListViewOutput) {
@@ -27,8 +28,10 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         collectionView.alwaysBounceVertical = true
         view.addSubview(collectionView)
         view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
+        navigationController?.view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
         self.view = view
         setupView()
+        self.navigationController?.navigationBar.prefersLargeTitles = !isCommon
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,6 +46,10 @@ final class EventListController: UIViewController, UISearchBarDelegate{
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         attemptToHideKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = !isCommon
     }
     
     private func attemptToHideKeyboard() {
@@ -89,6 +96,7 @@ extension EventListController: EventListViewInput {
                 return titleView
             }()
             makeSearchController()
+            isCommon = true
         }
         
         
@@ -183,7 +191,6 @@ private extension EventListController {
         navigationController?.navigationBar.isTranslucent = false
         
         navigationItem.searchController?.searchBar.placeholder = "Поиск"
-//        navigationItem.searchController?.searchBar.setValue("Отмена", forKey: "cancelButtonText")
         navigationItem.searchController?.searchBar.backgroundColor = #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998806119, alpha: 1)
     }
 }

@@ -60,11 +60,11 @@ extension AddEventPresenter: AddEventInteractorOutput {
         let organizingListNavigationController = organizingListNavigationControllers.viewControllers[0] as! EventListController
         organizingListNavigationController.updateList()
         
-        let participatingListNavigationControllers  = (self.view as! AddEventViewController).tabBarController!.viewControllers![2] as! UINavigationController
+        let participatingListNavigationControllers  = (self.view as! AddEventViewController).tabBarController!.viewControllers![3] as! UINavigationController
         let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
         participatingListNavigationController.updateList()
         
-        let addEventNavigationControllers  = (self.view as! AddEventViewController).tabBarController!.viewControllers![3] as! UINavigationController
+        let addEventNavigationControllers  = (self.view as! AddEventViewController).tabBarController!.viewControllers![2] as! UINavigationController
         let addEventNavigationController = addEventNavigationControllers.viewControllers[0] as! AddEventViewController
 
         addEventNavigationController.cleanScreen()

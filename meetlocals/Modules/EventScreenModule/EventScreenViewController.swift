@@ -63,13 +63,25 @@ final class EventScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     
     override func loadView() {
         self.view = UIView()
         self.view.backgroundColor = UIColor.systemBackground
         self.navigationController?.navigationBar.prefersLargeTitles = false
         output.checkMembershipPresenter()
-    //    output.getData()
         
         
         scrollView.alwaysBounceVertical = true

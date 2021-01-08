@@ -39,11 +39,6 @@ final class OrganizerScreenViewController: UIViewController {
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        self.tabBarItem =
-           UITabBarItem(
-            title: "Профиль",
-            image: UIImage(systemName: "person.circle"),
-            tag: 3)
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Назад",
@@ -51,11 +46,20 @@ final class OrganizerScreenViewController: UIViewController {
             target: self,
             action: #selector(self.back)
         )
-        self.navigationItem.title = "Профиль"
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().prefersLargeTitles = true
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     
     func setupConstraints() {
         self.imageOfPerson.translatesAutoresizingMaskIntoConstraints = false

@@ -51,9 +51,9 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
             image: UIImage(systemName: "plus"),
             tag: 2)
         self.navigationItem.title = "Новое событие"
-        
         self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,7 +75,6 @@ extension AddEventViewController: AddEventViewInput {
         textViewDidChange(placeText)
         textViewDidChange(textEventName)
         textViewDidChange(textEventDescription)
-        
         makeButtonUserEnabled()
     }
 }
@@ -246,31 +245,6 @@ private extension AddEventViewController {
         self.adjustTextViewHeightForTextEventDescription()
         self.adjustTextViewHeightForPlaceText()
     }
-
-    
-    func adjustTextViewHeightForTextEventName() {
-        let fixedWidth = textEventName.frame.size.width
-        let newSize = textEventName.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        scrollView.contentSize.height -= self.textEventNameHeightConstraint.constant - newSize.height
-        self.textEventNameHeightConstraint.constant = newSize.height
-        self.view.layoutIfNeeded()
-    }
-    
-    func adjustTextViewHeightForTextEventDescription() {
-        let fixedWidth = textEventDescription.frame.size.width
-        let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
-        self.textEventDescriptionNameHeightConstraint.constant = newSize.height < 76 ? 76: newSize.height
-        self.view.layoutIfNeeded()
-    }
-    func adjustTextViewHeightForPlaceText() {
-        let fixedWidth = placeText.frame.size.width
-        let newSize = placeText.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-        scrollView.contentSize.height -= self.placeTextHeightConstraint.constant - newSize.height
-        self.placeTextHeightConstraint.constant = newSize.height
-        self.view.layoutIfNeeded()
-    }
-    
     
     @objc
     func didTapButtonAddEvent() {
@@ -301,6 +275,29 @@ extension AddEventViewController {
         self.adjustTextViewHeightForTextEventName()
         self.adjustTextViewHeightForPlaceText()
         self.adjustTextViewHeightForTextEventDescription()
+    }
+    
+    func adjustTextViewHeightForTextEventName() {
+        let fixedWidth = textEventName.frame.size.width
+        let newSize = textEventName.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.textEventNameHeightConstraint.constant - newSize.height
+        self.textEventNameHeightConstraint.constant = newSize.height
+        self.view.layoutIfNeeded()
+    }
+    
+    func adjustTextViewHeightForTextEventDescription() {
+        let fixedWidth = textEventDescription.frame.size.width
+        let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
+        self.textEventDescriptionNameHeightConstraint.constant = newSize.height < 76 ? 76: newSize.height
+        self.view.layoutIfNeeded()
+    }
+    func adjustTextViewHeightForPlaceText() {
+        let fixedWidth = placeText.frame.size.width
+        let newSize = placeText.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        scrollView.contentSize.height -= self.placeTextHeightConstraint.constant - newSize.height
+        self.placeTextHeightConstraint.constant = newSize.height
+        self.view.layoutIfNeeded()
     }
 }
 

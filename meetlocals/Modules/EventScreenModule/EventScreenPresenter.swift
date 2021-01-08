@@ -79,7 +79,7 @@ extension EventScreenPresenter: EventScreenInteractorOutput {
         self.view!.setButton(check)
         self.view!.reloadMembers()
         let vc = self.view as! EventScreenViewController
-        let participatingListNavigationControllers  = vc.tabBarController!.viewControllers![2] as! UINavigationController
+        let participatingListNavigationControllers  = vc.tabBarController!.viewControllers![3] as! UINavigationController
         let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
         participatingListNavigationController.updateList()
     }

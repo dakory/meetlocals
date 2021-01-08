@@ -73,6 +73,6 @@ final class AppCoordinator: LoadingModuleModuleOutput {
 
 
         self.tabBar.setViewControllers([eventListNavigationController,
-                                 organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
+                                 organizingListNavigationController, addEventNavigationController, participatingListNavigationController, profileModuleNavigationController], animated: true)
     }
 }

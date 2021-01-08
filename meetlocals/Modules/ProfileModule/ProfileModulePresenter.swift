@@ -32,8 +32,6 @@ extension ProfileModulePresenter: ProfileModuleViewOutput {
     }
     
     func getData(){
-//        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})
-//        let person = Common.profiles.profiles[indexPerson!]
         self.view?.setProfileData(person: Common.myProfile)
     }
 }

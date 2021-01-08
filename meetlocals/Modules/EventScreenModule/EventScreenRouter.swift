@@ -32,7 +32,7 @@ extension EventScreenRouter: EventScreenRouterInput {
                             let organizingListNavigationController = organizingListNavigationControllers.viewControllers[0] as! EventListController
                             organizingListNavigationController.updateList()
                             
-                            let participatingListNavigationControllers  = self.viewController?.tabBarController!.viewControllers![2] as! UINavigationController
+                            let participatingListNavigationControllers  = self.viewController?.tabBarController!.viewControllers![3] as! UINavigationController
                             let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
                             participatingListNavigationController.updateList()
                             
