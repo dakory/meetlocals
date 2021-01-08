@@ -66,7 +66,7 @@ final class EventScreenViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = UIColor.systemBackground
+        self.view.backgroundColor = UIColor(rgb: 0xFAFAFA)
         self.navigationController?.navigationBar.prefersLargeTitles = false
         output.checkMembershipPresenter()
     //    output.getData()
@@ -154,7 +154,9 @@ final class EventScreenViewController: UIViewController {
         stackListMembers.spacing = 14
 
         
-        buttonSignUp.layer.cornerRadius = 25
+        buttonSignUp.layer.cornerRadius = 24
+
+//        buttonSignUp.layer.borderWidth
         
         imageOfPerson.contentMode = .scaleAspectFill
         imageOfPerson.layer.cornerRadius = 30
@@ -287,12 +289,12 @@ final class EventScreenViewController: UIViewController {
             viewButtonPrivateMessage.leadingAnchor.constraint(equalTo: viewStackTopLabelNames.trailingAnchor),
             viewButtonPrivateMessage.widthAnchor.constraint(equalToConstant: 80),
 
-            viewButtonSignUp.heightAnchor.constraint(equalToConstant: 50),
-            buttonSignUp.heightAnchor.constraint(equalToConstant: 50),
-            buttonSignUp.centerXAnchor.constraint(equalTo: viewButtonSignUp.centerXAnchor),
+            viewButtonSignUp.heightAnchor.constraint(equalToConstant: 48),
+            buttonSignUp.heightAnchor.constraint(equalToConstant: 48),
             buttonSignUp.centerYAnchor.constraint(equalTo: viewButtonSignUp.centerYAnchor),
-            buttonSignUp.leadingAnchor.constraint(equalTo: viewButtonSignUp.leadingAnchor, constant: 30),
-            buttonSignUp.leadingAnchor.constraint(equalTo: viewButtonSignUp.leadingAnchor, constant: 30),
+            buttonSignUp.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 37),
+            buttonSignUp.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:
+            -37),
 
             viewForScrollViewFriends.heightAnchor.constraint(equalToConstant: 104),
             scrollViewFriends.topAnchor.constraint(equalTo: viewForScrollViewFriends.topAnchor),
@@ -326,15 +328,15 @@ extension EventScreenViewController: EventScreenViewInput {
         buttonSignUp.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
         if output.checkCurrentUserIsOrganizer() {
             buttonSignUp.setTitle("Удалить событие", for: .normal)
-            buttonSignUp.backgroundColor = UIColor.systemRed
+            buttonSignUp.backgroundColor = UIColor(rgb: 0xE939C2)
         }
         else if check {
             buttonSignUp.setTitle("Отменить заявку", for: .normal)
-            buttonSignUp.backgroundColor = UIColor.systemRed
+            buttonSignUp.backgroundColor = UIColor(rgb: 0xE939C2)
         }
         else {
             buttonSignUp.setTitle("Участвовать", for: .normal)
-            buttonSignUp.backgroundColor = UIColor.systemBlue
+            buttonSignUp.backgroundColor = UIColor(rgb: 0x396AE9)
         }
     }
 
@@ -349,7 +351,6 @@ extension EventScreenViewController: EventScreenViewInput {
         }
         imageOfPerson.image = UIImage(named: "exampleImageOfPerson")
         if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
-            print("Url: \(avatarUrl)")
             imageOfPerson.downloaded(from: avatarUrl)
         }
 
@@ -379,7 +380,6 @@ extension EventScreenViewController: EventScreenViewInput {
             }
             imageView.image = UIImage(named: "exampleImageOfPerson")
             if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
-                print("Url: \(avatarUrl)")
                 imageView.downloaded(from: avatarUrl)
             }
             

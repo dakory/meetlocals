@@ -37,7 +37,7 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     
     override func loadView() {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(rgb: 0xFAFAFA)
         addAll(view)
         self.view = view
         setupAll()
@@ -123,10 +123,11 @@ private extension AddEventViewController {
         textEventName.translatesAutoresizingMaskIntoConstraints = false
         textEventName.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventName.font = .systemFont(ofSize: 20)
-        textEventName.placeholder = "Поездка на велосипеде"
+//        textEventName.placeholder = "Поездка на велосипеде"
         textEventName.delegate = self
         textEventName.layer.cornerRadius = 15
-        self.textEventNameHeightConstraint = textEventName.heightAnchor.constraint(equalToConstant: 19)
+        self.textEventNameHeightConstraint = textEventName.heightAnchor
+                .constraint(equalToConstant: 19)
         [
         textEventName.topAnchor.constraint(equalTo: eventNameLabel.bottomAnchor, constant: 8),
         self.textEventNameHeightConstraint,
@@ -184,7 +185,7 @@ private extension AddEventViewController {
         placeText.translatesAutoresizingMaskIntoConstraints = false
         placeText.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         placeText.font = .systemFont(ofSize: 20)
-        placeText.placeholder = "Парк Лосиный остров, главный вход"
+//        placeText.placeholder = "Парк Лосиный остров, главный вход"
         self.placeTextHeightConstraint = placeText.heightAnchor.constraint(equalToConstant: 19)
         placeText.delegate = self
         placeText.layer.cornerRadius = 15
@@ -214,7 +215,8 @@ private extension AddEventViewController {
         textEventDescription.translatesAutoresizingMaskIntoConstraints = false
         textEventDescription.backgroundColor = #colorLiteral(red: 0.9371530414, green: 0.9373136759, blue: 0.9371429086, alpha: 1)
         textEventDescription.font = .systemFont(ofSize: 20)
-        textEventDescription.placeholder = "Супер мероприятие, бери свой бак и присоединяйся ко мне :)"
+//        textEventDescription.placeholder = "Супер мероприятие, бери свой байк и присоединяйся
+//        ко мне :)"
         textEventDescription.delegate = self
         textEventDescription.layer.cornerRadius = 15
         self.textEventDescriptionNameHeightConstraint = textEventDescription.heightAnchor.constraint(equalToConstant: 76)
@@ -229,13 +231,14 @@ private extension AddEventViewController {
         
         
         buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
-        buttonAddEvent.backgroundColor = #colorLiteral(red: 0.01627545618, green: 0.4538905025, blue: 0.9498452544, alpha: 1)
+        buttonAddEvent.backgroundColor = UIColor(rgb: 0x396AE9)
         buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
-        buttonAddEvent.layer.cornerRadius = 25
+        buttonAddEvent.layer.cornerRadius = 24
         buttonAddEvent.setTitle("Добавить", for: .normal)
         buttonAddEvent.clipsToBounds = true
         [
-        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                constant: -31),
         buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79),
         buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
             buttonAddEvent.trailingAnchor.constraint(equalTo: buttonAddEvent.leadingAnchor, constant: UIScreen.main.bounds.width - 74)

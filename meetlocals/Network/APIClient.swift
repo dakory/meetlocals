@@ -213,7 +213,7 @@ final class APIClient {
         let interactor = InteractorImpl()
         let currentVkUser = interactor.getVkCurrentUser()
 
-        currentVkUser.observe(on: MainScheduler.instance)
+        _ = currentVkUser.observe(on: MainScheduler.instance)
                 .subscribe(
                         onNext: { (response: VKUser) in
                             // Строка ниже — костыль, который отрезает лишние символы в ссылке,

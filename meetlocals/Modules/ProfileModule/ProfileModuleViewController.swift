@@ -32,7 +32,7 @@ final class ProfileModuleViewController: UIViewController {
     
     override func loadView() {
         self.view = UIView()
-        self.view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
+        self.view.backgroundColor = UIColor(rgb: 0xFAFAFA)
         output.getData()
         
         scrollView.alwaysBounceVertical = true
@@ -99,7 +99,7 @@ final class ProfileModuleViewController: UIViewController {
         
         buttonExit.setTitle("Выйти", for: .normal)
         buttonExit.titleLabel?.font.withSize(17)
-        buttonExit.backgroundColor = #colorLiteral(red: 0.9139195085, green: 0.2209282517, blue: 0.7613213658, alpha: 1)
+        buttonExit.backgroundColor = UIColor(rgb: 0xE939C2)
         buttonExit.layer.cornerRadius = 24
         buttonExit.addTarget(self, action: #selector(didTapButtonExit), for: .touchUpInside)
     }
@@ -121,7 +121,6 @@ extension ProfileModuleViewController: ProfileModuleViewInput {
         }
         imageOfPerson.image = UIImage(named: "exampleImageOfPerson")
         if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
-            print("Url: \(avatarUrl)")
             imageOfPerson.downloaded(from: avatarUrl)
         }
     }

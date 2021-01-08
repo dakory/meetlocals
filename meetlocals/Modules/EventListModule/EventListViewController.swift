@@ -26,7 +26,7 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         let view = UIView()
         collectionView.alwaysBounceVertical = true
         view.addSubview(collectionView)
-        view.backgroundColor = #colorLiteral(red: 0.9567590356, green: 0.9569227099, blue: 0.9567485452, alpha: 1)
+        view.backgroundColor = UIColor(rgb: 0xFAFAFA)
         self.view = view
         setupView()
     }
@@ -86,14 +86,19 @@ extension EventListController: EventListViewInput {
                 image: UIImage(systemName: "magnifyingglass"),
                 tag: 0)
             self.navigationItem.titleView = {
-                let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 90, height: 30))
+                let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 78, height: 50))
                 let titleImageView = UIImageView(image: UIImage(named: "promoIcon"))
-                titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
+                titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: 27)
                 titleView.addSubview(titleImageView)
                 titleView.clipsToBounds = true
                 titleView.contentMode = .scaleAspectFill
+//                titleView.backgroundColor = .black
                 return titleView
             }()
+
+//            self.navigationController?.navigationBar.barTintColor = .black
+            self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xFAFAFA)
+
             makeSearchController()
         }
         
@@ -130,9 +135,10 @@ extension EventListController: UICollectionViewDataSource {
         cell.configure(with: self.viewModels[indexPath.row], collectionView: collectionView, index: indexPath.row)
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 15
-        cell.layer.shadowRadius = cell.layer.cornerRadius
-        cell.layer.shadowOpacity = 0.1
-        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowRadius = 10
+        cell.layer.shadowOpacity = 0.07
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
 
         return cell
     }
@@ -190,6 +196,6 @@ private extension EventListController {
         
         navigationItem.searchController?.searchBar.placeholder = "Поиск"
 //        navigationItem.searchController?.searchBar.setValue("Отмена", forKey: "cancelButtonText")
-        navigationItem.searchController?.searchBar.backgroundColor = #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998806119, alpha: 1)
+        navigationItem.searchController?.searchBar.backgroundColor = UIColor(rgb: 0xFAFAFA)
     }
 }

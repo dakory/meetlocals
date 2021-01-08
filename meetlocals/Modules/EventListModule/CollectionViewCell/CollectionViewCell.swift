@@ -18,9 +18,12 @@ class CollectionViewCell: UICollectionViewCell {
         UserName.font = UIFont(name: "Avenir-Light", size: 13)
         UserName.textColor = .systemGray
         UserName.textAlignment = .left
+
         return UserName
     }()
     
+
+
     fileprivate let EventName: UILabel = { () -> UILabel in
         let EventName = UILabel()
         EventName.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +33,7 @@ class CollectionViewCell: UICollectionViewCell {
         EventName.numberOfLines = 0
         return EventName
     }()
+
     fileprivate let UserImage: UIImageView = { ( ) -> UIImageView in
         let UserImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         
@@ -87,7 +91,6 @@ class CollectionViewCell: UICollectionViewCell {
         }
         UserImage.image = UIImage(named: "exampleImageOfPerson")
         if avatarUrl != "exampleImageOfPerson" && avatarUrl != "" {
-            print("Url: \(avatarUrl)")
             UserImage.downloaded(from: avatarUrl)
         }
         eventId = model.id

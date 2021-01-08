@@ -14,7 +14,7 @@ class InteractorImpl: Interactor {
 
     func getVkFriends() -> Observable<[VKUser]> {
         vkRepository.getFriends()
-                .subscribeOn(SerialDispatchQueueScheduler(qos: .background))
+                .subscribe(on: SerialDispatchQueueScheduler(qos: .background))
                 .map { (response: VKResponse<VKApiObject>) in
                     (self.converter.convert(to: [VKUser].self, from: response.json) ?? [VKUser]())
                 }

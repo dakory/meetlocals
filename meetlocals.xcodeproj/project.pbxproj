@@ -35,6 +35,7 @@
 		B02DD79D69C58BA519CA8436 /* ProfileModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD0EB62A466A32D333E0 /* ProfileModuleContainer.swift */; };
 		B02DD7B17195E6966C867A99 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDADAD066A4A034BA565 /* VkDelegate.swift */; };
 		B02DD7CC910E371FE27D69B6 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */; };
+		B02DD7CF2F525318381B514A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD804D1BACDF58CC2F4A4 /* UIColorExtension.swift */; };
 		B02DD7DB7D12680B3C702AB3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD45266B8FD7BC61668C0 /* Common.swift */; };
 		B02DD7F0501837F5FD655A0F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFFE3F08F0CA548D08CF /* Events.swift */; };
 		B02DD7FCC572870FF3A84DE8 /* EventListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD7429D20F923E400F1C6 /* EventListInteractor.swift */; };
@@ -126,6 +127,7 @@
 		B02DD75863A90D9F5A4F0666 /* EventListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListPresenter.swift; sourceTree = "<group>"; };
 		B02DD7719A71CCDDE67C38F7 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Network/APIClient.swift; sourceTree = "<group>"; };
 		B02DD7DA8C6E775DD5960674 /* EventScreenContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventScreenContainer.swift; sourceTree = "<group>"; };
+		B02DD804D1BACDF58CC2F4A4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B02DD823662E6474B15178C5 /* LoadingModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleViewController.swift; sourceTree = "<group>"; };
 		B02DD82C1D788ACDE510DDB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B02DD883CCB588A07C467D57 /* AddEventContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventContainer.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */,
 				B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */,
 				B02DDC279F5131EDD48D8D15 /* UIView_Layout_utils.swift */,
+				B02DD804D1BACDF58CC2F4A4 /* UIColorExtension.swift */,
 			);
 			name = Common;
 			path = meetlocals/Common;
@@ -621,6 +624,7 @@
 				B02DD38E753721FB28FF25E9 /* LoadingModuleInteractor.swift in Sources */,
 				B02DD25F1930551ED63C23C3 /* LoadingModuleViewController.swift in Sources */,
 				B02DDD32BFE966D06A257FEA /* AppCoordinator.swift in Sources */,
+				B02DD7CF2F525318381B514A /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

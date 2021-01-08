@@ -16,8 +16,6 @@ extension UIImageView {
                 else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
-                print("the userpic is downloaded!")
-//                print(self?.image)
             }
         }.resume()
     }
