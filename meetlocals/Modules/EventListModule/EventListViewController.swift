@@ -96,10 +96,10 @@ extension EventListController: EventListViewInput {
                 return titleView
             }()
 
-            self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xFAFAFA)
-
             makeSearchController()
             isCommon = true
+
+            self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xFAFAFA)
         }
         
         
@@ -177,7 +177,7 @@ extension EventListController: UICollectionViewDelegate, UICollectionViewDelegat
 private extension EventListController {
     func setupView() {
         self.collectionView.clipsToBounds = false
-        self.collectionView.backgroundColor = view.backgroundColor
+        self.collectionView.backgroundColor = UIColor(rgb: 0xFAFAFA)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
@@ -195,6 +195,6 @@ private extension EventListController {
         navigationController?.navigationBar.isTranslucent = false
         
         navigationItem.searchController?.searchBar.placeholder = "Поиск"
-        navigationItem.searchController?.searchBar.backgroundColor = #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998806119, alpha: 1)
+        navigationItem.searchController?.searchBar.backgroundColor = UIColor(rgb: 0xFAFAFA)
     }
 }
