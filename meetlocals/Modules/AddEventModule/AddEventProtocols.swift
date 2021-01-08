@@ -12,7 +12,6 @@ protocol AddEventModuleInput {
 }
 
 protocol AddEventModuleOutput: class {
-//    func viewDidLoad()
     var tabBar: UITabBarController { get set }
 }
 

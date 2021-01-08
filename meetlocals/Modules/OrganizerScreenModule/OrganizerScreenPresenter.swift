@@ -21,6 +21,20 @@ extension OrganizerScreenPresenter: OrganizerScreenModuleInput {
 }
 
 extension OrganizerScreenPresenter: OrganizerScreenViewOutput {
+    func didTapButtonOpenVK() {
+        let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})
+        let organizer = Common.profiles.profiles[indexPerson!]
+        let vkID = organizer.vkId
+        let appURL = NSURL(string: "vk://vk.com/id\(vkID)")!
+        let safariURL = URL(string: "https://vk.com/id\(vkID)")!
+
+        if UIApplication.shared.canOpenURL(appURL as URL){
+            UIApplication.shared.open(appURL as URL)
+        } else {
+            UIApplication.shared.open(safariURL)
+        }
+    }
+    
     
     func getData(){
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id ==  personId})

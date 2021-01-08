@@ -40,9 +40,6 @@ final class AppCoordinator: LoadingModuleModuleOutput {
     }
 
     func setupTabBar() {
-        let eventListContext = EventListContext(moduleOutput: self, typeOfScreen: .common)
-        let eventListContainer = EventListContainer.assemble(with: eventListContext)
-        let eventListNavigationController = UINavigationController(rootViewController: eventListContainer.viewController)
 
         let organizingListContext = EventListContext(moduleOutput: self, typeOfScreen: .organizing)
         let organizingListContainer = EventListContainer.assemble(with: organizingListContext)
@@ -61,6 +58,10 @@ final class AppCoordinator: LoadingModuleModuleOutput {
                 .myProfile.id)
         let profileModuleContainer = ProfileModuleContainer.assemble(with: profileModuleContext)
         let profileModuleNavigationController = UINavigationController(rootViewController: profileModuleContainer.viewController)
+        
+        let eventListContext = EventListContext(moduleOutput: self, typeOfScreen: .common)
+        let eventListContainer = EventListContainer.assemble(with: eventListContext)
+        let eventListNavigationController = UINavigationController(rootViewController: eventListContainer.viewController)
 
 
         eventListContainer.viewController.loadViewIfNeeded()
@@ -70,11 +71,8 @@ final class AppCoordinator: LoadingModuleModuleOutput {
         profileModuleContainer.viewController.loadViewIfNeeded()
 
 
-        organizingListNavigationController.navigationBar.prefersLargeTitles = true
-        participatingListNavigationController.navigationBar.prefersLargeTitles = true
-
 
         self.tabBar.setViewControllers([eventListNavigationController,
-                                 organizingListNavigationController, participatingListNavigationController, addEventNavigationController, profileModuleNavigationController], animated: true)
+                                 organizingListNavigationController, addEventNavigationController, participatingListNavigationController, profileModuleNavigationController], animated: true)
     }
 }

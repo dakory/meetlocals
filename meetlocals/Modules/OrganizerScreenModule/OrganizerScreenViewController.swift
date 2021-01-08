@@ -8,7 +8,7 @@ final class OrganizerScreenViewController: UIViewController {
     let stackViewTopLabel = UIStackView()
     
     let scrollView = UIScrollView()
-    let buttonExit = UIButton()
+    let buttonOpenVK = UIButton()
 
     
 	private let output: OrganizerScreenViewOutput
@@ -33,17 +33,12 @@ final class OrganizerScreenViewController: UIViewController {
         view.addSubview(scrollView)
         self.scrollView.addSubview(imageOfPerson)
         self.scrollView.addSubview(nameOfPerson)
-        self.scrollView.addSubview(buttonExit)
+        self.scrollView.addSubview(buttonOpenVK)
         self.setupConstraints()
     }
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        self.tabBarItem =
-           UITabBarItem(
-            title: "Профиль",
-            image: UIImage(systemName: "person.circle"),
-            tag: 3)
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             title: "Назад",
@@ -51,13 +46,25 @@ final class OrganizerScreenViewController: UIViewController {
             target: self,
             action: #selector(self.back)
         )
-        self.navigationItem.title = "Профиль"
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     
     func setupConstraints() {
         self.imageOfPerson.translatesAutoresizingMaskIntoConstraints = false
         self.nameOfPerson.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonExit.translatesAutoresizingMaskIntoConstraints = false
+        self.buttonOpenVK.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
         [
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
@@ -77,6 +84,21 @@ final class OrganizerScreenViewController: UIViewController {
         ].forEach({
             $0.isActive = true
         })
+        
+        
+        buttonOpenVK.setTitle("Открыть ВК", for: .normal)
+        buttonOpenVK.titleLabel?.font.withSize(17)
+        buttonOpenVK.backgroundColor = #colorLiteral(red: 0.9139195085, green: 0.2209282517, blue: 0.7613213658, alpha: 1)
+        buttonOpenVK.layer.cornerRadius = 24
+        buttonOpenVK.addTarget(self, action: #selector(didTapButtonOpenVK), for: .touchUpInside)
+        [
+        buttonOpenVK.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
+        buttonOpenVK.topAnchor.constraint(equalTo: buttonOpenVK.bottomAnchor, constant: -47),
+        buttonOpenVK.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
+        buttonOpenVK.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37)
+    ].forEach({
+                $0.isActive = true
+    })
     
         imageOfPerson.contentMode = .scaleAspectFill
         imageOfPerson.layer.cornerRadius = 35
@@ -87,6 +109,11 @@ final class OrganizerScreenViewController: UIViewController {
         nameOfPerson.font = nameOfPerson.font.withSize(16)
         nameOfPerson.numberOfLines = 0
         nameOfPerson.textAlignment = NSTextAlignment.center
+    }
+    
+    @objc
+    func didTapButtonOpenVK() {
+        output.didTapButtonOpenVK()
     }
 }
 

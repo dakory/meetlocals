@@ -19,6 +19,7 @@ extension ProfileModuleRouter: ProfileModuleRouterInput {
         alertController.addAction(UIAlertAction(title: "Да", style: .default) { action in
             VKSdk.forceLogout()
             self.openWelcomeScreen()
+            self.viewController?.tabBarController?.selectedIndex = 0
         })
         alertController.addAction(UIAlertAction(title: "Нет", style: .default))
         self.viewController?.present(alertController, animated: true)

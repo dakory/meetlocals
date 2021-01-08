@@ -53,8 +53,6 @@ final class ProfileModuleViewController: UIViewController {
             tag: 3)
         self.navigationItem.title = "Профиль"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-
-        
     }
     
     func setupConstraints() {

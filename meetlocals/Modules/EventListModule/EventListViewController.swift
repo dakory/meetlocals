@@ -11,6 +11,7 @@ final class EventListController: UIViewController, UISearchBarDelegate{
     private let output: EventListViewOutput
     private let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: CollectionViewFlowLayout())
     private var viewModels = [EventViewModel]()
+    private var isCommon: Bool = false
 
     
     init(output: EventListViewOutput) {
@@ -27,8 +28,10 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         collectionView.alwaysBounceVertical = true
         view.addSubview(collectionView)
         view.backgroundColor = UIColor(rgb: 0xFAFAFA)
+        navigationController?.view.backgroundColor = UIColor(rgb: 0xFAFAFA)
         self.view = view
         setupView()
+        self.navigationController?.navigationBar.prefersLargeTitles = !isCommon
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,6 +48,10 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         attemptToHideKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = !isCommon
+    }
+
     private func attemptToHideKeyboard() {
         self.navigationItem.searchController?.searchBar.resignFirstResponder()
         self.navigationItem.searchController?.searchBar.endEditing(true)
@@ -56,13 +63,7 @@ final class EventListController: UIViewController, UISearchBarDelegate{
         super.viewDidLoad()
         self.definesPresentationContext = true
         self.hideKeyboardWhenTappedAround()
-        self.tabBarItem =
-           UITabBarItem(
-            title: "Лента",
-            image: UIImage(systemName: "magnifyingglass"),
-            tag: 0)
         UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         self.output.viewDidLoad()
     }
 }
@@ -92,14 +93,13 @@ extension EventListController: EventListViewInput {
                 titleView.addSubview(titleImageView)
                 titleView.clipsToBounds = true
                 titleView.contentMode = .scaleAspectFill
-//                titleView.backgroundColor = .black
                 return titleView
             }()
 
-//            self.navigationController?.navigationBar.barTintColor = .black
             self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0xFAFAFA)
 
             makeSearchController()
+            isCommon = true
         }
         
         
@@ -195,7 +195,6 @@ private extension EventListController {
         navigationController?.navigationBar.isTranslucent = false
         
         navigationItem.searchController?.searchBar.placeholder = "Поиск"
-//        navigationItem.searchController?.searchBar.setValue("Отмена", forKey: "cancelButtonText")
-        navigationItem.searchController?.searchBar.backgroundColor = UIColor(rgb: 0xFAFAFA)
+        navigationItem.searchController?.searchBar.backgroundColor = #colorLiteral(red: 0.9998916984, green: 1, blue: 0.9998806119, alpha: 1)
     }
 }
