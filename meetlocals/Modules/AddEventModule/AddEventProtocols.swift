@@ -12,7 +12,8 @@ protocol AddEventModuleInput {
 }
 
 protocol AddEventModuleOutput: class {
-    var tabBar: UITabBarController { get set }
+    var tabBar: UITabBarController? { get set }
+//    var view: UIView { get }
 }
 
 protocol AddEventViewInput: class {

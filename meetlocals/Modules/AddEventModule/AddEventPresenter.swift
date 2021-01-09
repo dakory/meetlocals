@@ -68,5 +68,7 @@ extension AddEventPresenter: AddEventInteractorOutput {
         let addEventNavigationController = addEventNavigationControllers.viewControllers[0] as! AddEventViewController
 
         addEventNavigationController.cleanScreen()
+
+        (self.view as! AddEventViewController).tabBarController!.selectedIndex = 0
     }
 }
