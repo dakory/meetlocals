@@ -16,15 +16,15 @@ extension EventListInteractor: EventListInteractorInput {
     
     func fetchEvents(type: TypeOfListScreen) {
         if type == .common {
-            self.output?.didLoad(events: Common.events.listOfEvents.reversed())
+            self.output?.didLoad(events: Common.events.listOfEvents.sorted(by: {$0.creationDatetime.compare($1.creationDatetime) == .orderedDescending}))
         }
         else if type == .participating {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}).reversed())
+                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}).sorted(by: {$0.creationDatetime.compare($1.creationDatetime) == .orderedDescending}))
         }
         else if type == .organizing {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).reversed())
+                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).sorted(by: {$0.creationDatetime.compare($1.creationDatetime) == .orderedDescending}))
         }
     }
     
@@ -33,7 +33,7 @@ extension EventListInteractor: EventListInteractorInput {
             fetchEvents(type: .common)
         }
         else {
-            self.output?.didLoad(events: Common.events.listOfEvents.filter({$0.name.contains(text)}).reversed())
+            self.output?.didLoad(events: Common.events.listOfEvents.filter({$0.name.contains(text)}).sorted(by: {$0.creationDatetime.compare($1.creationDatetime) == .orderedDescending}))
         }
     }
 }

@@ -286,11 +286,12 @@ private extension AddEventViewController {
         if (deltaY != 0) {
                 UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
                     let plus = deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
-                    self.buttonTopConstraint.constant += plus
-                    self.buttonBottonConstraint.constant += plus
-                    self.gradientView.frame.origin.y += plus
+                    let sign = CGFloat((deltaY < 0 ? -1: 1) * 15)
+                    self.buttonTopConstraint.constant += plus - sign
+                    self.buttonBottonConstraint.constant += plus - sign
+                    self.gradientView.frame.origin.y += plus - sign
+                    self.scrollView.contentSize.height -= plus - sign - (deltaY < 0 ? -1: 1) * self.buttonAddEvent.frame.height
     }, completion: nil)
-            scrollView.contentSize.height -= deltaY  + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
             self.view.updateConstraints()
             self.view.layoutSubviews()
             
@@ -315,9 +316,12 @@ extension AddEventViewController {
     
     func adjustTextViewHeightForTextEventDescription() {
         let fixedWidth = textEventDescription.frame.size.width
-        let newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        var newSize = textEventDescription.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        if newSize.height < CGFloat(76) {
+            newSize.height = CGFloat(76)
+        }
         scrollView.contentSize.height -= self.textEventDescriptionNameHeightConstraint.constant - newSize.height
-        self.textEventDescriptionNameHeightConstraint.constant = newSize.height < 76 ? 76: newSize.height
+        self.textEventDescriptionNameHeightConstraint.constant = newSize.height
         self.view.layoutIfNeeded()
     }
     func adjustTextViewHeightForPlaceText() {
