@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         super.loadView()
 
         self.view = MainView()
-        self.view.backgroundColor = #colorLiteral(red: 0.9685224891, green: 0.9686880708, blue: 0.9685119987, alpha: 1)
+        self.view.backgroundColor = UIColor(rgb: 0xFAFAFA)
     }
 
     override func viewDidLoad() {
@@ -91,7 +91,7 @@ class MainView: AutoLayoutView {
         authorizeButton.setTitle("Войти через VK", for: .normal)
         authorizeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         authorizeButton.setTitleColor(.white, for: .normal)
-        authorizeButton.backgroundColor = #colorLiteral(red: 0.01627545618, green: 0.4538905025, blue: 0.9498452544, alpha: 1)
+        authorizeButton.backgroundColor = UIColor(rgb: 0x396AE9)
         authorizeButton.layer.cornerRadius = 24
         authorizeButton.layer.masksToBounds = true
     }

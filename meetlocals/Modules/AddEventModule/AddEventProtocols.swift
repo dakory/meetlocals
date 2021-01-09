@@ -35,3 +35,7 @@ protocol AddEventInteractorOutput: class {
 
 protocol AddEventRouterInput: class {
 }
+
+protocol AddEventRouterOutput: class {
+    var moduleOutput: AddEventModuleOutput? { get }
+}

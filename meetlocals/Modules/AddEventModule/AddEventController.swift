@@ -18,6 +18,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     private let placeText = UITextView()
     private let textEventLabel = UILabel()
     private let textEventDescription = UITextView()
+    private let gradientView = UIView()
+    private let layerGradient = CAGradientLayer()
     private let buttonAddEvent = UIButton()
     private let scrollView = UIScrollView()
     var textEventNameHeightConstraint: NSLayoutConstraint!
@@ -91,7 +93,10 @@ private extension AddEventViewController {
         scrollView.addSubview(textEventLabel)
         scrollView.addSubview(textEventDescription)
         scrollView.addSubview(placeText)
+
+
         view.addSubview(scrollView)
+        view.addSubview(gradientView)
         view.addSubview(buttonAddEvent)
     }
     func setupAll() {
@@ -226,8 +231,20 @@ private extension AddEventViewController {
         textEventDescription.trailingAnchor.constraint(equalTo: eventNameLabel.trailingAnchor)
         ].forEach({$0.isActive = true})
         textEventDescription.textContainer.lineBreakMode = .byTruncatingTail
-        
-        
+
+
+
+        layerGradient.colors = [UIColor(rgb: 0xFAFAFA, a: 0).cgColor,  UIColor(rgb: 0xFAFAFA, a: 1)
+                .cgColor]
+        layerGradient.locations = [0, 0.5]
+        layerGradient.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 220)
+
+        gradientView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height-220, width: UIScreen
+                .main.bounds.width, height: 220)
+        gradientView.layer.addSublayer(layerGradient)
+
+
+
         buttonAddEvent.translatesAutoresizingMaskIntoConstraints = false
         buttonAddEvent.backgroundColor = UIColor(rgb: 0x396AE9)
         buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
@@ -266,6 +283,8 @@ private extension AddEventViewController {
         if (deltaY != 0) {
                 UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
                     self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
+                    self.gradientView.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY
+                            < 0 ? 1: -1)
     }, completion: nil)
             scrollView.contentSize.height -= deltaY  + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
             

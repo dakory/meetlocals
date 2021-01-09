@@ -29,7 +29,7 @@ final class LoadingModuleViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = UIColor(rgb: 0xFAFAFA)
     }
 
     override func viewDidLoad() {
