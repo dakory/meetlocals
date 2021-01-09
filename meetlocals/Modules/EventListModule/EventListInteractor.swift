@@ -16,15 +16,15 @@ extension EventListInteractor: EventListInteractorInput {
     
     func fetchEvents(type: TypeOfListScreen) {
         if type == .common {
-            self.output?.didLoad(events: Common.events.listOfEvents.sorted(by: {$0.date.compare($1.date) == .orderedDescending}))
+            self.output?.didLoad(events: Common.events.listOfEvents.sorted(by: {$0.date.compare($1.date) == .orderedDescending}).reversed())
         }
         else if type == .participating {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}).sorted(by: {$0.date.compare($1.date) == .orderedDescending}))
+                                    Common.events.listOfEvents.filter({$0.idMembers.contains(Common.myProfile.id)}).sorted(by: {$0.date.compare($1.date) == .orderedDescending}).reversed())
         }
         else if type == .organizing {
             self.output?.didLoad(events:
-                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).sorted(by: {$0.date.compare($1.date) == .orderedDescending}))
+                                    Common.events.listOfEvents.filter({$0.idOrganizer == Common.myProfile.id}).sorted(by: {$0.date.compare($1.date) == .orderedDescending}).reversed())
         }
     }
     
