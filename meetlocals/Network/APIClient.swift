@@ -284,13 +284,30 @@ final class APIClient {
     }()
 
     private let jsonDecoder: JSONDecoder = {
-        let result = JSONDecoder()
+        let decoder = JSONDecoder()
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        result.dateDecodingStrategy = .formatted(dateFormatter)
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+//        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        decoder.dateDecodingStrategy = .custom { decoder in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
 
-        return result
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            if let date = dateFormatter.date(from: dateString) {
+                return date
+            }
+
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSS"
+            if let date = dateFormatter.date(from: dateString) {
+                return date
+            }
+
+            throw DecodingError.dataCorruptedError(in: container,
+                    debugDescription: "Cannot decode date string \(dateString)")
+        }
+
+        return decoder
     }()
 
     private enum DataTaskErrors: Error {

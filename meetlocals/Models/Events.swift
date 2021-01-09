@@ -8,6 +8,7 @@ struct Event: Codable {
     let description: String
     let place: String
     let date: Date
+    let creationDatetime: Date
 
     private enum CodingKeys : String, CodingKey {
         case id = "_id"
@@ -17,6 +18,7 @@ struct Event: Codable {
         case description
         case place = "location"
         case date
+        case creationDatetime = "creation_datetime"
     }
 }
 
