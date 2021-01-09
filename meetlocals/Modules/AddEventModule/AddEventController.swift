@@ -26,6 +26,8 @@ final class AddEventViewController: UIViewController, UITextViewDelegate {
     var placeTextHeightConstraint: NSLayoutConstraint!
     var textEventDescriptionNameHeightConstraint: NSLayoutConstraint!
     var addToScroll: CGFloat!
+    var buttonBottonConstraint: NSLayoutConstraint!
+    var buttonTopConstraint: NSLayoutConstraint!
     
     init(output: AddEventViewOutput) {
         self.output = output
@@ -250,11 +252,12 @@ private extension AddEventViewController {
         buttonAddEvent.addTarget(self, action: #selector(didTapButtonAddEvent), for: .touchUpInside)
         buttonAddEvent.layer.cornerRadius = 24
         buttonAddEvent.setTitle("Добавить", for: .normal)
-        buttonAddEvent.clipsToBounds = true
+        buttonAddEvent.clipsToBounds = false
+        self.buttonBottonConstraint = self.buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant:-31)
+        self.buttonTopConstraint = self.buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79)
         [
-        buttonAddEvent.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                constant: -31),
-        buttonAddEvent.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -79),
+            self.buttonBottonConstraint,
+            self.buttonTopConstraint,
         buttonAddEvent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 37),
             buttonAddEvent.trailingAnchor.constraint(equalTo: buttonAddEvent.leadingAnchor, constant: UIScreen.main.bounds.width - 74)
         ].forEach({$0.isActive = true})
@@ -282,11 +285,14 @@ private extension AddEventViewController {
         let deltaY = endFrame.origin.y - beginningFrame.origin.y
         if (deltaY != 0) {
                 UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
-                    self.buttonAddEvent.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
-                    self.gradientView.frame.origin.y += deltaY + (self.view.safeAreaInsets.bottom) * (deltaY
-                            < 0 ? 1: -1)
+                    let plus = deltaY + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
+                    self.buttonTopConstraint.constant += plus
+                    self.buttonBottonConstraint.constant += plus
+                    self.gradientView.frame.origin.y += plus
     }, completion: nil)
             scrollView.contentSize.height -= deltaY  + (self.view.safeAreaInsets.bottom) * (deltaY < 0 ? 1: -1)
+            self.view.updateConstraints()
+            self.view.layoutSubviews()
             
         }
     }
