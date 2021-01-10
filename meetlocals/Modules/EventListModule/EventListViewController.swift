@@ -133,7 +133,7 @@ extension EventListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.configure(with: self.viewModels[indexPath.row], collectionView: collectionView, index: indexPath.row)
-        cell.backgroundColor = .white
+//        cell.backgroundColor = .white
         cell.layer.cornerRadius = 15
         cell.layer.shadowRadius = 10
         cell.layer.shadowOpacity = 0.07

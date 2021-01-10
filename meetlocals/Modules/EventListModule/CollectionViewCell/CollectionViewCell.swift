@@ -12,11 +12,13 @@ class CollectionViewCell: UICollectionViewCell {
     var eventId: Int
     var height = CGFloat(75)
 
+
+
     fileprivate let UserName: UILabel = { () -> UILabel in
         let UserName = UILabel()
         UserName.translatesAutoresizingMaskIntoConstraints = false
-        UserName.font = UIFont(name: "Avenir-Light", size: 13)
-        UserName.textColor = .systemGray
+        UserName.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        UserName.textColor = UIColor(rgb: 0x8E8E93)
         UserName.textAlignment = .left
 
         return UserName
@@ -27,7 +29,7 @@ class CollectionViewCell: UICollectionViewCell {
     fileprivate let EventName: UILabel = { () -> UILabel in
         let EventName = UILabel()
         EventName.translatesAutoresizingMaskIntoConstraints = false
-        EventName.font = EventName.font.withSize(17)
+        EventName.font = UIFont.systemFont(ofSize: 17, weight: .light)
         EventName.textAlignment = .left
         EventName.lineBreakMode = .byWordWrapping
         EventName.numberOfLines = 0
@@ -94,5 +96,42 @@ class CollectionViewCell: UICollectionViewCell {
             UserImage.downloaded(from: avatarUrl)
         }
         eventId = model.id
+
+        self.backgroundColor = .white
     }
+
+
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(_: touches, with: event)
+        UIView.animate(withDuration: 0.1) { () -> () in
+            self.backgroundColor = UIColor(rgb: 0x396AE9)
+            self.UserName.textColor = UIColor.white
+            self.EventName.textColor = UIColor.white
+        }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(_: touches, with: event)
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(_: touches, with: event)
+        UIView.animate(withDuration: 0.2) { () -> () in
+            self.backgroundColor = UIColor.white
+            self.UserName.textColor = UIColor(rgb: 0x8E8E93)
+            self.EventName.textColor = UIColor.darkText
+        }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(_: touches, with: event)
+        UIView.animate(withDuration: 0.2) { () -> () in
+            self.backgroundColor = UIColor.white
+            self.UserName.textColor = UIColor(rgb: 0x8E8E93)
+            self.EventName.textColor = UIColor.darkText
+        }
+    }
+
+
 }
