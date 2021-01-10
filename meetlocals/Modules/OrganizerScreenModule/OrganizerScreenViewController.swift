@@ -85,10 +85,11 @@ final class OrganizerScreenViewController: UIViewController {
             $0.isActive = true
         })
         
-        
-        buttonOpenVK.setTitle("Открыть ВК", for: .normal)
+
+        buttonOpenVK.setImage(UIImage(named: "vk_icon_blue"), for: .normal)
         buttonOpenVK.titleLabel?.font.withSize(17)
-        buttonOpenVK.backgroundColor = #colorLiteral(red: 0.9139195085, green: 0.2209282517, blue: 0.7613213658, alpha: 1)
+        buttonOpenVK.layer.borderWidth = 2
+        buttonOpenVK.layer.borderColor = UIColor(rgb: 0x396AE9).cgColor
         buttonOpenVK.layer.cornerRadius = 24
         buttonOpenVK.addTarget(self, action: #selector(didTapButtonOpenVK), for: .touchUpInside)
         [
