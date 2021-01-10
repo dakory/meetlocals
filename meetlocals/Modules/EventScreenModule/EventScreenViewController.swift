@@ -109,13 +109,13 @@ final class EventScreenViewController: UIViewController {
         
         [nameOfPersonTitle, labelTimeTitle, labelDescriptionTitle, labelPlaceTitle, labelMembersTitle
         ].forEach({
-            $0.font = $0.font.withSize(14)
+            $0.font = $0.font.withSize(15)
             $0.textColor = .darkGray
         })
         
         [labelPlace, labelDescription, labelTime, nameOfPerson,
         ].forEach({
-            $0.font = $0.font.withSize(16)
+            $0.font = $0.font.withSize(18)
         })
         
         [nameOfPersonTitle, labelTimeTitle, labelDescriptionTitle, labelPlaceTitle, nameEvent, labelPlace, labelDescription, labelTime, nameOfPersonTitle, nameOfPerson
@@ -176,7 +176,7 @@ final class EventScreenViewController: UIViewController {
         
 
         nameEvent.font = UIFont.systemFont(ofSize: 22, weight: .light)
-        nameOfPerson.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        nameOfPerson.font = UIFont.systemFont(ofSize: 18, weight: .medium)
 
         buttonPrivateMessage.setImage(UIImage(named: "vk_icon_blue"), for: .normal)
         buttonPrivateMessage.layer.borderWidth = 2
