@@ -113,6 +113,7 @@ final class OrganizerScreenViewController: UIViewController {
     
     @objc
     func didTapButtonOpenVK() {
+        buttonOpenVK.tap()
         output.didTapButtonOpenVK()
     }
 }

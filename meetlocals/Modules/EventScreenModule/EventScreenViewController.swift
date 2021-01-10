@@ -240,6 +240,7 @@ final class EventScreenViewController: UIViewController {
     
     
     @IBAction func pressedButtonSignUp(_ sender: UIButton) {
+        buttonSignUp.tap()
         if output.checkCurrentUserIsOrganizer()
         {
             output.deleteEvent()

@@ -271,6 +271,7 @@ private extension AddEventViewController {
     
     @objc
     func didTapButtonAddEvent() {
+        buttonAddEvent.tap()
         self.buttonAddEvent.isUserInteractionEnabled = false
         output.didTabAddEvent(name: textEventName.text,
                                   description: textEventDescription.text,

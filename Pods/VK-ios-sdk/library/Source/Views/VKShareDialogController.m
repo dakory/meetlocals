@@ -1152,7 +1152,7 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
                     [self removeAttachIfExists:attach];
                     [self.attachmentsScrollView reloadData];
                 }];
-                imageLoad.successCallbackQueue = imageProcessingQueue;
+                imageLoad.successCallbackQueue = self->imageProcessingQueue;
                 [[VKHTTPClient getClient] enqueueOperation:imageLoad];
             }
             [self.attachmentsScrollView performBatchUpdates:^{

@@ -266,11 +266,11 @@ NSString *VK_AUTHORIZE_URL_STRING = @"vkauthorize://authorize";
 
 - (void)cancelAuthorization:(id)sender {
     [self dismissWithCompletion:^{
-        if (!_validationError) {
+        if (!self->_validationError) {
             //Silent cancel
             [VKSdk processOpenInternalURL:[NSURL URLWithString:@"#"] validation:NO];
         } else {
-            [_validationError.request cancel];
+            [self->_validationError.request cancel];
         }
     }];
     if (_validationError) {
@@ -281,7 +281,7 @@ NSString *VK_AUTHORIZE_URL_STRING = @"vkauthorize://authorize";
     }
 }
 
-- (void)dismissWithCompletion:(void (^)())completion {
+- (void)dismissWithCompletion:(void (^)(void))completion {
     _finished = YES;
 
     if (_internalNavigationController.isBeingDismissed) {

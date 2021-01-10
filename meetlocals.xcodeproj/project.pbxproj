@@ -87,6 +87,7 @@
 		C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */; };
 		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
 		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
+		E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +175,7 @@
 		C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.debug.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
 		D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetlocals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonAnimation.swift; path = ../../../Desktop/meetlocals/ButtonAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +403,7 @@
 				C2A4F146380F7A5519E8AE0F /* JsonAppUserConverter.swift */,
 				B02DD7719A71CCDDE67C38F7 /* APIClient.swift */,
 				B02DD4D04613A31BA6DD8D90 /* AppCoordinator.swift */,
+				E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				B02DD622017199131F2C6459 /* OrganizerScreenViewController.swift in Sources */,
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
+				E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
 				C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */,
 				C2A4F2DC4190A9C8706E9F61 /* JsonConverterFactory.swift in Sources */,

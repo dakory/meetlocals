@@ -75,7 +75,7 @@ CGFloat kCaptchaViewHeight = 138;
         [self addSubview:_captchaTextField];
         VKHTTPOperation *operation = [[VKHTTPOperation alloc] initWithURLRequest:[[VKHTTPClient getClient] requestWithMethod:@"GET" path:_error.captchaImg parameters:nil secure:NO]];
         [operation setCompletionBlockWithSuccess:^(VKHTTPOperation *operation, id responseObject) {
-            [_captchaImage setImage:[UIImage imageWithData:operation.responseData]];
+            [self->_captchaImage setImage:[UIImage imageWithData:operation.responseData]];
         }                                failure:^(VKHTTPOperation *operation, NSError *error) {
         }];
         [[VKHTTPClient getClient] enqueueOperation:operation];
@@ -87,8 +87,8 @@ CGFloat kCaptchaViewHeight = 138;
 
 - (void)deviceDidRotate:(NSNotification *)notification {
     [UIView animateWithDuration:notification ? 0.3 : 0 animations:^{
-        _captchaImage.frame = CGRectMake((self.bounds.size.width - kCaptchaImageWidth) / 2, 5, kCaptchaImageWidth, kCaptchaImageHeight);
-        _captchaTextField.frame = CGRectMake(_captchaImage.frame.origin.x, _captchaImage.frame.origin.y + kCaptchaImageHeight + 10, kCaptchaImageWidth, kCaptchaViewHeight - kCaptchaImageHeight - 10);
+        self->_captchaImage.frame = CGRectMake((self.bounds.size.width - kCaptchaImageWidth) / 2, 5, kCaptchaImageWidth, kCaptchaImageHeight);
+        self->_captchaTextField.frame = CGRectMake(_captchaImage.frame.origin.x, _captchaImage.frame.origin.y + kCaptchaImageHeight + 10, kCaptchaImageWidth, kCaptchaViewHeight - kCaptchaImageHeight - 10);
     }];
 }
 

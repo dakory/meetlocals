@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
 
     @objc
     public func authorize() {
+        mainView.authorizeButton.tap()
         authorizer.authorize()
     }
 }

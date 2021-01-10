@@ -104,6 +104,7 @@ final class ProfileModuleViewController: UIViewController {
     
     @objc
     func didTapButtonExit() {
+        buttonExit.tap()
         output.didTapButtonExit()
     }
 }

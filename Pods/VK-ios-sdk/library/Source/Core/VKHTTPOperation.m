@@ -525,7 +525,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
 
             if (![self hasAcceptableStatusCode]) {
                 NSUInteger statusCode = ([self.response isKindOfClass:[NSHTTPURLResponse class]]) ? (NSUInteger) [self.response statusCode] : 200;
-                [userInfo setValue:[NSString stringWithFormat:NSLocalizedStringFromTable(@"Expected status code 200, got %d", @"AFNetworking", nil), statusCode] forKey:NSLocalizedDescriptionKey];
+                [userInfo setValue:[NSString stringWithFormat:NSLocalizedStringFromTable(@"Expected status code 200, got %lu", @"AFNetworking", nil), (unsigned long)statusCode] forKey:NSLocalizedDescriptionKey];
                 self.HTTPError = [[NSError alloc] initWithDomain:VKSdkErrorDomain code:NSURLErrorBadServerResponse userInfo:userInfo];
             }
         }
