@@ -75,6 +75,7 @@ final class EventScreenViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.text
     }
     
     override func loadView() {
@@ -154,7 +155,7 @@ final class EventScreenViewController: UIViewController {
             $0.spacing = 8
         });
 
-        stackTopLabelNames.distribution = .fillEqually
+        stackTopLabelNames.distribution = .equalSpacing
 
 
         [nameEvent, stackViewTopLabel, stackViewTime, stackViewPlace, stackViewDescription, stackViewMembers, viewButtonSignUp
@@ -178,7 +179,10 @@ final class EventScreenViewController: UIViewController {
         nameEvent.font = nameEvent.font.withSize(22)
         nameOfPerson.font = UIFont.boldSystemFont(ofSize: 16.0)
         
-        buttonPrivateMessage.setImage(UIImage(named: "vk"), for: .normal)
+        buttonPrivateMessage.setImage(UIImage(named: "vk_icon_blue"), for: .normal)
+        buttonPrivateMessage.layer.borderWidth = 2
+        buttonPrivateMessage.layer.borderColor = UIColor(rgb: 0x396AE9).cgColor
+        buttonPrivateMessage.layer.cornerRadius = 20
 
         stackTopLabelNames.addArrangedSubview(nameOfPerson)
         stackTopLabelNames.addArrangedSubview(nameOfPersonTitle)
@@ -289,15 +293,15 @@ final class EventScreenViewController: UIViewController {
 
             imageOfPerson.widthAnchor.constraint(equalToConstant: 60),
 
-            stackTopLabelNames.centerYAnchor.constraint(equalTo: viewStackTopLabelNames.centerYAnchor),
+            stackTopLabelNames.topAnchor.constraint(equalTo: viewStackTopLabelNames.topAnchor),
             stackTopLabelNames.leadingAnchor.constraint(equalTo: viewStackTopLabelNames.leadingAnchor, constant: 8),
             stackViewTopLabel.heightAnchor.constraint(equalToConstant: 60),
             viewStackTopLabelNames.leadingAnchor.constraint(equalTo: imageOfPerson.trailingAnchor),
             
-            buttonPrivateMessage.heightAnchor.constraint(equalToConstant: 60),
-            buttonPrivateMessage.widthAnchor.constraint(equalToConstant: 60),
-            buttonPrivateMessage.centerYAnchor.constraint(equalTo: viewButtonPrivateMessage.centerYAnchor),
-            buttonPrivateMessage.centerXAnchor.constraint(equalTo: viewButtonPrivateMessage.centerXAnchor),
+            buttonPrivateMessage.heightAnchor.constraint(equalToConstant: 40),
+            buttonPrivateMessage.widthAnchor.constraint(equalToConstant: 80),
+            buttonPrivateMessage.bottomAnchor.constraint(equalTo: viewButtonPrivateMessage.bottomAnchor),
+            buttonPrivateMessage.trailingAnchor.constraint(equalTo: viewButtonPrivateMessage.trailingAnchor),
             viewButtonPrivateMessage.leadingAnchor.constraint(equalTo: viewStackTopLabelNames.trailingAnchor),
             viewButtonPrivateMessage.widthAnchor.constraint(equalToConstant: 80),
 
