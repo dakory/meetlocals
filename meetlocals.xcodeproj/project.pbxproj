@@ -32,6 +32,7 @@
 		B02DD66F685DF5539FFAC1BB /* AddEventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDFC3C85FA7690C3D5EC3 /* AddEventRouter.swift */; };
 		B02DD6D04D586498568BAB5A /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD19BA5D3038B6BEAA875 /* Profiles.swift */; };
 		B02DD74A845BFC11CC4F55D4 /* LoadingModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD16FDE19A148256AA8FA /* LoadingModuleContainer.swift */; };
+		B02DD76AA05EE4AD4C4FA203 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDE97C75031EB9DEA308B /* ButtonAnimation.swift */; };
 		B02DD79D69C58BA519CA8436 /* ProfileModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDD0EB62A466A32D333E0 /* ProfileModuleContainer.swift */; };
 		B02DD7B17195E6966C867A99 /* VkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DDDADAD066A4A034BA565 /* VkDelegate.swift */; };
 		B02DD7CC910E371FE27D69B6 /* EventScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02DD6AEF208AD087C8B99FE /* EventScreenProtocols.swift */; };
@@ -87,8 +88,6 @@
 		C2A4FD90261888A8722F5D72 /* ConverterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F5EB810160E4E90378C7 /* ConverterFactory.swift */; };
 		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
 		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
-		E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */; };
-		E3658BB325AB87E500F4FC72 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +148,7 @@
 		B02DDDADAD066A4A034BA565 /* VkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegate.swift; sourceTree = "<group>"; };
 		B02DDDD0390EC26E2F0E88CB /* VkUiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkUiDelegate.swift; sourceTree = "<group>"; };
 		B02DDE7AFAF179680182E668 /* meetlocals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetlocals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02DDE97C75031EB9DEA308B /* ButtonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		B02DDEAA8815E525FBAFA694 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		B02DDFC3C85FA7690C3D5EC3 /* AddEventRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventRouter.swift; sourceTree = "<group>"; };
 		B02DDFC9942A421486F30438 /* VkDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkDelegateImpl.swift; sourceTree = "<group>"; };
@@ -176,8 +176,6 @@
 		C58B43E698F5BA7B12B4953C /* Pods-meetlocals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.debug.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.debug.xcconfig"; sourceTree = "<group>"; };
 		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
 		D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetlocals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonAnimation.swift; path = ../../../Desktop/meetlocals/ButtonAnimation.swift; sourceTree = "<group>"; };
-		E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,12 +202,12 @@
 		B02DD0897423B085E454A7A1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */,
 				B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */,
 				B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */,
 				B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */,
 				B02DDC279F5131EDD48D8D15 /* UIView_Layout_utils.swift */,
 				B02DD804D1BACDF58CC2F4A4 /* UIColorExtension.swift */,
+				B02DDE97C75031EB9DEA308B /* ButtonAnimation.swift */,
 			);
 			name = Common;
 			path = meetlocals/Common;
@@ -406,7 +404,6 @@
 				C2A4F146380F7A5519E8AE0F /* JsonAppUserConverter.swift */,
 				B02DD7719A71CCDDE67C38F7 /* APIClient.swift */,
 				B02DD4D04613A31BA6DD8D90 /* AppCoordinator.swift */,
-				E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */,
 			);
 			path = meetlocals;
 			sourceTree = "<group>";
@@ -611,8 +608,6 @@
 				B02DD622017199131F2C6459 /* OrganizerScreenViewController.swift in Sources */,
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
-				E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */,
-				E3658BB325AB87E500F4FC72 /* ButtonAnimation.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
 				C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */,
 				C2A4F2DC4190A9C8706E9F61 /* JsonConverterFactory.swift in Sources */,
@@ -633,6 +628,7 @@
 				B02DD25F1930551ED63C23C3 /* LoadingModuleViewController.swift in Sources */,
 				B02DDD32BFE966D06A257FEA /* AppCoordinator.swift in Sources */,
 				B02DD7CF2F525318381B514A /* UIColorExtension.swift in Sources */,
+				B02DD76AA05EE4AD4C4FA203 /* ButtonAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
