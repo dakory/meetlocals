@@ -175,9 +175,9 @@ final class EventScreenViewController: UIViewController {
         imageOfPerson.clipsToBounds = true
         
 
-        nameEvent.font = nameEvent.font.withSize(22)
-        nameOfPerson.font = UIFont.boldSystemFont(ofSize: 16.0)
-        
+        nameEvent.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        nameOfPerson.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+
         buttonPrivateMessage.setImage(UIImage(named: "vk_icon_blue"), for: .normal)
         buttonPrivateMessage.layer.borderWidth = 2
         buttonPrivateMessage.layer.borderColor = UIColor(rgb: 0x396AE9).cgColor
