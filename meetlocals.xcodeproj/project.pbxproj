@@ -88,6 +88,7 @@
 		C2A4FE496ACB21F1A99CDC8F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4F42526DC0B4EF836DCBD /* Interactor.swift */; };
 		C2A4FEE9E73F260B0BAD64FD /* ConverterResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4FBC688877C4C69F756F1 /* ConverterResolver.swift */; };
 		E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */; };
+		E3658BB325AB87E500F4FC72 /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,7 @@
 		CB2FD77860EB19CDDFC55C77 /* Pods-meetlocals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meetlocals.release.xcconfig"; path = "Target Support Files/Pods-meetlocals/Pods-meetlocals.release.xcconfig"; sourceTree = "<group>"; };
 		D59FB10D7476C420CBD55D00 /* Pods_meetlocals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meetlocals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3658BAE25AB753400F4FC72 /* ButtonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonAnimation.swift; path = ../../../Desktop/meetlocals/ButtonAnimation.swift; sourceTree = "<group>"; };
+		E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		B02DD0897423B085E454A7A1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E3658BB225AB87E500F4FC72 /* ButtonAnimation.swift */,
 				B02DDFD3A26BE989DB1F866D /* AutoLayoutView.swift */,
 				B02DD2DAA869B3A44D05BE63 /* UIImageViewExtension.swift */,
 				B02DD0BE0341C5818D21A8ED /* UIImageView_downloaded_extension.swift */,
@@ -609,6 +612,7 @@
 				C2A4F44295E17223EC2A24FD /* AlertDialogDescription.swift in Sources */,
 				C2A4F861BE5DD22F85D4BE5E /* AlertDialogDelegate.swift in Sources */,
 				E3658BAF25AB753500F4FC72 /* ButtonAnimation.swift in Sources */,
+				E3658BB325AB87E500F4FC72 /* ButtonAnimation.swift in Sources */,
 				C2A4FD72C3A2FDFA4D56EE8E /* MainViewController.swift in Sources */,
 				C2A4FD437E76ACCBDE76706B /* AppRepository.swift in Sources */,
 				C2A4F2DC4190A9C8706E9F61 /* JsonConverterFactory.swift in Sources */,
