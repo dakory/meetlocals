@@ -238,7 +238,7 @@ final class EventScreenViewController: UIViewController {
     @IBAction func pressedButtonSignUp(_ sender: UIButton) {
         if output.checkCurrentUserIsOrganizer()
         {
-            output.DidTabDeleteEvent()
+            output.deleteEvent()
             self.navigationController?.navigationBar.isUserInteractionEnabled = false
         }
         else {

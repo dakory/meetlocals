@@ -24,7 +24,25 @@ extension EventScreenPresenter: EventScreenModuleInput {
 }
 
 extension EventScreenPresenter: EventScreenViewOutput {
+    func deleteEvent() {
+        print("Перешли")
+        let alertController = UIAlertController.init(title: "Вы точно хотите удалить событие?", message: "Его невозможно будет восстановить", preferredStyle: .alert)
 
+        let YesAction = UIAlertAction(title: "Да", style: .default) { action in
+            let event = self.interactor.getInfoOfEvent(eventId: self.eventId!)
+            self.interactor.deleteEvent(eventId: event.id)
+        }
+        
+        let NoAction = UIAlertAction(title: "Нет", style: .default) { action in
+            (self.view as! EventScreenViewController).navigationController?.navigationBar.isUserInteractionEnabled = true
+        }
+
+        alertController.addAction(YesAction)
+        alertController.addAction(NoAction)
+        (self.view as! EventScreenViewController).present(alertController, animated: true)
+
+    }
+    
     func checkMembershipPresenter(){
         checkMembership()
     }
@@ -37,7 +55,7 @@ extension EventScreenPresenter: EventScreenViewOutput {
     }
     
     func getData(){
-        let event = interactor.getInfoOfEvent(eventId: eventId!)   //обращаемся к interactor для получения информации и мероприятии
+        let event = interactor.getInfoOfEvent(eventId: eventId!)
         let person = interactor.getInfoOrganizer(id: event.idOrganizer)
         organizerID = person.id
         organizerVkID  = person.vkId
@@ -47,7 +65,6 @@ extension EventScreenPresenter: EventScreenViewOutput {
     
     func singUpForEvent(){
         interactor.addOrDeleteDataNewMember(eventId: eventId!)
-    //    router.updateScreens(vc: self.view as! EventScreenViewController)
     }
 
     
@@ -66,11 +83,6 @@ extension EventScreenPresenter: EventScreenViewOutput {
     func goToProfile(id: Int?) {
         router.organizerScreen(vc: self.view as! EventScreenViewController, organizerID: id!)
     }
-    
-    func DidTabDeleteEvent() {
-        let event = interactor.getInfoOfEvent(eventId: eventId!)
-        router.deleteEvent(eventId: event.id)
-    }
 }
 
 extension EventScreenPresenter: EventScreenInteractorOutput {
@@ -84,6 +96,20 @@ extension EventScreenPresenter: EventScreenInteractorOutput {
         participatingListNavigationController.updateList()
     }
     
+    func reloadScreens(){
+        let listNavigationControllers  = (self.view as! EventScreenViewController).tabBarController!.viewControllers![0] as! UINavigationController
+        let listNavigationController = listNavigationControllers.viewControllers[0] as! EventListController
+        listNavigationController.updateList()
+                                
+        let organizingListNavigationControllers  = (self.view as! EventScreenViewController).tabBarController!.viewControllers![1] as! UINavigationController
+        let organizingListNavigationController = organizingListNavigationControllers.viewControllers[0] as! EventListController
+        organizingListNavigationController.updateList()
+        
+        let participatingListNavigationControllers  = (self.view as! EventScreenViewController).tabBarController!.viewControllers![3] as! UINavigationController
+        let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
+        participatingListNavigationController.updateList()
+        self.router.deleteEvent()
+    }
 }
 
 extension Date {

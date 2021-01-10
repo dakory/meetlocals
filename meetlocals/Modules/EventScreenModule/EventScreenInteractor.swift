@@ -9,13 +9,6 @@ final class EventScreenInteractor {
 
 
 extension EventScreenInteractor: EventScreenInteractorInput {
-    func deleteEvent(eventId: Int) {
-        print("Придется поработать с базой данных")
-    }
-    
-
-    
-
     func addOrDeleteDataNewMember(eventId: Int) {
         let client = APIClient()
         let indexEvent = Common.events.listOfEvents.firstIndex(where: { $0.id == eventId })
@@ -76,6 +69,32 @@ extension EventScreenInteractor: EventScreenInteractorInput {
     func getInfoOrganizer(id: Int) -> Profile { //по id находим организатора мероприятия
         let indexPerson = Common.profiles.profiles.firstIndex(where: { $0.id == id })
         return Common.profiles.profiles[indexPerson!]
+    }
+    
+    func deleteEvent(eventId: Int) {
+        let client = APIClient()
+        client.deleteDataTask("events/\(eventId)") { (result: Result<Any, Error>) in
+            do {
+                let response = try result.get()
+                print(response)
+                client.getDataTask("events") { (result: Result<EventsResponse, Error>) in
+                    do {
+                        let eventsResponse = try result.get()
+                        print(eventsResponse.events)
+                        Common.events.listOfEvents = eventsResponse.events
+                        self.output?.reloadScreens()
+                    }
+                    catch {
+                        print(error)
+                    }
+                }
+            }
+            catch {
+                print(error)
+            }
+        }
+        print("Мероприятие удалено")
+        
     }
 }
 

@@ -6,60 +6,10 @@ final class EventScreenRouter {
 }
 
 extension EventScreenRouter: EventScreenRouterInput {
-
-    func deleteEvent(eventId: Int) {
-        let alertView = UIAlertController.init(title: "Вы точно хотите удалить событие?", message: "Его невозможно будет восстановить", preferredStyle: .alert)
-
-        let YesAction = UIAlertAction(title: "Да", style: .default) { action in
-            
-            let client = APIClient()
-            client.deleteDataTask("events/\(eventId)") { (result: Result<Any, Error>) in
-                do {
-                    let response = try result.get()
-                    print(response)
-                    client.getDataTask("events") { (result: Result<EventsResponse, Error>) in
-                        do {
-                            let eventsResponse = try result.get()
-                            print(eventsResponse.events)
-                            
-                            Common.events.listOfEvents = eventsResponse.events
-
-                            let listNavigationControllers  = self.viewController?.tabBarController!.viewControllers![0] as! UINavigationController
-                            let listNavigationController = listNavigationControllers.viewControllers[0] as! EventListController
-                            listNavigationController.updateList()
-                                                    
-                            let organizingListNavigationControllers  = self.viewController?.tabBarController!.viewControllers![1] as! UINavigationController
-                            let organizingListNavigationController = organizingListNavigationControllers.viewControllers[0] as! EventListController
-                            organizingListNavigationController.updateList()
-                            
-                            let participatingListNavigationControllers  = self.viewController?.tabBarController!.viewControllers![3] as! UINavigationController
-                            let participatingListNavigationController = participatingListNavigationControllers.viewControllers[0] as! EventListController
-                            participatingListNavigationController.updateList()
-                            
-                            self.viewController?.navigationController?.popViewController(animated: true)
-                            self.viewController?.dismiss(animated: true)
-                        }
-                        catch {
-                            print(error)
-                        }
-                    }
-                }
-                catch {
-                    print(error)
-                }
-            }
-            print("Мероприятие удалено")
-        }
-        let NoAction = UIAlertAction(title: "Нет", style: .default) { action in
-            print("Мероприятие не удалено")
-            self.viewController?.navigationController?.navigationBar.isUserInteractionEnabled = true
-        }
-
-        alertView.addAction(YesAction)
-        alertView.addAction(NoAction)
-        self.viewController?.present(alertView, animated: true)
+    func deleteEvent() {
+        self.viewController?.navigationController?.popViewController(animated: true)
+        self.viewController?.dismiss(animated: true)
     }
-    
     func organizerScreen(vc: EventScreenViewController, organizerID: Int){ //здесь осуществляем переход на "Профиль организатора"
         let contexOrganizerScreen = OrganizerScreenContext(moduleOutput: nil, personID: organizerID)
         let containerOrganizerScreen = OrganizerScreenContainer.assemble(with: contexOrganizerScreen)
